@@ -6,7 +6,7 @@
 			$(document).keyup(function(e) {
 
 				if (e.keyCode == 27) {
-					$("#cover").fadeOut(1000);
+					$("#cover").fadeOut(500);
 			
 				}   
 			});
