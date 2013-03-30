@@ -2,11 +2,11 @@
 	$(document).ready(function(){
 			$("#cover").hide();
 	
-			$("#cover").fadeIn(1000);
+			$("#cover").fadeIn(300);
 			$(document).keyup(function(e) {
 
 				if (e.keyCode == 27) {
-					$("#cover").fadeOut(500);
+					$("#cover").fadeOut(300);
 			
 				}   
 			});
