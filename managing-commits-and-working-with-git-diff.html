@@ -7,13 +7,15 @@
         <meta name="author" content="Sudhanshu Mishra (noreply@blogger.com)" />
         <meta name="copyright" content="Sudhanshu Mishra (noreply@blogger.com)" />
 
+        <meta name="description" content="**tl;dr**: This post assumes that you have basic knowledge of git. It&#39;s just about managing commits and minimizing their numbers by having only meaningful ones. I&#39;ve been working on a PR for around thirteen days which aims to fix a bug related to mathematical assumptions for inverse ...
+" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="git, github, misc, " />
+<meta name="keywords" content="git, github, Miscellaneous, " />
 
 <meta property="og:title" content="Managing commits and working with git diff "/>
-<meta property="og:url" content="http://www.sudhanshumishra.in/managing-commits-and-working-with-git-diff.html" />
+<meta property="og:url" content="http://www.sudhanshumishra.in/managing-commits-and-working-with-git-diff" />
 <meta property="og:description" content="**tl;dr**: This post assumes that you have basic knowledge of git. It&#39;s just about managing commits and minimizing their numbers by having only meaningful ones. I&#39;ve been working on a PR for around thirteen days which aims to fix a bug related to mathematical assumptions for inverse ..." />
 <meta property="og:site_name" content="Shortlog" />
 <meta property="og:article:author" content="Sudhanshu Mishra (noreply@blogger.com)" />
@@ -25,10 +27,17 @@
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="http://www.sudhanshumishra.in/theme/css/pygments.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="http://www.sudhanshumishra.in/theme/tipuesearch/tipuesearch.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="http://www.sudhanshumishra.in/theme/css/elegant.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="http://www.sudhanshumishra.in/theme/css/custom.css" media="screen">
+<link rel="stylesheet" href="http://www.sudhanshumishra.in/theme/css/style.min.css?7aeecf36">
+        <link rel="shortcut icon" href="http://www.sudhanshumishra.in/theme/images/favicon.ico" type="image/x-icon" type="image/png" />
+        <link rel="icon" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon-152x152.png" type="image/png" />
     </head>
     <body>
         <div id="content-sans-footer">
@@ -60,7 +69,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://www.sudhanshumishra.in/managing-commits-and-working-with-git-diff.html"> Managing commits and working with git diff  </a></h1>
+    <h1><a href="http://www.sudhanshumishra.in/managing-commits-and-working-with-git-diff"> Managing commits and working with git diff  </a></h1>
     </header>
 </div>
 
@@ -185,16 +194,36 @@ Cheers!
 </div>
 </div>
 </p></p>
-            
+            <section>
+    <p id="post-share-links">
+    Like this post? Share on:
+    <a href="http://twitter.com/home?status=Managing%20commits%20and%20working%20with%20git%20diff%20http%3A//www.sudhanshumishra.in/managing-commits-and-working-with-git-diff" target="_blank" title="Share on Twitter">Twitter</a>
+    ❄
+    <a href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=http%3A//www.sudhanshumishra.in/managing-commits-and-working-with-git-diff" target="_blank" title="Share on Facebook">Facebook</a>
+    ❄
+    <a href="https://plus.google.com/share?url=http%3A//www.sudhanshumishra.in/managing-commits-and-working-with-git-diff" target="_blank" title="Share on Google Plus">Google+</a>
+    ❄
+    <a href="mailto:?subject=Managing%20commits%20and%20working%20with%20git%20diff&amp;body=http%3A//www.sudhanshumishra.in/managing-commits-and-working-with-git-diff" target="_blank" title="Share via Email">Email</a>
+    </p>
+</section>
+
             
             <hr/>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204" title="Previous: Setting up Tornado server on Ubuntu 12.04">Setting up Tornado server on Ubuntu 12.04</a></li>
+                <li class="next-article"><a href="http://www.sudhanshumishra.in/gsoc-2014-with-sympy" title="Next: GSoC 2014 with SymPy">GSoC 2014 with SymPy</a> »</li>
+            </ul>
+            </nav>
+            </aside>
         </div>
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
             <time pubdate="pubdate" datetime="2014-04-14T13:48:00+05:30">Apr 14, 2014</time>
             <h4>Category</h4>
-            <a class="category-link" href="http://www.sudhanshumishra.in/categories.html#misc-ref">misc</a>
+            <a class="category-link" href="http://www.sudhanshumishra.in/categories.html#miscellaneous-ref">Miscellaneous</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="http://www.sudhanshumishra.in/tags.html#git-ref">git
@@ -204,6 +233,20 @@ Cheers!
                     <span>1</span>
 </a></li>
             </ul>
+<h4>Stay in Touch</h4>
+    <a href="https://twitter.com/debugger22" title="My Twitter Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-twitter sidebar-social-links"></i></a>
+    <a href="https://github.com/debugger22" title="My Github Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-github sidebar-social-links"></i></a>
+<!-- Begin MailChimp Signup Form -->
+<div id="mc-embed-signup">
+<form action="empty" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<h4>Get Monthly Updates</h4>
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email..." required>
+<div class="clear"><input type="submit" value="Send me Free updates" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup-->
         </div>
         </section>
 </div>
@@ -217,6 +260,7 @@ Cheers!
 <footer>
 <div id="footer">
     <ul class="footer-content">
+        <li class="elegant-license">Licensed under MIT License</li>
         <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
     </ul>
 </div>

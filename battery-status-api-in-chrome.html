@@ -7,13 +7,15 @@
         <meta name="author" content="Sudhanshu Mishra" />
         <meta name="copyright" content="Sudhanshu Mishra" />
 
+        <meta name="description" content="Implementation of HTML battery status API is a bit different in webkit. It has not been exposed with navigator.battery. This works fine in Gecko(Firefox) but you might have hard time if you try it on Chrome. After banging my head for few days against some chromium issues I ...
+" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="Chrome, JavaScript, misc, " />
+<meta name="keywords" content="Chrome, JavaScript, Miscellaneous, " />
 
 <meta property="og:title" content="Battery Status API in Chrome "/>
-<meta property="og:url" content="http://www.sudhanshumishra.in/battery-status-api-in-chrome.html" />
+<meta property="og:url" content="http://www.sudhanshumishra.in/battery-status-api-in-chrome" />
 <meta property="og:description" content="Implementation of HTML battery status API is a bit different in webkit. It has not been exposed with navigator.battery. This works fine in Gecko(Firefox) but you might have hard time if you try it on Chrome. After banging my head for few days against some chromium issues I ..." />
 <meta property="og:site_name" content="Shortlog" />
 <meta property="og:article:author" content="Sudhanshu Mishra" />
@@ -25,10 +27,17 @@
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="http://www.sudhanshumishra.in/theme/css/pygments.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="http://www.sudhanshumishra.in/theme/tipuesearch/tipuesearch.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="http://www.sudhanshumishra.in/theme/css/elegant.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="http://www.sudhanshumishra.in/theme/css/custom.css" media="screen">
+<link rel="stylesheet" href="http://www.sudhanshumishra.in/theme/css/style.min.css?7aeecf36">
+        <link rel="shortcut icon" href="http://www.sudhanshumishra.in/theme/images/favicon.ico" type="image/x-icon" type="image/png" />
+        <link rel="icon" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="http://www.sudhanshumishra.in/theme/images/apple-touch-icon-152x152.png" type="image/png" />
     </head>
     <body>
         <div id="content-sans-footer">
@@ -60,7 +69,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://www.sudhanshumishra.in/battery-status-api-in-chrome.html"> Battery Status API in Chrome  </a></h1>
+    <h1><a href="http://www.sudhanshumishra.in/battery-status-api-in-chrome"> Battery Status API in Chrome  </a></h1>
     </header>
 </div>
 
@@ -91,16 +100,36 @@ v38.0.2125.92</a>.</p>
 
 <p>Once you have the battery, the sub API is same for both.</p>
 <p>Cheers!</p>
-            
+            <section>
+    <p id="post-share-links">
+    Like this post? Share on:
+    <a href="http://twitter.com/home?status=Battery%20Status%20API%20in%20Chrome%20http%3A//www.sudhanshumishra.in/battery-status-api-in-chrome" target="_blank" title="Share on Twitter">Twitter</a>
+    ❄
+    <a href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=http%3A//www.sudhanshumishra.in/battery-status-api-in-chrome" target="_blank" title="Share on Facebook">Facebook</a>
+    ❄
+    <a href="https://plus.google.com/share?url=http%3A//www.sudhanshumishra.in/battery-status-api-in-chrome" target="_blank" title="Share on Google Plus">Google+</a>
+    ❄
+    <a href="mailto:?subject=Battery%20Status%20API%20in%20Chrome&amp;body=http%3A//www.sudhanshumishra.in/battery-status-api-in-chrome" target="_blank" title="Share via Email">Email</a>
+    </p>
+</section>
+
             
             <hr/>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="http://www.sudhanshumishra.in/gsoc14-progress-week-12" title="Previous: GSoC&#39;14 progress: Week 12">GSoC'14 progress: Week 12</a></li>
+                <li class="next-article"><a href="http://www.sudhanshumishra.in/top-hacker-news-archive" title="Next: Top Hacker News Archive">Top Hacker News Archive</a> »</li>
+            </ul>
+            </nav>
+            </aside>
         </div>
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
             <time pubdate="pubdate" datetime="2014-10-13T12:20:00+05:30">Oct 13, 2014</time>
             <h4>Category</h4>
-            <a class="category-link" href="http://www.sudhanshumishra.in/categories.html#misc-ref">misc</a>
+            <a class="category-link" href="http://www.sudhanshumishra.in/categories.html#miscellaneous-ref">Miscellaneous</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="http://www.sudhanshumishra.in/tags.html#chrome-ref">Chrome
@@ -110,6 +139,20 @@ v38.0.2125.92</a>.</p>
                     <span>1</span>
 </a></li>
             </ul>
+<h4>Stay in Touch</h4>
+    <a href="https://twitter.com/debugger22" title="My Twitter Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-twitter sidebar-social-links"></i></a>
+    <a href="https://github.com/debugger22" title="My Github Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-github sidebar-social-links"></i></a>
+<!-- Begin MailChimp Signup Form -->
+<div id="mc-embed-signup">
+<form action="empty" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<h4>Get Monthly Updates</h4>
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email..." required>
+<div class="clear"><input type="submit" value="Send me Free updates" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup-->
         </div>
         </section>
 </div>
@@ -123,6 +166,7 @@ v38.0.2125.92</a>.</p>
 <footer>
 <div id="footer">
     <ul class="footer-content">
+        <li class="elegant-license">Licensed under MIT License</li>
         <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
     </ul>
 </div>
