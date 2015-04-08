@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Shortlog - Server</title>
+        <link rel="stylesheet" href="http://www.sudhanshumishra.in/theme/css/main.css" />
+        <link href="http://www.sudhanshumishra.in/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Shortlog Atom Feed" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://www.sudhanshumishra.in/">Shortlog </a></h1>
+                <nav><ul>
+                    <li><a href="http://www.sudhanshumishra.in/category/miscellaneous.html">Miscellaneous</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/two-things-dockerizing-applications-and-aws-on-the-house-services">Two things: Dockerizing Applications and AWS' on the house services</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2015-01-08T18:25:00+05:30">
+                Published: Thu 08 January 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.sudhanshumishra.in/author/sudhanshu-mishra.html">Sudhanshu Mishra</a>
+        </address>
+<p>In <a href="http://www.sudhanshumishra.in/category/miscellaneous.html">Miscellaneous</a>. </p>
+<p>tags: <a href="http://www.sudhanshumishra.in/tag/aws.html">aws</a> <a href="http://www.sudhanshumishra.in/tag/cloud.html">cloud</a> <a href="http://www.sudhanshumishra.in/tag/docker.html">docker</a> <a href="http://www.sudhanshumishra.in/tag/server.html">Server</a> </p>
+</footer><!-- /.post-info --><p>Lately I migrated my app from DigitalOcean to AWS and encountered the
+pain of setting up similar environment.(Documenting everything is very
+important!)</p>
+<p>I heard long ago about <a href="https://docker.io/">Docker</a> but never bothered
+to tinker with it. If you don't know, Docker is a platform for
+developers and sysadmins to develop, ship, and run applications. Docker
+lets you quickly assemble applications from components and eliminates
+the friction that can come when shipping code.</p>
+<p><img alt="docker" src="http://blog.docker.com/wp-content/uploads/2013/08/KuDr42X_ITXghJhSInDZekNEF0jLt3NeVxtRye3tqco.png" /></p>
+<p>It's just like a <code>git pull</code> for your custom OS.
+<a href="https://docker.io/">https://docker.io</a> manages repositories of docker
+images, public and private. A docker image is just a set of layers where
+layers are changes to its file system as results of commands. It uses
+same commit system like git. Once you've established an image you can
+run your applications on it. Docker calls them containers. Each
+container runs a single process. Even when containers run on same
+environment, they are sandboxed to themselves. There's a 'sophisticated'
+way in which containers talk to each
+other. <a href="https://docs.docker.com/userguide/dockerizing">Here's</a> a great
+article on dockerizing your applications.</p>
+<p>So yeah, I had to set up the same environment but just for once! Now I
+can easily automate spawning new instances and adding them under
+Amazon's ELB. It also made the development easier.</p>
+<p>I'm amazingly happy with Amazon's great products. Things like Elastic
+IP, Elastic Load Balancer, Elastic Block Storage, S3, VPC, etc. can be
+done with just few clicks. Setting up such infrastructure manually is a
+nightmare. One thing which I miss here is MongoDB. Although there is
+Amazon's own DynamoDB but I really don't want to learn another NoSQL DB.
+I'm using few EC2 instances for that.</p>
+<p>We're accepting beta testers for this app.
+<a href="https://getwaeo.com/">https://getwaeo.com</a></p>
+<p>I'm really excited about it and will be putting it in production in few
+weeks! Cheers!</p><p>There are <a href="http://www.sudhanshumishra.in/two-things-dockerizing-applications-and-aws-on-the-house-services#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204" rel="bookmark"
+                           title="Permalink to Setting up Tornado server on Ubuntu 12.04">Setting up Tornado server on Ubuntu 12.04</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-04-05T06:42:00+05:30">
+                Published: Sat 05 April 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.sudhanshumishra.in/author/sudhanshu-mishra-noreplybloggercom.html">Sudhanshu Mishra (noreply@blogger.com)</a>
+        </address>
+<p>In <a href="http://www.sudhanshumishra.in/category/miscellaneous.html">Miscellaneous</a>. </p>
+<p>tags: <a href="http://www.sudhanshumishra.in/tag/binpy.html">BinPy</a> <a href="http://www.sudhanshumishra.in/tag/server.html">Server</a> <a href="http://www.sudhanshumishra.in/tag/ubuntu.html">Ubuntu</a> </p>
+</footer><!-- /.post-info -->                <div dir="ltr" style="text-align: left;">
+ {#setting-up-tornado-server-on-ubuntu-12-04 style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"}
+
+<div style="font-size: 13px; font-weight: normal; line-height: 18px; margin-bottom: 9px;">
+<div class="separator" style="clear: both; text-align: center;">
+[![Tornado](http://www.tornadoweb.org/en/stable/_images/tornado.png)](http://www.tornadoweb.org/en/stable/_images/tornado.png)
+
+</div>
+
+<p>Lately I was looking at Tornado which has been open sourced by Facebook.
+It was originally ...</p></div></div>
+                <a class="readmore" href="http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204">read more</a>
+<p>There are <a href="http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+<p class="paginator">
+    Page 1 / 1
+</p>
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://blog.sudhanshumishra.in/">Old blog</a></li>
+                            <li><a href="https://github.com/debugger22">GitHub</a></li>
+                            <li><a href="https://twitter.com/debugger22">Twitter</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://www.sudhanshumishra.in/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/debugger22">Twitter</a></li>
+                            <li><a href="https://github.com/debugger22">Github</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'newgithubpagesblog';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

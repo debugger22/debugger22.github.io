@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shortlog</title><link>http://www.sudhanshumishra.in/</link><description></description><atom:link href="http://www.sudhanshumishra.in/feeds/sudhanshu-mishra.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 16 Jan 2015 19:36:00 +0530</lastBuildDate><item><title>Memory Error due to charge leak acceleration in DRAM</title><link>http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram</link><description>&lt;p&gt;DRAM comprises a two-dimensional array of DRAM cells, each of which
+consists of a capacitor and an access-transistor. Depending on whether
+its capacitor is fully charged or fully discharged, a cell is in either
+the charged state or the discharged state, respectively. These two
+states are used to represent a binary data value.
+Dense packaging in DRAM leads to anomalies while performing continuous
+read operations from same memory address which involves opening and
+closing of the wordline. This anomaly will not be evident if the data is
+read from an address after opening a wordline and not closing it. When
+there are many activations to the same row, they force the wordline to
+toggle on and off repeatedly. Such voltage fluctuations on a row’s
+wordline have a disturbance effect on nearby rows, inducing some of
+their cells to leak charge at an accelerated rate. If such a cell loses
+too much charge before it is restored to its original value, it
+experiences a disturbance error.This disturbance results mostly in
+flipped bit value.Here's the assembly code which may induce errors when
+executed on Intel/AMD machines.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;loop:
+    mov X, %eax  ; Read from address X and save in register including
+cache
+    mov Y, %ebx  ; values in registers and cache
+    clflush (X)  ; Clear data from cache
+    clflush (Y)
+    mfence       ; Make sure that data is fully flushed
+    jmp loop
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;On the other hand, the following code will not induce errors because it
+does not force continuous toggling of the wordline.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;loop:
+    mov X, %eax  ; Read from address X and save in register including
+cache
+    clflush (X)  ; Clear data from cache
+    mfence       ; Make sure that data is fully flushed
+    jmp loop
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;These disturbances violate two invariants that memory should provide&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A read access should not modify data at any address&lt;/li&gt;
+&lt;li&gt;A write access should modify data only at the address being written to&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This makes systems, using DRAM, vulnerable to data corruption.&lt;/p&gt;
+&lt;p&gt;References:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Yoongu Kim, Ross Daly, Jeremie Kim, Chris Fallin, Ji Hye Lee,
+Donghyuk Lee, Chris Wilkerson, Konrad Lai, Onur Mutlu et al. Flipping
+Bits in Memory Without Accessing Them: An Experimental Study of DRAM
+Disturbance Errors, 2014.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A. J. van de Goor and I. Schanstra. Address and Data Scrambling:
+Causes and Impact on Memory Tests. In DELTA, 2002&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Fri, 16 Jan 2015 19:36:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2015-01-16:memory-error-due-to-charge-leak-acceleration-in-dram</guid><category>Electronics</category></item><item><title>Two things: Dockerizing Applications and AWS' on the house services</title><link>http://www.sudhanshumishra.in/two-things-dockerizing-applications-and-aws-on-the-house-services</link><description>&lt;p&gt;Lately I migrated my app from DigitalOcean to AWS and encountered the
+pain of setting up similar environment.(Documenting everything is very
+important!)&lt;/p&gt;
+&lt;p&gt;I heard long ago about &lt;a href="https://docker.io/"&gt;Docker&lt;/a&gt; but never bothered
+to tinker with it. If you don't know, Docker is a platform for
+developers and sysadmins to develop, ship, and run applications. Docker
+lets you quickly assemble applications from components and eliminates
+the friction that can come when shipping code.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="docker" src="http://blog.docker.com/wp-content/uploads/2013/08/KuDr42X_ITXghJhSInDZekNEF0jLt3NeVxtRye3tqco.png" /&gt;&lt;/p&gt;
+&lt;p&gt;It's just like a &lt;code&gt;git pull&lt;/code&gt; for your custom OS.
+&lt;a href="https://docker.io/"&gt;https://docker.io&lt;/a&gt; manages repositories of docker
+images, public and private. A docker image is just a set of layers where
+layers are changes to its file system as results of commands. It uses
+same commit system like git. Once you've established an image you can
+run your applications on it. Docker calls them containers. Each
+container runs a single process. Even when containers run on same
+environment, they are sandboxed to themselves. There's a 'sophisticated'
+way in which containers talk to each
+other. &lt;a href="https://docs.docker.com/userguide/dockerizing"&gt;Here's&lt;/a&gt; a great
+article on dockerizing your applications.&lt;/p&gt;
+&lt;p&gt;So yeah, I had to set up the same environment but just for once! Now I
+can easily automate spawning new instances and adding them under
+Amazon's ELB. It also made the development easier.&lt;/p&gt;
+&lt;p&gt;I'm amazingly happy with Amazon's great products. Things like Elastic
+IP, Elastic Load Balancer, Elastic Block Storage, S3, VPC, etc. can be
+done with just few clicks. Setting up such infrastructure manually is a
+nightmare. One thing which I miss here is MongoDB. Although there is
+Amazon's own DynamoDB but I really don't want to learn another NoSQL DB.
+I'm using few EC2 instances for that.&lt;/p&gt;
+&lt;p&gt;We're accepting beta testers for this app.
+&lt;a href="https://getwaeo.com/"&gt;https://getwaeo.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I'm really excited about it and will be putting it in production in few
+weeks! Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Thu, 08 Jan 2015 18:25:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2015-01-08:two-things-dockerizing-applications-and-aws-on-the-house-services</guid><category>aws</category><category>cloud</category><category>docker</category><category>Server</category></item><item><title>Battery Status API in Chrome</title><link>http://www.sudhanshumishra.in/battery-status-api-in-chrome</link><description>&lt;p&gt;Implementation of HTML battery status API is a bit different in webkit.
+It has not been exposed with &lt;code&gt;navigator.battery&lt;/code&gt;.
+This works fine in Gecko(Firefox) but you might have hard time if you
+try it on Chrome.&lt;/p&gt;
+&lt;p&gt;After banging my head for few days against some chromium issues I
+figured out that the API is &lt;code&gt;navigator.getBattery()&lt;/code&gt; instead of &lt;code&gt;navigator.battery&lt;/code&gt; which returns a promise. It works from &lt;a href="https://chromium.googlesource.com/chromium/src/+/38.0.2125.92/content/browser/battery_status/"&gt;Google Chrome
+v38.0.2125.92&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here's an example code for this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;battery&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;battery&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;mozBattery&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;battery&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// This works in Firefox&lt;/span&gt;
+    &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;battery&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;level&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;%&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getBattery&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// This works in Google Chrome&lt;/span&gt;
+    &lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getBattery&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;battery&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;battery&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;level&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;%&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;});&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Once you have the battery, the sub API is same for both.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Mon, 13 Oct 2014 12:20:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-10-13:battery-status-api-in-chrome</guid><category>Chrome</category><category>JavaScript</category></item><item><title>Easy caching in Android</title><link>http://www.sudhanshumishra.in/easy-caching-in-android</link><description>&lt;p&gt;Recently I found a better way to
+cache data in Android. It can also be used to save preferences of users. I was using SQLite before and it was cumbersome. I had to make a table to save just few key-value pairs.&lt;/p&gt;
+&lt;p&gt;Android SDK comes with an API
+called &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;android.content.SharedPreferences&lt;/code&gt;.
+A&lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt; object
+points to a file containing key-value pairs and provides simple methods
+to read and write them.
+Each &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt; file
+is managed by the framework and can be private or shared. You’ll not
+lose your data even when the device restarts. It has one more advantage,
+you can also use to share data among different activities.&lt;/p&gt;
+&lt;p&gt;It supports primitive data types
+only. You can not save objects in &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt;.
+Although you can serialize your object and store the raw string in
+it.&lt;/p&gt;
+&lt;p&gt;To get a private handle of
+the &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt; use
+following command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SharedPreferences&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;getActivity&lt;/span&gt;&lt;span class="o"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getSharedPreferences&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;getString&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;YOUR_PREFERENCE_FILE_NAME&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt; &lt;span class="n"&gt;Context&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;MODE_PRIVATE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;YOUR_PREFERENCE_FILE_NAME&lt;/code&gt; can
+be any valid string allowed for a file name in UNIX environment.&lt;/p&gt;
+&lt;p&gt;Private data will be available to your application only, it can not be accessed by other applications
+installed on the device. To make it public you just need to
+replace &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;Context.MODE_PRIVATE&lt;/code&gt; with
+either &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;MODE_WORLD_READABLE&lt;/code&gt; or &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;MODE_WORLD_WRITABLE&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SharedPreferences&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;getSharedPreferences&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;    &lt;span class="s"&gt;&amp;quot;YOUR_PREFERENCE_FILE_NAME&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Context&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;MODE_WORLD_WRITABLE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Publicly shared prefences are available to other apps and if they know the file identifier, they may
+perform read/write operations on it.&lt;/p&gt;
+&lt;p&gt;Once you’ve got the handle you
+can read data using following code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;strData&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getString&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mStrData&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DEFAULT_STRING&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;&lt;span class="kt"&gt;boolean&lt;/span&gt; &lt;span class="n"&gt;boolData&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getBoolean&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mBoolData&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DEFAULT_BOOLEAN&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;intData&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getInt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mIntData&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DEFAULT_INTEGER&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: If there isn’t any data
+associated with the passed key, it will return the passed default
+value.&lt;/p&gt;
+&lt;p&gt;For a complete list of methods see &lt;a href="http://developer.android.com/reference/android/content/SharedPreferences.html"&gt;this&lt;/a&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;To save data in the &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt; you
+need to add one more line:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SharedPreferences&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Editor&lt;/span&gt; &lt;span class="n"&gt;editor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;edit&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now you can easily save data in the memory.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;editor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;putBoolean&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;cacheAvailable&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;&lt;span class="n"&gt;editor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;putInt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pingCount&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getInt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pingCount&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)++);&lt;/span&gt;&lt;span class="n"&gt;editor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;putString&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mResponse&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;// A web response in my case.editor.commit(); // This is important to commit changes&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt;Use editor.apply() for asynchronous call.&lt;/p&gt;
+&lt;p&gt;This API made my life easy. Now I do not need to write queries to do these small
+things.&lt;/p&gt;
+&lt;p&gt;If you have suggestions, please
+comment below. I’ll be happy to get feedback.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Wed, 11 Jun 2014 21:26:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-06-11:easy-caching-in-android</guid><category>Android</category></item></channel></rss>

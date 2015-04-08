@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Shortlog - JavaScript</title>
+        <link rel="stylesheet" href="http://www.sudhanshumishra.in/theme/css/main.css" />
+        <link href="http://www.sudhanshumishra.in/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Shortlog Atom Feed" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://www.sudhanshumishra.in/">Shortlog </a></h1>
+                <nav><ul>
+                    <li><a href="http://www.sudhanshumishra.in/category/miscellaneous.html">Miscellaneous</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/battery-status-api-in-chrome">Battery Status API in Chrome</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-10-13T12:20:00+05:30">
+                Published: Mon 13 October 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.sudhanshumishra.in/author/sudhanshu-mishra.html">Sudhanshu Mishra</a>
+        </address>
+<p>In <a href="http://www.sudhanshumishra.in/category/miscellaneous.html">Miscellaneous</a>. </p>
+<p>tags: <a href="http://www.sudhanshumishra.in/tag/chrome.html">Chrome</a> <a href="http://www.sudhanshumishra.in/tag/javascript.html">JavaScript</a> </p>
+</footer><!-- /.post-info --><p>Implementation of HTML battery status API is a bit different in webkit.
+It has not been exposed with <code>navigator.battery</code>.
+This works fine in Gecko(Firefox) but you might have hard time if you
+try it on Chrome.</p>
+<p>After banging my head for few days against some chromium issues I
+figured out that the API is <code>navigator.getBattery()</code> instead of <code>navigator.battery</code> which returns a promise. It works from <a href="https://chromium.googlesource.com/chromium/src/+/38.0.2125.92/content/browser/battery_status/">Google Chrome
+v38.0.2125.92</a>.</p>
+<p>Here's an example code for this:</p>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">battery</span> <span class="o">=</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">battery</span> <span class="o">||</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">mozBattery</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">battery</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// This works in Firefox</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">battery</span><span class="p">.</span><span class="nx">level</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">getBattery</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// This works in Google Chrome</span>
+    <span class="nx">navigator</span><span class="p">.</span><span class="nx">getBattery</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">battery</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">battery</span><span class="p">.</span><span class="nx">level</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Once you have the battery, the sub API is same for both.</p>
+<p>Cheers!</p><p>There are <a href="http://www.sudhanshumishra.in/battery-status-api-in-chrome#disqus_thread">comments</a>.</p>                </article>
+<p class="paginator">
+    Page 1 / 1
+</p>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://blog.sudhanshumishra.in/">Old blog</a></li>
+                            <li><a href="https://github.com/debugger22">GitHub</a></li>
+                            <li><a href="https://twitter.com/debugger22">Twitter</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://www.sudhanshumishra.in/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/debugger22">Twitter</a></li>
+                            <li><a href="https://github.com/debugger22">Github</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'newgithubpagesblog';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>
