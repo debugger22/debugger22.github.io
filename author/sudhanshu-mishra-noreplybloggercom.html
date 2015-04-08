@@ -20,94 +20,7 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram.html">Memory Error due to charge leak acceleration in DRAM</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2015-01-16T19:36:00+05:30">
-                Published: Fri 16 January 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://www.sudhanshumishra.in/author/sudhanshu-mishra-noreplybloggercom.html">Sudhanshu Mishra (noreply@blogger.com)</a>
-        </address>
-<p>In <a href="http://www.sudhanshumishra.in/category/misc.html">misc</a>. </p>
-<p>tags: <a href="http://www.sudhanshumishra.in/tag/electronics.html">Electronics</a> </p>
-</footer><!-- /.post-info --><div dir="ltr" style="text-align: left;">
-DRAM comprises a two-dimensional array of DRAM cells, each of which
-consists of a capacitor and an access-transistor. Depending on whether
-its capacitor is fully charged or fully discharged, a cell is in either
-the charged state or the discharged state, respectively. These two
-states are used to represent a binary data value.  
-Dense packaging in DRAM leads to anomalies while performing continuous
-read operations from same memory address which involves opening and
-closing of the wordline. This anomaly will not be evident if the data is
-read from an address after opening a wordline and not closing it. When
-there are many activations to the same row, they force the wordline to
-toggle on and off repeatedly. Such voltage fluctuations on a row’s
-wordline have a disturbance effect on nearby rows, inducing some of
-their cells to leak charge at an accelerated rate. If such a cell loses
-too much charge before it is restored to its original value, it
-experiences a disturbance error.This disturbance results mostly in
-flipped bit value.Here's the assembly code which may induce errors when
-executed on Intel/AMD machines.
-
-loop:  
-    mov X, %eax  ; Read from address X and save in register including
-cache  
-    mov Y, %ebx  ; values in registers and cache  
-    clflush (X)  ; Clear data from cache  
-    clflush (Y)  
-    mfence       ; Make sure that data is fully flushed  
-    jmp loop  
-
-On the other hand, the following code will not induce errors because it
-does not force continuous toggling of the wordline.  
-
-loop:  
-    mov X, %eax  ; Read from address X and save in register including
-cache  
-    clflush (X)  ; Clear data from cache  
-    mfence       ; Make sure that data is fully flushed  
-    jmp loop  
-
-These disturbances violate two invariants that memory should provide  
-
-
--   A read access should not modify data at any address
--   A write access should modify data only at the address being written
-    to
-
-
-This makes systems, using DRAM, vulnerable to data corruption.  
-
-
-References:  
-.. [1] Yoongu Kim, Ross Daly, Jeremie Kim, Chris Fallin, Ji Hye Lee,
-Donghyuk Lee, Chris Wilkerson, Konrad Lai, Onur Mutlu et al. Flipping
-Bits in Memory Without Accessing Them: An Experimental Study of DRAM
-Disturbance Errors, 2014.  
-.. [2] A. J. van de Goor and I. Schanstra. Address and Data Scrambling:
-Causes and Impact on Memory Tests. In DELTA, 2002  
-
-<div>
-
-
-</div>
-
-<p></div>
-</p></p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://www.sudhanshumishra.in/two-things-dockerizing-applications-and-aws-on-the-house-services.html" rel="bookmark"
-                           title="Permalink to Two things: Dockerizing Applications and AWS' on the house services">Two things: Dockerizing Applications and AWS' on the house services</a></h1>
-                </header>
-
-                <div class="entry-content">
+                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/two-things-dockerizing-applications-and-aws-on-the-house-services.html">Two things: Dockerizing Applications and AWS' on the house services</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2015-01-08T18:25:00+05:30">
                 Published: Thu 08 January 2015
@@ -118,7 +31,7 @@ Causes and Impact on Memory Tests. In DELTA, 2002
         </address>
 <p>In <a href="http://www.sudhanshumishra.in/category/misc.html">misc</a>. </p>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/aws.html">aws</a> <a href="http://www.sudhanshumishra.in/tag/cloud.html">cloud</a> <a href="http://www.sudhanshumishra.in/tag/docker.html">docker</a> <a href="http://www.sudhanshumishra.in/tag/server.html">Server</a> </p>
-</footer><!-- /.post-info -->                <div dir="ltr" style="text-align: left;">
+</footer><!-- /.post-info --><div dir="ltr" style="text-align: left;">
 Lately I migrated my app from DigitalOcean to AWS and encountered the
 pain of setting up similar environment.(Documenting everything is very
 important!)
@@ -132,10 +45,79 @@ important!)
 <div>
 I heard long ago about [Docker](https://docker.io/) but never bothered
 to tinker with it. If you don't know, Docker is a platform for
-developers ...</div></div></div>
-                <a class="readmore" href="http://www.sudhanshumishra.in/two-things-dockerizing-applications-and-aws-on-the-house-services.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+developers and sysadmins to develop, ship, and run applications. Docker
+lets you quickly assemble applications from components and eliminates
+the friction that can come when shipping code.
+
+</div>
+
+<div>
+
+</div>
+
+<div class="separator" style="clear: both; text-align: center;">
+[![](http://blog.docker.com/wp-content/uploads/2013/08/KuDr42X_ITXghJhSInDZekNEF0jLt3NeVxtRye3tqco.png)](http://blog.docker.com/wp-content/uploads/2013/08/KuDr42X_ITXghJhSInDZekNEF0jLt3NeVxtRye3tqco.png)
+
+</div>
+
+<div>
+
+</div>
+
+<div>
+It's just like a \`git pull\` for your custom OS.
+[https://docker.io](https://docker.io/) manages repositories of docker
+images, public and private. A docker image is just a set of layers where
+layers are changes to its file system as results of commands. It uses
+same commit system like git. Once you've established an image you can
+run your applications on it. Docker calls them containers. Each
+container runs a single process. Even when containers run on same
+environment, they are sandboxed to themselves. There's a 'sophisticated'
+way in which containers talk to each
+other. [Here's](https://docs.docker.com/userguide/dockerizing) a great
+article on dockerizing your applications.
+
+</div>
+
+<p></div>
+<div></p>
+<p></div>
+<div>
+So yeah, I had to set up the same environment but just for once! Now I
+can easily automate spawning new instances and adding them under
+Amazon's ELB. It also made the development easier.</p>
+<p></div>
+<div></p>
+<p></div>
+<div>
+I'm amazingly happy with Amazon's great products. Things like Elastic
+IP, Elastic Load Balancer, Elastic Block Storage, S3, VPC, etc. can be
+done with just few clicks. Setting up such infrastructure manually is a
+nightmare. One thing which I miss here is MongoDB. Although there is
+Amazon's own DynamoDB but I really don't want to learn another NoSQL DB.
+I'm using few EC2 instances for that.</p>
+<p></div>
+<div></p>
+<p></div>
+<div>
+We're accepting beta testers for this app.
+<a href="https://getwaeo.com/">https://getwaeo.com</a></p>
+<p></div>
+<div></p>
+<p></div>
+<div>
+I'm really excited about it and will be putting it in production in few
+weeks! Cheers!</p>
+<p></div>
+<div></p>
+<p></div>
+</div>
+</p></p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
 
             <li><article class="hentry">
                 <header>
@@ -400,6 +382,32 @@ to ray tracing for review.
 I got some great suggestions from Sean to make it compatible directly
 with<span style="color: #444444;"> </span>`TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius ...</div></div>
                 <a class="readmore" href="http://www.sudhanshumishra.in/gsoc14-progress-week-5.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://www.sudhanshumishra.in/gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law.html" rel="bookmark"
+                           title="Permalink to GSoC'14 progress, week 4: finished medium, working on Fermat's principle and Snell's law">GSoC'14 progress, week 4: finished medium, working on Fermat's principle and Snell's law</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-06-16T19:32:00+05:30">
+                Published: Mon 16 June 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.sudhanshumishra.in/author/sudhanshu-mishra-noreplybloggercom.html">Sudhanshu Mishra (noreply@blogger.com)</a>
+        </address>
+<p>In <a href="http://www.sudhanshumishra.in/category/misc.html">misc</a>. </p>
+<p>tags: <a href="http://www.sudhanshumishra.in/tag/gsoc.html">gsoc</a> <a href="http://www.sudhanshumishra.in/tag/physics.html">physics</a> <a href="http://www.sudhanshumishra.in/tag/sympy.html">sympy</a> </p>
+</footer><!-- /.post-info -->                <div dir="ltr" style="text-align: left;">
+<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
+It was a great week! My last to last PR, on
+enhancing `TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"},
+got merged! I have also ...</div></div>
+                <a class="readmore" href="http://www.sudhanshumishra.in/gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
