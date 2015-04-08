@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://www.sudhanshumishra.in/</loc>
-<lastmod>2015-04-09T05:05:16-00:00</lastmod>
+<lastmod>2015-04-09T05:20:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://www.sudhanshumishra.in/archives.html</loc>
-<lastmod>2015-04-09T05:05:16-00:00</lastmod>
+<lastmod>2015-04-09T05:20:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://www.sudhanshumishra.in/tags.html</loc>
-<lastmod>2015-04-09T05:05:16-00:00</lastmod>
+<lastmod>2015-04-09T05:20:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://www.sudhanshumishra.in/categories.html</loc>
-<lastmod>2015-04-09T05:05:16-00:00</lastmod>
+<lastmod>2015-04-09T05:20:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -165,22 +165,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://www.sudhanshumishra.in/why-people-love-her</loc>
-<lastmod>2013-08-28T22:46:00+05:30</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>http://www.sudhanshumishra.in/capastr-talking-about-design</loc>
 <lastmod>2013-08-20T22:37:00+05:30</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://www.sudhanshumishra.in/customize-your-google-search</loc>
-<lastmod>2013-08-10T23:24:00+05:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -193,29 +179,50 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://www.sudhanshumishra.in/some-ideas</loc>
-<lastmod>2013-04-19T21:07:00+05:30</lastmod>
-<changefreq>monthly</changefreq>
+<loc>http://www.sudhanshumishra.in/category/android.html</loc>
+<lastmod>2014-06-11T21:26:00+05:53</lastmod>
+<changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.sudhanshumishra.in/strings-in-c</loc>
-<lastmod>2013-03-04T23:53:00+05:30</lastmod>
-<changefreq>monthly</changefreq>
+<loc>http://www.sudhanshumishra.in/category/cloud-computing.html</loc>
+<lastmod>2015-01-08T18:25:00+05:53</lastmod>
+<changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.sudhanshumishra.in/category/miscellaneous.html</loc>
+<loc>http://www.sudhanshumishra.in/category/electronics.html</loc>
 <lastmod>2015-01-16T19:36:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.sudhanshumishra.in/tag/google.html</loc>
-<lastmod>2013-08-10T23:24:00+05:53</lastmod>
+<loc>http://www.sudhanshumishra.in/category/gsoc.html</loc>
+<lastmod>2014-08-11T11:27:00+05:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://www.sudhanshumishra.in/category/javascript.html</loc>
+<lastmod>2014-10-13T12:20:00+05:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://www.sudhanshumishra.in/category/linux.html</loc>
+<lastmod>2013-08-10T23:10:00+05:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://www.sudhanshumishra.in/category/miscellaneous.html</loc>
+<lastmod>2015-01-07T16:51:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -405,13 +412,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://www.sudhanshumishra.in/tag/physics.html</loc>
 <lastmod>2014-07-08T17:24:00+05:53</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://www.sudhanshumishra.in/tag/tricks.html</loc>
-<lastmod>2013-08-10T23:24:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

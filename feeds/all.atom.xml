@@ -88,25 +88,18 @@ I'm using few EC2 instances for that.&lt;/p&gt;
 &lt;p&gt;We're accepting beta testers for this app.
 &lt;a href="https://getwaeo.com/"&gt;https://getwaeo.com&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I'm really excited about it and will be putting it in production in few
-weeks! Cheers!&lt;/p&gt;</summary><category term="aws"></category><category term="cloud"></category><category term="docker"></category><category term="Server"></category></entry><entry><title>Top Hacker News Archive</title><link href="http://www.sudhanshumishra.in/top-hacker-news-archive" rel="alternate"></link><updated>2015-01-07T16:51:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-01-07:top-hacker-news-archive</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
-[Hacker News'](https://news.ycombinator.com/) top 5 entries are some
+weeks! Cheers!&lt;/p&gt;</summary><category term="aws"></category><category term="cloud"></category><category term="docker"></category><category term="Server"></category></entry><entry><title>Top Hacker News Archive</title><link href="http://www.sudhanshumishra.in/top-hacker-news-archive" rel="alternate"></link><updated>2015-01-07T16:51:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-01-07:top-hacker-news-archive</id><summary type="html">&lt;p&gt;&lt;a href="https://news.ycombinator.com/"&gt;Hacker News'&lt;/a&gt; top 5 entries are some
 beautiful stories that can't be missed by a technology enthusiast. The
 problem is HN gives more weight-age to the period of existence of a post
 and hence articles decay rapidly as time passes. I try my best to read
 most of them but it's certainly not possible if you've got other things
-to do. :)
-
-To overcome this problem I wrote a small script to pull all those
+to do. :)&lt;/p&gt;
+&lt;p&gt;To overcome this problem I wrote a small script to pull all those
 entries and save it for me even when I'm away. Perhaps this will help my
-obsession with hacker news.  
-
-Once I have enough articles, I'll host them on the web with real time
+obsession with hacker news.&lt;/p&gt;
+&lt;p&gt;Once I have enough articles, I'll host them on the web with real time
 addition of new articles for everyone. I'll think about other good
-sources too.
-
-&lt;/div&gt;
-
-&lt;/p&gt;</summary><category term="python"></category><category term="Web"></category></entry><entry><title>Battery Status API in Chrome</title><link href="http://www.sudhanshumishra.in/battery-status-api-in-chrome" rel="alternate"></link><updated>2014-10-13T12:20:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-10-13:battery-status-api-in-chrome</id><summary type="html">&lt;p&gt;Implementation of HTML battery status API is a bit different in webkit.
+sources too.&lt;/p&gt;</summary><category term="python"></category><category term="Web"></category></entry><entry><title>Battery Status API in Chrome</title><link href="http://www.sudhanshumishra.in/battery-status-api-in-chrome" rel="alternate"></link><updated>2014-10-13T12:20:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-10-13:battery-status-api-in-chrome</id><summary type="html">&lt;p&gt;Implementation of HTML battery status API is a bit different in webkit.
 It has not been exposed with &lt;code&gt;navigator.battery&lt;/code&gt;.
 This works fine in Gecko(Firefox) but you might have hard time if you
 try it on Chrome.&lt;/p&gt;
@@ -832,123 +825,53 @@ working on few old pull requests that are dead for so long.  &lt;/p&gt;
 &lt;p&gt;Looking forward to work with such a great organization! Thanks to Google
 and SymPy for this opportunity!&lt;/p&gt;
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>Managing commits and working with git diff</title><link href="http://www.sudhanshumishra.in/managing-commits-and-working-with-git-diff" rel="alternate"></link><updated>2014-04-14T13:48:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-14:managing-commits-and-working-with-git-diff</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
-&lt;div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-bottom: 15px;"&gt;
-**tl;dr**: This post assumes that you have basic knowledge of git. It's
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>Managing commits and working with git diff</title><link href="http://www.sudhanshumishra.in/managing-commits-and-working-with-git-diff" rel="alternate"></link><updated>2014-04-14T13:48:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-14:managing-commits-and-working-with-git-diff</id><summary type="html">&lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;: This post assumes that you have basic knowledge of git. It's
 just about managing commits and minimizing their numbers by having only
-meaningful ones.
-
-&lt;/div&gt;
-
-&lt;div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-bottom: 15px; margin-top: 15px;"&gt;
-I've been working on a PR for around thirteen days which aims to fix a
-bug related to mathematical assumptions for inverse trigonometric
-functions in sympy. In order to do that I kept on committing changes
-randomly and number of commits went on increasing. As of now sympy has
-two types of mathematical assumptions we call it **new** and **old** so
-genuinely there should have been only two commits referring changes to
-respective types.
-
-&lt;/div&gt;
-
-&lt;div dir="ltr" style="text-align: left;"&gt;
-&lt;div&gt;
-
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-bottom: 15px; margin-top: 15px;"&gt;
-I had two
-branches `master`{style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"} and `arctrigo`{style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"}.
-I followed following steps to separate the changes done in both the
-assumptions:
-
-&lt;/div&gt;
-
+meaningful ones.&lt;/p&gt;
+&lt;p&gt;I've been working on a PR for around thirteen days which aims to fix a bug related to mathematical assumptions for inverse trigonometric functions in sympy. In order to do that I kept on committing changes
+randomly and number of commits went on increasing. As of now sympy has two types of mathematical assumptions we call it &lt;strong&gt;new&lt;/strong&gt; and &lt;strong&gt;old&lt;/strong&gt; so genuinely there should have been only two commits referring changes to
+respective types.&lt;/p&gt;
+&lt;p&gt;I had two branches &lt;code&gt;master&lt;/code&gt; and &lt;code&gt;arctrigo&lt;/code&gt; I followed following steps to separate the changes done in both the
+assumptions:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
-    First pull the changes from the remote to
-    your &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;master&lt;/code&gt; and
-    merge it to your feature branch. In my case it
-    was &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;arctrigo&lt;/code&gt;.
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
-    Make sure that you are no your feature branch and not
-    on &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;master&lt;/code&gt;.
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
-    Create a diff with respect
-    to &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;master&lt;/code&gt;. &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git diff master &amp;gt; diff&lt;/code&gt;`
-    (latter diff is just the filename, it could be anything)
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
-    Create a new temporary branch
-    of &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;master&lt;/code&gt;. &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git checkout master; git branch -b tmp&lt;/code&gt;.
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
-    Apply the patch
-    . &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git apply diff&lt;/code&gt;.
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
-    Use &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git add -p&lt;/code&gt; and
-    you'll be prompted change by change as to whether that change should
-    be staged for committal.
-    Say &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;y&lt;/code&gt; to
-    all changes involving one part
-    and &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;n&lt;/code&gt; to
-    the others.
-    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;First pull the changes from the remote to your &lt;code&gt;master&lt;/code&gt; and merge it to your feature branch. In my case it was &lt;code&gt;arctrigo&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make sure that you are no your feature branch and not on &lt;code&gt;master&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a diff with respect to &lt;code&gt;master&lt;/code&gt;. &lt;code&gt;git diff master &amp;gt; diff&lt;/code&gt; (latter diff is just the filename, it could be anything)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a new temporary branch of &lt;code&gt;master&lt;/code&gt;. &lt;code&gt;git checkout master; git branch -b tmp&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Apply the patch. &lt;code&gt;git apply diff&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use &lt;code&gt;git add -p&lt;/code&gt; and you'll be prompted change by change as to whether that change should be staged for committal. Say &lt;code&gt;y&lt;/code&gt; to all changes involving one part and &lt;code&gt;n&lt;/code&gt; to the others.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-bottom: 15px; margin-top: 15px;"&gt;
-Here git has staged a set of changes for your next commit command.
-
-&lt;/div&gt;
-
+&lt;p&gt;Here git has staged a set of changes for your next commit command.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
-    Commit the changes for the first part, for which you
-    said &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;y&lt;/code&gt; in
-    the prompts,
-    by &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git commit -m "your message for the first part"&lt;/code&gt;.
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
-    And then
-    do &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git commit -am "your message for the other part"&lt;/code&gt; for
-    which you
-    said &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;n&lt;/code&gt; in
-    the prompts.
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
-    Delete your feature branch. In my case it
-    was &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;arctrigo&lt;/code&gt; with &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git branch -D arctrigo&lt;/code&gt;.
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
-    Create the same feature branch
-    from &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;tmp&lt;/code&gt; and
-    switch to
-    it. &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git branch tmp; git checkout tmp&lt;/code&gt;.
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
-    Update your PR
-    with &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git push -f &amp;lt;your_remote_name&amp;gt; &amp;lt;your_branch_name&amp;gt;&lt;/code&gt;.
-    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Commit the changes for the first part, for which you said &lt;code&gt;y&lt;/code&gt; in the prompts, by &lt;code&gt;git commit -m "your message for the first part"&lt;/code&gt;. And then do &lt;code&gt;git commit -am "your message for the other part"&lt;/code&gt; for which you said &lt;code&gt;n&lt;/code&gt; in the prompts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Delete your feature branch. In my case it was &lt;code&gt;arctrigo&lt;/code&gt; with &lt;code&gt;git branch -D arctrigo&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create the same feature branch from &lt;code&gt;tmp&lt;/code&gt; and switch to it. &lt;code&gt;git branch tmp; git checkout tmp&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Update your PR with &lt;code&gt;git push -f &amp;lt;your_remote_name&amp;gt; &amp;lt;your_branch_name&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-bottom: 15px; margin-top: 15px;"&gt;
-Now navigate to your PR and you'll see two clean commits. I just learned
-these things from [Christopher](https://github.com/smichr) and decided
-to write a blog post about it.
-
-&lt;/div&gt;
-
-&lt;div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-top: 15px;"&gt;
-Cheers!
-
-&lt;/div&gt;
-
-&lt;p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="git"></category><category term="github"></category></entry><entry><title>Setting up Tornado server on Ubuntu 12.04</title><link href="http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204" rel="alternate"></link><updated>2014-04-05T06:42:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-05:setting-up-tornado-server-on-ubuntu-1204</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;p&gt;Now navigate to your PR and you'll see two clean commits. I just learned
+these things from &lt;a href="https://github.com/smichr"&gt;Christopher&lt;/a&gt; and decided
+to write a blog post about it.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;</summary><category term="git"></category><category term="github"></category></entry><entry><title>Setting up Tornado server on Ubuntu 12.04</title><link href="http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204" rel="alternate"></link><updated>2014-04-05T06:42:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-05:setting-up-tornado-server-on-ubuntu-1204</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
  {#setting-up-tornado-server-on-ubuntu-12-04 style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"}
 
 &lt;div style="font-size: 13px; font-weight: normal; line-height: 18px; margin-bottom: 9px;"&gt;
@@ -1115,63 +1038,7 @@ If you have some feedback or questions regarding this post, please add
 comments. Cheers!   &lt;/p&gt;
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="BinPy"></category><category term="Circuit Design"></category><category term="Electronics"></category></entry><entry><title>Why people love her?</title><link href="http://www.sudhanshumishra.in/why-people-love-her" rel="alternate"></link><updated>2013-08-28T22:46:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-08-28:why-people-love-her</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
-[![](http://www.python.org/community/logos/python-logo-master-v3-TM.png)](http://www.python.org/community/logos/python-logo-master-v3-TM.png)&lt;span style="color: #333333; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; line-height: 17.90625px;"&gt;There's
-nothing wrong with falling in love with a programming language for her
-looks. I mean, let's face it - Python does have a rockin' body of
-modules, and a damn good set of utilities and interpreters on various
-platforms. Her whitespace-sensitive syntax is easy on the eyes, and it's
-a beautiful sight to wake up to in the morning after a long night of
-debugging. The way she sways those releases on a consistent cycle - she
-knows how to treat you right, you know?&lt;/span&gt;
-
-&lt;span style="color: #333333; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; line-height: 17.90625px;"&gt;But
-let's face it - a lot of other languages see the attention she's
-getting, and they get jealous. Really jealous. They try and make her
-feel bad by pointing out the GIL, and they try and convince her that
-she's not "good enough" for parallel programming or enterprise-level
-applications. They say that her lack of static typing gives her
-programmers headaches, and that as an interpreted language, she's not
-fast enough for performance-critical applications.&lt;/span&gt;  
-
-&lt;span style="color: #333333; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; line-height: 17.90625px;"&gt;She
-hears what those other, older languages like Java and C++ say, and she
-thinks she's not stable or mature enough. She hears what those shallow,
-beauty-obsessed languages like Ruby say, and she thinks she's not pretty
-enough. But she's trying really hard, you know? She hits the gym every
-day, trying to come up with new and better ways of JIT'ing and
-optimizing. She's experimenting with new platforms and compilation
-techniques all the time. She wants you to love her more, because she
-cares.&lt;/span&gt;  
-
-&lt;span style="color: #333333; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; line-height: 17.90625px;"&gt;But
-then you hear about how bad she feels, and how hard she's trying, and
-you just look into her eyes, sighing. You take Python out for a walk -
-holding her hand - and tell her that she's the most beautiful language
-in the world, but that's not the only reason you love her.&lt;/span&gt;  
-
-&lt;span style="color: #333333; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; line-height: 17.90625px;"&gt;You
-tell her she was raised right - Guido gave her core functionality and a
-deep philosophy she's never forgotten. You tell her you appreciate her
-consistent releases and her detailed and descriptive documentation. You
-tell her that she has a great set of friends who are supportive and
-understanding - friends like Google, Quora, and Facebook. And finally,
-with tears in your eyes, you tell her that with her broad community
-support, ease of development, and well-supported frameworks, you know
-she's a language you want to be with for a long, long time.&lt;/span&gt;  
-
-&lt;span style="color: #333333; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; line-height: 17.90625px;"&gt;After
-saying all this, you look around and notice that the two of you are
-alone. Letting go of Python's hand, you start to get down on one knee.
-Her eyes get wide as you try and say the words - but she just puts her
-finger on your lips and whispers, "Yes".&lt;/span&gt;  
-
-&lt;span style="color: #333333; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; line-height: 17.90625px;"&gt;The
-moon is bright. You know things are going to be okay now.&lt;/span&gt;
-
-&lt;/div&gt;
-
-&lt;/p&gt;</summary></entry><entry><title>CapaStr: Talking about design</title><link href="http://www.sudhanshumishra.in/capastr-talking-about-design" rel="alternate"></link><updated>2013-08-20T22:37:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-08-20:capastr-talking-about-design</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="BinPy"></category><category term="Circuit Design"></category><category term="Electronics"></category></entry><entry><title>CapaStr: Talking about design</title><link href="http://www.sudhanshumishra.in/capastr-talking-about-design" rel="alternate"></link><updated>2013-08-20T22:37:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-08-20:capastr-talking-about-design</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 It was very difficult for me to choose the best and easiest framework to
 use for UI design. After lot of research I decided to stick with
 **JQueryMobile** since it has an awesome extension called
@@ -1210,264 +1077,22 @@ I'll let you know about further development soon.  &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Enjoy!!&lt;/em&gt;&lt;/strong&gt;  &lt;/p&gt;
 &lt;p&gt;&lt;span style="font-size: xx-small;"&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="Android"></category><category term="CapaStr"></category><category term="Cordova"></category><category term="iOS"></category><category term="JQueryMobile"></category><category term="PhoneGap"></category></entry><entry><title>Customize your Google Search</title><link href="http://www.sudhanshumishra.in/customize-your-google-search" rel="alternate"></link><updated>2013-08-10T23:24:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-08-10:customize-your-google-search</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
-1.
-
-    &gt; 1.  **Either/or**  
-   &gt;     Google normally searches for pages that contain all the words
-    &gt;     you type in the search box, but if you want pages that have
-    &gt;     one term or another (or both), use the OR operator -- or use
-    &gt;     the "|" symbol (pipe symbol) to save you a keystroke.
-    &gt;     &lt;span class="qlink_container"&gt;[dumb | little |
-    &gt;     man](https://www.google.com/search?q=dumb+%7C+little+%7C+man&amp;oq=dumb+%7C+little+%7C+man&amp;aqs=chrome.0.69i57j5j0l2j69i62l2.338j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
-    &gt; 2.  **Quotes**  
-   &gt;     If you want to search for an exact phrase, use quotes.
-    &gt;     &lt;span class="qlink_container"&gt;["dumb little
-    &gt;     man"](https://www.google.com/search?q=%22dumb+little+man%22&amp;oq=%22dumb+little+man%22&amp;aqs=chrome.0.69i57j69i62.347j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
-    &gt;     will only find that exact phrase. 
-    &gt;     &lt;span class="qlink_container"&gt;[dumb "little
-    &gt;     man"](https://www.google.com/search?q=dumb+%22little+man%22&amp;oq=dumb+%22little+man%22&amp;aqs=chrome.0.69i57j0l3j69i62.275j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
-    &gt;     will find pages that contain the word dumb and the exact
-    &gt;     phrase "little man".
-    &gt; 3.  **Not**  
-   &gt;     If you don't want a term or phrase, use the "-" symbol.
-    &gt;     &lt;span class="qlink_container"&gt;[-dumb little
-    &gt;     man](https://www.google.com/search?q=-dumb+little+man&amp;oq=-dumb+little+man&amp;aqs=chrome.0.69i57j69i62l3.553j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
-    &gt;     will return pages that contain "little" and "man" but that
-    &gt;     don't contain "dumb".
-    &gt; 4.  **Similar terms**  
-   &gt;     Use the "\~" symbol to return similar terms.
-    &gt;     &lt;span class="qlink_container"&gt;[\~dumb little man
-    &gt;     -dumb](https://www.google.com/search?q=%7Edumb+little+man+-dumb%5D&amp;oq=%7Edumb+little+man+-dumb%5D&amp;aqs=chrome.0.69i57j69i62l3.674j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1#bav=on.2,or.r_cp.r_qf.&amp;fp=ed6cd8ec55b9affb&amp;q=%7Edumb+little+man+-dumb&amp;qscrl=1)&lt;/span&gt;
-    &gt;     will get you pages that contain "funny little man" and "stupid
-    &gt;     little man" but not "dumb little man". Note: It looks like
-    &gt;     this feature may have been turned off. Good idea though!
-    &gt; 5.  **Wildcard**  
-   &gt;     The "\*" symbol is a wildcard. This is useful if you're trying
-    &gt;     to find the lyrics to a song, but can't remember the exact
-    &gt;     lyrics. &lt;span class="qlink_container"&gt;[can't \* me love
-    &gt;     lyrics](https://www.google.com/search?q=can%27t+*+me+love+lyrics&amp;oq=can%27t+*+me+love+lyrics&amp;aqs=chrome.0.69i57j0l3j69i62.450j0&amp;sourceid=chrome&amp;ie=UTF-8)&lt;/span&gt;
-    &gt;     will return the Beatles song you're looking for. It's also
-    &gt;     useful for finding stuff only in certain domains, such as
-    &gt;     educational information: &lt;span class="qlink_container"&gt;[cats
-    &gt;     \*.edu](https://www.google.com/search?q=cats+*.edu&amp;oq=cats+*.edu&amp;aqs=chrome.0.69i57j5j0l2.6906j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
-    &gt; 6.  **Advanced search**  
-   &gt;     If you can't remember any of these operators, you can always
-    &gt;     use &lt;span class="qlink_container"&gt;[Google's Advanced
-    &gt;     Search](http://www.google.com/advanced_search)&lt;/span&gt;.
-    &gt; 7.  **Definitions**  
-   &gt;     Use the "define:" operator to get a quick definition.
-    &gt;     &lt;span class="qlink_container"&gt;[define:dumb](https://www.google.com/search?q=define%3Adumb&amp;oq=define%3Adumb&amp;aqs=chrome.0.69i57j69i58j69i62.375j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
-    &gt;     will give you a whole host of definitions from different
-    &gt;     sources, with links.
-    &gt; 8.  **Calculator**  
-   &gt;     One of the handiest uses of Google, type in a quick
-    &gt;     calculation in the search box and get an answer. It's faster
-    &gt;     than calling up your computer's calculator in most cases. Use
-    &gt;     the +, -, \*, / symbols and parentheses to do a simple
-    &gt;     equation. &lt;span class="qlink_container"&gt;[(3 4/5 + 2 1/8)-(1
-    &gt;     1/12)\*2](https://www.google.com/search?q=%283+4%2F5+%2B+2+1%2F8%29-%281+1%2F12%29*2&amp;oq=%283+4%2F5+%2B+2+1%2F8%29-%281+1%2F12%29*2&amp;aqs=chrome.0.69i57j0j69i62l3.27860j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
-    &gt; 9.  **Numrange**  
-   &gt;     This little-known feature searches for a range of numbers. For
-    &gt;     example, &lt;span class="qlink_container"&gt;[best books
-    &gt;     2002..2007](https://www.google.com/search?q=best+books+2002..2007&amp;oq=best+books+2002..2007&amp;aqs=chrome.0.69i57j69i62l3j69i64.226j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
-    &gt;     will return lists of best books for each of the years from
-    &gt;     2002 to 2007 (note the two periods between the two numbers).
-    &gt; 10. **Site-specific**  
-   &gt;     Use the "site:" operator to search only within a certain
-    &gt;     website. &lt;span class="qlink_container"&gt;[site:dumblittleman.com
-    &gt;     leo](https://www.google.com/search?q=site%3Adumblittleman.com+leo&amp;oq=site%3Adumblittleman.com+leo&amp;aqs=chrome.0.69i57j69i58.466j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
-    &gt;     will search for the term "leo" only within this blog.
-    &gt; 11. **Backlinks**  
-   &gt;     The "link:" operator will find pages that link to a specific
-    &gt;     URL. You can use this not only for a main URL but even to a
-    &gt;     specific page. Not all links to an URL are listed, however.
-    &gt;     &lt;span class="qlink_container"&gt;[link:dumblittleman.com](https://www.google.com/search?q=link%3Adumblittleman.com&amp;oq=link%3Adumblittleman.com&amp;aqs=chrome.0.69i57j69i58.321j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
-    &gt; 12. **Vertical search**  
-   &gt;     Instead of searching for a term across all pages on the web,
-    &gt;     search within a specialized field. Google has a number of
-    &gt;     specific searches, allowing you to search within blogs, news,
-    &gt;     books, and much more:  
-   &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Blog
-    &gt;         Search&lt;/u&gt;**](http://blogsearch.google.com/)&lt;/span&gt;
-    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Book
-    &gt;         Search&lt;/u&gt;**](http://books.google.com/)&lt;/span&gt;
-    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Scholar&lt;/u&gt;**](http://scholar.google.com/)&lt;/span&gt;
-    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Catalogs&lt;/u&gt;**](http://catalogs.google.com/)&lt;/span&gt;
-    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Code
-    &gt;         Search&lt;/u&gt;**](http://www.google.com/codesearch)&lt;/span&gt;
-    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Directory&lt;/u&gt;**](http://www.google.com/dirhp)&lt;/span&gt;
-    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Finance&lt;/u&gt;**](http://finance.google.com/finance)&lt;/span&gt;
-    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Images&lt;/u&gt;**](http://images.google.com/)&lt;/span&gt;
-    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Local/Maps&lt;/u&gt;**](http://maps.google.com/maps)&lt;/span&gt;
-    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;News&lt;/u&gt;**](http://news.google.com/)&lt;/span&gt;
-    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Patent
-    &gt;         Search&lt;/u&gt;**](http://www.google.com/patents)&lt;/span&gt;
-    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Product
-    &gt;         Search&lt;/u&gt;**](http://www.google.com/products)&lt;/span&gt;
-    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Video&lt;/u&gt;**](http://video.google.com/)&lt;/span&gt;
-    &gt;
-    &gt; 13. **Local Search**  
-   &gt;     Search for anything in your city. Examples
-    &gt;     &lt;span class="qlink_container"&gt;[movies
-    &gt;     94705](https://www.google.com/search?q=movies+94705&amp;btnG=Search&amp;qscrl=1)&lt;/span&gt;,
-    &gt;     &lt;span class="qlink_container"&gt;[Italian food
-    &gt;     02138](https://www.google.com/search?q=Italian+food+02138&amp;btnG=Search&amp;qscrl=1)&lt;/span&gt;
-    &gt; 14. **Weather**  
-   &gt;     To see the weather for many U.S. and worldwide cities, type
-    &gt;     “weather” followed by the city and state, U.S. zip code, or
-    &gt;     city and country. &lt;span class="qlink_container"&gt;[weather San
-    &gt;     Francisco,
-    &gt;     CA](https://www.google.com/search?q=weather+San+Francisco%2C+CA&amp;btnG=Search&amp;qscrl=1)&lt;/span&gt;
-    &gt; 15. **Unit converter**  
-   &gt;     Use Google for a quick conversion, from yards to meters for
-    &gt;     example, or different currency:
-    &gt;     &lt;span class="qlink_container"&gt;[12 meters in
-    &gt;     yards](https://www.google.com/search?q=12+meters+in+yards&amp;oq=12+meters+in+yards&amp;aqs=chrome.0.69i57j0j69i62.441j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
-    &gt; 16. **Types of numbers**  
-   &gt;     Google algorithms can recognize patterns in numbers you enter,
-    &gt;     so you can search for:  
-   &gt;     -   Telephone area codes
-    &gt;     -   Vehicle ID number (US only)
-    &gt;     -   Federal Communications Commission (FCC) equipment numbers
-    &gt;         (US only)
-    &gt;     -   UPC codes
-    &gt;     -   Federal Aviation Administration (FAA) airplane
-    &gt;         registration number (US only)
-    &gt;     -   Patent numbers (US only). Example
-    &gt;         &lt;span class="qlink_container"&gt;[Patent
-    &gt;         5123123](https://www.google.com/search?q=Patent+5123123&amp;btnG=Search&amp;qscrl=1)&lt;/span&gt;
-    &gt;     -   Even stock quotes (using the stock symbol) or a weather
-    &gt;         forecast regarding the next five days
-    &gt;     -   Package Tracking (UPS, Fedex, or USPS). Example:
-    &gt;         &lt;span class="qlink_container"&gt;[1Z9999W99999999999](https://www.google.com/search?q=1Z9999W99999999999&amp;btnG=Search&amp;qscrl=1)&lt;/span&gt;
-    &gt;
-    &gt; 17. **File types**  
-   &gt;     If you just want to search for .PDF files, or Word documents,
-    &gt;     or Excel spreadsheets, for example, use the "filetype:"
-    &gt;     operator. &lt;span class="qlink_container"&gt;[cats
-    &gt;     filetype:pdf](https://www.google.com/search?q=cats+filetype%3Apdf&amp;oq=cats+filetype%3Apdf&amp;aqs=chrome.0.69i57.9169j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
-    &gt; 18. **Location of term**  
-   &gt;     By default, Google searches for your term throughout a web
-    &gt;     page. But if you just want it to search certain locations, you
-    &gt;     can use operators such as "inurl:", "intitle:", "intext:", and
-    &gt;     "inanchor:". Those search for a term only within the URL, the
-    &gt;     title, the body text, and the anchor text (the text used to
-    &gt;     describe a link).
-    &gt;     &lt;span class="qlink_container"&gt;[inurl:funny](https://www.google.com/search?q=inurl%3Afunny&amp;oq=inurl%3Afunny&amp;aqs=chrome.0.69i57j69i58.3481j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
-    &gt; 19. **Related search**  
-   &gt;     To search for web pages that have similar content to a given
-    &gt;     site, type “related:” followed by the website address into the
-    &gt;     Google search box.
-    &gt;     &lt;span class="qlink_container"&gt;[related:www.cnn.com](https://www.google.com/search?q=related%3Awww.cnn.com&amp;btnG=Search&amp;qscrl=1)&lt;/span&gt;
-    &gt; 20. &lt;span class="qlink_container"&gt;[**answer to life the universe
-    &gt;     and
-    &gt;     everything**](https://www.google.com/search?q=answer+to+life+the+universe+and+everything&amp;oq=answer&amp;aqs=chrome.1.69i57j69i59j69i61j5j0j69i60.6362j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;  
-   &gt;     Search for that phrase, in lower case, and Google will give
-    &gt;     you the answer!
-
-
-
-&lt;/div&gt;
-
-&lt;/p&gt;</summary><category term="Google"></category><category term="Tricks"></category><category term="Web"></category></entry><entry><title>Linux and Lenovo Essential G580</title><link href="http://www.sudhanshumishra.in/linux-and-lenovo-essential-g580" rel="alternate"></link><updated>2013-08-10T23:10:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-08-10:linux-and-lenovo-essential-g580</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
-&lt;span href="http://mrsud.quora.com/#" id="__w2_ciPHhLi_toggle_link"&gt;&lt;span id="ld_nrrkyA_12168"&gt;&lt;span id="ld_kWHjoX_11820"&gt;&lt;span class="inline_editor_value"&gt;Lenovo
-Essential G580 is the laptop which has highest number of conflicts with
+&lt;/p&gt;&lt;/p&gt;</summary><category term="Android"></category><category term="CapaStr"></category><category term="Cordova"></category><category term="iOS"></category><category term="JQueryMobile"></category><category term="PhoneGap"></category></entry><entry><title>Linux and Lenovo Essential G580</title><link href="http://www.sudhanshumishra.in/linux-and-lenovo-essential-g580" rel="alternate"></link><updated>2013-08-10T23:10:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-08-10:linux-and-lenovo-essential-g580</id><summary type="html">&lt;p&gt;Lenovo Essential G580 is the laptop which has highest number of conflicts with
 aLinux OS. The biggest problem is when you install a Linux OS you will
-**lose access to your BIOS setup** and that's permanent. I faced this
+&lt;strong&gt;lose access to your BIOS setup&lt;/strong&gt; and that's permanent. I faced this
 problem and I sent my laptop to service center to repair and they had to
 change its motherboard to fix this problem. When my laptop returned
 after repairing I installed Ubuntu 12.10 and lost my BIOS once again!
-:(  
-Now I am using only Ubuntu 12.10 and not windows and that too without
-BIOS even if it's under warranty.
-
-Now when the Ubuntu is installed, be prepared to face challenges! Ubuntu
+:(&lt;/p&gt;
+&lt;p&gt;Now I am using only Ubuntu 12.10 and not windows and that too without
+BIOS even if it's under warranty.&lt;/p&gt;
+&lt;p&gt;Now when the Ubuntu is installed, be prepared to face challenges! Ubuntu
 is supposed to carry each and every driver with it but unfortunately it
 doesn't have the wired network driver for this laptop. After searching
 over the internet for hours I finally installed my network driver and
-uploaded the installer to Google drive for future.  
+uploaded the installer to Google drive for future.
 I solved one more issue of uncontrollable brightness of the screen by
-editing grub. Bluetooth automatically gets activated sometimes.  
+editing grub. Bluetooth automatically gets activated sometimes.
 There are uncountable number of problems. The only thing which you can
 do is to prevent yourself from buying this
-laptop.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-
-&lt;/div&gt;
-
-&lt;/p&gt;</summary><category term="BIOS"></category><category term="Lenovo"></category><category term="Lenovo G580"></category><category term="Linux"></category><category term="Ubuntu"></category></entry><entry><title>Some Ideas</title><link href="http://www.sudhanshumishra.in/some-ideas" rel="alternate"></link><updated>2013-04-19T21:07:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-04-19:some-ideas</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
-&lt;span style="background-color: white; color: #333333; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px;"&gt;There
-are several basic things where computer vision can be applied to make
-things easier by increasing automation.&lt;/span&gt;  
-&lt;span style="background-color: white; color: #333333; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px;"&gt;Some
-fields which I can figure out are:&lt;/span&gt;
-
-&lt;span style="background-color: white; color: #333333; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px;"&gt;    &lt;/span&gt;**1.**&lt;span style="background-color: white; color: #333333; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px;"&gt; Collecting
-data from CCTVs installed in public places and making some sense out of
-it by finding patterns and activities that people usually do to generate
-some revenue or making use of that data for development of the
-country.&lt;/span&gt;  
-&lt;span style="background-color: white; color: #333333; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px;"&gt;   
-This is only possible by mastering BigData and computer vision. &lt;/span&gt;  
-&lt;span style="background-color: white; color: #333333; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px;"&gt;    &lt;/span&gt;  
-**   
-2.**&lt;span style="background-color: white; color: #333333; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px;"&gt; Detecting
-presence of people in a room to save electricity and switching
-appliances on/off by observing their gesture and speech.&lt;/span&gt;  
-&lt;span style="background-color: white; color: #333333; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px;"&gt;      
-Later on it can be converted into a device for people.&lt;/span&gt;  
-
-&lt;/div&gt;
-
-&lt;/p&gt;</summary></entry><entry><title>Strings in C</title><link href="http://www.sudhanshumishra.in/strings-in-c" rel="alternate"></link><updated>2013-03-04T23:53:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-03-04:strings-in-c</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
-### **Yes, there is a way to handle strings without any loop in C.** {style="text-align: left;"}
-
-Playing with arrays is the most enjoying work which programmers do.
-These arrays are the most powerful tool which has been invented for
-programming.  
-
-Modern languages handle these arrays pretty well but if we talk about
-arrays in C, it would be a bit tricky.  
-Just because C lacks in handling strings, arrays prove to be more
-important in C.  
-
-Strings are treated to be a collection of characters in C. We can store
-a bunch of characters in an array and display them altogether to
-represent a string.  
-
-To do this follow these steps:  
-
-&lt;span style="color: blue;"&gt;char&lt;/span&gt;
-&lt;span style="color: #b45f06;"&gt;myString[100]&lt;/span&gt;;  
-    This defines a character array of size 100.  
-    Size 100 means it can store 100 characters in it or simply a string
-of length 100.  
-
-Now we have to take input of the string from user. we'll use **fgets()**
-function to take input.  
-
-&lt;span style="color: blue;"&gt;fgets&lt;/span&gt;&lt;span style="color: #b45f06;"&gt;(myString)&lt;/span&gt;;  
-
-    **Note:** fgets() can take input of infinite length.  
-
-To print the string taken from the user we can either use **printf()**
-or **puts()**.  
-
-&lt;span style="color: blue;"&gt;printf&lt;/span&gt;&lt;span style="color: #b45f06;"&gt;("%s",myString)&lt;/span&gt;;  
-
-or just  
-&lt;span style="color: blue;"&gt;  
-&lt;/span&gt;&lt;span style="color: blue;"&gt;puts&lt;/span&gt;&lt;span style="color: #b45f06;"&gt;(myString);&lt;/span&gt;  
-
-
-Example:  
-
-INPUT: &lt;span style="color: #38761d;"&gt;So I am breaking the habit
-tonight.&lt;/span&gt;  
-
-OUTPUT : &lt;span style="color: #38761d;"&gt;So I am breaking the habit
-tonight.&lt;/span&gt;
-
-&lt;/div&gt;
-
-&lt;/p&gt;</summary></entry></feed>
+laptop.&lt;/p&gt;</summary><category term="BIOS"></category><category term="Lenovo"></category><category term="Lenovo G580"></category><category term="Linux"></category><category term="Ubuntu"></category></entry></feed>

@@ -15,7 +15,13 @@
         <header id="banner" class="body">
                 <h1><a href="http://www.sudhanshumishra.in/">Shortlog </a></h1>
                 <nav><ul>
-                    <li class="active"><a href="http://www.sudhanshumishra.in/category/miscellaneous.html">Miscellaneous</a></li>
+                    <li><a href="http://www.sudhanshumishra.in/category/android.html">Android</a></li>
+                    <li><a href="http://www.sudhanshumishra.in/category/cloud-computing.html">Cloud Computing</a></li>
+                    <li><a href="http://www.sudhanshumishra.in/category/electronics.html">Electronics</a></li>
+                    <li class="active"><a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a></li>
+                    <li><a href="http://www.sudhanshumishra.in/category/javascript.html">JavaScript</a></li>
+                    <li><a href="http://www.sudhanshumishra.in/category/linux.html">Linux</a></li>
+                    <li><a href="http://www.sudhanshumishra.in/category/miscellaneous.html">Miscellaneous</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -35,125 +41,55 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="http://www.sudhanshumishra.in/author/sudhanshu-mishra.html">Sudhanshu Mishra</a>
         </address>
-<p>In <a href="http://www.sudhanshumishra.in/category/miscellaneous.html">Miscellaneous</a>. </p>
+<p>In <a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a>. </p>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/git.html">git</a> <a href="http://www.sudhanshumishra.in/tag/github.html">github</a> </p>
-</footer><!-- /.post-info -->      <div dir="ltr" style="text-align: left;">
-<div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-bottom: 15px;">
-**tl;dr**: This post assumes that you have basic knowledge of git. It's
+</footer><!-- /.post-info -->      <p><strong>tl;dr</strong>: This post assumes that you have basic knowledge of git. It's
 just about managing commits and minimizing their numbers by having only
-meaningful ones.
-
-</div>
-
-<div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-bottom: 15px; margin-top: 15px;">
-I've been working on a PR for around thirteen days which aims to fix a
-bug related to mathematical assumptions for inverse trigonometric
-functions in sympy. In order to do that I kept on committing changes
-randomly and number of commits went on increasing. As of now sympy has
-two types of mathematical assumptions we call it **new** and **old** so
-genuinely there should have been only two commits referring changes to
-respective types.
-
-</div>
-
-<div dir="ltr" style="text-align: left;">
-<div>
-
-</div>
-
-<div>
-<div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-bottom: 15px; margin-top: 15px;">
-I had two
-branches `master`{style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"} and `arctrigo`{style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"}.
-I followed following steps to separate the changes done in both the
-assumptions:
-
-</div>
-
+meaningful ones.</p>
+<p>I've been working on a PR for around thirteen days which aims to fix a bug related to mathematical assumptions for inverse trigonometric functions in sympy. In order to do that I kept on committing changes
+randomly and number of commits went on increasing. As of now sympy has two types of mathematical assumptions we call it <strong>new</strong> and <strong>old</strong> so genuinely there should have been only two commits referring changes to
+respective types.</p>
+<p>I had two branches <code>master</code> and <code>arctrigo</code> I followed following steps to separate the changes done in both the
+assumptions:</p>
 <ul>
-<li><div style="margin-bottom: 15px; margin-top: 15px;">
-    First pull the changes from the remote to
-    your <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">master</code> and
-    merge it to your feature branch. In my case it
-    was <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">arctrigo</code>.
-    </div></li>
-<li><div style="margin-bottom: 15px; margin-top: 15px;">
-    Make sure that you are no your feature branch and not
-    on <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">master</code>.
-    </div></li>
-<li><div style="margin-bottom: 15px; margin-top: 15px;">
-    Create a diff with respect
-    to <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">master</code>. <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">git diff master &gt; diff</code>`
-    (latter diff is just the filename, it could be anything)
-    </div></li>
-<li><div style="margin-bottom: 15px; margin-top: 15px;">
-    Create a new temporary branch
-    of <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">master</code>. <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">git checkout master; git branch -b tmp</code>.
-    </div></li>
-<li><div style="margin-bottom: 15px; margin-top: 15px;">
-    Apply the patch
-    . <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">git apply diff</code>.
-    </div></li>
-<li><div style="margin-bottom: 15px; margin-top: 15px;">
-    Use <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">git add -p</code> and
-    you'll be prompted change by change as to whether that change should
-    be staged for committal.
-    Say <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">y</code> to
-    all changes involving one part
-    and <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">n</code> to
-    the others.
-    </div></li>
+<li>
+<p>First pull the changes from the remote to your <code>master</code> and merge it to your feature branch. In my case it was <code>arctrigo</code>.</p>
+</li>
+<li>
+<p>Make sure that you are no your feature branch and not on <code>master</code>.</p>
+</li>
+<li>
+<p>Create a diff with respect to <code>master</code>. <code>git diff master &gt; diff</code> (latter diff is just the filename, it could be anything)</p>
+</li>
+<li>
+<p>Create a new temporary branch of <code>master</code>. <code>git checkout master; git branch -b tmp</code>.</p>
+</li>
+<li>
+<p>Apply the patch. <code>git apply diff</code>.</p>
+</li>
+<li>
+<p>Use <code>git add -p</code> and you'll be prompted change by change as to whether that change should be staged for committal. Say <code>y</code> to all changes involving one part and <code>n</code> to the others.</p>
+</li>
 </ul>
-<div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-bottom: 15px; margin-top: 15px;">
-Here git has staged a set of changes for your next commit command.
-
-</div>
-
+<p>Here git has staged a set of changes for your next commit command.</p>
 <ul>
-<li><div style="margin-bottom: 15px; margin-top: 15px;">
-    Commit the changes for the first part, for which you
-    said <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">y</code> in
-    the prompts,
-    by <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">git commit -m "your message for the first part"</code>.
-    </div></li>
-<li><div style="margin-bottom: 15px; margin-top: 15px;">
-    And then
-    do <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">git commit -am "your message for the other part"</code> for
-    which you
-    said <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">n</code> in
-    the prompts.
-    </div></li>
-<li><div style="margin-bottom: 15px; margin-top: 15px;">
-    Delete your feature branch. In my case it
-    was <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">arctrigo</code> with <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">git branch -D arctrigo</code>.
-    </div></li>
-<li><div style="margin-bottom: 15px; margin-top: 15px;">
-    Create the same feature branch
-    from <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">tmp</code> and
-    switch to
-    it. <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">git branch tmp; git checkout tmp</code>.
-    </div></li>
-<li><div style="margin-bottom: 15px; margin-top: 15px;">
-    Update your PR
-    with <code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;">git push -f &lt;your_remote_name&gt; &lt;your_branch_name&gt;</code>.
-    </div></li>
+<li>
+<p>Commit the changes for the first part, for which you said <code>y</code> in the prompts, by <code>git commit -m "your message for the first part"</code>. And then do <code>git commit -am "your message for the other part"</code> for which you said <code>n</code> in the prompts.</p>
+</li>
+<li>
+<p>Delete your feature branch. In my case it was <code>arctrigo</code> with <code>git branch -D arctrigo</code>.</p>
+</li>
+<li>
+<p>Create the same feature branch from <code>tmp</code> and switch to it. <code>git branch tmp; git checkout tmp</code>.</p>
+</li>
+<li>
+<p>Update your PR with <code>git push -f &lt;your_remote_name&gt; &lt;your_branch_name&gt;</code>.</p>
+</li>
 </ul>
-<div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-bottom: 15px; margin-top: 15px;">
-Now navigate to your PR and you'll see two clean commits. I just learned
-these things from [Christopher](https://github.com/smichr) and decided
-to write a blog post about it.
-
-</div>
-
-<div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-top: 15px;">
-Cheers!
-
-</div>
-
-<p></div>
-</div>
-</div>
-</p></p>
+<p>Now navigate to your PR and you'll see two clean commits. I just learned
+these things from <a href="https://github.com/smichr">Christopher</a> and decided
+to write a blog post about it.</p>
+<p>Cheers!</p>
     </div><!-- /.entry-content -->
     <div class="comments">
       <h2>Comments !</h2>
