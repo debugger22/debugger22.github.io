@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/github.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2014-04-14T13:48:00+05:30</updated><entry><title>Managing commits and working with git diff</title><link href="http://www.sudhanshumishra.in/managing-commits-and-working-with-git-diff" rel="alternate"></link><updated>2014-04-14T13:48:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-04-14:managing-commits-and-working-with-git-diff</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-bottom: 15px;"&gt;
+**tl;dr**: This post assumes that you have basic knowledge of git. It's
+just about managing commits and minimizing their numbers by having only
+meaningful ones.
+
+&lt;/div&gt;
+
+&lt;div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-bottom: 15px; margin-top: 15px;"&gt;
+I've been working on a PR for around thirteen days which aims to fix a
+bug related to mathematical assumptions for inverse trigonometric
+functions in sympy. In order to do that I kept on committing changes
+randomly and number of commits went on increasing. As of now sympy has
+two types of mathematical assumptions we call it **new** and **old** so
+genuinely there should have been only two commits referring changes to
+respective types.
+
+&lt;/div&gt;
+
+&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;div&gt;
+
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-bottom: 15px; margin-top: 15px;"&gt;
+I had two
+branches `master`{style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"} and `arctrigo`{style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"}.
+I followed following steps to separate the changes done in both the
+assumptions:
+
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
+    First pull the changes from the remote to
+    your &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;master&lt;/code&gt; and
+    merge it to your feature branch. In my case it
+    was &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;arctrigo&lt;/code&gt;.
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
+    Make sure that you are no your feature branch and not
+    on &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;master&lt;/code&gt;.
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
+    Create a diff with respect
+    to &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;master&lt;/code&gt;. &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git diff master &amp;gt; diff&lt;/code&gt;`
+    (latter diff is just the filename, it could be anything)
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
+    Create a new temporary branch
+    of &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;master&lt;/code&gt;. &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git checkout master; git branch -b tmp&lt;/code&gt;.
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
+    Apply the patch
+    . &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git apply diff&lt;/code&gt;.
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
+    Use &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git add -p&lt;/code&gt; and
+    you'll be prompted change by change as to whether that change should
+    be staged for committal.
+    Say &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;y&lt;/code&gt; to
+    all changes involving one part
+    and &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;n&lt;/code&gt; to
+    the others.
+    &lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-bottom: 15px; margin-top: 15px;"&gt;
+Here git has staged a set of changes for your next commit command.
+
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
+    Commit the changes for the first part, for which you
+    said &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;y&lt;/code&gt; in
+    the prompts,
+    by &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git commit -m "your message for the first part"&lt;/code&gt;.
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
+    And then
+    do &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git commit -am "your message for the other part"&lt;/code&gt; for
+    which you
+    said &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;n&lt;/code&gt; in
+    the prompts.
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
+    Delete your feature branch. In my case it
+    was &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;arctrigo&lt;/code&gt; with &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git branch -D arctrigo&lt;/code&gt;.
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
+    Create the same feature branch
+    from &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;tmp&lt;/code&gt; and
+    switch to
+    it. &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git branch tmp; git checkout tmp&lt;/code&gt;.
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div style="margin-bottom: 15px; margin-top: 15px;"&gt;
+    Update your PR
+    with &lt;code style="background-color: #f8f8f8; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(221, 221, 221); display: inline-block; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 1.3; margin: 0px; overflow: auto; padding: 0px; vertical-align: middle; white-space: nowrap;"&gt;git push -f &amp;lt;your_remote_name&amp;gt; &amp;lt;your_branch_name&amp;gt;&lt;/code&gt;.
+    &lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-bottom: 15px; margin-top: 15px;"&gt;
+Now navigate to your PR and you'll see two clean commits. I just learned
+these things from [Christopher](https://github.com/smichr) and decided
+to write a blog post about it.
+
+&lt;/div&gt;
+
+&lt;div style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 15px; line-height: 25.5px; margin-top: 15px;"&gt;
+Cheers!
+
+&lt;/div&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="git"></category><category term="github"></category></entry></feed>

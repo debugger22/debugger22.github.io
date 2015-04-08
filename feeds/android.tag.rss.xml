@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shortlog</title><link>http://www.sudhanshumishra.in/</link><description></description><atom:link href="http://www.sudhanshumishra.in/feeds/android.tag.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 11 Jun 2014 21:26:00 +0530</lastBuildDate><item><title>Easy caching in Android</title><link>http://www.sudhanshumishra.in/easy-caching-in-android</link><description>&lt;p&gt;Recently I found a better way to
+cache data in Android. It can also be used to save preferences of users. I was using SQLite before and it was cumbersome. I had to make a table to save just few key-value pairs.&lt;/p&gt;
+&lt;p&gt;Android SDK comes with an API
+called &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;android.content.SharedPreferences&lt;/code&gt;.
+A&lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt; object
+points to a file containing key-value pairs and provides simple methods
+to read and write them.
+Each &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt; file
+is managed by the framework and can be private or shared. You’ll not
+lose your data even when the device restarts. It has one more advantage,
+you can also use to share data among different activities.&lt;/p&gt;
+&lt;p&gt;It supports primitive data types
+only. You can not save objects in &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt;.
+Although you can serialize your object and store the raw string in
+it.&lt;/p&gt;
+&lt;p&gt;To get a private handle of
+the &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt; use
+following command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SharedPreferences&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;getActivity&lt;/span&gt;&lt;span class="o"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getSharedPreferences&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;getString&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;YOUR_PREFERENCE_FILE_NAME&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt; &lt;span class="n"&gt;Context&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;MODE_PRIVATE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;YOUR_PREFERENCE_FILE_NAME&lt;/code&gt; can
+be any valid string allowed for a file name in UNIX environment.&lt;/p&gt;
+&lt;p&gt;Private data will be available to your application only, it can not be accessed by other applications
+installed on the device. To make it public you just need to
+replace &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;Context.MODE_PRIVATE&lt;/code&gt; with
+either &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;MODE_WORLD_READABLE&lt;/code&gt; or &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;MODE_WORLD_WRITABLE&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SharedPreferences&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;getSharedPreferences&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;    &lt;span class="s"&gt;&amp;quot;YOUR_PREFERENCE_FILE_NAME&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Context&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;MODE_WORLD_WRITABLE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Publicly shared prefences are available to other apps and if they know the file identifier, they may
+perform read/write operations on it.&lt;/p&gt;
+&lt;p&gt;Once you’ve got the handle you
+can read data using following code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;strData&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getString&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mStrData&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DEFAULT_STRING&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;&lt;span class="kt"&gt;boolean&lt;/span&gt; &lt;span class="n"&gt;boolData&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getBoolean&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mBoolData&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DEFAULT_BOOLEAN&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;intData&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getInt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mIntData&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DEFAULT_INTEGER&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: If there isn’t any data
+associated with the passed key, it will return the passed default
+value.&lt;/p&gt;
+&lt;p&gt;For a complete list of methods see &lt;a href="http://developer.android.com/reference/android/content/SharedPreferences.html"&gt;this&lt;/a&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;To save data in the &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt; you
+need to add one more line:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SharedPreferences&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Editor&lt;/span&gt; &lt;span class="n"&gt;editor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;edit&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now you can easily save data in the memory.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;editor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;putBoolean&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;cacheAvailable&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;&lt;span class="n"&gt;editor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;putInt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pingCount&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getInt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pingCount&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)++);&lt;/span&gt;&lt;span class="n"&gt;editor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;putString&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mResponse&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;// A web response in my case.editor.commit(); // This is important to commit changes&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt;Use editor.apply() for asynchronous call.&lt;/p&gt;
+&lt;p&gt;This API made my life easy. Now I do not need to write queries to do these small
+things.&lt;/p&gt;
+&lt;p&gt;If you have suggestions, please
+comment below. I’ll be happy to get feedback.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Wed, 11 Jun 2014 21:26:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-06-11:easy-caching-in-android</guid><category>Android</category></item><item><title>CapaStr: Talking about design</title><link>http://www.sudhanshumishra.in/capastr-talking-about-design</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
+It was very difficult for me to choose the best and easiest framework to
+use for UI design. After lot of research I decided to stick with
+**JQueryMobile** since it has an awesome extension called
+**ThemeRoller**.
+
+Working with a framework gives you enough time to work on core things
+rather than thinking about the responsive design. Cordova is doing
+pretty well with JQuery without loosing any frame.  
+
+Here's some of the screen shots of the
+app&lt;span id="goog_1151724009"&gt;&lt;/span&gt;&lt;span id="goog_1151724010"&gt;&lt;/span&gt;  
+
+
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;
+[![](http://2.bp.blogspot.com/-Ro8l1hwPdeY/UhPmv_VoK8I/AAAAAAAAAg8/h_G61THSzHo/s320/device-2013-08-21-032238.png)](http://2.bp.blogspot.com/-Ro8l1hwPdeY/UhPmv_VoK8I/AAAAAAAAAg8/h_G61THSzHo/s1600/device-2013-08-21-032238.png)
+
+&lt;/div&gt;
+
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;
+[![](http://3.bp.blogspot.com/-D6s37MvlMpI/UhPnnnEflOI/AAAAAAAAAhE/4tkIOQw1L58/s320/device-2013-08-21-031844.png)](http://3.bp.blogspot.com/-D6s37MvlMpI/UhPnnnEflOI/AAAAAAAAAhE/4tkIOQw1L58/s1600/device-2013-08-21-031844.png)
+
+&lt;/div&gt;
+
+&lt;p&gt;I'm not very good at choosing colors, although Blue and Orange are my
+all time favorite.  &lt;/p&gt;
+&lt;p&gt;Working with Android's push notification system is really a hectic job.
+First you code for C2DM and then you get to know that it has been
+deprecated by Google itself discourages the development. Google
+introduced something new called Google Cloud Messaging(GCM). This works
+pretty smooth once you have the registration Id of the device. Thanks
+to &lt;a href="http://namis.me/"&gt;geeknam&lt;/a&gt; for proving such a fantastic library to
+handle GCM with Python.&lt;br /&gt;
+I hope that Apple Push Notification Service(APNS) would not be a
+headache like Android. &lt;br /&gt;
+I'll let you know about further development soon.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Enjoy!!&lt;/em&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: xx-small;"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/div&gt;
+&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra (noreply@blogger.com)</dc:creator><pubDate>Tue, 20 Aug 2013 22:37:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2013-08-20:capastr-talking-about-design</guid><category>Android</category><category>CapaStr</category><category>Cordova</category><category>iOS</category><category>JQueryMobile</category><category>PhoneGap</category></item></channel></rss>

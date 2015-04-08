@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/web.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2015-01-07T16:51:00+05:30</updated><entry><title>Top Hacker News Archive</title><link href="http://www.sudhanshumishra.in/top-hacker-news-archive" rel="alternate"></link><updated>2015-01-07T16:51:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2015-01-07:top-hacker-news-archive</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+[Hacker News'](https://news.ycombinator.com/) top 5 entries are some
+beautiful stories that can't be missed by a technology enthusiast. The
+problem is HN gives more weight-age to the period of existence of a post
+and hence articles decay rapidly as time passes. I try my best to read
+most of them but it's certainly not possible if you've got other things
+to do. :)
+
+To overcome this problem I wrote a small script to pull all those
+entries and save it for me even when I'm away. Perhaps this will help my
+obsession with hacker news.  
+
+Once I have enough articles, I'll host them on the web with real time
+addition of new articles for everyone. I'll think about other good
+sources too.
+
+&lt;/div&gt;
+
+&lt;/p&gt;</summary><category term="python"></category><category term="Web"></category></entry><entry><title>Customize your Google Search</title><link href="http://www.sudhanshumishra.in/customize-your-google-search" rel="alternate"></link><updated>2013-08-10T23:24:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2013-08-10:customize-your-google-search</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+1.
+
+    &gt; 1.  **Either/or**  
+   &gt;     Google normally searches for pages that contain all the words
+    &gt;     you type in the search box, but if you want pages that have
+    &gt;     one term or another (or both), use the OR operator -- or use
+    &gt;     the "|" symbol (pipe symbol) to save you a keystroke.
+    &gt;     &lt;span class="qlink_container"&gt;[dumb | little |
+    &gt;     man](https://www.google.com/search?q=dumb+%7C+little+%7C+man&amp;oq=dumb+%7C+little+%7C+man&amp;aqs=chrome.0.69i57j5j0l2j69i62l2.338j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
+    &gt; 2.  **Quotes**  
+   &gt;     If you want to search for an exact phrase, use quotes.
+    &gt;     &lt;span class="qlink_container"&gt;["dumb little
+    &gt;     man"](https://www.google.com/search?q=%22dumb+little+man%22&amp;oq=%22dumb+little+man%22&amp;aqs=chrome.0.69i57j69i62.347j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
+    &gt;     will only find that exact phrase. 
+    &gt;     &lt;span class="qlink_container"&gt;[dumb "little
+    &gt;     man"](https://www.google.com/search?q=dumb+%22little+man%22&amp;oq=dumb+%22little+man%22&amp;aqs=chrome.0.69i57j0l3j69i62.275j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
+    &gt;     will find pages that contain the word dumb and the exact
+    &gt;     phrase "little man".
+    &gt; 3.  **Not**  
+   &gt;     If you don't want a term or phrase, use the "-" symbol.
+    &gt;     &lt;span class="qlink_container"&gt;[-dumb little
+    &gt;     man](https://www.google.com/search?q=-dumb+little+man&amp;oq=-dumb+little+man&amp;aqs=chrome.0.69i57j69i62l3.553j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
+    &gt;     will return pages that contain "little" and "man" but that
+    &gt;     don't contain "dumb".
+    &gt; 4.  **Similar terms**  
+   &gt;     Use the "\~" symbol to return similar terms.
+    &gt;     &lt;span class="qlink_container"&gt;[\~dumb little man
+    &gt;     -dumb](https://www.google.com/search?q=%7Edumb+little+man+-dumb%5D&amp;oq=%7Edumb+little+man+-dumb%5D&amp;aqs=chrome.0.69i57j69i62l3.674j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1#bav=on.2,or.r_cp.r_qf.&amp;fp=ed6cd8ec55b9affb&amp;q=%7Edumb+little+man+-dumb&amp;qscrl=1)&lt;/span&gt;
+    &gt;     will get you pages that contain "funny little man" and "stupid
+    &gt;     little man" but not "dumb little man". Note: It looks like
+    &gt;     this feature may have been turned off. Good idea though!
+    &gt; 5.  **Wildcard**  
+   &gt;     The "\*" symbol is a wildcard. This is useful if you're trying
+    &gt;     to find the lyrics to a song, but can't remember the exact
+    &gt;     lyrics. &lt;span class="qlink_container"&gt;[can't \* me love
+    &gt;     lyrics](https://www.google.com/search?q=can%27t+*+me+love+lyrics&amp;oq=can%27t+*+me+love+lyrics&amp;aqs=chrome.0.69i57j0l3j69i62.450j0&amp;sourceid=chrome&amp;ie=UTF-8)&lt;/span&gt;
+    &gt;     will return the Beatles song you're looking for. It's also
+    &gt;     useful for finding stuff only in certain domains, such as
+    &gt;     educational information: &lt;span class="qlink_container"&gt;[cats
+    &gt;     \*.edu](https://www.google.com/search?q=cats+*.edu&amp;oq=cats+*.edu&amp;aqs=chrome.0.69i57j5j0l2.6906j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
+    &gt; 6.  **Advanced search**  
+   &gt;     If you can't remember any of these operators, you can always
+    &gt;     use &lt;span class="qlink_container"&gt;[Google's Advanced
+    &gt;     Search](http://www.google.com/advanced_search)&lt;/span&gt;.
+    &gt; 7.  **Definitions**  
+   &gt;     Use the "define:" operator to get a quick definition.
+    &gt;     &lt;span class="qlink_container"&gt;[define:dumb](https://www.google.com/search?q=define%3Adumb&amp;oq=define%3Adumb&amp;aqs=chrome.0.69i57j69i58j69i62.375j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
+    &gt;     will give you a whole host of definitions from different
+    &gt;     sources, with links.
+    &gt; 8.  **Calculator**  
+   &gt;     One of the handiest uses of Google, type in a quick
+    &gt;     calculation in the search box and get an answer. It's faster
+    &gt;     than calling up your computer's calculator in most cases. Use
+    &gt;     the +, -, \*, / symbols and parentheses to do a simple
+    &gt;     equation. &lt;span class="qlink_container"&gt;[(3 4/5 + 2 1/8)-(1
+    &gt;     1/12)\*2](https://www.google.com/search?q=%283+4%2F5+%2B+2+1%2F8%29-%281+1%2F12%29*2&amp;oq=%283+4%2F5+%2B+2+1%2F8%29-%281+1%2F12%29*2&amp;aqs=chrome.0.69i57j0j69i62l3.27860j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
+    &gt; 9.  **Numrange**  
+   &gt;     This little-known feature searches for a range of numbers. For
+    &gt;     example, &lt;span class="qlink_container"&gt;[best books
+    &gt;     2002..2007](https://www.google.com/search?q=best+books+2002..2007&amp;oq=best+books+2002..2007&amp;aqs=chrome.0.69i57j69i62l3j69i64.226j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
+    &gt;     will return lists of best books for each of the years from
+    &gt;     2002 to 2007 (note the two periods between the two numbers).
+    &gt; 10. **Site-specific**  
+   &gt;     Use the "site:" operator to search only within a certain
+    &gt;     website. &lt;span class="qlink_container"&gt;[site:dumblittleman.com
+    &gt;     leo](https://www.google.com/search?q=site%3Adumblittleman.com+leo&amp;oq=site%3Adumblittleman.com+leo&amp;aqs=chrome.0.69i57j69i58.466j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
+    &gt;     will search for the term "leo" only within this blog.
+    &gt; 11. **Backlinks**  
+   &gt;     The "link:" operator will find pages that link to a specific
+    &gt;     URL. You can use this not only for a main URL but even to a
+    &gt;     specific page. Not all links to an URL are listed, however.
+    &gt;     &lt;span class="qlink_container"&gt;[link:dumblittleman.com](https://www.google.com/search?q=link%3Adumblittleman.com&amp;oq=link%3Adumblittleman.com&amp;aqs=chrome.0.69i57j69i58.321j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
+    &gt; 12. **Vertical search**  
+   &gt;     Instead of searching for a term across all pages on the web,
+    &gt;     search within a specialized field. Google has a number of
+    &gt;     specific searches, allowing you to search within blogs, news,
+    &gt;     books, and much more:  
+   &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Blog
+    &gt;         Search&lt;/u&gt;**](http://blogsearch.google.com/)&lt;/span&gt;
+    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Book
+    &gt;         Search&lt;/u&gt;**](http://books.google.com/)&lt;/span&gt;
+    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Scholar&lt;/u&gt;**](http://scholar.google.com/)&lt;/span&gt;
+    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Catalogs&lt;/u&gt;**](http://catalogs.google.com/)&lt;/span&gt;
+    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Code
+    &gt;         Search&lt;/u&gt;**](http://www.google.com/codesearch)&lt;/span&gt;
+    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Directory&lt;/u&gt;**](http://www.google.com/dirhp)&lt;/span&gt;
+    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Finance&lt;/u&gt;**](http://finance.google.com/finance)&lt;/span&gt;
+    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Images&lt;/u&gt;**](http://images.google.com/)&lt;/span&gt;
+    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Local/Maps&lt;/u&gt;**](http://maps.google.com/maps)&lt;/span&gt;
+    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;News&lt;/u&gt;**](http://news.google.com/)&lt;/span&gt;
+    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Patent
+    &gt;         Search&lt;/u&gt;**](http://www.google.com/patents)&lt;/span&gt;
+    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Product
+    &gt;         Search&lt;/u&gt;**](http://www.google.com/products)&lt;/span&gt;
+    &gt;     -   &lt;span class="qlink_container"&gt;[**&lt;u&gt;Video&lt;/u&gt;**](http://video.google.com/)&lt;/span&gt;
+    &gt;
+    &gt; 13. **Local Search**  
+   &gt;     Search for anything in your city. Examples
+    &gt;     &lt;span class="qlink_container"&gt;[movies
+    &gt;     94705](https://www.google.com/search?q=movies+94705&amp;btnG=Search&amp;qscrl=1)&lt;/span&gt;,
+    &gt;     &lt;span class="qlink_container"&gt;[Italian food
+    &gt;     02138](https://www.google.com/search?q=Italian+food+02138&amp;btnG=Search&amp;qscrl=1)&lt;/span&gt;
+    &gt; 14. **Weather**  
+   &gt;     To see the weather for many U.S. and worldwide cities, type
+    &gt;     “weather” followed by the city and state, U.S. zip code, or
+    &gt;     city and country. &lt;span class="qlink_container"&gt;[weather San
+    &gt;     Francisco,
+    &gt;     CA](https://www.google.com/search?q=weather+San+Francisco%2C+CA&amp;btnG=Search&amp;qscrl=1)&lt;/span&gt;
+    &gt; 15. **Unit converter**  
+   &gt;     Use Google for a quick conversion, from yards to meters for
+    &gt;     example, or different currency:
+    &gt;     &lt;span class="qlink_container"&gt;[12 meters in
+    &gt;     yards](https://www.google.com/search?q=12+meters+in+yards&amp;oq=12+meters+in+yards&amp;aqs=chrome.0.69i57j0j69i62.441j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
+    &gt; 16. **Types of numbers**  
+   &gt;     Google algorithms can recognize patterns in numbers you enter,
+    &gt;     so you can search for:  
+   &gt;     -   Telephone area codes
+    &gt;     -   Vehicle ID number (US only)
+    &gt;     -   Federal Communications Commission (FCC) equipment numbers
+    &gt;         (US only)
+    &gt;     -   UPC codes
+    &gt;     -   Federal Aviation Administration (FAA) airplane
+    &gt;         registration number (US only)
+    &gt;     -   Patent numbers (US only). Example
+    &gt;         &lt;span class="qlink_container"&gt;[Patent
+    &gt;         5123123](https://www.google.com/search?q=Patent+5123123&amp;btnG=Search&amp;qscrl=1)&lt;/span&gt;
+    &gt;     -   Even stock quotes (using the stock symbol) or a weather
+    &gt;         forecast regarding the next five days
+    &gt;     -   Package Tracking (UPS, Fedex, or USPS). Example:
+    &gt;         &lt;span class="qlink_container"&gt;[1Z9999W99999999999](https://www.google.com/search?q=1Z9999W99999999999&amp;btnG=Search&amp;qscrl=1)&lt;/span&gt;
+    &gt;
+    &gt; 17. **File types**  
+   &gt;     If you just want to search for .PDF files, or Word documents,
+    &gt;     or Excel spreadsheets, for example, use the "filetype:"
+    &gt;     operator. &lt;span class="qlink_container"&gt;[cats
+    &gt;     filetype:pdf](https://www.google.com/search?q=cats+filetype%3Apdf&amp;oq=cats+filetype%3Apdf&amp;aqs=chrome.0.69i57.9169j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
+    &gt; 18. **Location of term**  
+   &gt;     By default, Google searches for your term throughout a web
+    &gt;     page. But if you just want it to search certain locations, you
+    &gt;     can use operators such as "inurl:", "intitle:", "intext:", and
+    &gt;     "inanchor:". Those search for a term only within the URL, the
+    &gt;     title, the body text, and the anchor text (the text used to
+    &gt;     describe a link).
+    &gt;     &lt;span class="qlink_container"&gt;[inurl:funny](https://www.google.com/search?q=inurl%3Afunny&amp;oq=inurl%3Afunny&amp;aqs=chrome.0.69i57j69i58.3481j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;
+    &gt; 19. **Related search**  
+   &gt;     To search for web pages that have similar content to a given
+    &gt;     site, type “related:” followed by the website address into the
+    &gt;     Google search box.
+    &gt;     &lt;span class="qlink_container"&gt;[related:www.cnn.com](https://www.google.com/search?q=related%3Awww.cnn.com&amp;btnG=Search&amp;qscrl=1)&lt;/span&gt;
+    &gt; 20. &lt;span class="qlink_container"&gt;[**answer to life the universe
+    &gt;     and
+    &gt;     everything**](https://www.google.com/search?q=answer+to+life+the+universe+and+everything&amp;oq=answer&amp;aqs=chrome.1.69i57j69i59j69i61j5j0j69i60.6362j0&amp;sourceid=chrome&amp;ie=UTF-8&amp;qscrl=1)&lt;/span&gt;  
+   &gt;     Search for that phrase, in lower case, and Google will give
+    &gt;     you the answer!
+
+
+
+&lt;/div&gt;
+
+&lt;/p&gt;</summary><category term="Google"></category><category term="Tricks"></category><category term="Web"></category></entry></feed>

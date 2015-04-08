@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/physics.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2014-07-08T17:24:00+05:30</updated><entry><title>GSoC'14 Progress: Working with geometry</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-working-with-geometry" rel="alternate"></link><updated>2014-07-08T17:24:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-07-08:gsoc14-progress-working-with-geometry</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;div class="markdown-body"&gt;
+&lt;div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;"&gt;
+&lt;span style="background-color: white;"&gt;This week I
+completed `refraction_angle`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}.
+Now it also works
+with `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} and `Plane`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}.
+This function calculates transmitted vector after
+refraction. `medium1`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} and `medium2`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} can
+be `Medium`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}or
+any sympifiable object.
+If`incident`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} is
+an object
+of `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}, `normal`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} also
+has to be an instance
+of `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} in
+order to get the output as
+a `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}.
+If plane of separation is not provided and normal is an instance
+of `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"},
+normal will be assumed to be intersecting incident ray at the plane of
+separation. This will not be the case
+when `normal`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} is
+a `Matrix`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} or
+any other sequence.   
+If `incident`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} is
+an instance
+of `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} and `plane`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} has
+not been provided
+and `normal`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} is
+not`Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"},
+output will be
+a `Matrix`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}.
+It is dependent
+on `Plane`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} so
+I haven’t added tests for it.&lt;/span&gt;
+
+&lt;/div&gt;
+
+&lt;div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;"&gt;
+&lt;span style="background-color: white;"&gt;Here’s the link to the
+PR &lt;https://github.com/sympy/sympy/pull/7626&gt;&lt;/span&gt;
+
+&lt;/div&gt;
+
+&lt;div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;"&gt;
+&lt;span style="background-color: white;"&gt;This week I also worked on making
+spherical mirrors in SymPy. There are few issues that I am facing.
+Currently I’m working(stuck) on locating mirrors in space. It’s an
+amalgamation of 2D and 3D geometry. I still have to subclass Ray of
+geometry and make it useful for this. I’ve sent a [WIP
+PR](https://github.com/sympy/sympy/pull/7686).&lt;/span&gt;
+
+&lt;/div&gt;
+
+&lt;div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;"&gt;
+&lt;span style="background-color: white;"&gt;I’m waiting for Sean to
+merge [this](https://github.com/sympy/sympy/pull/7607) long waited PR
+for moving Gaussian optics module.&lt;/span&gt;
+
+&lt;/div&gt;
+
+&lt;div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;"&gt;
+That's all for now.
+
+&lt;/div&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 progress: Week 6</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-6" rel="alternate"></link><updated>2014-07-02T03:27:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-07-02:gsoc14-progress-week-6</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+It was a busy week though I managed to do some work.
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+I've been working on following things:
+
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Integrating &lt;code style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"&gt;TWave&lt;/code&gt; with &lt;code style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"&gt;refraction_angle&lt;/code&gt;(&lt;a href="https://github.com/sympy/sympy/pull/7626"&gt;7626&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Interference class&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+Some blocking 3D geometry code got merged yesterday which gives me a lot
+of new things to work on. :-)
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+I also tried to take a look on very
+old [patch](https://github.com/sympy/sympy/pull/1226) for `gaussopt`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}.
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+This week I wrote a script to update the development documentation when
+a PR gets merged into the master. This is up and running.
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+I passed mid term evaluation that took place last week and I would like
+to
+thank [Sean](https://github.com/flacjacket), [Ondrej](https://github.com/certik),[Aaron](https://github.com/asmeurer) and [Chris](https://github.com/smichr) for
+their constant support.
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+That's all for now. *Cheers!*
+
+&lt;/div&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 progress, Week 5</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-5" rel="alternate"></link><updated>2014-06-23T17:59:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-06-23:gsoc14-progress-week-5</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+I did good amount of work this week. I sent a small part of it related
+to ray tracing for review.
+
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/7626"&gt;https://github.com/sympy/sympy/pull/7626&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+I got some great suggestions from Sean to make it compatible directly
+with&lt;span style="color: #444444;"&gt; &lt;/span&gt;`TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}&lt;span style="color: #444444;"&gt; &lt;/span&gt;class.
+It is a WIP as I'm waiting for few 3D geometry classes. I'm also working
+on inteference of light waves and I hope that I'll send it for review in
+next couple of days. My last PR on medium is still unmerged and I really
+need it to be in master to work on more implementations.
+
+&lt;/div&gt;
+
+&lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+I'm also trying to
+move&lt;span style="color: #444444;"&gt; &lt;/span&gt;`physics/gaussopt`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}&lt;span style="color: #444444;"&gt; &lt;/span&gt;to&lt;span style="color: #444444;"&gt; &lt;/span&gt;`physics/optics/gaussopt`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}&lt;span style="color: #444444;"&gt; &lt;/span&gt;as
+it'll be good to keep things related to optics at the same place. I'm
+waiting for opinion of the community about it. Here's the link to that
+PR:
+
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/7607"&gt;https://github.com/sympy/sympy/pull/7607&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+Here is some other minor work that I've done this week outside of
+optics:
+
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/7609"&gt;https://github.com/sympy/sympy/pull/7609&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/7610"&gt;https://github.com/sympy/sympy/pull/7610&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/7612"&gt;https://github.com/sympy/sympy/pull/7612&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/7614"&gt;https://github.com/sympy/sympy/pull/7614&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/7627"&gt;https://github.com/sympy/sympy/pull/7627&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/7628"&gt;https://github.com/sympy/sympy/pull/7628&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/7629"&gt;https://github.com/sympy/sympy/pull/7629&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+That's all for now. *Cheers!*
+
+&lt;/div&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 progress, week 4: finished medium, working on Fermat's principle and Snell's law</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law" rel="alternate"></link><updated>2014-06-16T19:32:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-06-16:gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+It was a great week! My last to last PR, on
+enhancing `TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"},
+got merged! I have also
+finished`Medium`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} and
+waiting for Sean's comments on it. Here's the link to that PR:
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+&lt;https://github.com/sympy/sympy/pull/7580&gt;
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+I still have a *todo* in the tests:
+
+&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;m5 = Medium(&amp;#39;m5&amp;#39;, permittivity=710*10**(-12)*s**4*A**2/(m**3*kg), n=1.33)assert simplify(m5.intrinsic_impedance - 6.24845417765552*kg*m**2/(A**2*s**3)) == 0# XXX: This is supposed to be zero but it turns out to be# very close to zero and not zero.# assert simplify(m5.speed - 225407863.157895*m/s) == 0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+This `m5.speed`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} is
+equal
+to `225407863.157895*m/s`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} (or
+maybe very close to it) but, assertion results in a failure.
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+Similarly in the constructor of
+the `Medium`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} inconsistency
+comes due to slight difference in floating point parameters(permittivity
+and permeability). I've commented out this part of my code. Maybe Sean
+will suggest a better way to do it.
+
+&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;# XXX: There&amp;#39;s issue with precision. Values may be# different slightly.if permittivity != u0 and permittivity != e0:    if n != c*sqrt(permittivity*permeability):        raise ValueError(&amp;quot;Values are not consistent.&amp;quot;)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+As soon as it gets merged, I'll make necessary changes in Fermat's
+principle and Snell's law part of the code and send a PR to review.
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+Now I realize that the next two weeks are not going to be a joy ride for
+me. I must finish major part of geometrical optics as written in my
+proposal.
+
+That's all for now. Cheers!
+
+&lt;/div&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14: Third week</title><link href="http://www.sudhanshumishra.in/gsoc14-third-week" rel="alternate"></link><updated>2014-06-10T10:08:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-06-10:gsoc14-third-week</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+It was another not so productive week but I learnt a lot regarding how
+to write new classes by extending classes
+like `Basic`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}, `Symbol`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} and `Expr`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}.
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+Last week I got stuck with the rewrite expression mechanism which turned
+out to be a bug in
+the `core`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}.
+Thanks to [Sean](https://github.com/flacjacket) for the fix! I need to
+do some more cleanup to get my last PR merged.
+
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/7546"&gt;https://github.com/sympy/sympy/pull/7546&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;
+&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt;I
+also tried to fix an issue related to assumptions
+in &lt;/span&gt;`Function`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; line-height: 18px; padding: 3px 4px;"}&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt; but
+the complex behaviour
+of &lt;/span&gt;`__new__`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; line-height: 18px; padding: 3px 4px;"}&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt; constructor
+makes it difficult to follow the inheritance. I also need to understand
+the working of SymPy's
+ &lt;/span&gt;`@cacheit`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; line-height: 18px; padding: 3px 4px;"}&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt; 
+decorator.&lt;/span&gt;
+
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt;  
+&lt;/span&gt;
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+Lately I've been working on the implementation of optical medium. The
+motivation behind defining
+a`Medium`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} came
+from the laziness of passing constants like electric permittivity and
+magnetic permeabhility of the medium everywhere. It will help carry out
+operations(events) very easily in optics.
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+With the merger
+of `Point3D`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} by [Akshay](https://github.com/akshayah3) I
+planned to implement Fermat's principle and thus felt the need
+of `Medium`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} first.
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+I've already sent a WIP pull request
+for `Medium`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}.
+Here's the link:
+
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/7580"&gt;https://github.com/sympy/sympy/pull/7580&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+I also took a quick glance at variational calculus to solve the problem
+involving Fermat's principle. I'm planning to start this as following:
+
+&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;FermatsPrinciple&lt;/span&gt;(&lt;span class="n"&gt;Expr&lt;/span&gt;):    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;__init__&lt;/span&gt;(&lt;span class="k"&gt;self&lt;/span&gt;, &lt;span class="n"&gt;p1&lt;/span&gt;, &lt;span class="n"&gt;p2&lt;/span&gt;, &lt;span class="n"&gt;v&lt;/span&gt;=&lt;span class="n"&gt;Symbol&lt;/span&gt;(&lt;span class="s"&gt;&amp;#39;c&amp;#39;&lt;/span&gt;)):        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;isinstance&lt;/span&gt;(&lt;span class="n"&gt;p1&lt;/span&gt;, &lt;span class="n"&gt;type&lt;/span&gt;(())) &lt;span class="o"&gt;and&lt;/span&gt; &lt;span class="n"&gt;isinstance&lt;/span&gt;(&lt;span class="n"&gt;p2&lt;/span&gt;, &lt;span class="n"&gt;type&lt;/span&gt;(())):            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;len&lt;/span&gt;(&lt;span class="n"&gt;p1&lt;/span&gt;) == &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;and&lt;/span&gt; &lt;span class="n"&gt;len&lt;/span&gt;(&lt;span class="n"&gt;p2&lt;/span&gt;) == &lt;span class="mi"&gt;2&lt;/span&gt;:                &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;p1&lt;/span&gt; = &lt;span class="n"&gt;Point&lt;/span&gt;(*&lt;span class="n"&gt;p1&lt;/span&gt;)                &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;p2&lt;/span&gt; = &lt;span class="n"&gt;Point&lt;/span&gt;(*&lt;span class="n"&gt;p2&lt;/span&gt;)            &lt;span class="n"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;len&lt;/span&gt;(&lt;span class="n"&gt;p1&lt;/span&gt;) == &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;and&lt;/span&gt; &lt;span class="n"&gt;len&lt;/span&gt;(&lt;span class="n"&gt;p2&lt;/span&gt;) == &lt;span class="mi"&gt;3&lt;/span&gt;:                &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;p1&lt;/span&gt; = &lt;span class="n"&gt;Point3D&lt;/span&gt;(*&lt;span class="n"&gt;p1&lt;/span&gt;)                &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;p2&lt;/span&gt; = &lt;span class="n"&gt;Point3D&lt;/span&gt;(*&lt;span class="n"&gt;p2&lt;/span&gt;)        &lt;span class="n"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;isinstance&lt;/span&gt;(&lt;span class="n"&gt;p1&lt;/span&gt;, &lt;span class="n"&gt;Point&lt;/span&gt;) &lt;span class="o"&gt;and&lt;/span&gt; &lt;span class="n"&gt;isinstance&lt;/span&gt;(&lt;span class="n"&gt;p2&lt;/span&gt;, &lt;span class="n"&gt;Point&lt;/span&gt;):            &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;p1&lt;/span&gt; = &lt;span class="n"&gt;Point3D&lt;/span&gt;(&lt;span class="n"&gt;p1&lt;/span&gt;.&lt;span class="o"&gt;x&lt;/span&gt;, &lt;span class="n"&gt;p1&lt;/span&gt;.&lt;span class="n"&gt;y&lt;/span&gt;, &lt;span class="mi"&gt;0&lt;/span&gt;)            &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;p2&lt;/span&gt; = &lt;span class="n"&gt;Point3D&lt;/span&gt;(&lt;span class="n"&gt;p2&lt;/span&gt;.&lt;span class="o"&gt;x&lt;/span&gt;, &lt;span class="n"&gt;p2&lt;/span&gt;.&lt;span class="n"&gt;y&lt;/span&gt;, &lt;span class="mi"&gt;0&lt;/span&gt;)        &lt;span class="n"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;isinstance&lt;/span&gt;(&lt;span class="n"&gt;p1&lt;/span&gt;, &lt;span class="n"&gt;Point3D&lt;/span&gt;) &lt;span class="o"&gt;and&lt;/span&gt; &lt;span class="n"&gt;isinstance&lt;/span&gt;(&lt;span class="n"&gt;p2&lt;/span&gt;, &lt;span class="n"&gt;Point3D&lt;/span&gt;):            &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;p1&lt;/span&gt; = &lt;span class="n"&gt;p1&lt;/span&gt;            &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;p2&lt;/span&gt; = &lt;span class="n"&gt;p2&lt;/span&gt;        &lt;span class="n"&gt;else:&lt;/span&gt;            &lt;span class="n"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;TypeError&lt;/span&gt;(&lt;span class="s"&gt;&amp;quot;p1 and p2 can only be tuple, Point or Point3D&amp;quot;&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+It's not a very good API and needs more refining which I'll discuss with
+Sean once I get it working.
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+My work in this week(*fourth week as I am writing this post very late*)
+will be to complete the above discussed things.
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+On a lighter note, the temperature here is 46 degrees and no sign of
+rains yet. :(
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+*That's all for now. Cheers!*
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+If you have some feedback or questions regarding this post, please add
+comments. I would be happy to get some feedback.
+
+&lt;/div&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Progress: Finishing TWave</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-finishing-twave" rel="alternate"></link><updated>2014-06-02T02:02:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-06-02:gsoc14-progress-finishing-twave</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;div style="margin-bottom: 9px;"&gt;
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+This last week most of the coding I did was only related to transverse
+wave. It has already been merged into the master.
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+&lt;https://github.com/sympy/sympy/pull/7518&gt;
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+Here is the class structure of
+the `TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}:
+
+&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;Inherits========ExprArguments=========amplitude : Sympifyable    Amplitude of the wave.frequency : Sympifyable    Frequency of the wave.phase : Sympifyable    Phase angle of the wave.time_period : Sympifyable    Time period of the wave.n : Sympifyable    Refractive index of the medium.Raises=======ValueError : When niether frequency nor time period is provided.    or they are not consistent.TypeError : When anyting other than TWave objects is added.Methods=======frequencytime_periodwavelengthamplitudephasespeedangular_velocitywavenumber
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+Till now it has been very easy to implement this but these days I'm
+stuck on writing functions to rewrite an expression using different
+functions. This is supposed to work like this as I feel from the code:
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+When you
+call `expr.rewrite('sin')`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"},
+the following code written
+in `sympy.core.basic`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}should
+make a call to
+function `_eval_rewrite_as_sin(self, *args)`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} defined
+in the object class.
+
+&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="s-Atom"&gt;if&lt;/span&gt; &lt;span class="o"&gt;not&lt;/span&gt; &lt;span class="nn"&gt;args&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;    &lt;span class="s-Atom"&gt;return&lt;/span&gt; &lt;span class="nn"&gt;selfelse&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;    &lt;span class="s-Atom"&gt;pattern&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s-Atom"&gt;args&lt;/span&gt;&lt;span class="p"&gt;[:-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;    &lt;span class="s-Atom"&gt;if&lt;/span&gt; &lt;span class="nf"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s-Atom"&gt;args&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s-Atom"&gt;string_types&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s-Atom"&gt;:&lt;/span&gt;        &lt;span class="s-Atom"&gt;rule&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s-Atom"&gt;&amp;#39;_eval_rewrite_as_&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s-Atom"&gt;args&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;    &lt;span class="nn"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;        &lt;span class="s-Atom"&gt;rule&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s-Atom"&gt;&amp;#39;_eval_rewrite_as_&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s-Atom"&gt;args&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;].&lt;/span&gt;&lt;span class="k"&gt;__&lt;/span&gt;&lt;span class="s-Atom"&gt;name__&lt;/span&gt;    &lt;span class="s-Atom"&gt;if&lt;/span&gt; &lt;span class="o"&gt;not&lt;/span&gt; &lt;span class="nn"&gt;pattern&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;        &lt;span class="s-Atom"&gt;return&lt;/span&gt; &lt;span class="s-Atom"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;_&lt;/span&gt;&lt;span class="nf"&gt;eval_rewrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s-Atom"&gt;rule&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s-Atom"&gt;**hints&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;    &lt;span class="nn"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;        &lt;span class="s-Atom"&gt;if&lt;/span&gt; &lt;span class="nf"&gt;iterable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s-Atom"&gt;pattern&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="s-Atom"&gt;:&lt;/span&gt;            &lt;span class="s-Atom"&gt;pattern&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s-Atom"&gt;pattern&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;        &lt;span class="s-Atom"&gt;pattern&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="s-Atom"&gt;p&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;__&lt;/span&gt;&lt;span class="s-Atom"&gt;class__&lt;/span&gt; &lt;span class="s-Atom"&gt;for&lt;/span&gt; &lt;span class="s-Atom"&gt;p&lt;/span&gt; &lt;span class="s-Atom"&gt;in&lt;/span&gt; &lt;span class="s-Atom"&gt;pattern&lt;/span&gt; &lt;span class="s-Atom"&gt;if&lt;/span&gt; &lt;span class="s-Atom"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;has&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s-Atom"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;        &lt;span class="s-Atom"&gt;if&lt;/span&gt; &lt;span class="nn"&gt;pattern&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;            &lt;span class="s-Atom"&gt;return&lt;/span&gt; &lt;span class="s-Atom"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;_&lt;/span&gt;&lt;span class="nf"&gt;eval_rewrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;tuple&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s-Atom"&gt;pattern&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s-Atom"&gt;rule&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s-Atom"&gt;**hints&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;        &lt;span class="nn"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;            &lt;span class="s-Atom"&gt;return&lt;/span&gt; &lt;span class="s-Atom"&gt;self&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+But this is not the case with me. It always ends up
+calling `__str__`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} method.
+This is the PR for the same.
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+&lt;https://github.com/sympy/sympy/pull/7546&gt;
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+By the way, I had never used any debugger for Python before and now I
+feel it makes your life much easier. [Winpdb](http://winpdb.org/) is a
+great Python debugger which is platform independent.
+
+&lt;/div&gt;
+
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+I've also been working on SHM and will submit a PR soon for that.
+Besides my project, I also closed two issues this week related to
+printing
+in `sympy.logic`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} and
+helped to review few PRs.
+
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/issues/7179"&gt;https://github.com/sympy/sympy/issues/7179&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/issues/7180"&gt;https://github.com/sympy/sympy/issues/7180&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;PR: &lt;a href="https://github.com/sympy/sympy/pull/7541"&gt;https://github.com/sympy/sympy/pull/7541&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+We have a public channel(&lt;https://gitter.im/sympy/sympy/optics&gt;) to
+discuss about my project. You are welcome to join us, we would be more
+than happy to get feedback about the work. It'll help us refine it and
+cover a wider range of use cases.
+
+&lt;/div&gt;
+
+&lt;h4 id="weeklog" style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; margin: 0px;"&gt;Weeklog&lt;/h4&gt;
+&lt;h6 id="merged" style="color: #999999; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px;"&gt;MERGED&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;Add tests for pretty printer&lt;/li&gt;
+&lt;li&gt;Remove unnecessary if block&lt;/li&gt;
+&lt;li&gt;Add IPython Notebook Checkpoints to .gitignore&lt;/li&gt;
+&lt;li&gt;Remove double wrapping with u&lt;/li&gt;
+&lt;li&gt;Add tests for printing Equivalent. fixes #7180&lt;/li&gt;
+&lt;li&gt;Wrap unicode chars with u and fix a bug in latex printer&lt;/li&gt;
+&lt;li&gt;Fix a typo in manipulation.rst [skip ci]&lt;/li&gt;
+&lt;li&gt;Make equivalence symbol same for pretty printer and * latex printer
+    and change not equivalent symbol to u+2262 [skip ci]&lt;/li&gt;
+&lt;li&gt;Fix latex printing for Not(Equivalent) and Not(Implies).&lt;/li&gt;
+&lt;li&gt;Fix pretty printing for Not(Equivalent) and Not(Implies). fixes
+    #7179&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id="pending" style="color: #999999; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px;"&gt;PENDING&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;Change arg to *args [skip ci]&lt;/li&gt;
+&lt;li&gt;Add rewrite expression methods [skip ci]&lt;/li&gt;
+&lt;li&gt;Add wavenumber property&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
+This is all for now. Cheers!
+
+&lt;/div&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC 14: First Week</title><link href="http://www.sudhanshumishra.in/gsoc-14-first-week" rel="alternate"></link><updated>2014-05-25T00:14:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-05-25:gsoc-14-first-week</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;div style="color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3em; margin-bottom: 1.2em;"&gt;
+The first week of GSoC is going to end very soon. I started working very
+late this week because of some issues. I spent most of my time in
+reading books on optics.
+
+&lt;/div&gt;
+
+&lt;div style="color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3em; margin-bottom: 1.2em;"&gt;
+Due to a dependency for 3D geometry, which will take some more time, I
+changed my timeline from what I had proposed. Besides starting with
+geometrical optics(3 weeks), I have started working on wave optics.
+
+&lt;/div&gt;
+
+&lt;div style="color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3em; margin-bottom: 1.2em;"&gt;
+This is what my proposal says:
+
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;During this week I'll write code for classical wave equation and
+    simple harmonic motion.&lt;/li&gt;
+&lt;li&gt;Introduction of properties like phase angles, phase velocity, wave
+    velocity, amplitude, intensity, frequency and wavelength. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;div style="color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3em; margin-bottom: 1.2em;"&gt;
+[This](https://github.com/sympy/sympy/pull/7518) is my first pull
+request regarding my project (Thanks to Sean for the quick review). Till
+now I've only added a transverse wave class and will add more to it in
+the next 2 days.
+
+&lt;/div&gt;
+
+&lt;div style="color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3em; margin-bottom: 1.2em;"&gt;
+There were no hiccups yet!
+
+&lt;/div&gt;
+
+&lt;div style="color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3em; margin-bottom: 1.2em;"&gt;
+&lt;span style="line-height: 1.3em;"&gt;Cheers!&lt;/span&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry></feed>

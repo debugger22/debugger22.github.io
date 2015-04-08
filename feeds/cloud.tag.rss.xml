@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shortlog</title><link>http://www.sudhanshumishra.in/</link><description></description><atom:link href="http://www.sudhanshumishra.in/feeds/cloud.tag.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 08 Jan 2015 18:25:00 +0530</lastBuildDate><item><title>Two things: Dockerizing Applications and AWS' on the house services</title><link>http://www.sudhanshumishra.in/two-things-dockerizing-applications-and-aws-on-the-house-services</link><description>&lt;p&gt;Lately I migrated my app from DigitalOcean to AWS and encountered the
+pain of setting up similar environment.(Documenting everything is very
+important!)&lt;/p&gt;
+&lt;p&gt;I heard long ago about &lt;a href="https://docker.io/"&gt;Docker&lt;/a&gt; but never bothered
+to tinker with it. If you don't know, Docker is a platform for
+developers and sysadmins to develop, ship, and run applications. Docker
+lets you quickly assemble applications from components and eliminates
+the friction that can come when shipping code.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="docker" src="http://blog.docker.com/wp-content/uploads/2013/08/KuDr42X_ITXghJhSInDZekNEF0jLt3NeVxtRye3tqco.png" /&gt;&lt;/p&gt;
+&lt;p&gt;It's just like a &lt;code&gt;git pull&lt;/code&gt; for your custom OS.
+&lt;a href="https://docker.io/"&gt;https://docker.io&lt;/a&gt; manages repositories of docker
+images, public and private. A docker image is just a set of layers where
+layers are changes to its file system as results of commands. It uses
+same commit system like git. Once you've established an image you can
+run your applications on it. Docker calls them containers. Each
+container runs a single process. Even when containers run on same
+environment, they are sandboxed to themselves. There's a 'sophisticated'
+way in which containers talk to each
+other. &lt;a href="https://docs.docker.com/userguide/dockerizing"&gt;Here's&lt;/a&gt; a great
+article on dockerizing your applications.&lt;/p&gt;
+&lt;p&gt;So yeah, I had to set up the same environment but just for once! Now I
+can easily automate spawning new instances and adding them under
+Amazon's ELB. It also made the development easier.&lt;/p&gt;
+&lt;p&gt;I'm amazingly happy with Amazon's great products. Things like Elastic
+IP, Elastic Load Balancer, Elastic Block Storage, S3, VPC, etc. can be
+done with just few clicks. Setting up such infrastructure manually is a
+nightmare. One thing which I miss here is MongoDB. Although there is
+Amazon's own DynamoDB but I really don't want to learn another NoSQL DB.
+I'm using few EC2 instances for that.&lt;/p&gt;
+&lt;p&gt;We're accepting beta testers for this app.
+&lt;a href="https://getwaeo.com/"&gt;https://getwaeo.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I'm really excited about it and will be putting it in production in few
+weeks! Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Thu, 08 Jan 2015 18:25:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2015-01-08:two-things-dockerizing-applications-and-aws-on-the-house-services</guid><category>aws</category><category>cloud</category><category>docker</category><category>Server</category></item></channel></rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shortlog</title><link>http://www.sudhanshumishra.in/</link><description></description><atom:link href="http://www.sudhanshumishra.in/feeds/python.tag.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 07 Jan 2015 16:51:00 +0530</lastBuildDate><item><title>Top Hacker News Archive</title><link>http://www.sudhanshumishra.in/top-hacker-news-archive</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
+[Hacker News'](https://news.ycombinator.com/) top 5 entries are some
+beautiful stories that can't be missed by a technology enthusiast. The
+problem is HN gives more weight-age to the period of existence of a post
+and hence articles decay rapidly as time passes. I try my best to read
+most of them but it's certainly not possible if you've got other things
+to do. :)
+
+To overcome this problem I wrote a small script to pull all those
+entries and save it for me even when I'm away. Perhaps this will help my
+obsession with hacker news.  
+
+Once I have enough articles, I'll host them on the web with real time
+addition of new articles for everyone. I'll think about other good
+sources too.
+
+&lt;/div&gt;
+
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra (noreply@blogger.com)</dc:creator><pubDate>Wed, 07 Jan 2015 16:51:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2015-01-07:top-hacker-news-archive</guid><category>python</category><category>Web</category></item></channel></rss>
