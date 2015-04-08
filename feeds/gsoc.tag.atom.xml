@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/gsoc.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2014-08-11T11:27:00+05:30</updated><entry><title>GSoC'14 progress: Week 12</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-12" rel="alternate"></link><updated>2014-08-11T11:27:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-08-11:gsoc14-progress-week-12</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/gsoc.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2014-08-11T11:27:00+05:30</updated><entry><title>GSoC'14 progress: Week 12</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-12" rel="alternate"></link><updated>2014-08-11T11:27:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-08-11:gsoc14-progress-week-12</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 
 &lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
@@ -31,7 +31,7 @@ follows:
 &lt;/ul&gt;
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Week 10: Adding more to utils</title><link href="http://www.sudhanshumishra.in/gsoc14-week-10-adding-more-to-utils" rel="alternate"></link><updated>2014-07-28T09:05:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-07-28:gsoc14-week-10-adding-more-to-utils</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Week 10: Adding more to utils</title><link href="http://www.sudhanshumishra.in/gsoc14-week-10-adding-more-to-utils" rel="alternate"></link><updated>2014-07-28T09:05:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-28:gsoc14-week-10-adding-more-to-utils</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 This week I worked on adding more utility function in optics. Some of
 them are yet to be added. I'll send a pull request once I write tests
@@ -71,7 +71,7 @@ That's all for now. Cheers!
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Progress: Finished refraction at planar surface</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-finished-refraction-at-planar-surface" rel="alternate"></link><updated>2014-07-20T14:32:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-07-20:gsoc14-progress-finished-refraction-at-planar-surface</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Progress: Finished refraction at planar surface</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-finished-refraction-at-planar-surface" rel="alternate"></link><updated>2014-07-20T14:32:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-20:gsoc14-progress-finished-refraction-at-planar-surface</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 I'm sorry for this delayed post. I couldn't work last week due to some
 other issues so had nothing much to report.
@@ -101,7 +101,7 @@ My next priority is to complete a pending PR on mirrors.
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Progress: Working with geometry</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-working-with-geometry" rel="alternate"></link><updated>2014-07-08T17:24:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-07-08:gsoc14-progress-working-with-geometry</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Progress: Working with geometry</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-working-with-geometry" rel="alternate"></link><updated>2014-07-08T17:24:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-08:gsoc14-progress-working-with-geometry</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div class="markdown-body"&gt;
 &lt;div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;"&gt;
 &lt;span style="background-color: white;"&gt;This week I
@@ -170,7 +170,7 @@ That's all for now.
 
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 progress: Week 6</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-6" rel="alternate"></link><updated>2014-07-02T03:27:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-07-02:gsoc14-progress-week-6</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 progress: Week 6</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-6" rel="alternate"></link><updated>2014-07-02T03:27:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-02:gsoc14-progress-week-6</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 It was a busy week though I managed to do some work.
 
@@ -217,7 +217,7 @@ That's all for now. *Cheers!*
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 progress, Week 5</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-5" rel="alternate"></link><updated>2014-06-23T17:59:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-06-23:gsoc14-progress-week-5</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 progress, Week 5</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-5" rel="alternate"></link><updated>2014-06-23T17:59:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-23:gsoc14-progress-week-5</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 I did good amount of work this week. I sent a small part of it related
 to ray tracing for review.
@@ -270,7 +270,7 @@ That's all for now. *Cheers!*
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 progress, week 4: finished medium, working on Fermat's principle and Snell's law</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law" rel="alternate"></link><updated>2014-06-16T19:32:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-06-16:gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 progress, week 4: finished medium, working on Fermat's principle and Snell's law</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law" rel="alternate"></link><updated>2014-06-16T19:32:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-16:gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 It was a great week! My last to last PR, on
 enhancing `TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"},
@@ -331,7 +331,7 @@ That's all for now. Cheers!
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14: Third week</title><link href="http://www.sudhanshumishra.in/gsoc14-third-week" rel="alternate"></link><updated>2014-06-10T10:08:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-06-10:gsoc14-third-week</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14: Third week</title><link href="http://www.sudhanshumishra.in/gsoc14-third-week" rel="alternate"></link><updated>2014-06-10T10:08:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-10:gsoc14-third-week</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 It was another not so productive week but I learnt a lot regarding how
 to write new classes by extending classes
@@ -438,7 +438,7 @@ comments. I would be happy to get some feedback.
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Progress: Finishing TWave</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-finishing-twave" rel="alternate"></link><updated>2014-06-02T02:02:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-06-02:gsoc14-progress-finishing-twave</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Progress: Finishing TWave</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-finishing-twave" rel="alternate"></link><updated>2014-06-02T02:02:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-02:gsoc14-progress-finishing-twave</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="margin-bottom: 9px;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 This last week most of the coding I did was only related to transverse
@@ -553,7 +553,7 @@ This is all for now. Cheers!
 
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC 14: First Week</title><link href="http://www.sudhanshumishra.in/gsoc-14-first-week" rel="alternate"></link><updated>2014-05-25T00:14:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-05-25:gsoc-14-first-week</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC 14: First Week</title><link href="http://www.sudhanshumishra.in/gsoc-14-first-week" rel="alternate"></link><updated>2014-05-25T00:14:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-05-25:gsoc-14-first-week</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3em; margin-bottom: 1.2em;"&gt;
 The first week of GSoC is going to end very soon. I started working very
 late this week because of some issues. I spent most of my time in
@@ -600,7 +600,7 @@ There were no hiccups yet!
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC 2014 with SymPy</title><link href="http://www.sudhanshumishra.in/gsoc-2014-with-sympy" rel="alternate"></link><updated>2014-04-25T18:00:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-04-25:gsoc-2014-with-sympy</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC 2014 with SymPy</title><link href="http://www.sudhanshumishra.in/gsoc-2014-with-sympy" rel="alternate"></link><updated>2014-04-25T18:00:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-25:gsoc-2014-with-sympy</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="text-align: left;"&gt;
 
 My proposal is intended to add more to optics in SymPy. Till now it can

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/binpy.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2014-04-05T06:42:00+05:30</updated><entry><title>Setting up Tornado server on Ubuntu 12.04</title><link href="http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204" rel="alternate"></link><updated>2014-04-05T06:42:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-04-05:setting-up-tornado-server-on-ubuntu-1204</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/binpy.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2014-04-05T06:42:00+05:30</updated><entry><title>Setting up Tornado server on Ubuntu 12.04</title><link href="http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204" rel="alternate"></link><updated>2014-04-05T06:42:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-05:setting-up-tornado-server-on-ubuntu-1204</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
  {#setting-up-tornado-server-on-ubuntu-12-04 style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"}
 
 &lt;div style="font-size: 13px; font-weight: normal; line-height: 18px; margin-bottom: 9px;"&gt;
@@ -130,7 +130,7 @@ Cheers!
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="BinPy"></category><category term="Server"></category><category term="Ubuntu"></category></entry><entry><title>BinPy: N Bit Ripple Counter</title><link href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter" rel="alternate"></link><updated>2014-03-13T17:36:00+05:30</updated><author><name>Sudhanshu Mishra (noreply@blogger.com)</name></author><id>tag:www.sudhanshumishra.in,2014-03-13:binpy-n-bit-ripple-counter</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="BinPy"></category><category term="Server"></category><category term="Ubuntu"></category></entry><entry><title>BinPy: N Bit Ripple Counter</title><link href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter" rel="alternate"></link><updated>2014-03-13T17:36:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-03-13:binpy-n-bit-ripple-counter</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;
 [![](http://binpy.github.io/images/logo.png)](http://binpy.github.io/images/logo.png)

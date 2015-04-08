@@ -31,7 +31,7 @@ follows:
 &lt;/ul&gt;
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra (noreply@blogger.com)</dc:creator><pubDate>Mon, 11 Aug 2014 11:27:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-08-11:gsoc14-progress-week-12</guid><category>gsoc</category><category>sympy</category></item><item><title>GSoC'14 Week 10: Adding more to utils</title><link>http://www.sudhanshumishra.in/gsoc14-week-10-adding-more-to-utils</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Mon, 11 Aug 2014 11:27:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-08-11:gsoc14-progress-week-12</guid><category>gsoc</category><category>sympy</category></item><item><title>GSoC'14 Week 10: Adding more to utils</title><link>http://www.sudhanshumishra.in/gsoc14-week-10-adding-more-to-utils</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 This week I worked on adding more utility function in optics. Some of
 them are yet to be added. I'll send a pull request once I write tests
@@ -71,7 +71,7 @@ That's all for now. Cheers!
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra (noreply@blogger.com)</dc:creator><pubDate>Mon, 28 Jul 2014 09:05:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-07-28:gsoc14-week-10-adding-more-to-utils</guid><category>gsoc</category><category>sympy</category></item><item><title>GSoC'14 Progress: Finished refraction at planar surface</title><link>http://www.sudhanshumishra.in/gsoc14-progress-finished-refraction-at-planar-surface</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Mon, 28 Jul 2014 09:05:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-07-28:gsoc14-week-10-adding-more-to-utils</guid><category>gsoc</category><category>sympy</category></item><item><title>GSoC'14 Progress: Finished refraction at planar surface</title><link>http://www.sudhanshumishra.in/gsoc14-progress-finished-refraction-at-planar-surface</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 I'm sorry for this delayed post. I couldn't work last week due to some
 other issues so had nothing much to report.
@@ -101,7 +101,7 @@ My next priority is to complete a pending PR on mirrors.
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra (noreply@blogger.com)</dc:creator><pubDate>Sun, 20 Jul 2014 14:32:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-07-20:gsoc14-progress-finished-refraction-at-planar-surface</guid><category>gsoc</category><category>sympy</category></item><item><title>GSoC'14 Progress: Working with geometry</title><link>http://www.sudhanshumishra.in/gsoc14-progress-working-with-geometry</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Sun, 20 Jul 2014 14:32:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-07-20:gsoc14-progress-finished-refraction-at-planar-surface</guid><category>gsoc</category><category>sympy</category></item><item><title>GSoC'14 Progress: Working with geometry</title><link>http://www.sudhanshumishra.in/gsoc14-progress-working-with-geometry</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div class="markdown-body"&gt;
 &lt;div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;"&gt;
 &lt;span style="background-color: white;"&gt;This week I
@@ -170,7 +170,7 @@ That's all for now.
 
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra (noreply@blogger.com)</dc:creator><pubDate>Tue, 08 Jul 2014 17:24:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-07-08:gsoc14-progress-working-with-geometry</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC'14 progress: Week 6</title><link>http://www.sudhanshumishra.in/gsoc14-progress-week-6</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Tue, 08 Jul 2014 17:24:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-07-08:gsoc14-progress-working-with-geometry</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC'14 progress: Week 6</title><link>http://www.sudhanshumishra.in/gsoc14-progress-week-6</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 It was a busy week though I managed to do some work.
 
@@ -217,7 +217,7 @@ That's all for now. *Cheers!*
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra (noreply@blogger.com)</dc:creator><pubDate>Wed, 02 Jul 2014 03:27:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-07-02:gsoc14-progress-week-6</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC'14 progress, Week 5</title><link>http://www.sudhanshumishra.in/gsoc14-progress-week-5</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Wed, 02 Jul 2014 03:27:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-07-02:gsoc14-progress-week-6</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC'14 progress, Week 5</title><link>http://www.sudhanshumishra.in/gsoc14-progress-week-5</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 I did good amount of work this week. I sent a small part of it related
 to ray tracing for review.
@@ -270,7 +270,7 @@ That's all for now. *Cheers!*
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra (noreply@blogger.com)</dc:creator><pubDate>Mon, 23 Jun 2014 17:59:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-06-23:gsoc14-progress-week-5</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC'14 progress, week 4: finished medium, working on Fermat's principle and Snell's law</title><link>http://www.sudhanshumishra.in/gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Mon, 23 Jun 2014 17:59:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-06-23:gsoc14-progress-week-5</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC'14 progress, week 4: finished medium, working on Fermat's principle and Snell's law</title><link>http://www.sudhanshumishra.in/gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 It was a great week! My last to last PR, on
 enhancing `TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"},
@@ -331,7 +331,7 @@ That's all for now. Cheers!
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra (noreply@blogger.com)</dc:creator><pubDate>Mon, 16 Jun 2014 19:32:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-06-16:gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC'14: Third week</title><link>http://www.sudhanshumishra.in/gsoc14-third-week</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Mon, 16 Jun 2014 19:32:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-06-16:gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC'14: Third week</title><link>http://www.sudhanshumishra.in/gsoc14-third-week</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 It was another not so productive week but I learnt a lot regarding how
 to write new classes by extending classes
@@ -438,7 +438,7 @@ comments. I would be happy to get some feedback.
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra (noreply@blogger.com)</dc:creator><pubDate>Tue, 10 Jun 2014 10:08:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-06-10:gsoc14-third-week</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC'14 Progress: Finishing TWave</title><link>http://www.sudhanshumishra.in/gsoc14-progress-finishing-twave</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Tue, 10 Jun 2014 10:08:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-06-10:gsoc14-third-week</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC'14 Progress: Finishing TWave</title><link>http://www.sudhanshumishra.in/gsoc14-progress-finishing-twave</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="margin-bottom: 9px;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 This last week most of the coding I did was only related to transverse
@@ -553,7 +553,7 @@ This is all for now. Cheers!
 
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra (noreply@blogger.com)</dc:creator><pubDate>Mon, 02 Jun 2014 02:02:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-06-02:gsoc14-progress-finishing-twave</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC 14: First Week</title><link>http://www.sudhanshumishra.in/gsoc-14-first-week</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Mon, 02 Jun 2014 02:02:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-06-02:gsoc14-progress-finishing-twave</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC 14: First Week</title><link>http://www.sudhanshumishra.in/gsoc-14-first-week</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3em; margin-bottom: 1.2em;"&gt;
 The first week of GSoC is going to end very soon. I started working very
 late this week because of some issues. I spent most of my time in
@@ -600,7 +600,7 @@ There were no hiccups yet!
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra (noreply@blogger.com)</dc:creator><pubDate>Sun, 25 May 2014 00:14:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-05-25:gsoc-14-first-week</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC 2014 with SymPy</title><link>http://www.sudhanshumishra.in/gsoc-2014-with-sympy</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Sun, 25 May 2014 00:14:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-05-25:gsoc-14-first-week</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC 2014 with SymPy</title><link>http://www.sudhanshumishra.in/gsoc-2014-with-sympy</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="text-align: left;"&gt;
 
 My proposal is intended to add more to optics in SymPy. Till now it can
@@ -644,4 +644,4 @@ working on few old pull requests that are dead for so long.  &lt;/p&gt;
 &lt;p&gt;Looking forward to work with such a great organization! Thanks to Google
 and SymPy for this opportunity!&lt;/p&gt;
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra (noreply@blogger.com)</dc:creator><pubDate>Fri, 25 Apr 2014 18:00:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-04-25:gsoc-2014-with-sympy</guid><category>gsoc</category><category>sympy</category></item></channel></rss>
+&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Fri, 25 Apr 2014 18:00:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-04-25:gsoc-2014-with-sympy</guid><category>gsoc</category><category>sympy</category></item></channel></rss>
