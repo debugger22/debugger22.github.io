@@ -13,7 +13,7 @@
 @import url("pygment.css");
 @import url("typogrify.css");
 @import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
-@import url(//fonts.googleapis.com/css?family=Roboto+Condensed:600);
+@import url(//fonts.googleapis.com/css?family=Roboto+Condensed:400);
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
 
 /***** Global *****/
@@ -148,7 +148,7 @@ aside, nav, article, figure {
 }
 
 /***** Layout *****/
-.body {clear: both; margin: 0 auto; width: 800px;}
+.body {clear: both; margin: 0 auto; width: 80%;}
 img.right, figure.right {float: right; margin: 0 0 2em 2em;}
 img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 
