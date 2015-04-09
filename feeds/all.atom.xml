@@ -34,7 +34,7 @@
 
 
 &lt;h2&gt;Add&amp;nbsp;contents&lt;/h2&gt;
-&lt;p&gt;Adding content is very easy. You just have to create markdown files with extension &lt;code&gt;.md&lt;/code&gt; in &lt;code&gt;content&lt;/code&gt; directory and it will automatically convert them into publishable &lt;code&gt;html&lt;/code&gt;. The command to import contents from blogger actually converted all my posts into markdown files and saved them into &lt;code&gt;content&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;Adding content is very easy. You just have to create markdown files with extension &lt;code&gt;.md&lt;/code&gt; in the &lt;code&gt;content&lt;/code&gt; directory and it will automatically convert them into publishable &lt;code&gt;html&lt;/code&gt;. The command to import contents from blogger actually converted all my posts into markdown files and saved them into the &lt;code&gt;content&lt;/code&gt; directory.&lt;/p&gt;
 &lt;p&gt;Pelican follows a certain format for articles. For instance, here&amp;#8217;s the format for this&amp;nbsp;article:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;Title: Moving to a static site generator
 Date: 2015-04-09 06:50
