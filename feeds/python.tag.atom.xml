@@ -1,13 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/python.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2015-01-07T16:51:00+05:30</updated><entry><title>Top Hacker News Archive</title><link href="http://www.sudhanshumishra.in/top-hacker-news-archive" rel="alternate"></link><updated>2015-01-07T16:51:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-01-07:top-hacker-news-archive</id><summary type="html">&lt;p&gt;&lt;a href="https://news.ycombinator.com/"&gt;Hacker News'&lt;/a&gt; top 5 entries are some
-beautiful stories that can't be missed by a technology enthusiast. The
-problem is HN gives more weight-age to the period of existence of a post
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/python.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2015-04-09T06:50:00+05:30</updated><entry><title>Moving to a static site generator</title><link href="http://www.sudhanshumishra.in/moving-to-a-static-site-generator" rel="alternate"></link><updated>2015-04-09T06:50:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-04-09:moving-to-a-static-site-generator</id><summary type="html">&lt;p&gt;Finally I moved to a static site generator for my homepage + blog. Previously, I was using &lt;a href="http://blog.sudhanshumishra.in"&gt;blogger&lt;/a&gt; which was really annoying when writing a technical post. Code formatting was&amp;nbsp;bizarre!&lt;/p&gt;
+&lt;p&gt;Of all the static website generators I chose &lt;a href="http://getpelican.com"&gt;Pelican&lt;/a&gt;. It is written in Python and it doesn&amp;#8217;t require any database at the server side. I can write articles in &lt;strong&gt;markdown&lt;/strong&gt; which gives me full control over code highlighting! I know that these things are also possible with &lt;a href="http://jekyllrb.com/"&gt;Jekyll&lt;/a&gt; but the fact that Jekyll builds the complete site everytime which may take upto minutes, set me off. Moreover, Pelican is in&amp;nbsp;Python!&lt;/p&gt;
+&lt;p&gt;Pelican also gives you a nice way of importing contents from your old blog. I used following command to do&amp;nbsp;that.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pelican-import  --feed http://blog.sudhanshumishra.in/feeds/posts/default/ -o content/ -m markdown
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I&amp;#8217;ll explain what it actually did a bit&amp;nbsp;later.&lt;/p&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;p&gt;You can install it very easily with &lt;code&gt;pip&lt;/code&gt;. For a full installation(with markdown support) issue following&amp;nbsp;command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install --upgrade pelican markdown typogriphy
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Kickstart your&amp;nbsp;website&lt;/h2&gt;
+&lt;p&gt;Now create your project folder and &lt;code&gt;cd&lt;/code&gt; into it. After navigating into your project folder issue following&amp;nbsp;command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pelican-quickstart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If Pelican was installed successfully on your computer, it will prompt you with a questionnaire having very simple questions. Answer them and it&amp;#8217;ll generate skeleton files for your&amp;nbsp;website.&lt;/p&gt;
+&lt;p&gt;The directory structure looks somewhat like&amp;nbsp;this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;yourproject/
+├── content
+│   └── (pages)
+├── output
+├── develop_server.sh
+├── fabfile.py
+├── Makefile
+├── pelicanconf.py       # Main settings file
+└── publishconf.py       # Settings to use when ready to publish
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Add&amp;nbsp;contents&lt;/h2&gt;
+&lt;p&gt;Adding content is very easy. You just have to create markdown files with extension &lt;code&gt;.md&lt;/code&gt; in &lt;code&gt;content&lt;/code&gt; directory and it will automatically convert them into publishable &lt;code&gt;html&lt;/code&gt;. The command to import contents from blogger actually converted all my posts into markdown files and saved them into &lt;code&gt;content&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;Pelican follows a certain format for articles. For instance, here&amp;#8217;s the format for this&amp;nbsp;article:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Title: Moving to a static site generator
+Date: 2015-04-09 06:50
+Author: Sudhanshu Mishra
+Category: Programming
+Tags: Python
+Slug: moving-to-a-static-site-generator
+
+Finally I moved to a static site generator for my homepage + blog website.
+Previously, I was using [blogger](http://blog.sudhanshumishra.in) which was really
+annoying while writing a technical post. Code formatting was bizarre!
+
+...
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Publish&lt;/h2&gt;
+&lt;p&gt;Once you are done with the article just issue following command to generate &lt;code&gt;html&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;make html
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will generate &lt;code&gt;html&lt;/code&gt; along with assets in the &lt;code&gt;output&lt;/code&gt; directory. Since I&amp;#8217;m using GitHub pages to host my website, I used &lt;code&gt;output&lt;/code&gt; directory as my git repository having &lt;code&gt;CNAME&lt;/code&gt; file. Now just commit those files and push to your repository(&lt;your_username&gt;.github.io). Learn more about GitHub pages &lt;a href="https://pages.github.com/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to change theme or add plugins please visit the &lt;a href="http://docs.getpelican.com/"&gt;documentation&lt;/a&gt;.&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>Top Hacker News Archive</title><link href="http://www.sudhanshumishra.in/top-hacker-news-archive" rel="alternate"></link><updated>2015-01-07T16:51:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-01-07:top-hacker-news-archive</id><summary type="html">&lt;p&gt;&lt;a href="https://news.ycombinator.com/"&gt;Hacker News&amp;#8217;&lt;/a&gt; top 5 entries are some
+beautiful stories that can&amp;#8217;t be missed by a technology enthusiast. The
+problem is &lt;span class="caps"&gt;HN&lt;/span&gt; gives more weight-age to the period of existence of a post
 and hence articles decay rapidly as time passes. I try my best to read
-most of them but it's certainly not possible if you've got other things
-to do. :)&lt;/p&gt;
+most of them but it&amp;#8217;s certainly not possible if you&amp;#8217;ve got other things
+to do.&amp;nbsp;:)&lt;/p&gt;
 &lt;p&gt;To overcome this problem I wrote a small script to pull all those
-entries and save it for me even when I'm away. Perhaps this will help my
-obsession with hacker news.&lt;/p&gt;
-&lt;p&gt;Once I have enough articles, I'll host them on the web with real time
-addition of new articles for everyone. I'll think about other good
-sources too.&lt;/p&gt;</summary><category term="python"></category><category term="Web"></category></entry></feed>
+entries and save it for me even when I&amp;#8217;m away. Perhaps this will help my
+obsession with hacker&amp;nbsp;news.&lt;/p&gt;
+&lt;p&gt;Once I have enough articles, I&amp;#8217;ll host them on the web with real time
+addition of new articles for everyone. I&amp;#8217;ll think about other good
+sources&amp;nbsp;too.&lt;/p&gt;</summary><category term="python"></category><category term="Web"></category></entry></feed>

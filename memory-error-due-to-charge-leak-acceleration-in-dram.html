@@ -15,7 +15,7 @@
         <header id="banner" class="body">
                 <h1><a href="http://www.sudhanshumishra.in/">Shortlog </a></h1>
                 <nav><ul>
-                    <li><a href="http://www.sudhanshumishra.in/about-me">About me</a></li>
+                    <li><a href="http://www.sudhanshumishra.in/about-me">About&nbsp;me</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/android.html">Android</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/cloud-computing.html">Cloud Computing</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a></li>
@@ -28,7 +28,7 @@
     <header>
       <h1 class="entry-title">
         <a href="http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram" rel="bookmark"
-           title="Permalink to Memory Error due to charge leak acceleration in DRAM">Memory Error due to charge leak acceleration in DRAM</a></h1>
+           title="Permalink to Memory Error due to charge leak acceleration in DRAM">Memory Error due to charge leak acceleration in <span class="caps">DRAM</span></a></h1>
     </header>
 
     <div class="entry-content">
@@ -42,12 +42,12 @@
         </address>
 <p>In <a href="http://www.sudhanshumishra.in/category/programming.html">Programming</a>. </p>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/electronics.html">Electronics</a> </p>
-</footer><!-- /.post-info -->      <p>DRAM comprises a two-dimensional array of DRAM cells, each of which
+</footer><!-- /.post-info -->      <p><span class="caps">DRAM</span> comprises a two-dimensional array of <span class="caps">DRAM</span> cells, each of which
 consists of a capacitor and an access-transistor. Depending on whether
 its capacitor is fully charged or fully discharged, a cell is in either
 the charged state or the discharged state, respectively. These two
 states are used to represent a binary data value.
-Dense packaging in DRAM leads to anomalies while performing continuous
+Dense packaging in <span class="caps">DRAM</span> leads to anomalies while performing continuous
 read operations from same memory address which involves opening and
 closing of the wordline. This anomaly will not be evident if the data is
 read from an address after opening a wordline and not closing it. When
@@ -57,8 +57,8 @@ wordline have a disturbance effect on nearby rows, inducing some of
 their cells to leak charge at an accelerated rate. If such a cell loses
 too much charge before it is restored to its original value, it
 experiences a disturbance error.This disturbance results mostly in
-flipped bit value.Here's the assembly code which may induce errors when
-executed on Intel/AMD machines.</p>
+flipped bit value.Here&#8217;s the assembly code which may induce errors when
+executed on Intel/<span class="caps">AMD</span>&nbsp;machines.</p>
 <div class="highlight"><pre>loop:
     mov X, %eax  ; Read from address X and save in register including
 cache
@@ -71,7 +71,7 @@ cache
 
 
 <p>On the other hand, the following code will not induce errors because it
-does not force continuous toggling of the wordline.</p>
+does not force continuous toggling of the&nbsp;wordline.</p>
 <div class="highlight"><pre>loop:
     mov X, %eax  ; Read from address X and save in register including
 cache
@@ -81,23 +81,23 @@ cache
 </pre></div>
 
 
-<p>These disturbances violate two invariants that memory should provide</p>
+<p>These disturbances violate two invariants that memory should&nbsp;provide</p>
 <ul>
-<li>A read access should not modify data at any address</li>
-<li>A write access should modify data only at the address being written to</li>
+<li>A read access should not modify data at any&nbsp;address</li>
+<li>A write access should modify data only at the address being written&nbsp;to</li>
 </ul>
-<p>This makes systems, using DRAM, vulnerable to data corruption.</p>
+<p>This makes systems, using <span class="caps">DRAM</span>, vulnerable to data&nbsp;corruption.</p>
 <p>References:</p>
 <ol>
 <li>
 <p>Yoongu Kim, Ross Daly, Jeremie Kim, Chris Fallin, Ji Hye Lee,
 Donghyuk Lee, Chris Wilkerson, Konrad Lai, Onur Mutlu et al. Flipping
-Bits in Memory Without Accessing Them: An Experimental Study of DRAM
-Disturbance Errors, 2014.</p>
+Bits in Memory Without Accessing Them: An Experimental Study of <span class="caps">DRAM</span>
+Disturbance Errors,&nbsp;2014.</p>
 </li>
 <li>
-<p>A. J. van de Goor and I. Schanstra. Address and Data Scrambling:
-Causes and Impact on Memory Tests. In DELTA, 2002</p>
+<p><span class="caps">A. J.</span> van de Goor and I. Schanstra. Address and Data Scrambling:
+Causes and Impact on Memory Tests. In <span class="caps">DELTA</span>,&nbsp;2002</p>
 </li>
 </ol>
     </div><!-- /.entry-content -->

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/sympy.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2014-08-11T11:27:00+05:30</updated><entry><title>GSoC'14 progress: Week 12</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-12" rel="alternate"></link><updated>2014-08-11T11:27:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-08-11:gsoc14-progress-week-12</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/sympy.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2014-08-11T11:27:00+05:30</updated><entry><title>GSoC‘14 progress: Week 12</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-12" rel="alternate"></link><updated>2014-08-11T11:27:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-08-11:gsoc14-progress-week-12</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 
 &lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
@@ -9,12 +9,12 @@ master.
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Currently I am working on converting my incopmlete PR related to
+Currently I am working on converting my incopmlete &lt;span class="caps"&gt;PR&lt;/span&gt; related to
 geometrical optics in 3D into 2D. Creating these classes in 3D will make
 it difficult to use/extend. I referred to some books and I never saw use
 of too much 3D in their illustrations. Depending on the use cases we can
 consider adding it later after gsoc. As of now optics module can not be
-called complete and hence I'll be working on it post gsoc.
+called complete and hence I&amp;#8217;ll be working on it post gsoc.
 
 &lt;/div&gt;
 
@@ -27,20 +27,20 @@ follows:
 &lt;ul&gt;
 &lt;li&gt;Interference&lt;/li&gt;
 &lt;li&gt;Diffraction&lt;/li&gt;
-&lt;li&gt;IPython notebooks for examples&lt;/li&gt;
+&lt;li&gt;IPython notebooks for&amp;nbsp;examples&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Week 10: Adding more to utils</title><link href="http://www.sudhanshumishra.in/gsoc14-week-10-adding-more-to-utils" rel="alternate"></link><updated>2014-07-28T09:05:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-28:gsoc14-week-10-adding-more-to-utils</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC‘14 Week 10: Adding more to utils</title><link href="http://www.sudhanshumishra.in/gsoc14-week-10-adding-more-to-utils" rel="alternate"></link><updated>2014-07-28T09:05:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-28:gsoc14-week-10-adding-more-to-utils</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 This week I worked on adding more utility function in optics. Some of
-them are yet to be added. I'll send a pull request once I write tests
+them are yet to be added. I&amp;#8217;ll send a pull request once I write tests
 for them.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Here's the link to the code pushed till now:
+Here&amp;#8217;s the link to the code pushed till now:
 
 &lt;/div&gt;
 
@@ -51,18 +51,18 @@ Here's the link to the code pushed till now:
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 I also worked on one of my pending
-PR(&lt;https://github.com/sympy/sympy/pull/7686&gt;) parameterizing a 3D
+&lt;span class="caps"&gt;PR&lt;/span&gt;(&lt;https://github.com/sympy/sympy/pull/7686&gt;) parameterizing a 3D
 circle. This will make the implementation a bit easier.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Tomorrow I'll be going back to college.
+Tomorrow I&amp;#8217;ll be going back to college.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-That's all for now. Cheers!
+That&amp;#8217;s all for now. Cheers!
 
 &lt;/div&gt;
 
@@ -71,9 +71,9 @@ That's all for now. Cheers!
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Progress: Finished refraction at planar surface</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-finished-refraction-at-planar-surface" rel="alternate"></link><updated>2014-07-20T14:32:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-20:gsoc14-progress-finished-refraction-at-planar-surface</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC‘14 Progress: Finished refraction at planar surface</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-finished-refraction-at-planar-surface" rel="alternate"></link><updated>2014-07-20T14:32:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-20:gsoc14-progress-finished-refraction-at-planar-surface</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-I'm sorry for this delayed post. I couldn't work last week due to some
+I&amp;#8217;m sorry for this delayed post. I couldn&amp;#8217;t work last week due to some
 other issues so had nothing much to report.
 
 &lt;/div&gt;
@@ -91,58 +91,58 @@ of deviation. Details can be found on the following link
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-I'm waiting for Sean to start reviewing this.
+I&amp;#8217;m waiting for Sean to start reviewing this.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-My next priority is to complete a pending PR on mirrors.
+My next priority is to complete a pending &lt;span class="caps"&gt;PR&lt;/span&gt; on mirrors.
 
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Progress: Working with geometry</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-working-with-geometry" rel="alternate"></link><updated>2014-07-08T17:24:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-08:gsoc14-progress-working-with-geometry</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC‘14 Progress: Working with geometry</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-working-with-geometry" rel="alternate"></link><updated>2014-07-08T17:24:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-08:gsoc14-progress-working-with-geometry</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div class="markdown-body"&gt;
 &lt;div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;"&gt;
 &lt;span style="background-color: white;"&gt;This week I
-completed `refraction_angle`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}.
+completed `refraction_angle`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;}.
 Now it also works
-with `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} and `Plane`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}.
+with `Ray3D`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} and `Plane`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;}.
 This function calculates transmitted vector after
-refraction. `medium1`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} and `medium2`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} can
-be `Medium`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}or
+refraction. `medium1`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} and `medium2`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} can
+be `Medium`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;}or
 any sympifiable object.
-If`incident`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} is
+If`incident`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} is
 an object
-of `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}, `normal`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} also
+of `Ray3D`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;}, `normal`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} also
 has to be an instance
-of `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} in
+of `Ray3D`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} in
 order to get the output as
-a `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}.
+a `Ray3D`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;}.
 If plane of separation is not provided and normal is an instance
-of `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"},
+of `Ray3D`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;},
 normal will be assumed to be intersecting incident ray at the plane of
 separation. This will not be the case
-when `normal`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} is
-a `Matrix`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} or
+when `normal`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} is
+a `Matrix`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} or
 any other sequence.   
-If `incident`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} is
+If `incident`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} is
 an instance
-of `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} and `plane`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} has
+of `Ray3D`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} and `plane`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} has
 not been provided
-and `normal`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} is
-not`Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"},
+and `normal`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} is
+not`Ray3D`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;},
 output will be
-a `Matrix`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}.
+a `Matrix`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;}.
 It is dependent
-on `Plane`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} so
+on `Plane`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} so
 I haven’t added tests for it.&lt;/span&gt;
 
 &lt;/div&gt;
 
 &lt;div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;"&gt;
 &lt;span style="background-color: white;"&gt;Here’s the link to the
-PR &lt;https://github.com/sympy/sympy/pull/7626&gt;&lt;/span&gt;
+&lt;span class="caps"&gt;PR&lt;/span&gt; &lt;https://github.com/sympy/sympy/pull/7626&gt;&lt;/span&gt;
 
 &lt;/div&gt;
 
@@ -151,39 +151,39 @@ PR &lt;https://github.com/sympy/sympy/pull/7626&gt;&lt;/span&gt;
 spherical mirrors in SymPy. There are few issues that I am facing.
 Currently I’m working(stuck) on locating mirrors in space. It’s an
 amalgamation of 2D and 3D geometry. I still have to subclass Ray of
-geometry and make it useful for this. I’ve sent a [WIP
-PR](https://github.com/sympy/sympy/pull/7686).&lt;/span&gt;
+geometry and make it useful for this. I’ve sent a [&lt;span class="caps"&gt;WIP&lt;/span&gt;
+&lt;span class="caps"&gt;PR&lt;/span&gt;](https://github.com/sympy/sympy/pull/7686).&lt;/span&gt;
 
 &lt;/div&gt;
 
 &lt;div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;"&gt;
 &lt;span style="background-color: white;"&gt;I’m waiting for Sean to
-merge [this](https://github.com/sympy/sympy/pull/7607) long waited PR
+merge [this](https://github.com/sympy/sympy/pull/7607) long waited &lt;span class="caps"&gt;PR&lt;/span&gt;
 for moving Gaussian optics module.&lt;/span&gt;
 
 &lt;/div&gt;
 
 &lt;div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;"&gt;
-That's all for now.
+That&amp;#8217;s all for now.
 
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 progress: Week 6</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-6" rel="alternate"></link><updated>2014-07-02T03:27:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-02:gsoc14-progress-week-6</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC‘14 progress: Week 6</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-6" rel="alternate"></link><updated>2014-07-02T03:27:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-02:gsoc14-progress-week-6</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 It was a busy week though I managed to do some work.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-I've been working on following things:
+I&amp;#8217;ve been working on following things:
 
 &lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Integrating &lt;code style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"&gt;TWave&lt;/code&gt; with &lt;code style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"&gt;refraction_angle&lt;/code&gt;(&lt;a href="https://github.com/sympy/sympy/pull/7626"&gt;7626&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Interference class&lt;/li&gt;
+&lt;li&gt;Interference&amp;nbsp;class&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 Some blocking 3D geometry code got merged yesterday which gives me a lot
@@ -193,13 +193,13 @@ of new things to work on. :-)
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 I also tried to take a look on very
-old [patch](https://github.com/sympy/sympy/pull/1226) for `gaussopt`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}.
+old [patch](https://github.com/sympy/sympy/pull/1226) for `gaussopt`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 This week I wrote a script to update the development documentation when
-a PR gets merged into the master. This is up and running.
+a &lt;span class="caps"&gt;PR&lt;/span&gt; gets merged into the master. This is up and running.
 
 &lt;/div&gt;
 
@@ -212,12 +212,12 @@ their constant support.
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-That's all for now. *Cheers!*
+That&amp;#8217;s all for now. *Cheers!*
 
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 progress, Week 5</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-5" rel="alternate"></link><updated>2014-06-23T17:59:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-23:gsoc14-progress-week-5</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC‘14 progress, Week 5</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-5" rel="alternate"></link><updated>2014-06-23T17:59:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-23:gsoc14-progress-week-5</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 I did good amount of work this week. I sent a small part of it related
 to ray tracing for review.
@@ -229,20 +229,20 @@ to ray tracing for review.
 &lt;/ul&gt;
 &lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 I got some great suggestions from Sean to make it compatible directly
-with&lt;span style="color: #444444;"&gt; &lt;/span&gt;`TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}&lt;span style="color: #444444;"&gt; &lt;/span&gt;class.
-It is a WIP as I'm waiting for few 3D geometry classes. I'm also working
-on inteference of light waves and I hope that I'll send it for review in
-next couple of days. My last PR on medium is still unmerged and I really
+with&lt;span style="color: #444444;"&gt; &lt;/span&gt;`TWave`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}&lt;span style="color: #444444;"&gt; &lt;/span&gt;class.
+It is a &lt;span class="caps"&gt;WIP&lt;/span&gt; as I&amp;#8217;m waiting for few 3D geometry classes. I&amp;#8217;m also working
+on inteference of light waves and I hope that I&amp;#8217;ll send it for review in
+next couple of days. My last &lt;span class="caps"&gt;PR&lt;/span&gt; on medium is still unmerged and I really
 need it to be in master to work on more implementations.
 
 &lt;/div&gt;
 
 &lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-I'm also trying to
-move&lt;span style="color: #444444;"&gt; &lt;/span&gt;`physics/gaussopt`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}&lt;span style="color: #444444;"&gt; &lt;/span&gt;to&lt;span style="color: #444444;"&gt; &lt;/span&gt;`physics/optics/gaussopt`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}&lt;span style="color: #444444;"&gt; &lt;/span&gt;as
-it'll be good to keep things related to optics at the same place. I'm
-waiting for opinion of the community about it. Here's the link to that
-PR:
+I&amp;#8217;m also trying to
+move&lt;span style="color: #444444;"&gt; &lt;/span&gt;`physics/gaussopt`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}&lt;span style="color: #444444;"&gt; &lt;/span&gt;to&lt;span style="color: #444444;"&gt; &lt;/span&gt;`physics/optics/gaussopt`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}&lt;span style="color: #444444;"&gt; &lt;/span&gt;as
+it&amp;#8217;ll be good to keep things related to optics at the same place. I&amp;#8217;m
+waiting for opinion of the community about it. Here&amp;#8217;s the link to that
+&lt;span class="caps"&gt;PR&lt;/span&gt;:
 
 &lt;/div&gt;
 
@@ -250,7 +250,7 @@ PR:
 &lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/7607"&gt;https://github.com/sympy/sympy/pull/7607&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Here is some other minor work that I've done this week outside of
+Here is some other minor work that I&amp;#8217;ve done this week outside of
 optics:
 
 &lt;/div&gt;
@@ -265,18 +265,18 @@ optics:
 &lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/7629"&gt;https://github.com/sympy/sympy/pull/7629&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-That's all for now. *Cheers!*
+That&amp;#8217;s all for now. *Cheers!*
 
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 progress, week 4: finished medium, working on Fermat's principle and Snell's law</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law" rel="alternate"></link><updated>2014-06-16T19:32:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-16:gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC‘14 progress, week 4: finished medium, working on Fermat’s principle and Snell’s law</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law" rel="alternate"></link><updated>2014-06-16T19:32:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-16:gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-It was a great week! My last to last PR, on
-enhancing `TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"},
+It was a great week! My last to last &lt;span class="caps"&gt;PR&lt;/span&gt;, on
+enhancing `TWave`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;},
 got merged! I have also
-finished`Medium`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} and
-waiting for Sean's comments on it. Here's the link to that PR:
+finished`Medium`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} and
+waiting for Sean&amp;#8217;s comments on it. Here&amp;#8217;s the link to that &lt;span class="caps"&gt;PR&lt;/span&gt;:
 
 &lt;/div&gt;
 
@@ -295,18 +295,18 @@ I still have a *todo* in the tests:
 
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-This `m5.speed`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} is
+This `m5.speed`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} is
 equal
-to `225407863.157895*m/s`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} (or
+to `225407863.157895*m/s`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} (or
 maybe very close to it) but, assertion results in a failure.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 Similarly in the constructor of
-the `Medium`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} inconsistency
+the `Medium`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} inconsistency
 comes due to slight difference in floating point parameters(permittivity
-and permeability). I've commented out this part of my code. Maybe Sean
+and permeability). I&amp;#8217;ve commented out this part of my code. Maybe Sean
 will suggest a better way to do it.
 
 &lt;/div&gt;
@@ -316,8 +316,8 @@ will suggest a better way to do it.
 
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-As soon as it gets merged, I'll make necessary changes in Fermat's
-principle and Snell's law part of the code and send a PR to review.
+As soon as it gets merged, I&amp;#8217;ll make necessary changes in Fermat&amp;#8217;s
+principle and Snell&amp;#8217;s law part of the code and send a &lt;span class="caps"&gt;PR&lt;/span&gt; to review.
 
 &lt;/div&gt;
 
@@ -326,25 +326,25 @@ Now I realize that the next two weeks are not going to be a joy ride for
 me. I must finish major part of geometrical optics as written in my
 proposal.
 
-That's all for now. Cheers!
+That&amp;#8217;s all for now. Cheers!
 
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14: Third week</title><link href="http://www.sudhanshumishra.in/gsoc14-third-week" rel="alternate"></link><updated>2014-06-10T10:08:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-10:gsoc14-third-week</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC‘14: Third week</title><link href="http://www.sudhanshumishra.in/gsoc14-third-week" rel="alternate"></link><updated>2014-06-10T10:08:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-10:gsoc14-third-week</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 It was another not so productive week but I learnt a lot regarding how
 to write new classes by extending classes
-like `Basic`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}, `Symbol`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} and `Expr`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}.
+like `Basic`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}, `Symbol`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} and `Expr`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 Last week I got stuck with the rewrite expression mechanism which turned
 out to be a bug in
-the `core`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}.
+the `core`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}.
 Thanks to [Sean](https://github.com/flacjacket) for the fix! I need to
-do some more cleanup to get my last PR merged.
+do some more cleanup to get my last &lt;span class="caps"&gt;PR&lt;/span&gt; merged.
 
 &lt;/div&gt;
 
@@ -354,12 +354,12 @@ do some more cleanup to get my last PR merged.
 &lt;div&gt;
 &lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt;I
 also tried to fix an issue related to assumptions
-in &lt;/span&gt;`Function`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; line-height: 18px; padding: 3px 4px;"}&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt; but
+in &lt;/span&gt;`Function`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; line-height: 18px; padding: 3px 4px;&amp;#8221;}&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt; but
 the complex behaviour
-of &lt;/span&gt;`__new__`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; line-height: 18px; padding: 3px 4px;"}&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt; constructor
+of &lt;/span&gt;`__new__`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; line-height: 18px; padding: 3px 4px;&amp;#8221;}&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt; constructor
 makes it difficult to follow the inheritance. I also need to understand
-the working of SymPy's
- &lt;/span&gt;`@cacheit`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; line-height: 18px; padding: 3px 4px;"}&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt; 
+the working of SymPy&amp;#8217;s
+ &lt;/span&gt;`@cacheit`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; line-height: 18px; padding: 3px 4px;&amp;#8221;}&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt; 
 decorator.&lt;/span&gt;
 
 &lt;/div&gt;
@@ -371,9 +371,9 @@ decorator.&lt;/span&gt;
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Lately I've been working on the implementation of optical medium. The
+Lately I&amp;#8217;ve been working on the implementation of optical medium. The
 motivation behind defining
-a`Medium`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} came
+a`Medium`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} came
 from the laziness of passing constants like electric permittivity and
 magnetic permeabhility of the medium everywhere. It will help carry out
 operations(events) very easily in optics.
@@ -382,16 +382,16 @@ operations(events) very easily in optics.
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 With the merger
-of `Point3D`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} by [Akshay](https://github.com/akshayah3) I
-planned to implement Fermat's principle and thus felt the need
-of `Medium`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} first.
+of `Point3D`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} by [Akshay](https://github.com/akshayah3) I
+planned to implement Fermat&amp;#8217;s principle and thus felt the need
+of `Medium`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} first.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-I've already sent a WIP pull request
-for `Medium`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}.
-Here's the link:
+I&amp;#8217;ve already sent a &lt;span class="caps"&gt;WIP&lt;/span&gt; pull request
+for `Medium`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}.
+Here&amp;#8217;s the link:
 
 &lt;/div&gt;
 
@@ -400,7 +400,7 @@ Here's the link:
 &lt;/ul&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 I also took a quick glance at variational calculus to solve the problem
-involving Fermat's principle. I'm planning to start this as following:
+involving Fermat&amp;#8217;s principle. I&amp;#8217;m planning to start this as following:
 
 &lt;/div&gt;
 
@@ -409,7 +409,7 @@ involving Fermat's principle. I'm planning to start this as following:
 
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-It's not a very good API and needs more refining which I'll discuss with
+It&amp;#8217;s not a very good &lt;span class="caps"&gt;API&lt;/span&gt; and needs more refining which I&amp;#8217;ll discuss with
 Sean once I get it working.
 
 &lt;/div&gt;
@@ -427,7 +427,7 @@ rains yet. :(
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-*That's all for now. Cheers!*
+*That&amp;#8217;s all for now. Cheers!*
 
 &lt;/div&gt;
 
@@ -438,7 +438,7 @@ comments. I would be happy to get some feedback.
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Progress: Finishing TWave</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-finishing-twave" rel="alternate"></link><updated>2014-06-02T02:02:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-02:gsoc14-progress-finishing-twave</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC‘14 Progress: Finishing TWave</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-finishing-twave" rel="alternate"></link><updated>2014-06-02T02:02:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-02:gsoc14-progress-finishing-twave</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="margin-bottom: 9px;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 This last week most of the coding I did was only related to transverse
@@ -453,7 +453,7 @@ wave. It has already been merged into the master.
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 Here is the class structure of
-the `TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}:
+the `TWave`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}:
 
 &lt;/div&gt;
 
@@ -462,7 +462,7 @@ the `TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; b
 
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Till now it has been very easy to implement this but these days I'm
+Till now it has been very easy to implement this but these days I&amp;#8217;m
 stuck on writing functions to rewrite an expression using different
 functions. This is supposed to work like this as I feel from the code:
 
@@ -470,11 +470,11 @@ functions. This is supposed to work like this as I feel from the code:
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 When you
-call `expr.rewrite('sin')`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"},
+call `expr.rewrite(&amp;#8216;sin&amp;#8217;)`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;},
 the following code written
-in `sympy.core.basic`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}should
+in `sympy.core.basic`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}should
 make a call to
-function `_eval_rewrite_as_sin(self, *args)`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} defined
+function `_eval_rewrite_as_sin(self, *args)`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} defined
 in the object class.
 
 &lt;/div&gt;
@@ -485,8 +485,8 @@ in the object class.
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 But this is not the case with me. It always ends up
-calling `__str__`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} method.
-This is the PR for the same.
+calling `__str__`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} method.
+This is the &lt;span class="caps"&gt;PR&lt;/span&gt; for the same.
 
 &lt;/div&gt;
 
@@ -503,10 +503,10 @@ great Python debugger which is platform independent.
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-I've also been working on SHM and will submit a PR soon for that.
+I&amp;#8217;ve also been working on &lt;span class="caps"&gt;SHM&lt;/span&gt; and will submit a &lt;span class="caps"&gt;PR&lt;/span&gt; soon for that.
 Besides my project, I also closed two issues this week related to
 printing
-in `sympy.logic`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} and
+in `sympy.logic`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} and
 helped to review few PRs.
 
 &lt;/div&gt;
@@ -514,37 +514,36 @@ helped to review few PRs.
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/sympy/sympy/issues/7179"&gt;https://github.com/sympy/sympy/issues/7179&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/sympy/sympy/issues/7180"&gt;https://github.com/sympy/sympy/issues/7180&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;PR: &lt;a href="https://github.com/sympy/sympy/pull/7541"&gt;https://github.com/sympy/sympy/pull/7541&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;PR&lt;/span&gt;: &lt;a href="https://github.com/sympy/sympy/pull/7541"&gt;https://github.com/sympy/sympy/pull/7541&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 We have a public channel(&lt;https://gitter.im/sympy/sympy/optics&gt;) to
 discuss about my project. You are welcome to join us, we would be more
-than happy to get feedback about the work. It'll help us refine it and
+than happy to get feedback about the work. It&amp;#8217;ll help us refine it and
 cover a wider range of use cases.
 
 &lt;/div&gt;
 
 &lt;h4 id="weeklog" style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; margin: 0px;"&gt;Weeklog&lt;/h4&gt;
-&lt;h6 id="merged" style="color: #999999; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px;"&gt;MERGED&lt;/h6&gt;
+&lt;h6 id="merged" style="color: #999999; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px;"&gt;&lt;span class="caps"&gt;MERGED&lt;/span&gt;&lt;/h6&gt;
 &lt;ul&gt;
-&lt;li&gt;Add tests for pretty printer&lt;/li&gt;
-&lt;li&gt;Remove unnecessary if block&lt;/li&gt;
-&lt;li&gt;Add IPython Notebook Checkpoints to .gitignore&lt;/li&gt;
-&lt;li&gt;Remove double wrapping with u&lt;/li&gt;
-&lt;li&gt;Add tests for printing Equivalent. fixes #7180&lt;/li&gt;
-&lt;li&gt;Wrap unicode chars with u and fix a bug in latex printer&lt;/li&gt;
-&lt;li&gt;Fix a typo in manipulation.rst [skip ci]&lt;/li&gt;
+&lt;li&gt;Add tests for pretty&amp;nbsp;printer&lt;/li&gt;
+&lt;li&gt;Remove unnecessary if&amp;nbsp;block&lt;/li&gt;
+&lt;li&gt;Add IPython Notebook Checkpoints to&amp;nbsp;.gitignore&lt;/li&gt;
+&lt;li&gt;Remove double wrapping with&amp;nbsp;u&lt;/li&gt;
+&lt;li&gt;Add tests for printing Equivalent. fixes&amp;nbsp;#7180&lt;/li&gt;
+&lt;li&gt;Wrap unicode chars with u and fix a bug in latex&amp;nbsp;printer&lt;/li&gt;
+&lt;li&gt;Fix a typo in manipulation.rst [skip&amp;nbsp;ci]&lt;/li&gt;
 &lt;li&gt;Make equivalence symbol same for pretty printer and * latex printer
-    and change not equivalent symbol to u+2262 [skip ci]&lt;/li&gt;
-&lt;li&gt;Fix latex printing for Not(Equivalent) and Not(Implies).&lt;/li&gt;
-&lt;li&gt;Fix pretty printing for Not(Equivalent) and Not(Implies). fixes
-    #7179&lt;/li&gt;
+    and change not equivalent symbol to u+2262 [skip&amp;nbsp;ci]&lt;/li&gt;
+&lt;li&gt;Fix latex printing for Not(Equivalent) and&amp;nbsp;Not(Implies).&lt;/li&gt;
+&lt;li&gt;Fix pretty printing for Not(Equivalent) and Not(Implies). fixes&amp;nbsp;#7179&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h6 id="pending" style="color: #999999; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px;"&gt;PENDING&lt;/h6&gt;
+&lt;h6 id="pending" style="color: #999999; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px;"&gt;&lt;span class="caps"&gt;PENDING&lt;/span&gt;&lt;/h6&gt;
 &lt;ul&gt;
-&lt;li&gt;Change arg to *args [skip ci]&lt;/li&gt;
-&lt;li&gt;Add rewrite expression methods [skip ci]&lt;/li&gt;
-&lt;li&gt;Add wavenumber property&lt;/li&gt;
+&lt;li&gt;Change arg to *args [skip&amp;nbsp;ci]&lt;/li&gt;
+&lt;li&gt;Add rewrite expression methods [skip&amp;nbsp;ci]&lt;/li&gt;
+&lt;li&gt;Add wavenumber&amp;nbsp;property&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 This is all for now. Cheers!
@@ -553,7 +552,7 @@ This is all for now. Cheers!
 
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC 14: First Week</title><link href="http://www.sudhanshumishra.in/gsoc-14-first-week" rel="alternate"></link><updated>2014-05-25T00:14:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-05-25:gsoc-14-first-week</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC 14: First Week</title><link href="http://www.sudhanshumishra.in/gsoc-14-first-week" rel="alternate"></link><updated>2014-05-25T00:14:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-05-25:gsoc-14-first-week</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3em; margin-bottom: 1.2em;"&gt;
 The first week of GSoC is going to end very soon. I started working very
 late this week because of some issues. I spent most of my time in
@@ -575,16 +574,16 @@ This is what my proposal says:
 
 &lt;blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;During this week I'll write code for classical wave equation and
-    simple harmonic motion.&lt;/li&gt;
+&lt;li&gt;During this week I&amp;#8217;ll write code for classical wave equation and
+    simple harmonic&amp;nbsp;motion.&lt;/li&gt;
 &lt;li&gt;Introduction of properties like phase angles, phase velocity, wave
-    velocity, amplitude, intensity, frequency and wavelength. &lt;/li&gt;
+    velocity, amplitude, intensity, frequency and&amp;nbsp;wavelength. &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;div style="color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3em; margin-bottom: 1.2em;"&gt;
 [This](https://github.com/sympy/sympy/pull/7518) is my first pull
 request regarding my project (Thanks to Sean for the quick review). Till
-now I've only added a transverse wave class and will add more to it in
+now I&amp;#8217;ve only added a transverse wave class and will add more to it in
 the next 2 days.
 
 &lt;/div&gt;
@@ -600,7 +599,7 @@ There were no hiccups yet!
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC 2014 with SymPy</title><link href="http://www.sudhanshumishra.in/gsoc-2014-with-sympy" rel="alternate"></link><updated>2014-04-25T18:00:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-25:gsoc-2014-with-sympy</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC 2014 with SymPy</title><link href="http://www.sudhanshumishra.in/gsoc-2014-with-sympy" rel="alternate"></link><updated>2014-04-25T18:00:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-25:gsoc-2014-with-sympy</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="text-align: left;"&gt;
 
 My proposal is intended to add more to optics in SymPy. Till now it can
@@ -615,7 +614,7 @@ Vig](https://github.com/flacjacket) are my mentors for the project.
 &lt;/div&gt;
 
 &lt;div style="text-align: left;"&gt;
-For those who don't know what is SymPy, SymPy is a Python library for
+For those who don&amp;#8217;t know what is SymPy, SymPy is a Python library for
 symbolic computation. It provides computer algebra capabilities either
 as a standalone application, as a library to other applications, or live
 on the web as SymPy Live. SymPy is trivial to install and to inspect
@@ -623,7 +622,7 @@ because is written entirely in Python and because it does not depend on
 any additional libraries. This ease of access combined with a simple and
 extensible code base in a well known language make SymPy a computer
 algebra system with a relatively low barrier to entry. SymPy is free
-software and is licensed under New BSD license. The lead developers are
+software and is licensed under New &lt;span class="caps"&gt;BSD&lt;/span&gt; license. The lead developers are
 Ondřej Čertík and Aaron Meurer.
 
 &lt;/div&gt;
@@ -638,10 +637,10 @@ namely, Akshay, Sachin Joglekar and Soumya Dipta Biswas.
 
 &lt;/div&gt;
 
-&lt;p&gt;During this &lt;em&gt;Community Bonding Period&lt;/em&gt;I'll try to get familiar with the
-huge code base of SymPy and its community of developers. I'm also
-working on few old pull requests that are dead for so long.  &lt;/p&gt;
+&lt;p&gt;During this &lt;em&gt;Community Bonding Period&lt;/em&gt;I&amp;#8217;ll try to get familiar with the
+huge code base of SymPy and its community of developers. I&amp;#8217;m also
+working on few old pull requests that are dead for so&amp;nbsp;long.  &lt;/p&gt;
 &lt;p&gt;Looking forward to work with such a great organization! Thanks to Google
-and SymPy for this opportunity!&lt;/p&gt;
+and SymPy for this&amp;nbsp;opportunity!&lt;/p&gt;
 &lt;p&gt;&lt;/div&gt;
 &lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry></feed>

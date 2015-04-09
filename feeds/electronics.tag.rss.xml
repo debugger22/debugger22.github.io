@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shortlog</title><link>http://www.sudhanshumishra.in/</link><description></description><atom:link href="http://www.sudhanshumishra.in/feeds/electronics.tag.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 16 Jan 2015 19:36:00 +0530</lastBuildDate><item><title>Memory Error due to charge leak acceleration in DRAM</title><link>http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram</link><description>&lt;p&gt;DRAM comprises a two-dimensional array of DRAM cells, each of which
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shortlog</title><link>http://www.sudhanshumishra.in/</link><description></description><atom:link href="http://www.sudhanshumishra.in/feeds/electronics.tag.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 16 Jan 2015 19:36:00 +0530</lastBuildDate><item><title>Memory Error due to charge leak acceleration in DRAM</title><link>http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram</link><description>&lt;p&gt;&lt;span class="caps"&gt;DRAM&lt;/span&gt; comprises a two-dimensional array of &lt;span class="caps"&gt;DRAM&lt;/span&gt; cells, each of which
 consists of a capacitor and an access-transistor. Depending on whether
 its capacitor is fully charged or fully discharged, a cell is in either
 the charged state or the discharged state, respectively. These two
 states are used to represent a binary data value.
-Dense packaging in DRAM leads to anomalies while performing continuous
+Dense packaging in &lt;span class="caps"&gt;DRAM&lt;/span&gt; leads to anomalies while performing continuous
 read operations from same memory address which involves opening and
 closing of the wordline. This anomaly will not be evident if the data is
 read from an address after opening a wordline and not closing it. When
@@ -14,8 +14,8 @@ wordline have a disturbance effect on nearby rows, inducing some of
 their cells to leak charge at an accelerated rate. If such a cell loses
 too much charge before it is restored to its original value, it
 experiences a disturbance error.This disturbance results mostly in
-flipped bit value.Here's the assembly code which may induce errors when
-executed on Intel/AMD machines.&lt;/p&gt;
+flipped bit value.Here&amp;#8217;s the assembly code which may induce errors when
+executed on Intel/&lt;span class="caps"&gt;AMD&lt;/span&gt;&amp;nbsp;machines.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;loop:
     mov X, %eax  ; Read from address X and save in register including
 cache
@@ -28,7 +28,7 @@ cache
 
 
 &lt;p&gt;On the other hand, the following code will not induce errors because it
-does not force continuous toggling of the wordline.&lt;/p&gt;
+does not force continuous toggling of the&amp;nbsp;wordline.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;loop:
     mov X, %eax  ; Read from address X and save in register including
 cache
@@ -38,25 +38,25 @@ cache
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;These disturbances violate two invariants that memory should provide&lt;/p&gt;
+&lt;p&gt;These disturbances violate two invariants that memory should&amp;nbsp;provide&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;A read access should not modify data at any address&lt;/li&gt;
-&lt;li&gt;A write access should modify data only at the address being written to&lt;/li&gt;
+&lt;li&gt;A read access should not modify data at any&amp;nbsp;address&lt;/li&gt;
+&lt;li&gt;A write access should modify data only at the address being written&amp;nbsp;to&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;This makes systems, using DRAM, vulnerable to data corruption.&lt;/p&gt;
+&lt;p&gt;This makes systems, using &lt;span class="caps"&gt;DRAM&lt;/span&gt;, vulnerable to data&amp;nbsp;corruption.&lt;/p&gt;
 &lt;p&gt;References:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Yoongu Kim, Ross Daly, Jeremie Kim, Chris Fallin, Ji Hye Lee,
 Donghyuk Lee, Chris Wilkerson, Konrad Lai, Onur Mutlu et al. Flipping
-Bits in Memory Without Accessing Them: An Experimental Study of DRAM
-Disturbance Errors, 2014.&lt;/p&gt;
+Bits in Memory Without Accessing Them: An Experimental Study of &lt;span class="caps"&gt;DRAM&lt;/span&gt;
+Disturbance Errors,&amp;nbsp;2014.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;A. J. van de Goor and I. Schanstra. Address and Data Scrambling:
-Causes and Impact on Memory Tests. In DELTA, 2002&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;A. J.&lt;/span&gt; van de Goor and I. Schanstra. Address and Data Scrambling:
+Causes and Impact on Memory Tests. In &lt;span class="caps"&gt;DELTA&lt;/span&gt;,&amp;nbsp;2002&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Fri, 16 Jan 2015 19:36:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2015-01-16:memory-error-due-to-charge-leak-acceleration-in-dram</guid><category>Electronics</category></item><item><title>BinPy: N Bit Ripple Counter</title><link>http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Fri, 16 Jan 2015 19:36:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2015-01-16:memory-error-due-to-charge-leak-acceleration-in-dram</guid><category>Electronics</category></item><item><title>BinPy: N Bit Ripple Counter</title><link>http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;
 [![](http://binpy.github.io/images/logo.png)](http://binpy.github.io/images/logo.png)
@@ -64,32 +64,32 @@ Causes and Impact on Memory Tests. In DELTA, 2002&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;&lt;a href="http://binpy.github.io"&gt;BinPy&lt;/a&gt; is almost ready to create things. This
-post focuses on building a ripple counter using it.  &lt;/p&gt;
+post focuses on building a ripple counter using&amp;nbsp;it.  &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Theory&lt;/strong&gt;  &lt;/p&gt;
 &lt;p&gt;A ripple counter is an asynchronous counter where only the first
 flip-flop is clocked by an external clock. All subsequent flip-flops are
 clocked by the output of the preceding flip-flop. Asynchronous counters
 are also called ripple-counters because of the way the clock pulse
-ripples it way through the flip-flops.  &lt;/p&gt;
-&lt;p&gt;The MOD of the ripple counter or asynchronous counter is 2n if n
+ripples it way through the&amp;nbsp;flip-flops.  &lt;/p&gt;
+&lt;p&gt;The &lt;span class="caps"&gt;MOD&lt;/span&gt; of the ripple counter or asynchronous counter is 2n if n
 flip-flops are used. For a 4-bit counter, the range of the count is 0000
 to 1111 (24-1). A counter may count up or count down or count up and
 down depending on the input control. The count sequence usually repeats
 itself. When counting up, the count sequence goes from 0000, 0001, 0010,
-... 1110 , 1111 , 0000, 0001, ... etc. When counting down the count
-sequence goes in the opposite manner: 1111, 1110, ... 0010, 0001, 0000,
-1111, 1110, ... etc.  &lt;/p&gt;
+&amp;#8230; 1110 , 1111 , 0000, 0001, &amp;#8230; etc. When counting down the count
+sequence goes in the opposite manner: 1111, 1110, &amp;#8230; 0010, 0001, 0000,
+1111, 1110, &amp;#8230;&amp;nbsp;etc.  &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Implementation&lt;/strong&gt;  &lt;/p&gt;
-&lt;p&gt;The following code is using BinPy's internal NBitRippleCounter.  &lt;/p&gt;
-&lt;p&gt;Following is the output of the above code.  &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Under the hood&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;The following code is using BinPy&amp;#8217;s internal&amp;nbsp;NBitRippleCounter.  &lt;/p&gt;
+&lt;p&gt;Following is the output of the above&amp;nbsp;code.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Under the&amp;nbsp;hood&lt;/strong&gt;  &lt;/p&gt;
 &lt;p&gt;When we are initializing the counter with specified number of bits, it
 is actually creating those many T Flip Flops and connecting them in
 order to get the result. The actual implementation is shown in the
-following code.  &lt;/p&gt;
-&lt;p&gt;Try connecting some wires with code, it's fun!&lt;br /&gt;
+following&amp;nbsp;code.  &lt;/p&gt;
+&lt;p&gt;Try connecting some wires with code, it&amp;#8217;s fun!&lt;br /&gt;
 If you have some feedback or questions regarding this post, please add
-comments. Cheers!   &lt;/p&gt;
+comments.&amp;nbsp;Cheers!   &lt;/p&gt;
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Thu, 13 Mar 2014 17:36:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-03-13:binpy-n-bit-ripple-counter</guid><category>BinPy</category><category>Circuit Design</category><category>Electronics</category></item></channel></rss>

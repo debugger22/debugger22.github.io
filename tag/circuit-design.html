@@ -15,7 +15,7 @@
         <header id="banner" class="body">
                 <h1><a href="http://www.sudhanshumishra.in/">Shortlog </a></h1>
                 <nav><ul>
-                    <li><a href="http://www.sudhanshumishra.in/about-me">About me</a></li>
+                    <li><a href="http://www.sudhanshumishra.in/about-me">About&nbsp;me</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/android.html">Android</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/cloud-computing.html">Cloud Computing</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a></li>
@@ -26,7 +26,7 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter">BinPy: N Bit Ripple Counter</a></h1>
+                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter">BinPy: N Bit Ripple&nbsp;Counter</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2014-03-13T17:36:00+05:30">
                 Published: Thu 13 March 2014
@@ -45,32 +45,32 @@
 </div>
 
 <p><a href="http://binpy.github.io">BinPy</a> is almost ready to create things. This
-post focuses on building a ripple counter using it.  </p>
+post focuses on building a ripple counter using&nbsp;it.  </p>
 <p><strong>Theory</strong>  </p>
 <p>A ripple counter is an asynchronous counter where only the first
 flip-flop is clocked by an external clock. All subsequent flip-flops are
 clocked by the output of the preceding flip-flop. Asynchronous counters
 are also called ripple-counters because of the way the clock pulse
-ripples it way through the flip-flops.  </p>
-<p>The MOD of the ripple counter or asynchronous counter is 2n if n
+ripples it way through the&nbsp;flip-flops.  </p>
+<p>The <span class="caps">MOD</span> of the ripple counter or asynchronous counter is 2n if n
 flip-flops are used. For a 4-bit counter, the range of the count is 0000
 to 1111 (24-1). A counter may count up or count down or count up and
 down depending on the input control. The count sequence usually repeats
 itself. When counting up, the count sequence goes from 0000, 0001, 0010,
-... 1110 , 1111 , 0000, 0001, ... etc. When counting down the count
-sequence goes in the opposite manner: 1111, 1110, ... 0010, 0001, 0000,
-1111, 1110, ... etc.  </p>
+&#8230; 1110 , 1111 , 0000, 0001, &#8230; etc. When counting down the count
+sequence goes in the opposite manner: 1111, 1110, &#8230; 0010, 0001, 0000,
+1111, 1110, &#8230;&nbsp;etc.  </p>
 <p><strong>Implementation</strong>  </p>
-<p>The following code is using BinPy's internal NBitRippleCounter.  </p>
-<p>Following is the output of the above code.  </p>
-<p><strong>Under the hood</strong>  </p>
+<p>The following code is using BinPy&#8217;s internal&nbsp;NBitRippleCounter.  </p>
+<p>Following is the output of the above&nbsp;code.  </p>
+<p><strong>Under the&nbsp;hood</strong>  </p>
 <p>When we are initializing the counter with specified number of bits, it
 is actually creating those many T Flip Flops and connecting them in
 order to get the result. The actual implementation is shown in the
-following code.  </p>
-<p>Try connecting some wires with code, it's fun!<br />
+following&nbsp;code.  </p>
+<p>Try connecting some wires with code, it&#8217;s fun!<br />
 If you have some feedback or questions regarding this post, please add
-comments. Cheers!   </p>
+comments.&nbsp;Cheers!   </p>
 <p></div>
 </div>
 </p></p><p>There are <a href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter#disqus_thread">comments</a>.</p>                </article>

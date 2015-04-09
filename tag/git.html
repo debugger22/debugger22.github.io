@@ -15,7 +15,7 @@
         <header id="banner" class="body">
                 <h1><a href="http://www.sudhanshumishra.in/">Shortlog </a></h1>
                 <nav><ul>
-                    <li><a href="http://www.sudhanshumishra.in/about-me">About me</a></li>
+                    <li><a href="http://www.sudhanshumishra.in/about-me">About&nbsp;me</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/android.html">Android</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/cloud-computing.html">Cloud Computing</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a></li>
@@ -26,7 +26,7 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/managing-commits-and-working-with-git-diff">Managing commits and working with git diff</a></h1>
+                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/managing-commits-and-working-with-git-diff">Managing commits and working with git&nbsp;diff</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2014-04-14T13:48:00+05:30">
                 Published: Mon 14 April 2014
@@ -37,14 +37,13 @@
         </address>
 <p>In <a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a>. </p>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/git.html">git</a> <a href="http://www.sudhanshumishra.in/tag/github.html">github</a> </p>
-</footer><!-- /.post-info --><p><strong>tl;dr</strong>: This post assumes that you have basic knowledge of git. It's
+</footer><!-- /.post-info --><p><strong>tl;dr</strong>: This post assumes that you have basic knowledge of git. It&#8217;s
 just about managing commits and minimizing their numbers by having only
-meaningful ones.</p>
-<p>I've been working on a PR for around thirteen days which aims to fix a bug related to mathematical assumptions for inverse trigonometric functions in sympy. In order to do that I kept on committing changes
+meaningful&nbsp;ones.</p>
+<p>I&#8217;ve been working on a <span class="caps">PR</span> for around thirteen days which aims to fix a bug related to mathematical assumptions for inverse trigonometric functions in sympy. In order to do that I kept on committing changes
 randomly and number of commits went on increasing. As of now sympy has two types of mathematical assumptions we call it <strong>new</strong> and <strong>old</strong> so genuinely there should have been only two commits referring changes to
-respective types.</p>
-<p>I had two branches <code>master</code> and <code>arctrigo</code> I followed following steps to separate the changes done in both the
-assumptions:</p>
+respective&nbsp;types.</p>
+<p>I had two branches <code>master</code> and <code>arctrigo</code> I followed following steps to separate the changes done in both the&nbsp;assumptions:</p>
 <ul>
 <li>
 <p>First pull the changes from the remote to your <code>master</code> and merge it to your feature branch. In my case it was <code>arctrigo</code>.</p>
@@ -53,7 +52,7 @@ assumptions:</p>
 <p>Make sure that you are no your feature branch and not on <code>master</code>.</p>
 </li>
 <li>
-<p>Create a diff with respect to <code>master</code>. <code>git diff master &gt; diff</code> (latter diff is just the filename, it could be anything)</p>
+<p>Create a diff with respect to <code>master</code>. <code>git diff master &gt; diff</code> (latter diff is just the filename, it could be&nbsp;anything)</p>
 </li>
 <li>
 <p>Create a new temporary branch of <code>master</code>. <code>git checkout master; git branch -b tmp</code>.</p>
@@ -62,13 +61,13 @@ assumptions:</p>
 <p>Apply the patch. <code>git apply diff</code>.</p>
 </li>
 <li>
-<p>Use <code>git add -p</code> and you'll be prompted change by change as to whether that change should be staged for committal. Say <code>y</code> to all changes involving one part and <code>n</code> to the others.</p>
+<p>Use <code>git add -p</code> and you&#8217;ll be prompted change by change as to whether that change should be staged for committal. Say <code>y</code> to all changes involving one part and <code>n</code> to the&nbsp;others.</p>
 </li>
 </ul>
-<p>Here git has staged a set of changes for your next commit command.</p>
+<p>Here git has staged a set of changes for your next commit&nbsp;command.</p>
 <ul>
 <li>
-<p>Commit the changes for the first part, for which you said <code>y</code> in the prompts, by <code>git commit -m "your message for the first part"</code>. And then do <code>git commit -am "your message for the other part"</code> for which you said <code>n</code> in the prompts.</p>
+<p>Commit the changes for the first part, for which you said <code>y</code> in the prompts, by <code>git commit -m "your message for the first part"</code>. And then do <code>git commit -am "your message for the other part"</code> for which you said <code>n</code> in the&nbsp;prompts.</p>
 </li>
 <li>
 <p>Delete your feature branch. In my case it was <code>arctrigo</code> with <code>git branch -D arctrigo</code>.</p>
@@ -77,12 +76,12 @@ assumptions:</p>
 <p>Create the same feature branch from <code>tmp</code> and switch to it. <code>git branch tmp; git checkout tmp</code>.</p>
 </li>
 <li>
-<p>Update your PR with <code>git push -f &lt;your_remote_name&gt; &lt;your_branch_name&gt;</code>.</p>
+<p>Update your <span class="caps">PR</span> with <code>git push -f &lt;your_remote_name&gt; &lt;your_branch_name&gt;</code>.</p>
 </li>
 </ul>
-<p>Now navigate to your PR and you'll see two clean commits. I just learned
+<p>Now navigate to your <span class="caps">PR</span> and you&#8217;ll see two clean commits. I just learned
 these things from <a href="https://github.com/smichr">Christopher</a> and decided
-to write a blog post about it.</p>
+to write a blog post about&nbsp;it.</p>
 <p>Cheers!</p><p>There are <a href="http://www.sudhanshumishra.in/managing-commits-and-working-with-git-diff#disqus_thread">comments</a>.</p>                </article>
 <p class="paginator">
     Page 1 / 1

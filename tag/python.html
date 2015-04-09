@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Shortlog - python</title>
+        <title>Shortlog - Python</title>
         <link rel="stylesheet" href="http://www.sudhanshumishra.in/theme/css/main.css" />
         <link href="http://www.sudhanshumishra.in/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Shortlog Atom Feed" />
 
@@ -15,7 +15,7 @@
         <header id="banner" class="body">
                 <h1><a href="http://www.sudhanshumishra.in/">Shortlog </a></h1>
                 <nav><ul>
-                    <li><a href="http://www.sudhanshumishra.in/about-me">About me</a></li>
+                    <li><a href="http://www.sudhanshumishra.in/about-me">About&nbsp;me</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/android.html">Android</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/cloud-computing.html">Cloud Computing</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a></li>
@@ -26,7 +26,90 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/top-hacker-news-archive">Top Hacker News Archive</a></h1>
+                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/moving-to-a-static-site-generator">Moving to a static site&nbsp;generator</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2015-04-09T06:50:00+05:30">
+                Published: Thu 09 April 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.sudhanshumishra.in/author/sudhanshu-mishra.html">Sudhanshu Mishra</a>
+        </address>
+<p>In <a href="http://www.sudhanshumishra.in/category/programming.html">Programming</a>. </p>
+<p>tags: <a href="http://www.sudhanshumishra.in/tag/python.html">Python</a> </p>
+</footer><!-- /.post-info --><p>Finally I moved to a static site generator for my homepage + blog. Previously, I was using <a href="http://blog.sudhanshumishra.in">blogger</a> which was really annoying when writing a technical post. Code formatting was&nbsp;bizarre!</p>
+<p>Of all the static website generators I chose <a href="http://getpelican.com">Pelican</a>. It is written in Python and it doesn&#8217;t require any database at the server side. I can write articles in <strong>markdown</strong> which gives me full control over code highlighting! I know that these things are also possible with <a href="http://jekyllrb.com/">Jekyll</a> but the fact that Jekyll builds the complete site everytime which may take upto minutes, set me off. Moreover, Pelican is in&nbsp;Python!</p>
+<p>Pelican also gives you a nice way of importing contents from your old blog. I used following command to do&nbsp;that.</p>
+<div class="highlight"><pre><span class="nv">$ </span>pelican-import  --feed http://blog.sudhanshumishra.in/feeds/posts/default/ -o content/ -m markdown
+</pre></div>
+
+
+<p>I&#8217;ll explain what it actually did a bit&nbsp;later.</p>
+<h2>Install</h2>
+<p>You can install it very easily with <code>pip</code>. For a full installation(with markdown support) issue following&nbsp;command.</p>
+<div class="highlight"><pre><span class="nv">$ </span>pip install --upgrade pelican markdown typogriphy
+</pre></div>
+
+
+<h2>Kickstart your&nbsp;website</h2>
+<p>Now create your project folder and <code>cd</code> into it. After navigating into your project folder issue following&nbsp;command.</p>
+<div class="highlight"><pre><span class="nv">$ </span>pelican-quickstart
+</pre></div>
+
+
+<p>If Pelican was installed successfully on your computer, it will prompt you with a questionnaire having very simple questions. Answer them and it&#8217;ll generate skeleton files for your&nbsp;website.</p>
+<p>The directory structure looks somewhat like&nbsp;this:</p>
+<div class="highlight"><pre>yourproject/
+├── content
+│   └── (pages)
+├── output
+├── develop_server.sh
+├── fabfile.py
+├── Makefile
+├── pelicanconf.py       # Main settings file
+└── publishconf.py       # Settings to use when ready to publish
+</pre></div>
+
+
+<h2>Add&nbsp;contents</h2>
+<p>Adding content is very easy. You just have to create markdown files with extension <code>.md</code> in <code>content</code> directory and it will automatically convert them into publishable <code>html</code>. The command to import contents from blogger actually converted all my posts into markdown files and saved them into <code>content</code> directory.</p>
+<p>Pelican follows a certain format for articles. For instance, here&#8217;s the format for this&nbsp;article:</p>
+<div class="highlight"><pre>Title: Moving to a static site generator
+Date: 2015-04-09 06:50
+Author: Sudhanshu Mishra
+Category: Programming
+Tags: Python
+Slug: moving-to-a-static-site-generator
+
+Finally I moved to a static site generator for my homepage + blog website.
+Previously, I was using [blogger](http://blog.sudhanshumishra.in) which was really
+annoying while writing a technical post. Code formatting was bizarre!
+
+...
+</pre></div>
+
+
+<h2>Publish</h2>
+<p>Once you are done with the article just issue following command to generate <code>html</code>.</p>
+<div class="highlight"><pre><span class="nv">$ </span>make html
+</pre></div>
+
+
+<p>This will generate <code>html</code> along with assets in the <code>output</code> directory. Since I&#8217;m using GitHub pages to host my website, I used <code>output</code> directory as my git repository having <code>CNAME</code> file. Now just commit those files and push to your repository(<your_username>.github.io). Learn more about GitHub pages <a href="https://pages.github.com/">here</a>.</p>
+<p>If you want to change theme or add plugins please visit the <a href="http://docs.getpelican.com/">documentation</a>.</p><p>There are <a href="http://www.sudhanshumishra.in/moving-to-a-static-site-generator#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://www.sudhanshumishra.in/top-hacker-news-archive" rel="bookmark"
+                           title="Permalink to Top Hacker News Archive">Top Hacker News&nbsp;Archive</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2015-01-07T16:51:00+05:30">
                 Published: Wed 07 January 2015
@@ -37,22 +120,19 @@
         </address>
 <p>In <a href="http://www.sudhanshumishra.in/category/miscellaneous.html">Miscellaneous</a>. </p>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/python.html">python</a> <a href="http://www.sudhanshumishra.in/tag/web.html">Web</a> </p>
-</footer><!-- /.post-info --><p><a href="https://news.ycombinator.com/">Hacker News'</a> top 5 entries are some
-beautiful stories that can't be missed by a technology enthusiast. The
-problem is HN gives more weight-age to the period of existence of a post
+</footer><!-- /.post-info -->                <p><a href="https://news.ycombinator.com/">Hacker News&#8217;</a> top 5 entries are some
+beautiful stories that can&#8217;t be missed by a technology enthusiast. The
+problem is <span class="caps">HN</span> gives more weight-age to the period of existence of a post
 and hence articles decay rapidly as time passes. I try my best to read
-most of them but it's certainly not possible if you've got other things
-to do. :)</p>
-<p>To overcome this problem I wrote a small script to pull all those
-entries and save it for me even when I'm away. Perhaps this will help my
-obsession with hacker news.</p>
-<p>Once I have enough articles, I'll host them on the web with real time
-addition of new articles for everyone. I'll think about other good
-sources too.</p><p>There are <a href="http://www.sudhanshumishra.in/top-hacker-news-archive#disqus_thread">comments</a>.</p>                </article>
+most of them ...</p>
+                <a class="readmore" href="http://www.sudhanshumishra.in/top-hacker-news-archive">read more</a>
+<p>There are <a href="http://www.sudhanshumishra.in/top-hacker-news-archive#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
 <p class="paginator">
     Page 1 / 1
 </p>
-            </aside><!-- /#featured -->
+                </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>blogroll</h2>

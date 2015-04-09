@@ -1,38 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shortlog</title><link>http://www.sudhanshumishra.in/</link><description></description><atom:link href="http://www.sudhanshumishra.in/feeds/server.tag.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 08 Jan 2015 18:25:00 +0530</lastBuildDate><item><title>Two things: Dockerizing Applications and AWS' on the house services</title><link>http://www.sudhanshumishra.in/two-things-dockerizing-applications-and-aws-on-the-house-services</link><description>&lt;p&gt;Lately I migrated my app from DigitalOcean to AWS and encountered the
-pain of setting up similar environment.(Documenting everything is very
-important!)&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shortlog</title><link>http://www.sudhanshumishra.in/</link><description></description><atom:link href="http://www.sudhanshumishra.in/feeds/server.tag.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 08 Jan 2015 18:25:00 +0530</lastBuildDate><item><title>Two things: Dockerizing Applications and AWS’ on the house services</title><link>http://www.sudhanshumishra.in/two-things-dockerizing-applications-and-aws-on-the-house-services</link><description>&lt;p&gt;Lately I migrated my app from DigitalOcean to &lt;span class="caps"&gt;AWS&lt;/span&gt; and encountered the
+pain of setting up similar environment.(Documenting everything is very&amp;nbsp;important!)&lt;/p&gt;
 &lt;p&gt;I heard long ago about &lt;a href="https://docker.io/"&gt;Docker&lt;/a&gt; but never bothered
-to tinker with it. If you don't know, Docker is a platform for
+to tinker with it. If you don&amp;#8217;t know, Docker is a platform for
 developers and sysadmins to develop, ship, and run applications. Docker
 lets you quickly assemble applications from components and eliminates
-the friction that can come when shipping code.&lt;/p&gt;
+the friction that can come when shipping&amp;nbsp;code.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="docker" src="http://blog.docker.com/wp-content/uploads/2013/08/KuDr42X_ITXghJhSInDZekNEF0jLt3NeVxtRye3tqco.png" /&gt;&lt;/p&gt;
-&lt;p&gt;It's just like a &lt;code&gt;git pull&lt;/code&gt; for your custom OS.
+&lt;p&gt;It&amp;#8217;s just like a &lt;code&gt;git pull&lt;/code&gt; for your custom &lt;span class="caps"&gt;OS&lt;/span&gt;.
 &lt;a href="https://docker.io/"&gt;https://docker.io&lt;/a&gt; manages repositories of docker
 images, public and private. A docker image is just a set of layers where
 layers are changes to its file system as results of commands. It uses
-same commit system like git. Once you've established an image you can
+same commit system like git. Once you&amp;#8217;ve established an image you can
 run your applications on it. Docker calls them containers. Each
 container runs a single process. Even when containers run on same
-environment, they are sandboxed to themselves. There's a 'sophisticated'
+environment, they are sandboxed to themselves. There&amp;#8217;s a &amp;#8216;sophisticated&amp;#8217;
 way in which containers talk to each
-other. &lt;a href="https://docs.docker.com/userguide/dockerizing"&gt;Here's&lt;/a&gt; a great
-article on dockerizing your applications.&lt;/p&gt;
+other. &lt;a href="https://docs.docker.com/userguide/dockerizing"&gt;Here&amp;#8217;s&lt;/a&gt; a great
+article on dockerizing your&amp;nbsp;applications.&lt;/p&gt;
 &lt;p&gt;So yeah, I had to set up the same environment but just for once! Now I
 can easily automate spawning new instances and adding them under
-Amazon's ELB. It also made the development easier.&lt;/p&gt;
-&lt;p&gt;I'm amazingly happy with Amazon's great products. Things like Elastic
-IP, Elastic Load Balancer, Elastic Block Storage, S3, VPC, etc. can be
+Amazon&amp;#8217;s &lt;span class="caps"&gt;ELB&lt;/span&gt;. It also made the development&amp;nbsp;easier.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;m amazingly happy with Amazon&amp;#8217;s great products. Things like Elastic
+&lt;span class="caps"&gt;IP&lt;/span&gt;, Elastic Load Balancer, Elastic Block Storage, S3, &lt;span class="caps"&gt;VPC&lt;/span&gt;, etc. can be
 done with just few clicks. Setting up such infrastructure manually is a
 nightmare. One thing which I miss here is MongoDB. Although there is
-Amazon's own DynamoDB but I really don't want to learn another NoSQL DB.
-I'm using few EC2 instances for that.&lt;/p&gt;
-&lt;p&gt;We're accepting beta testers for this app.
+Amazon&amp;#8217;s own DynamoDB but I really don&amp;#8217;t want to learn another NoSQL &lt;span class="caps"&gt;DB&lt;/span&gt;.
+I&amp;#8217;m using few &lt;span class="caps"&gt;EC2&lt;/span&gt; instances for&amp;nbsp;that.&lt;/p&gt;
+&lt;p&gt;We&amp;#8217;re accepting beta testers for this app.
 &lt;a href="https://getwaeo.com/"&gt;https://getwaeo.com&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;I'm really excited about it and will be putting it in production in few
-weeks! Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Thu, 08 Jan 2015 18:25:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2015-01-08:two-things-dockerizing-applications-and-aws-on-the-house-services</guid><category>aws</category><category>cloud</category><category>docker</category><category>Server</category></item><item><title>Setting up Tornado server on Ubuntu 12.04</title><link>http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
- {#setting-up-tornado-server-on-ubuntu-12-04 style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"}
+&lt;p&gt;I&amp;#8217;m really excited about it and will be putting it in production in few
+weeks!&amp;nbsp;Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Thu, 08 Jan 2015 18:25:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2015-01-08:two-things-dockerizing-applications-and-aws-on-the-house-services</guid><category>aws</category><category>cloud</category><category>docker</category><category>Server</category></item><item><title>Setting up Tornado server on Ubuntu 12.04</title><link>http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204</link><description>&lt;div dir="ltr" style="text-align: left;"&gt;
+ {#setting-up-tornado-server-on-ubuntu-12-04 style=&amp;#8221;color: #444444; font-family: Arvo, &amp;#8216;Helvetica Neue&amp;#8217;, Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;&amp;#8221;}
 
 &lt;div style="font-size: 13px; font-weight: normal; line-height: 18px; margin-bottom: 9px;"&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;
@@ -47,11 +46,10 @@ for &lt;br /&gt;
 long polling, WebSockets, and other applications that require a
 long-lived connection to each user. This server is written in Python
 which follows a non blocking methodology of coding. Just like Node.js it
-also works on a similar concept of callbacks.&lt;/p&gt;
+also works on a similar concept of&amp;nbsp;callbacks.&lt;/p&gt;
 &lt;p&gt;&lt;/div&gt;
 &lt;/h1&gt;
-&lt;span style="font-size: large;"&gt;Prerequisites&lt;/span&gt; {#setting-up-tornado-server-on-ubuntu-12-04 style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"}
-====================================================&lt;/p&gt;
+&lt;span style="font-size: large;"&gt;Prerequisites&lt;/span&gt; {#setting-up-tornado-server-on-ubuntu-12-04 style=&amp;#8221;color: #444444; font-family: Arvo, &amp;#8216;Helvetica Neue&amp;#8217;, Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;&amp;#8221;}&amp;nbsp;====================================================&lt;/p&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 Tornado runs on Python 2.6, 2.7, 3.2, and 3.3. On Python 2, the
 backports.ssl\_match\_hostname package must be installed (This will be
@@ -86,7 +84,7 @@ Tornado features may require one of the following optional libraries:
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div style="margin-bottom: 9px;"&gt;
     &lt;a href="https://pypi.python.org/pypi/pycares"&gt;pycares&lt;/a&gt; is an alternative
-    non-blocking DNS resolver that can be used when threads are not
+    non-blocking &lt;span class="caps"&gt;DNS&lt;/span&gt; resolver that can be used when threads are not
     appropriate.
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div style="margin-bottom: 9px;"&gt;
@@ -96,7 +94,7 @@ Tornado features may require one of the following optional libraries:
     &lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Tornado works on almost all platforms including unix, BSD, Mac OS X and
+Tornado works on almost all platforms including unix, &lt;span class="caps"&gt;BSD&lt;/span&gt;, Mac &lt;span class="caps"&gt;OS&lt;/span&gt; X and
 windows though it is advised to use it only on Unix for production
 purpose.
 
@@ -129,7 +127,7 @@ using following command:
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h1 id="running-a-simple-program-using-tornado" style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"&gt;&lt;span style="font-size: large;"&gt;Running a simple program using tornado&lt;/span&gt;&lt;/h1&gt;
+&lt;h1 id="running-a-simple-program-using-tornado" style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"&gt;&lt;span style="font-size: large;"&gt;Running a simple program using&amp;nbsp;tornado&lt;/span&gt;&lt;/h1&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 Following is a simple hello world program using tornado.
 
@@ -151,7 +149,7 @@ visiting [http://www.yourdomain.com:8888](http://www.yourdomain.com:8888/).
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-I will write more on tornado in future. I'm planning to use this as
+I will write more on tornado in future. I&amp;#8217;m planning to use this as
 computing server for online version of [Binpy](http://www.binpy.org/).
 
 &lt;/div&gt;

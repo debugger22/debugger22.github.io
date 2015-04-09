@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/github.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2014-04-14T13:48:00+05:30</updated><entry><title>Managing commits and working with git diff</title><link href="http://www.sudhanshumishra.in/managing-commits-and-working-with-git-diff" rel="alternate"></link><updated>2014-04-14T13:48:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-14:managing-commits-and-working-with-git-diff</id><summary type="html">&lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;: This post assumes that you have basic knowledge of git. It's
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/github.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2014-04-14T13:48:00+05:30</updated><entry><title>Managing commits and working with git diff</title><link href="http://www.sudhanshumishra.in/managing-commits-and-working-with-git-diff" rel="alternate"></link><updated>2014-04-14T13:48:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-14:managing-commits-and-working-with-git-diff</id><summary type="html">&lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;: This post assumes that you have basic knowledge of git. It&amp;#8217;s
 just about managing commits and minimizing their numbers by having only
-meaningful ones.&lt;/p&gt;
-&lt;p&gt;I've been working on a PR for around thirteen days which aims to fix a bug related to mathematical assumptions for inverse trigonometric functions in sympy. In order to do that I kept on committing changes
+meaningful&amp;nbsp;ones.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve been working on a &lt;span class="caps"&gt;PR&lt;/span&gt; for around thirteen days which aims to fix a bug related to mathematical assumptions for inverse trigonometric functions in sympy. In order to do that I kept on committing changes
 randomly and number of commits went on increasing. As of now sympy has two types of mathematical assumptions we call it &lt;strong&gt;new&lt;/strong&gt; and &lt;strong&gt;old&lt;/strong&gt; so genuinely there should have been only two commits referring changes to
-respective types.&lt;/p&gt;
-&lt;p&gt;I had two branches &lt;code&gt;master&lt;/code&gt; and &lt;code&gt;arctrigo&lt;/code&gt; I followed following steps to separate the changes done in both the
-assumptions:&lt;/p&gt;
+respective&amp;nbsp;types.&lt;/p&gt;
+&lt;p&gt;I had two branches &lt;code&gt;master&lt;/code&gt; and &lt;code&gt;arctrigo&lt;/code&gt; I followed following steps to separate the changes done in both the&amp;nbsp;assumptions:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;First pull the changes from the remote to your &lt;code&gt;master&lt;/code&gt; and merge it to your feature branch. In my case it was &lt;code&gt;arctrigo&lt;/code&gt;.&lt;/p&gt;
@@ -15,7 +14,7 @@ assumptions:&lt;/p&gt;
 &lt;p&gt;Make sure that you are no your feature branch and not on &lt;code&gt;master&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Create a diff with respect to &lt;code&gt;master&lt;/code&gt;. &lt;code&gt;git diff master &amp;gt; diff&lt;/code&gt; (latter diff is just the filename, it could be anything)&lt;/p&gt;
+&lt;p&gt;Create a diff with respect to &lt;code&gt;master&lt;/code&gt;. &lt;code&gt;git diff master &amp;gt; diff&lt;/code&gt; (latter diff is just the filename, it could be&amp;nbsp;anything)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Create a new temporary branch of &lt;code&gt;master&lt;/code&gt;. &lt;code&gt;git checkout master; git branch -b tmp&lt;/code&gt;.&lt;/p&gt;
@@ -24,13 +23,13 @@ assumptions:&lt;/p&gt;
 &lt;p&gt;Apply the patch. &lt;code&gt;git apply diff&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Use &lt;code&gt;git add -p&lt;/code&gt; and you'll be prompted change by change as to whether that change should be staged for committal. Say &lt;code&gt;y&lt;/code&gt; to all changes involving one part and &lt;code&gt;n&lt;/code&gt; to the others.&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;git add -p&lt;/code&gt; and you&amp;#8217;ll be prompted change by change as to whether that change should be staged for committal. Say &lt;code&gt;y&lt;/code&gt; to all changes involving one part and &lt;code&gt;n&lt;/code&gt; to the&amp;nbsp;others.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Here git has staged a set of changes for your next commit command.&lt;/p&gt;
+&lt;p&gt;Here git has staged a set of changes for your next commit&amp;nbsp;command.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Commit the changes for the first part, for which you said &lt;code&gt;y&lt;/code&gt; in the prompts, by &lt;code&gt;git commit -m "your message for the first part"&lt;/code&gt;. And then do &lt;code&gt;git commit -am "your message for the other part"&lt;/code&gt; for which you said &lt;code&gt;n&lt;/code&gt; in the prompts.&lt;/p&gt;
+&lt;p&gt;Commit the changes for the first part, for which you said &lt;code&gt;y&lt;/code&gt; in the prompts, by &lt;code&gt;git commit -m "your message for the first part"&lt;/code&gt;. And then do &lt;code&gt;git commit -am "your message for the other part"&lt;/code&gt; for which you said &lt;code&gt;n&lt;/code&gt; in the&amp;nbsp;prompts.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Delete your feature branch. In my case it was &lt;code&gt;arctrigo&lt;/code&gt; with &lt;code&gt;git branch -D arctrigo&lt;/code&gt;.&lt;/p&gt;
@@ -39,10 +38,10 @@ assumptions:&lt;/p&gt;
 &lt;p&gt;Create the same feature branch from &lt;code&gt;tmp&lt;/code&gt; and switch to it. &lt;code&gt;git branch tmp; git checkout tmp&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Update your PR with &lt;code&gt;git push -f &amp;lt;your_remote_name&amp;gt; &amp;lt;your_branch_name&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Update your &lt;span class="caps"&gt;PR&lt;/span&gt; with &lt;code&gt;git push -f &amp;lt;your_remote_name&amp;gt; &amp;lt;your_branch_name&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Now navigate to your PR and you'll see two clean commits. I just learned
+&lt;p&gt;Now navigate to your &lt;span class="caps"&gt;PR&lt;/span&gt; and you&amp;#8217;ll see two clean commits. I just learned
 these things from &lt;a href="https://github.com/smichr"&gt;Christopher&lt;/a&gt; and decided
-to write a blog post about it.&lt;/p&gt;
+to write a blog post about&amp;nbsp;it.&lt;/p&gt;
 &lt;p&gt;Cheers!&lt;/p&gt;</summary><category term="git"></category><category term="github"></category></entry></feed>

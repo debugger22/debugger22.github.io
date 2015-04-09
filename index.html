@@ -15,7 +15,7 @@
         <header id="banner" class="body">
                 <h1><a href="http://www.sudhanshumishra.in/">Shortlog </a></h1>
                 <nav><ul>
-                    <li><a href="http://www.sudhanshumishra.in/about-me">About me</a></li>
+                    <li><a href="http://www.sudhanshumishra.in/about-me">About&nbsp;me</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/android.html">Android</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/cloud-computing.html">Cloud Computing</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a></li>
@@ -26,7 +26,90 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram">Memory Error due to charge leak acceleration in DRAM</a></h1>
+                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/moving-to-a-static-site-generator">Moving to a static site&nbsp;generator</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2015-04-09T06:50:00+05:30">
+                Published: Thu 09 April 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://www.sudhanshumishra.in/author/sudhanshu-mishra.html">Sudhanshu Mishra</a>
+        </address>
+<p>In <a href="http://www.sudhanshumishra.in/category/programming.html">Programming</a>. </p>
+<p>tags: <a href="http://www.sudhanshumishra.in/tag/python.html">Python</a> </p>
+</footer><!-- /.post-info --><p>Finally I moved to a static site generator for my homepage + blog. Previously, I was using <a href="http://blog.sudhanshumishra.in">blogger</a> which was really annoying when writing a technical post. Code formatting was&nbsp;bizarre!</p>
+<p>Of all the static website generators I chose <a href="http://getpelican.com">Pelican</a>. It is written in Python and it doesn&#8217;t require any database at the server side. I can write articles in <strong>markdown</strong> which gives me full control over code highlighting! I know that these things are also possible with <a href="http://jekyllrb.com/">Jekyll</a> but the fact that Jekyll builds the complete site everytime which may take upto minutes, set me off. Moreover, Pelican is in&nbsp;Python!</p>
+<p>Pelican also gives you a nice way of importing contents from your old blog. I used following command to do&nbsp;that.</p>
+<div class="highlight"><pre><span class="nv">$ </span>pelican-import  --feed http://blog.sudhanshumishra.in/feeds/posts/default/ -o content/ -m markdown
+</pre></div>
+
+
+<p>I&#8217;ll explain what it actually did a bit&nbsp;later.</p>
+<h2>Install</h2>
+<p>You can install it very easily with <code>pip</code>. For a full installation(with markdown support) issue following&nbsp;command.</p>
+<div class="highlight"><pre><span class="nv">$ </span>pip install --upgrade pelican markdown typogriphy
+</pre></div>
+
+
+<h2>Kickstart your&nbsp;website</h2>
+<p>Now create your project folder and <code>cd</code> into it. After navigating into your project folder issue following&nbsp;command.</p>
+<div class="highlight"><pre><span class="nv">$ </span>pelican-quickstart
+</pre></div>
+
+
+<p>If Pelican was installed successfully on your computer, it will prompt you with a questionnaire having very simple questions. Answer them and it&#8217;ll generate skeleton files for your&nbsp;website.</p>
+<p>The directory structure looks somewhat like&nbsp;this:</p>
+<div class="highlight"><pre>yourproject/
+├── content
+│   └── (pages)
+├── output
+├── develop_server.sh
+├── fabfile.py
+├── Makefile
+├── pelicanconf.py       # Main settings file
+└── publishconf.py       # Settings to use when ready to publish
+</pre></div>
+
+
+<h2>Add&nbsp;contents</h2>
+<p>Adding content is very easy. You just have to create markdown files with extension <code>.md</code> in <code>content</code> directory and it will automatically convert them into publishable <code>html</code>. The command to import contents from blogger actually converted all my posts into markdown files and saved them into <code>content</code> directory.</p>
+<p>Pelican follows a certain format for articles. For instance, here&#8217;s the format for this&nbsp;article:</p>
+<div class="highlight"><pre>Title: Moving to a static site generator
+Date: 2015-04-09 06:50
+Author: Sudhanshu Mishra
+Category: Programming
+Tags: Python
+Slug: moving-to-a-static-site-generator
+
+Finally I moved to a static site generator for my homepage + blog website.
+Previously, I was using [blogger](http://blog.sudhanshumishra.in) which was really
+annoying while writing a technical post. Code formatting was bizarre!
+
+...
+</pre></div>
+
+
+<h2>Publish</h2>
+<p>Once you are done with the article just issue following command to generate <code>html</code>.</p>
+<div class="highlight"><pre><span class="nv">$ </span>make html
+</pre></div>
+
+
+<p>This will generate <code>html</code> along with assets in the <code>output</code> directory. Since I&#8217;m using GitHub pages to host my website, I used <code>output</code> directory as my git repository having <code>CNAME</code> file. Now just commit those files and push to your repository(<your_username>.github.io). Learn more about GitHub pages <a href="https://pages.github.com/">here</a>.</p>
+<p>If you want to change theme or add plugins please visit the <a href="http://docs.getpelican.com/">documentation</a>.</p><p>There are <a href="http://www.sudhanshumishra.in/moving-to-a-static-site-generator#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram" rel="bookmark"
+                           title="Permalink to Memory Error due to charge leak acceleration in DRAM">Memory Error due to charge leak acceleration in <span class="caps">DRAM</span></a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2015-01-16T19:36:00+05:30">
                 Published: Fri 16 January 2015
@@ -37,74 +120,19 @@
         </address>
 <p>In <a href="http://www.sudhanshumishra.in/category/programming.html">Programming</a>. </p>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/electronics.html">Electronics</a> </p>
-</footer><!-- /.post-info --><p>DRAM comprises a two-dimensional array of DRAM cells, each of which
+</footer><!-- /.post-info -->                <p><span class="caps">DRAM</span> comprises a two-dimensional array of <span class="caps">DRAM</span> cells, each of which
 consists of a capacitor and an access-transistor. Depending on whether
 its capacitor is fully charged or fully discharged, a cell is in either
 the charged state or the discharged state, respectively. These two
-states are used to represent a binary data value.
-Dense packaging in DRAM leads to anomalies while performing continuous
-read operations from same memory address which involves opening and
-closing of the wordline. This anomaly will not be evident if the data is
-read from an address after opening a wordline and not closing it. When
-there are many activations to the same row, they force the wordline to
-toggle on and off repeatedly. Such voltage fluctuations on a row’s
-wordline have a disturbance effect on nearby rows, inducing some of
-their cells to leak charge at an accelerated rate. If such a cell loses
-too much charge before it is restored to its original value, it
-experiences a disturbance error.This disturbance results mostly in
-flipped bit value.Here's the assembly code which may induce errors when
-executed on Intel/AMD machines.</p>
-<div class="highlight"><pre>loop:
-    mov X, %eax  ; Read from address X and save in register including
-cache
-    mov Y, %ebx  ; values in registers and cache
-    clflush (X)  ; Clear data from cache
-    clflush (Y)
-    mfence       ; Make sure that data is fully flushed
-    jmp loop
-</pre></div>
-
-
-<p>On the other hand, the following code will not induce errors because it
-does not force continuous toggling of the wordline.</p>
-<div class="highlight"><pre>loop:
-    mov X, %eax  ; Read from address X and save in register including
-cache
-    clflush (X)  ; Clear data from cache
-    mfence       ; Make sure that data is fully flushed
-    jmp loop
-</pre></div>
-
-
-<p>These disturbances violate two invariants that memory should provide</p>
-<ul>
-<li>A read access should not modify data at any address</li>
-<li>A write access should modify data only at the address being written to</li>
-</ul>
-<p>This makes systems, using DRAM, vulnerable to data corruption.</p>
-<p>References:</p>
-<ol>
-<li>
-<p>Yoongu Kim, Ross Daly, Jeremie Kim, Chris Fallin, Ji Hye Lee,
-Donghyuk Lee, Chris Wilkerson, Konrad Lai, Onur Mutlu et al. Flipping
-Bits in Memory Without Accessing Them: An Experimental Study of DRAM
-Disturbance Errors, 2014.</p>
-</li>
-<li>
-<p>A. J. van de Goor and I. Schanstra. Address and Data Scrambling:
-Causes and Impact on Memory Tests. In DELTA, 2002</p>
-</li>
-</ol><p>There are <a href="http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+states are used to represent a ...</p>
+                <a class="readmore" href="http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram">read more</a>
+<p>There are <a href="http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
                     <h1><a href="http://www.sudhanshumishra.in/two-things-dockerizing-applications-and-aws-on-the-house-services" rel="bookmark"
-                           title="Permalink to Two things: Dockerizing Applications and AWS' on the house services">Two things: Dockerizing Applications and AWS' on the house services</a></h1>
+                           title="Permalink to Two things: Dockerizing Applications and AWS’ on the house services">Two things: Dockerizing Applications and <span class="caps">AWS</span>&#8217; on the house&nbsp;services</a></h1>
                 </header>
 
                 <div class="entry-content">
@@ -118,11 +146,10 @@ Causes and Impact on Memory Tests. In DELTA, 2002</p>
         </address>
 <p>In <a href="http://www.sudhanshumishra.in/category/cloud-computing.html">Cloud Computing</a>. </p>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/aws.html">aws</a> <a href="http://www.sudhanshumishra.in/tag/cloud.html">cloud</a> <a href="http://www.sudhanshumishra.in/tag/docker.html">docker</a> <a href="http://www.sudhanshumishra.in/tag/server.html">Server</a> </p>
-</footer><!-- /.post-info -->                <p>Lately I migrated my app from DigitalOcean to AWS and encountered the
-pain of setting up similar environment.(Documenting everything is very
-important!)</p>
+</footer><!-- /.post-info -->                <p>Lately I migrated my app from DigitalOcean to <span class="caps">AWS</span> and encountered the
+pain of setting up similar environment.(Documenting everything is very&nbsp;important!)</p>
 <p>I heard long ago about <a href="https://docker.io/">Docker</a> but never bothered
-to tinker with it. If you don't know, Docker is a platform for
+to tinker with it. If you don&#8217;t know, Docker is a platform for
 developers and sysadmins to ...</p>
                 <a class="readmore" href="http://www.sudhanshumishra.in/two-things-dockerizing-applications-and-aws-on-the-house-services">read more</a>
 <p>There are <a href="http://www.sudhanshumishra.in/two-things-dockerizing-applications-and-aws-on-the-house-services#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -131,7 +158,7 @@ developers and sysadmins to ...</p>
             <li><article class="hentry">
                 <header>
                     <h1><a href="http://www.sudhanshumishra.in/top-hacker-news-archive" rel="bookmark"
-                           title="Permalink to Top Hacker News Archive">Top Hacker News Archive</a></h1>
+                           title="Permalink to Top Hacker News Archive">Top Hacker News&nbsp;Archive</a></h1>
                 </header>
 
                 <div class="entry-content">
@@ -145,9 +172,9 @@ developers and sysadmins to ...</p>
         </address>
 <p>In <a href="http://www.sudhanshumishra.in/category/miscellaneous.html">Miscellaneous</a>. </p>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/python.html">python</a> <a href="http://www.sudhanshumishra.in/tag/web.html">Web</a> </p>
-</footer><!-- /.post-info -->                <p><a href="https://news.ycombinator.com/">Hacker News'</a> top 5 entries are some
-beautiful stories that can't be missed by a technology enthusiast. The
-problem is HN gives more weight-age to the period of existence of a post
+</footer><!-- /.post-info -->                <p><a href="https://news.ycombinator.com/">Hacker News&#8217;</a> top 5 entries are some
+beautiful stories that can&#8217;t be missed by a technology enthusiast. The
+problem is <span class="caps">HN</span> gives more weight-age to the period of existence of a post
 and hence articles decay rapidly as time passes. I try my best to read
 most of them ...</p>
                 <a class="readmore" href="http://www.sudhanshumishra.in/top-hacker-news-archive">read more</a>
@@ -157,7 +184,7 @@ most of them ...</p>
             <li><article class="hentry">
                 <header>
                     <h1><a href="http://www.sudhanshumishra.in/battery-status-api-in-chrome" rel="bookmark"
-                           title="Permalink to Battery Status API in Chrome">Battery Status API in Chrome</a></h1>
+                           title="Permalink to Battery Status API in Chrome">Battery Status <span class="caps">API</span> in&nbsp;Chrome</a></h1>
                 </header>
 
                 <div class="entry-content">
@@ -171,10 +198,10 @@ most of them ...</p>
         </address>
 <p>In <a href="http://www.sudhanshumishra.in/category/programming.html">Programming</a>. </p>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/chrome.html">Chrome</a> <a href="http://www.sudhanshumishra.in/tag/javascript.html">JavaScript</a> </p>
-</footer><!-- /.post-info -->                <p>Implementation of HTML battery status API is a bit different in webkit.
+</footer><!-- /.post-info -->                <p>Implementation of <span class="caps">HTML</span> battery status <span class="caps">API</span> is a bit different in webkit.
 It has not been exposed with <code>navigator.battery</code>.
 This works fine in Gecko(Firefox) but you might have hard time if you
-try it on Chrome.</p>
+try it on&nbsp;Chrome.</p>
 <p>After banging my head for few days against some chromium issues I ...</p>
                 <a class="readmore" href="http://www.sudhanshumishra.in/battery-status-api-in-chrome">read more</a>
 <p>There are <a href="http://www.sudhanshumishra.in/battery-status-api-in-chrome#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -183,7 +210,7 @@ try it on Chrome.</p>
             <li><article class="hentry">
                 <header>
                     <h1><a href="http://www.sudhanshumishra.in/gsoc14-progress-week-12" rel="bookmark"
-                           title="Permalink to GSoC'14 progress: Week 12">GSoC'14 progress: Week 12</a></h1>
+                           title="Permalink to GSoC‘14 progress: Week 12">GSoC&#8216;14 progress: Week&nbsp;12</a></h1>
                 </header>
 
                 <div class="entry-content">
@@ -207,7 +234,7 @@ master.
 </div>
 
 <div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-Currently I am working on converting my incopmlete PR related to
+Currently I am working on converting my incopmlete <span class="caps">PR</span> related to
 geometrical optics in 3D into 2D. Creating these classes in 3D will make
 it difficult to use/extend. I referred to some books and I ...</div></div></div>
                 <a class="readmore" href="http://www.sudhanshumishra.in/gsoc14-progress-week-12">read more</a>
@@ -217,7 +244,7 @@ it difficult to use/extend. I referred to some books and I ...</div></div></div>
             <li><article class="hentry">
                 <header>
                     <h1><a href="http://www.sudhanshumishra.in/gsoc14-week-10-adding-more-to-utils" rel="bookmark"
-                           title="Permalink to GSoC'14 Week 10: Adding more to utils">GSoC'14 Week 10: Adding more to utils</a></h1>
+                           title="Permalink to GSoC‘14 Week 10: Adding more to utils">GSoC&#8216;14 Week 10: Adding more to&nbsp;utils</a></h1>
                 </header>
 
                 <div class="entry-content">
@@ -234,13 +261,13 @@ it difficult to use/extend. I referred to some books and I ...</div></div></div>
 </footer><!-- /.post-info -->                <div dir="ltr" style="text-align: left;">
 <div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
 This week I worked on adding more utility function in optics. Some of
-them are yet to be added. I'll send a pull request once I write tests
+them are yet to be added. I&#8217;ll send a pull request once I write tests
 for them.
 
 </div>
 
 <div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-Here's the link to the code pushed till now:
+Here&#8217;s the link to the code pushed till now:
 
 </div>
 
@@ -251,7 +278,7 @@ Here's the link to the code pushed till now:
 
 <div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
 I also worked on one of my pending
-PR ...</div></div>
+<span class="caps">PR ...</span></div></div>
                 <a class="readmore" href="http://www.sudhanshumishra.in/gsoc14-week-10-adding-more-to-utils">read more</a>
 <p>There are <a href="http://www.sudhanshumishra.in/gsoc14-week-10-adding-more-to-utils#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -259,7 +286,7 @@ PR ...</div></div>
             <li><article class="hentry">
                 <header>
                     <h1><a href="http://www.sudhanshumishra.in/gsoc14-progress-finished-refraction-at-planar-surface" rel="bookmark"
-                           title="Permalink to GSoC'14 Progress: Finished refraction at planar surface">GSoC'14 Progress: Finished refraction at planar surface</a></h1>
+                           title="Permalink to GSoC‘14 Progress: Finished refraction at planar surface">GSoC&#8216;14 Progress: Finished refraction at planar&nbsp;surface</a></h1>
                 </header>
 
                 <div class="entry-content">
@@ -275,7 +302,7 @@ PR ...</div></div>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/gsoc.html">gsoc</a> <a href="http://www.sudhanshumishra.in/tag/sympy.html">sympy</a> </p>
 </footer><!-- /.post-info -->                <div dir="ltr" style="text-align: left;">
 <div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-I'm sorry for this delayed post. I couldn't work last week due to some
+I&#8217;m sorry for this delayed post. I couldn&#8217;t work last week due to some
 other issues so had nothing much to report.
 
 </div>
@@ -291,7 +318,7 @@ of ...</div></div>
             <li><article class="hentry">
                 <header>
                     <h1><a href="http://www.sudhanshumishra.in/gsoc14-progress-working-with-geometry" rel="bookmark"
-                           title="Permalink to GSoC'14 Progress: Working with geometry">GSoC'14 Progress: Working with geometry</a></h1>
+                           title="Permalink to GSoC‘14 Progress: Working with geometry">GSoC&#8216;14 Progress: Working with&nbsp;geometry</a></h1>
                 </header>
 
                 <div class="entry-content">
@@ -309,9 +336,9 @@ of ...</div></div>
 <div class="markdown-body">
 <div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;">
 <span style="background-color: white;">This week I
-completed `refraction_angle`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}.
+completed `refraction_angle`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;}.
 Now it also works
-with `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size ...</span></div></div></div>
+with `Ray3D`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size ...</span></div></div></div>
                 <a class="readmore" href="http://www.sudhanshumishra.in/gsoc14-progress-working-with-geometry">read more</a>
 <p>There are <a href="http://www.sudhanshumishra.in/gsoc14-progress-working-with-geometry#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -319,7 +346,7 @@ with `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius:
             <li><article class="hentry">
                 <header>
                     <h1><a href="http://www.sudhanshumishra.in/gsoc14-progress-week-6" rel="bookmark"
-                           title="Permalink to GSoC'14 progress: Week 6">GSoC'14 progress: Week 6</a></h1>
+                           title="Permalink to GSoC‘14 progress: Week 6">GSoC&#8216;14 progress: Week&nbsp;6</a></h1>
                 </header>
 
                 <div class="entry-content">
@@ -340,13 +367,13 @@ It was a busy week though I managed to do some work.
 </div>
 
 <div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-I've been working on following things:
+I&#8217;ve been working on following things:
 
 </div>
 
 <ul>
 <li>Integrating <code style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;">TWave</code> with <code style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;">refraction_angle</code>(<a href="https://github.com/sympy/sympy/pull/7626">7626</a>)</li>
-<li>Interference class</li>
+<li>Interference&nbsp;class</li>
 </ul>
 <div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
 Some blocking 3D geometry code got merged yesterday which gives me a lot
@@ -358,40 +385,6 @@ of new things to work on. :-)
 I also tried to take ...</div></div>
                 <a class="readmore" href="http://www.sudhanshumishra.in/gsoc14-progress-week-6">read more</a>
 <p>There are <a href="http://www.sudhanshumishra.in/gsoc14-progress-week-6#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://www.sudhanshumishra.in/gsoc14-progress-week-5" rel="bookmark"
-                           title="Permalink to GSoC'14 progress, Week 5">GSoC'14 progress, Week 5</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-06-23T17:59:00+05:30">
-                Published: Mon 23 June 2014
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://www.sudhanshumishra.in/author/sudhanshu-mishra.html">Sudhanshu Mishra</a>
-        </address>
-<p>In <a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a>. </p>
-<p>tags: <a href="http://www.sudhanshumishra.in/tag/gsoc.html">gsoc</a> <a href="http://www.sudhanshumishra.in/tag/physics.html">physics</a> <a href="http://www.sudhanshumishra.in/tag/sympy.html">sympy</a> </p>
-</footer><!-- /.post-info -->                <div dir="ltr" style="text-align: left;">
-<div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-I did good amount of work this week. I sent a small part of it related
-to ray tracing for review.
-
-</div>
-
-<ul>
-<li><a href="https://github.com/sympy/sympy/pull/7626">https://github.com/sympy/sympy/pull/7626</a></li>
-</ul>
-<div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-I got some great suggestions from Sean to make it compatible directly
-with<span style="color: #444444;"> </span>`TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius ...</div></div>
-                <a class="readmore" href="http://www.sudhanshumishra.in/gsoc14-progress-week-5">read more</a>
-<p>There are <a href="http://www.sudhanshumishra.in/gsoc14-progress-week-5#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
 <p class="paginator">

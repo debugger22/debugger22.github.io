@@ -15,7 +15,7 @@
         <header id="banner" class="body">
                 <h1><a href="http://www.sudhanshumishra.in/">Shortlog </a></h1>
                 <nav><ul>
-                    <li><a href="http://www.sudhanshumishra.in/about-me">About me</a></li>
+                    <li><a href="http://www.sudhanshumishra.in/about-me">About&nbsp;me</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/android.html">Android</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/cloud-computing.html">Cloud Computing</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a></li>
@@ -26,7 +26,7 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/battery-status-api-in-chrome">Battery Status API in Chrome</a></h1>
+                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/battery-status-api-in-chrome">Battery Status <span class="caps">API</span> in&nbsp;Chrome</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2014-10-13T12:20:00+05:30">
                 Published: Mon 13 October 2014
@@ -37,14 +37,14 @@
         </address>
 <p>In <a href="http://www.sudhanshumishra.in/category/programming.html">Programming</a>. </p>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/chrome.html">Chrome</a> <a href="http://www.sudhanshumishra.in/tag/javascript.html">JavaScript</a> </p>
-</footer><!-- /.post-info --><p>Implementation of HTML battery status API is a bit different in webkit.
+</footer><!-- /.post-info --><p>Implementation of <span class="caps">HTML</span> battery status <span class="caps">API</span> is a bit different in webkit.
 It has not been exposed with <code>navigator.battery</code>.
 This works fine in Gecko(Firefox) but you might have hard time if you
-try it on Chrome.</p>
+try it on&nbsp;Chrome.</p>
 <p>After banging my head for few days against some chromium issues I
-figured out that the API is <code>navigator.getBattery()</code> instead of <code>navigator.battery</code> which returns a promise. It works from <a href="https://chromium.googlesource.com/chromium/src/+/38.0.2125.92/content/browser/battery_status/">Google Chrome
+figured out that the <span class="caps">API</span> is <code>navigator.getBattery()</code> instead of <code>navigator.battery</code> which returns a promise. It works from <a href="https://chromium.googlesource.com/chromium/src/+/38.0.2125.92/content/browser/battery_status/">Google Chrome
 v38.0.2125.92</a>.</p>
-<p>Here's an example code for this:</p>
+<p>Here&#8217;s an example code for&nbsp;this:</p>
 <div class="highlight"><pre><span class="kd">var</span> <span class="nx">battery</span> <span class="o">=</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">battery</span> <span class="o">||</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">mozBattery</span><span class="p">;</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">battery</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// This works in Firefox</span>
@@ -58,7 +58,7 @@ v38.0.2125.92</a>.</p>
 </pre></div>
 
 
-<p>Once you have the battery, the sub API is same for both.</p>
+<p>Once you have the battery, the sub <span class="caps">API</span> is same for&nbsp;both.</p>
 <p>Cheers!</p><p>There are <a href="http://www.sudhanshumishra.in/battery-status-api-in-chrome#disqus_thread">comments</a>.</p>                </article>
 <p class="paginator">
     Page 1 / 1

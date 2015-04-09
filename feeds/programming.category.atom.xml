@@ -1,10 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/programming.category.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2015-01-16T19:36:00+05:30</updated><entry><title>Memory Error due to charge leak acceleration in DRAM</title><link href="http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram" rel="alternate"></link><updated>2015-01-16T19:36:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-01-16:memory-error-due-to-charge-leak-acceleration-in-dram</id><summary type="html">&lt;p&gt;DRAM comprises a two-dimensional array of DRAM cells, each of which
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/programming.category.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2015-04-09T06:50:00+05:30</updated><entry><title>Moving to a static site generator</title><link href="http://www.sudhanshumishra.in/moving-to-a-static-site-generator" rel="alternate"></link><updated>2015-04-09T06:50:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-04-09:moving-to-a-static-site-generator</id><summary type="html">&lt;p&gt;Finally I moved to a static site generator for my homepage + blog. Previously, I was using &lt;a href="http://blog.sudhanshumishra.in"&gt;blogger&lt;/a&gt; which was really annoying when writing a technical post. Code formatting was&amp;nbsp;bizarre!&lt;/p&gt;
+&lt;p&gt;Of all the static website generators I chose &lt;a href="http://getpelican.com"&gt;Pelican&lt;/a&gt;. It is written in Python and it doesn&amp;#8217;t require any database at the server side. I can write articles in &lt;strong&gt;markdown&lt;/strong&gt; which gives me full control over code highlighting! I know that these things are also possible with &lt;a href="http://jekyllrb.com/"&gt;Jekyll&lt;/a&gt; but the fact that Jekyll builds the complete site everytime which may take upto minutes, set me off. Moreover, Pelican is in&amp;nbsp;Python!&lt;/p&gt;
+&lt;p&gt;Pelican also gives you a nice way of importing contents from your old blog. I used following command to do&amp;nbsp;that.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pelican-import  --feed http://blog.sudhanshumishra.in/feeds/posts/default/ -o content/ -m markdown
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I&amp;#8217;ll explain what it actually did a bit&amp;nbsp;later.&lt;/p&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;p&gt;You can install it very easily with &lt;code&gt;pip&lt;/code&gt;. For a full installation(with markdown support) issue following&amp;nbsp;command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install --upgrade pelican markdown typogriphy
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Kickstart your&amp;nbsp;website&lt;/h2&gt;
+&lt;p&gt;Now create your project folder and &lt;code&gt;cd&lt;/code&gt; into it. After navigating into your project folder issue following&amp;nbsp;command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pelican-quickstart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If Pelican was installed successfully on your computer, it will prompt you with a questionnaire having very simple questions. Answer them and it&amp;#8217;ll generate skeleton files for your&amp;nbsp;website.&lt;/p&gt;
+&lt;p&gt;The directory structure looks somewhat like&amp;nbsp;this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;yourproject/
+├── content
+│   └── (pages)
+├── output
+├── develop_server.sh
+├── fabfile.py
+├── Makefile
+├── pelicanconf.py       # Main settings file
+└── publishconf.py       # Settings to use when ready to publish
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Add&amp;nbsp;contents&lt;/h2&gt;
+&lt;p&gt;Adding content is very easy. You just have to create markdown files with extension &lt;code&gt;.md&lt;/code&gt; in &lt;code&gt;content&lt;/code&gt; directory and it will automatically convert them into publishable &lt;code&gt;html&lt;/code&gt;. The command to import contents from blogger actually converted all my posts into markdown files and saved them into &lt;code&gt;content&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;Pelican follows a certain format for articles. For instance, here&amp;#8217;s the format for this&amp;nbsp;article:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Title: Moving to a static site generator
+Date: 2015-04-09 06:50
+Author: Sudhanshu Mishra
+Category: Programming
+Tags: Python
+Slug: moving-to-a-static-site-generator
+
+Finally I moved to a static site generator for my homepage + blog website.
+Previously, I was using [blogger](http://blog.sudhanshumishra.in) which was really
+annoying while writing a technical post. Code formatting was bizarre!
+
+...
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Publish&lt;/h2&gt;
+&lt;p&gt;Once you are done with the article just issue following command to generate &lt;code&gt;html&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;make html
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will generate &lt;code&gt;html&lt;/code&gt; along with assets in the &lt;code&gt;output&lt;/code&gt; directory. Since I&amp;#8217;m using GitHub pages to host my website, I used &lt;code&gt;output&lt;/code&gt; directory as my git repository having &lt;code&gt;CNAME&lt;/code&gt; file. Now just commit those files and push to your repository(&lt;your_username&gt;.github.io). Learn more about GitHub pages &lt;a href="https://pages.github.com/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to change theme or add plugins please visit the &lt;a href="http://docs.getpelican.com/"&gt;documentation&lt;/a&gt;.&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>Memory Error due to charge leak acceleration in DRAM</title><link href="http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram" rel="alternate"></link><updated>2015-01-16T19:36:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-01-16:memory-error-due-to-charge-leak-acceleration-in-dram</id><summary type="html">&lt;p&gt;&lt;span class="caps"&gt;DRAM&lt;/span&gt; comprises a two-dimensional array of &lt;span class="caps"&gt;DRAM&lt;/span&gt; cells, each of which
 consists of a capacitor and an access-transistor. Depending on whether
 its capacitor is fully charged or fully discharged, a cell is in either
 the charged state or the discharged state, respectively. These two
 states are used to represent a binary data value.
-Dense packaging in DRAM leads to anomalies while performing continuous
+Dense packaging in &lt;span class="caps"&gt;DRAM&lt;/span&gt; leads to anomalies while performing continuous
 read operations from same memory address which involves opening and
 closing of the wordline. This anomaly will not be evident if the data is
 read from an address after opening a wordline and not closing it. When
@@ -14,8 +73,8 @@ wordline have a disturbance effect on nearby rows, inducing some of
 their cells to leak charge at an accelerated rate. If such a cell loses
 too much charge before it is restored to its original value, it
 experiences a disturbance error.This disturbance results mostly in
-flipped bit value.Here's the assembly code which may induce errors when
-executed on Intel/AMD machines.&lt;/p&gt;
+flipped bit value.Here&amp;#8217;s the assembly code which may induce errors when
+executed on Intel/&lt;span class="caps"&gt;AMD&lt;/span&gt;&amp;nbsp;machines.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;loop:
     mov X, %eax  ; Read from address X and save in register including
 cache
@@ -28,7 +87,7 @@ cache
 
 
 &lt;p&gt;On the other hand, the following code will not induce errors because it
-does not force continuous toggling of the wordline.&lt;/p&gt;
+does not force continuous toggling of the&amp;nbsp;wordline.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;loop:
     mov X, %eax  ; Read from address X and save in register including
 cache
@@ -38,32 +97,32 @@ cache
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;These disturbances violate two invariants that memory should provide&lt;/p&gt;
+&lt;p&gt;These disturbances violate two invariants that memory should&amp;nbsp;provide&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;A read access should not modify data at any address&lt;/li&gt;
-&lt;li&gt;A write access should modify data only at the address being written to&lt;/li&gt;
+&lt;li&gt;A read access should not modify data at any&amp;nbsp;address&lt;/li&gt;
+&lt;li&gt;A write access should modify data only at the address being written&amp;nbsp;to&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;This makes systems, using DRAM, vulnerable to data corruption.&lt;/p&gt;
+&lt;p&gt;This makes systems, using &lt;span class="caps"&gt;DRAM&lt;/span&gt;, vulnerable to data&amp;nbsp;corruption.&lt;/p&gt;
 &lt;p&gt;References:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Yoongu Kim, Ross Daly, Jeremie Kim, Chris Fallin, Ji Hye Lee,
 Donghyuk Lee, Chris Wilkerson, Konrad Lai, Onur Mutlu et al. Flipping
-Bits in Memory Without Accessing Them: An Experimental Study of DRAM
-Disturbance Errors, 2014.&lt;/p&gt;
+Bits in Memory Without Accessing Them: An Experimental Study of &lt;span class="caps"&gt;DRAM&lt;/span&gt;
+Disturbance Errors,&amp;nbsp;2014.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;A. J. van de Goor and I. Schanstra. Address and Data Scrambling:
-Causes and Impact on Memory Tests. In DELTA, 2002&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;A. J.&lt;/span&gt; van de Goor and I. Schanstra. Address and Data Scrambling:
+Causes and Impact on Memory Tests. In &lt;span class="caps"&gt;DELTA&lt;/span&gt;,&amp;nbsp;2002&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</summary><category term="Electronics"></category></entry><entry><title>Battery Status API in Chrome</title><link href="http://www.sudhanshumishra.in/battery-status-api-in-chrome" rel="alternate"></link><updated>2014-10-13T12:20:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-10-13:battery-status-api-in-chrome</id><summary type="html">&lt;p&gt;Implementation of HTML battery status API is a bit different in webkit.
+&lt;/ol&gt;</summary><category term="Electronics"></category></entry><entry><title>Battery Status API in Chrome</title><link href="http://www.sudhanshumishra.in/battery-status-api-in-chrome" rel="alternate"></link><updated>2014-10-13T12:20:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-10-13:battery-status-api-in-chrome</id><summary type="html">&lt;p&gt;Implementation of &lt;span class="caps"&gt;HTML&lt;/span&gt; battery status &lt;span class="caps"&gt;API&lt;/span&gt; is a bit different in webkit.
 It has not been exposed with &lt;code&gt;navigator.battery&lt;/code&gt;.
 This works fine in Gecko(Firefox) but you might have hard time if you
-try it on Chrome.&lt;/p&gt;
+try it on&amp;nbsp;Chrome.&lt;/p&gt;
 &lt;p&gt;After banging my head for few days against some chromium issues I
-figured out that the API is &lt;code&gt;navigator.getBattery()&lt;/code&gt; instead of &lt;code&gt;navigator.battery&lt;/code&gt; which returns a promise. It works from &lt;a href="https://chromium.googlesource.com/chromium/src/+/38.0.2125.92/content/browser/battery_status/"&gt;Google Chrome
+figured out that the &lt;span class="caps"&gt;API&lt;/span&gt; is &lt;code&gt;navigator.getBattery()&lt;/code&gt; instead of &lt;code&gt;navigator.battery&lt;/code&gt; which returns a promise. It works from &lt;a href="https://chromium.googlesource.com/chromium/src/+/38.0.2125.92/content/browser/battery_status/"&gt;Google Chrome
 v38.0.2125.92&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Here's an example code for this:&lt;/p&gt;
+&lt;p&gt;Here&amp;#8217;s an example code for&amp;nbsp;this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;battery&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;battery&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;mozBattery&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;battery&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="c1"&gt;// This works in Firefox&lt;/span&gt;
@@ -77,8 +136,8 @@ v38.0.2125.92&lt;/a&gt;.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Once you have the battery, the sub API is same for both.&lt;/p&gt;
-&lt;p&gt;Cheers!&lt;/p&gt;</summary><category term="Chrome"></category><category term="JavaScript"></category></entry><entry><title>BinPy: N Bit Ripple Counter</title><link href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter" rel="alternate"></link><updated>2014-03-13T17:36:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-03-13:binpy-n-bit-ripple-counter</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;p&gt;Once you have the battery, the sub &lt;span class="caps"&gt;API&lt;/span&gt; is same for&amp;nbsp;both.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;</summary><category term="Chrome"></category><category term="JavaScript"></category></entry><entry><title>BinPy: N Bit Ripple Counter</title><link href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter" rel="alternate"></link><updated>2014-03-13T17:36:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-03-13:binpy-n-bit-ripple-counter</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;
 [![](http://binpy.github.io/images/logo.png)](http://binpy.github.io/images/logo.png)
@@ -86,32 +145,32 @@ v38.0.2125.92&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;&lt;a href="http://binpy.github.io"&gt;BinPy&lt;/a&gt; is almost ready to create things. This
-post focuses on building a ripple counter using it.  &lt;/p&gt;
+post focuses on building a ripple counter using&amp;nbsp;it.  &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Theory&lt;/strong&gt;  &lt;/p&gt;
 &lt;p&gt;A ripple counter is an asynchronous counter where only the first
 flip-flop is clocked by an external clock. All subsequent flip-flops are
 clocked by the output of the preceding flip-flop. Asynchronous counters
 are also called ripple-counters because of the way the clock pulse
-ripples it way through the flip-flops.  &lt;/p&gt;
-&lt;p&gt;The MOD of the ripple counter or asynchronous counter is 2n if n
+ripples it way through the&amp;nbsp;flip-flops.  &lt;/p&gt;
+&lt;p&gt;The &lt;span class="caps"&gt;MOD&lt;/span&gt; of the ripple counter or asynchronous counter is 2n if n
 flip-flops are used. For a 4-bit counter, the range of the count is 0000
 to 1111 (24-1). A counter may count up or count down or count up and
 down depending on the input control. The count sequence usually repeats
 itself. When counting up, the count sequence goes from 0000, 0001, 0010,
-... 1110 , 1111 , 0000, 0001, ... etc. When counting down the count
-sequence goes in the opposite manner: 1111, 1110, ... 0010, 0001, 0000,
-1111, 1110, ... etc.  &lt;/p&gt;
+&amp;#8230; 1110 , 1111 , 0000, 0001, &amp;#8230; etc. When counting down the count
+sequence goes in the opposite manner: 1111, 1110, &amp;#8230; 0010, 0001, 0000,
+1111, 1110, &amp;#8230;&amp;nbsp;etc.  &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Implementation&lt;/strong&gt;  &lt;/p&gt;
-&lt;p&gt;The following code is using BinPy's internal NBitRippleCounter.  &lt;/p&gt;
-&lt;p&gt;Following is the output of the above code.  &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Under the hood&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;The following code is using BinPy&amp;#8217;s internal&amp;nbsp;NBitRippleCounter.  &lt;/p&gt;
+&lt;p&gt;Following is the output of the above&amp;nbsp;code.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Under the&amp;nbsp;hood&lt;/strong&gt;  &lt;/p&gt;
 &lt;p&gt;When we are initializing the counter with specified number of bits, it
 is actually creating those many T Flip Flops and connecting them in
 order to get the result. The actual implementation is shown in the
-following code.  &lt;/p&gt;
-&lt;p&gt;Try connecting some wires with code, it's fun!&lt;br /&gt;
+following&amp;nbsp;code.  &lt;/p&gt;
+&lt;p&gt;Try connecting some wires with code, it&amp;#8217;s fun!&lt;br /&gt;
 If you have some feedback or questions regarding this post, please add
-comments. Cheers!   &lt;/p&gt;
+comments.&amp;nbsp;Cheers!   &lt;/p&gt;
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/p&gt;&lt;/p&gt;</summary><category term="BinPy"></category><category term="Circuit Design"></category><category term="Electronics"></category></entry></feed>

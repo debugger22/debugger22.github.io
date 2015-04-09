@@ -15,7 +15,7 @@
         <header id="banner" class="body">
                 <h1><a href="http://www.sudhanshumishra.in/">Shortlog </a></h1>
                 <nav><ul>
-                    <li><a href="http://www.sudhanshumishra.in/about-me">About me</a></li>
+                    <li><a href="http://www.sudhanshumishra.in/about-me">About&nbsp;me</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/android.html">Android</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/cloud-computing.html">Cloud Computing</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a></li>
@@ -26,7 +26,7 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/easy-caching-in-android">Easy caching in Android</a></h1>
+                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/easy-caching-in-android">Easy caching in&nbsp;Android</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2014-06-11T21:26:00+05:30">
                 Published: Wed 11 June 2014
@@ -38,8 +38,8 @@
 <p>In <a href="http://www.sudhanshumishra.in/category/android.html">Android</a>. </p>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/android.html">Android</a> </p>
 </footer><!-- /.post-info --><p>Recently I found a better way to
-cache data in Android. It can also be used to save preferences of users. I was using SQLite before and it was cumbersome. I had to make a table to save just few key-value pairs.</p>
-<p>Android SDK comes with an API
+cache data in Android. It can also be used to save preferences of users. I was using SQLite before and it was cumbersome. I had to make a table to save just few key-value&nbsp;pairs.</p>
+<p>Android <span class="caps">SDK</span> comes with an <span class="caps">API</span>
 called <code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;">android.content.SharedPreferences</code>.
 A<code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;">SharedPreferences</code> object
 points to a file containing key-value pairs and provides simple methods
@@ -47,20 +47,19 @@ to read and write them.
 Each <code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;">SharedPreferences</code> file
 is managed by the framework and can be private or shared. You’ll not
 lose your data even when the device restarts. It has one more advantage,
-you can also use to share data among different activities.</p>
+you can also use to share data among different&nbsp;activities.</p>
 <p>It supports primitive data types
 only. You can not save objects in <code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;">SharedPreferences</code>.
-Although you can serialize your object and store the raw string in
-it.</p>
+Although you can serialize your object and store the raw string in&nbsp;it.</p>
 <p>To get a private handle of
 the <code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;">SharedPreferences</code> use
-following command:</p>
+following&nbsp;command:</p>
 <div class="highlight"><pre><span class="n">SharedPreferences</span> <span class="n">myPrefs</span> <span class="o">=</span> <span class="n">getActivity</span><span class="o">().</span><span class="na">getSharedPreferences</span><span class="o">(</span><span class="n">getString</span><span class="o">(</span><span class="s">&quot;YOUR_PREFERENCE_FILE_NAME&quot;</span><span class="o">),</span> <span class="n">Context</span><span class="o">.</span><span class="na">MODE_PRIVATE</span><span class="o">);</span>
 </pre></div>
 
 
 <p><strong>Note</strong>: <code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;">YOUR_PREFERENCE_FILE_NAME</code> can
-be any valid string allowed for a file name in UNIX environment.</p>
+be any valid string allowed for a file name in <span class="caps">UNIX</span>&nbsp;environment.</p>
 <p>Private data will be available to your application only, it can not be accessed by other applications
 installed on the device. To make it public you just need to
 replace <code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;">Context.MODE_PRIVATE</code> with
@@ -70,33 +69,31 @@ either <code style="border-bottom-left-radius: 4px; border-bottom-right-radius:
 
 
 <p>Publicly shared prefences are available to other apps and if they know the file identifier, they may
-perform read/write operations on it.</p>
+perform read/write operations on&nbsp;it.</p>
 <p>Once you’ve got the handle you
-can read data using following code:</p>
+can read data using following&nbsp;code:</p>
 <div class="highlight"><pre><span class="n">String</span> <span class="n">strData</span> <span class="o">=</span> <span class="n">myPrefs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;mStrData&quot;</span><span class="o">,</span> <span class="n">DEFAULT_STRING</span><span class="o">);</span><span class="kt">boolean</span> <span class="n">boolData</span> <span class="o">=</span> <span class="n">myPrefs</span><span class="o">.</span><span class="na">getBoolean</span><span class="o">(</span><span class="s">&quot;mBoolData&quot;</span><span class="o">,</span> <span class="n">DEFAULT_BOOLEAN</span><span class="o">);</span><span class="kt">int</span> <span class="n">intData</span> <span class="o">=</span> <span class="n">myPrefs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">&quot;mIntData&quot;</span><span class="o">,</span> <span class="n">DEFAULT_INTEGER</span><span class="o">);</span>
 </pre></div>
 
 
 <p><strong>Note</strong>: If there isn’t any data
-associated with the passed key, it will return the passed default
-value.</p>
+associated with the passed key, it will return the passed default&nbsp;value.</p>
 <p>For a complete list of methods see <a href="http://developer.android.com/reference/android/content/SharedPreferences.html">this</a>.</span></p>
 <p>To save data in the <code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;">SharedPreferences</code> you
-need to add one more line:</p>
+need to add one more&nbsp;line:</p>
 <div class="highlight"><pre><span class="n">SharedPreferences</span><span class="o">.</span><span class="na">Editor</span> <span class="n">editor</span> <span class="o">=</span> <span class="n">myPrefs</span><span class="o">.</span><span class="na">edit</span><span class="o">();</span>
 </pre></div>
 
 
-<p>Now you can easily save data in the memory.</p>
+<p>Now you can easily save data in the&nbsp;memory.</p>
 <div class="highlight"><pre><span class="n">editor</span><span class="o">.</span><span class="na">putBoolean</span><span class="o">(</span><span class="s">&quot;cacheAvailable&quot;</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span><span class="n">editor</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="s">&quot;pingCount&quot;</span><span class="o">,</span> <span class="n">myPrefs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">&quot;pingCount&quot;</span><span class="o">)++);</span><span class="n">editor</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&quot;mResponse&quot;</span><span class="o">,</span> <span class="n">response</span><span class="o">);</span> <span class="c1">// A web response in my case.editor.commit(); // This is important to commit changes</span>
 </pre></div>
 
 
-<p><strong>Update:</strong>Use editor.apply() for asynchronous call.</p>
-<p>This API made my life easy. Now I do not need to write queries to do these small
-things.</p>
+<p><strong>Update:</strong>Use editor.apply() for asynchronous&nbsp;call.</p>
+<p>This <span class="caps">API</span> made my life easy. Now I do not need to write queries to do these small&nbsp;things.</p>
 <p>If you have suggestions, please
-comment below. I’ll be happy to get feedback.</p><p>There are <a href="http://www.sudhanshumishra.in/easy-caching-in-android#disqus_thread">comments</a>.</p>                </article>
+comment below. I’ll be happy to get&nbsp;feedback.</p><p>There are <a href="http://www.sudhanshumishra.in/easy-caching-in-android#disqus_thread">comments</a>.</p>                </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
@@ -106,7 +103,7 @@ comment below. I’ll be happy to get feedback.</p><p>There are <a href="http://
             <li><article class="hentry">
                 <header>
                     <h1><a href="http://www.sudhanshumishra.in/capastr-talking-about-design" rel="bookmark"
-                           title="Permalink to CapaStr: Talking about design">CapaStr: Talking about design</a></h1>
+                           title="Permalink to CapaStr: Talking about design">CapaStr: Talking about&nbsp;design</a></h1>
                 </header>
 
                 <div class="entry-content">
@@ -122,7 +119,7 @@ comment below. I’ll be happy to get feedback.</p><p>There are <a href="http://
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/android.html">Android</a> <a href="http://www.sudhanshumishra.in/tag/capastr.html">CapaStr</a> <a href="http://www.sudhanshumishra.in/tag/cordova.html">Cordova</a> <a href="http://www.sudhanshumishra.in/tag/ios.html">iOS</a> <a href="http://www.sudhanshumishra.in/tag/jquerymobile.html">JQueryMobile</a> <a href="http://www.sudhanshumishra.in/tag/phonegap.html">PhoneGap</a> </p>
 </footer><!-- /.post-info -->                <div dir="ltr" style="text-align: left;">
 It was very difficult for me to choose the best and easiest framework to
-use for UI design. After lot of research I decided to stick with
+use for <span class="caps">UI</span> design. After lot of research I decided to stick with
 **JQueryMobile** since it has an awesome extension called
 **ThemeRoller**.
 

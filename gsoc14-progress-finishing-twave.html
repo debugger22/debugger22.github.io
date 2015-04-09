@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>GSoC'14 Progress: Finishing TWave</title>
+        <title>GSoC‘14 Progress: Finishing TWave</title>
         <link rel="stylesheet" href="http://www.sudhanshumishra.in/theme/css/main.css" />
         <link href="http://www.sudhanshumishra.in/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Shortlog Atom Feed" />
 
@@ -15,7 +15,7 @@
         <header id="banner" class="body">
                 <h1><a href="http://www.sudhanshumishra.in/">Shortlog </a></h1>
                 <nav><ul>
-                    <li><a href="http://www.sudhanshumishra.in/about-me">About me</a></li>
+                    <li><a href="http://www.sudhanshumishra.in/about-me">About&nbsp;me</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/android.html">Android</a></li>
                     <li><a href="http://www.sudhanshumishra.in/category/cloud-computing.html">Cloud Computing</a></li>
                     <li class="active"><a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a></li>
@@ -28,7 +28,7 @@
     <header>
       <h1 class="entry-title">
         <a href="http://www.sudhanshumishra.in/gsoc14-progress-finishing-twave" rel="bookmark"
-           title="Permalink to GSoC'14 Progress: Finishing TWave">GSoC'14 Progress: Finishing TWave</a></h1>
+           title="Permalink to GSoC‘14 Progress: Finishing TWave">GSoC&#8216;14 Progress: Finishing&nbsp;TWave</a></h1>
     </header>
 
     <div class="entry-content">
@@ -57,7 +57,7 @@ wave. It has already been merged into the master.
 
 <div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
 Here is the class structure of
-the `TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}:
+the `TWave`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;}:
 
 </div>
 
@@ -66,7 +66,7 @@ the `TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; b
 
 
 <div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-Till now it has been very easy to implement this but these days I'm
+Till now it has been very easy to implement this but these days I&#8217;m
 stuck on writing functions to rewrite an expression using different
 functions. This is supposed to work like this as I feel from the code:
 
@@ -74,11 +74,11 @@ functions. This is supposed to work like this as I feel from the code:
 
 <div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
 When you
-call `expr.rewrite('sin')`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"},
+call `expr.rewrite(&#8216;sin&#8217;)`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;},
 the following code written
-in `sympy.core.basic`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}should
+in `sympy.core.basic`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;}should
 make a call to
-function `_eval_rewrite_as_sin(self, *args)`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} defined
+function `_eval_rewrite_as_sin(self, *args)`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;} defined
 in the object class.
 
 </div>
@@ -89,8 +89,8 @@ in the object class.
 
 <div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
 But this is not the case with me. It always ends up
-calling `__str__`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} method.
-This is the PR for the same.
+calling `__str__`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;} method.
+This is the <span class="caps">PR</span> for the same.
 
 </div>
 
@@ -107,10 +107,10 @@ great Python debugger which is platform independent.
 </div>
 
 <div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-I've also been working on SHM and will submit a PR soon for that.
+I&#8217;ve also been working on <span class="caps">SHM</span> and will submit a <span class="caps">PR</span> soon for that.
 Besides my project, I also closed two issues this week related to
 printing
-in `sympy.logic`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} and
+in `sympy.logic`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;} and
 helped to review few PRs.
 
 </div>
@@ -118,37 +118,36 @@ helped to review few PRs.
 <ul>
 <li><a href="https://github.com/sympy/sympy/issues/7179">https://github.com/sympy/sympy/issues/7179</a></li>
 <li><a href="https://github.com/sympy/sympy/issues/7180">https://github.com/sympy/sympy/issues/7180</a></li>
-<li>PR: <a href="https://github.com/sympy/sympy/pull/7541">https://github.com/sympy/sympy/pull/7541</a></li>
+<li><span class="caps">PR</span>: <a href="https://github.com/sympy/sympy/pull/7541">https://github.com/sympy/sympy/pull/7541</a></li>
 </ul>
 <div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
 We have a public channel(<https://gitter.im/sympy/sympy/optics>) to
 discuss about my project. You are welcome to join us, we would be more
-than happy to get feedback about the work. It'll help us refine it and
+than happy to get feedback about the work. It&#8217;ll help us refine it and
 cover a wider range of use cases.
 
 </div>
 
 <h4 id="weeklog" style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; margin: 0px;">Weeklog</h4>
-<h6 id="merged" style="color: #999999; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px;">MERGED</h6>
+<h6 id="merged" style="color: #999999; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px;"><span class="caps">MERGED</span></h6>
 <ul>
-<li>Add tests for pretty printer</li>
-<li>Remove unnecessary if block</li>
-<li>Add IPython Notebook Checkpoints to .gitignore</li>
-<li>Remove double wrapping with u</li>
-<li>Add tests for printing Equivalent. fixes #7180</li>
-<li>Wrap unicode chars with u and fix a bug in latex printer</li>
-<li>Fix a typo in manipulation.rst [skip ci]</li>
+<li>Add tests for pretty&nbsp;printer</li>
+<li>Remove unnecessary if&nbsp;block</li>
+<li>Add IPython Notebook Checkpoints to&nbsp;.gitignore</li>
+<li>Remove double wrapping with&nbsp;u</li>
+<li>Add tests for printing Equivalent. fixes&nbsp;#7180</li>
+<li>Wrap unicode chars with u and fix a bug in latex&nbsp;printer</li>
+<li>Fix a typo in manipulation.rst [skip&nbsp;ci]</li>
 <li>Make equivalence symbol same for pretty printer and * latex printer
-    and change not equivalent symbol to u+2262 [skip ci]</li>
-<li>Fix latex printing for Not(Equivalent) and Not(Implies).</li>
-<li>Fix pretty printing for Not(Equivalent) and Not(Implies). fixes
-    #7179</li>
+    and change not equivalent symbol to u+2262 [skip&nbsp;ci]</li>
+<li>Fix latex printing for Not(Equivalent) and&nbsp;Not(Implies).</li>
+<li>Fix pretty printing for Not(Equivalent) and Not(Implies). fixes&nbsp;#7179</li>
 </ul>
-<h6 id="pending" style="color: #999999; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px;">PENDING</h6>
+<h6 id="pending" style="color: #999999; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px;"><span class="caps">PENDING</span></h6>
 <ul>
-<li>Change arg to *args [skip ci]</li>
-<li>Add rewrite expression methods [skip ci]</li>
-<li>Add wavenumber property</li>
+<li>Change arg to *args [skip&nbsp;ci]</li>
+<li>Add rewrite expression methods [skip&nbsp;ci]</li>
+<li>Add wavenumber&nbsp;property</li>
 </ul>
 <div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
 This is all for now. Cheers!

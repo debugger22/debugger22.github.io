@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Shortlog - Programming</title>
+        <title>Moving to a static site generator</title>
         <link rel="stylesheet" href="http://www.sudhanshumishra.in/theme/css/main.css" />
         <link href="http://www.sudhanshumishra.in/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Shortlog Atom Feed" />
 
@@ -23,10 +23,15 @@
                     <li class="active"><a href="http://www.sudhanshumishra.in/category/programming.html">Programming</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://www.sudhanshumishra.in/moving-to-a-static-site-generator" rel="bookmark"
+           title="Permalink to Moving to a static site generator">Moving to a static site&nbsp;generator</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/moving-to-a-static-site-generator">Moving to a static site&nbsp;generator</a></h1>
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2015-04-09T06:50:00+05:30">
                 Published: Thu 09 April 2015
@@ -37,7 +42,7 @@
         </address>
 <p>In <a href="http://www.sudhanshumishra.in/category/programming.html">Programming</a>. </p>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/python.html">Python</a> </p>
-</footer><!-- /.post-info --><p>Finally I moved to a static site generator for my homepage + blog. Previously, I was using <a href="http://blog.sudhanshumishra.in">blogger</a> which was really annoying when writing a technical post. Code formatting was&nbsp;bizarre!</p>
+</footer><!-- /.post-info -->      <p>Finally I moved to a static site generator for my homepage + blog. Previously, I was using <a href="http://blog.sudhanshumishra.in">blogger</a> which was really annoying when writing a technical post. Code formatting was&nbsp;bizarre!</p>
 <p>Of all the static website generators I chose <a href="http://getpelican.com">Pelican</a>. It is written in Python and it doesn&#8217;t require any database at the server side. I can write articles in <strong>markdown</strong> which gives me full control over code highlighting! I know that these things are also possible with <a href="http://jekyllrb.com/">Jekyll</a> but the fact that Jekyll builds the complete site everytime which may take upto minutes, set me off. Moreover, Pelican is in&nbsp;Python!</p>
 <p>Pelican also gives you a nice way of importing contents from your old blog. I used following command to do&nbsp;that.</p>
 <div class="highlight"><pre><span class="nv">$ </span>pelican-import  --feed http://blog.sudhanshumishra.in/feeds/posts/default/ -o content/ -m markdown
@@ -96,102 +101,26 @@ annoying while writing a technical post. Code formatting was bizarre!
 
 
 <p>This will generate <code>html</code> along with assets in the <code>output</code> directory. Since I&#8217;m using GitHub pages to host my website, I used <code>output</code> directory as my git repository having <code>CNAME</code> file. Now just commit those files and push to your repository(<your_username>.github.io). Learn more about GitHub pages <a href="https://pages.github.com/">here</a>.</p>
-<p>If you want to change theme or add plugins please visit the <a href="http://docs.getpelican.com/">documentation</a>.</p><p>There are <a href="http://www.sudhanshumishra.in/moving-to-a-static-site-generator#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<p>If you want to change theme or add plugins please visit the <a href="http://docs.getpelican.com/">documentation</a>.</p>
+    </div><!-- /.entry-content -->
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'newgithubpagesblog';
+        var disqus_identifier = 'moving-to-a-static-site-generator';
+        var disqus_url = 'http://www.sudhanshumishra.in/moving-to-a-static-site-generator';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//newgithubpagesblog.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram" rel="bookmark"
-                           title="Permalink to Memory Error due to charge leak acceleration in DRAM">Memory Error due to charge leak acceleration in <span class="caps">DRAM</span></a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-01-16T19:36:00+05:30">
-                Published: Fri 16 January 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://www.sudhanshumishra.in/author/sudhanshu-mishra.html">Sudhanshu Mishra</a>
-        </address>
-<p>In <a href="http://www.sudhanshumishra.in/category/programming.html">Programming</a>. </p>
-<p>tags: <a href="http://www.sudhanshumishra.in/tag/electronics.html">Electronics</a> </p>
-</footer><!-- /.post-info -->                <p><span class="caps">DRAM</span> comprises a two-dimensional array of <span class="caps">DRAM</span> cells, each of which
-consists of a capacitor and an access-transistor. Depending on whether
-its capacitor is fully charged or fully discharged, a cell is in either
-the charged state or the discharged state, respectively. These two
-states are used to represent a ...</p>
-                <a class="readmore" href="http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram">read more</a>
-<p>There are <a href="http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://www.sudhanshumishra.in/battery-status-api-in-chrome" rel="bookmark"
-                           title="Permalink to Battery Status API in Chrome">Battery Status <span class="caps">API</span> in&nbsp;Chrome</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-10-13T12:20:00+05:30">
-                Published: Mon 13 October 2014
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://www.sudhanshumishra.in/author/sudhanshu-mishra.html">Sudhanshu Mishra</a>
-        </address>
-<p>In <a href="http://www.sudhanshumishra.in/category/programming.html">Programming</a>. </p>
-<p>tags: <a href="http://www.sudhanshumishra.in/tag/chrome.html">Chrome</a> <a href="http://www.sudhanshumishra.in/tag/javascript.html">JavaScript</a> </p>
-</footer><!-- /.post-info -->                <p>Implementation of <span class="caps">HTML</span> battery status <span class="caps">API</span> is a bit different in webkit.
-It has not been exposed with <code>navigator.battery</code>.
-This works fine in Gecko(Firefox) but you might have hard time if you
-try it on&nbsp;Chrome.</p>
-<p>After banging my head for few days against some chromium issues I ...</p>
-                <a class="readmore" href="http://www.sudhanshumishra.in/battery-status-api-in-chrome">read more</a>
-<p>There are <a href="http://www.sudhanshumishra.in/battery-status-api-in-chrome#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter" rel="bookmark"
-                           title="Permalink to BinPy: N Bit Ripple Counter">BinPy: N Bit Ripple&nbsp;Counter</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-03-13T17:36:00+05:30">
-                Published: Thu 13 March 2014
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://www.sudhanshumishra.in/author/sudhanshu-mishra.html">Sudhanshu Mishra</a>
-        </address>
-<p>In <a href="http://www.sudhanshumishra.in/category/programming.html">Programming</a>. </p>
-<p>tags: <a href="http://www.sudhanshumishra.in/tag/binpy.html">BinPy</a> <a href="http://www.sudhanshumishra.in/tag/circuit-design.html">Circuit Design</a> <a href="http://www.sudhanshumishra.in/tag/electronics.html">Electronics</a> </p>
-</footer><!-- /.post-info -->                <div dir="ltr" style="text-align: left;">
-<div dir="ltr" style="text-align: left;">
-<div class="separator" style="clear: both; text-align: center;">
-[![](http://binpy.github.io/images/logo.png)](http://binpy.github.io/images/logo.png)
-
-</div>
-
-<p><a href="http://binpy.github.io">BinPy</a> is almost ready to create things. This
-post focuses on building a ripple counter using&nbsp;it.  </p>
-<p><strong>Theory</strong>  </p>
-<p>A ripple counter is an asynchronous counter where only the first
-flip-flop is clocked by an external clock ...</p></div></div>
-                <a class="readmore" href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter">read more</a>
-<p>There are <a href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-<p class="paginator">
-    Page 1 / 1
-</p>
-                </section><!-- /#content -->
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>blogroll</h2>

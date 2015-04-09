@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/web.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2015-01-07T16:51:00+05:30</updated><entry><title>Top Hacker News Archive</title><link href="http://www.sudhanshumishra.in/top-hacker-news-archive" rel="alternate"></link><updated>2015-01-07T16:51:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-01-07:top-hacker-news-archive</id><summary type="html">&lt;p&gt;&lt;a href="https://news.ycombinator.com/"&gt;Hacker News'&lt;/a&gt; top 5 entries are some
-beautiful stories that can't be missed by a technology enthusiast. The
-problem is HN gives more weight-age to the period of existence of a post
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/web.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2015-01-07T16:51:00+05:30</updated><entry><title>Top Hacker News Archive</title><link href="http://www.sudhanshumishra.in/top-hacker-news-archive" rel="alternate"></link><updated>2015-01-07T16:51:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-01-07:top-hacker-news-archive</id><summary type="html">&lt;p&gt;&lt;a href="https://news.ycombinator.com/"&gt;Hacker News&amp;#8217;&lt;/a&gt; top 5 entries are some
+beautiful stories that can&amp;#8217;t be missed by a technology enthusiast. The
+problem is &lt;span class="caps"&gt;HN&lt;/span&gt; gives more weight-age to the period of existence of a post
 and hence articles decay rapidly as time passes. I try my best to read
-most of them but it's certainly not possible if you've got other things
-to do. :)&lt;/p&gt;
+most of them but it&amp;#8217;s certainly not possible if you&amp;#8217;ve got other things
+to do.&amp;nbsp;:)&lt;/p&gt;
 &lt;p&gt;To overcome this problem I wrote a small script to pull all those
-entries and save it for me even when I'm away. Perhaps this will help my
-obsession with hacker news.&lt;/p&gt;
-&lt;p&gt;Once I have enough articles, I'll host them on the web with real time
-addition of new articles for everyone. I'll think about other good
-sources too.&lt;/p&gt;</summary><category term="python"></category><category term="Web"></category></entry></feed>
+entries and save it for me even when I&amp;#8217;m away. Perhaps this will help my
+obsession with hacker&amp;nbsp;news.&lt;/p&gt;
+&lt;p&gt;Once I have enough articles, I&amp;#8217;ll host them on the web with real time
+addition of new articles for everyone. I&amp;#8217;ll think about other good
+sources&amp;nbsp;too.&lt;/p&gt;</summary><category term="python"></category><category term="Web"></category></entry></feed>

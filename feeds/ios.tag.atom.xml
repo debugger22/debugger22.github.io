@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/ios.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2013-08-20T22:37:00+05:30</updated><entry><title>CapaStr: Talking about design</title><link href="http://www.sudhanshumishra.in/capastr-talking-about-design" rel="alternate"></link><updated>2013-08-20T22:37:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-08-20:capastr-talking-about-design</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/ios.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2013-08-20T22:37:00+05:30</updated><entry><title>CapaStr: Talking about design</title><link href="http://www.sudhanshumishra.in/capastr-talking-about-design" rel="alternate"></link><updated>2013-08-20T22:37:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-08-20:capastr-talking-about-design</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 It was very difficult for me to choose the best and easiest framework to
-use for UI design. After lot of research I decided to stick with
+use for &lt;span class="caps"&gt;UI&lt;/span&gt; design. After lot of research I decided to stick with
 **JQueryMobile** since it has an awesome extension called
 **ThemeRoller**.
 
@@ -9,7 +9,7 @@ Working with a framework gives you enough time to work on core things
 rather than thinking about the responsive design. Cordova is doing
 pretty well with JQuery without loosing any frame.  
 
-Here's some of the screen shots of the
+Here&amp;#8217;s some of the screen shots of the
 app&lt;span id="goog_1151724009"&gt;&lt;/span&gt;&lt;span id="goog_1151724010"&gt;&lt;/span&gt;  
 
 
@@ -23,18 +23,18 @@ app&lt;span id="goog_1151724009"&gt;&lt;/span&gt;&lt;span id="goog_1151724010"&g
 
 &lt;/div&gt;
 
-&lt;p&gt;I'm not very good at choosing colors, although Blue and Orange are my
-all time favorite.  &lt;/p&gt;
-&lt;p&gt;Working with Android's push notification system is really a hectic job.
-First you code for C2DM and then you get to know that it has been
+&lt;p&gt;I&amp;#8217;m not very good at choosing colors, although Blue and Orange are my
+all time&amp;nbsp;favorite.  &lt;/p&gt;
+&lt;p&gt;Working with Android&amp;#8217;s push notification system is really a hectic job.
+First you code for &lt;span class="caps"&gt;C2DM&lt;/span&gt; and then you get to know that it has been
 deprecated by Google itself discourages the development. Google
-introduced something new called Google Cloud Messaging(GCM). This works
+introduced something new called Google Cloud Messaging(&lt;span class="caps"&gt;GCM&lt;/span&gt;). This works
 pretty smooth once you have the registration Id of the device. Thanks
 to &lt;a href="http://namis.me/"&gt;geeknam&lt;/a&gt; for proving such a fantastic library to
-handle GCM with Python.&lt;br /&gt;
-I hope that Apple Push Notification Service(APNS) would not be a
+handle &lt;span class="caps"&gt;GCM&lt;/span&gt; with Python.&lt;br /&gt;
+I hope that Apple Push Notification Service(&lt;span class="caps"&gt;APNS&lt;/span&gt;) would not be a
 headache like Android. &lt;br /&gt;
-I'll let you know about further development soon.  &lt;/p&gt;
+I&amp;#8217;ll let you know about further development&amp;nbsp;soon.  &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Enjoy!!&lt;/em&gt;&lt;/strong&gt;  &lt;/p&gt;
 &lt;p&gt;&lt;span style="font-size: xx-small;"&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/div&gt;

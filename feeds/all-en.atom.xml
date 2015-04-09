@@ -1,10 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/all-en.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2015-01-16T19:36:00+05:30</updated><entry><title>Memory Error due to charge leak acceleration in DRAM</title><link href="http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram" rel="alternate"></link><updated>2015-01-16T19:36:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-01-16:memory-error-due-to-charge-leak-acceleration-in-dram</id><summary type="html">&lt;p&gt;DRAM comprises a two-dimensional array of DRAM cells, each of which
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/all-en.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2015-04-09T06:50:00+05:30</updated><entry><title>Moving to a static site generator</title><link href="http://www.sudhanshumishra.in/moving-to-a-static-site-generator" rel="alternate"></link><updated>2015-04-09T06:50:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-04-09:moving-to-a-static-site-generator</id><summary type="html">&lt;p&gt;Finally I moved to a static site generator for my homepage + blog. Previously, I was using &lt;a href="http://blog.sudhanshumishra.in"&gt;blogger&lt;/a&gt; which was really annoying when writing a technical post. Code formatting was&amp;nbsp;bizarre!&lt;/p&gt;
+&lt;p&gt;Of all the static website generators I chose &lt;a href="http://getpelican.com"&gt;Pelican&lt;/a&gt;. It is written in Python and it doesn&amp;#8217;t require any database at the server side. I can write articles in &lt;strong&gt;markdown&lt;/strong&gt; which gives me full control over code highlighting! I know that these things are also possible with &lt;a href="http://jekyllrb.com/"&gt;Jekyll&lt;/a&gt; but the fact that Jekyll builds the complete site everytime which may take upto minutes, set me off. Moreover, Pelican is in&amp;nbsp;Python!&lt;/p&gt;
+&lt;p&gt;Pelican also gives you a nice way of importing contents from your old blog. I used following command to do&amp;nbsp;that.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pelican-import  --feed http://blog.sudhanshumishra.in/feeds/posts/default/ -o content/ -m markdown
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I&amp;#8217;ll explain what it actually did a bit&amp;nbsp;later.&lt;/p&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;p&gt;You can install it very easily with &lt;code&gt;pip&lt;/code&gt;. For a full installation(with markdown support) issue following&amp;nbsp;command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install --upgrade pelican markdown typogriphy
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Kickstart your&amp;nbsp;website&lt;/h2&gt;
+&lt;p&gt;Now create your project folder and &lt;code&gt;cd&lt;/code&gt; into it. After navigating into your project folder issue following&amp;nbsp;command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pelican-quickstart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If Pelican was installed successfully on your computer, it will prompt you with a questionnaire having very simple questions. Answer them and it&amp;#8217;ll generate skeleton files for your&amp;nbsp;website.&lt;/p&gt;
+&lt;p&gt;The directory structure looks somewhat like&amp;nbsp;this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;yourproject/
+├── content
+│   └── (pages)
+├── output
+├── develop_server.sh
+├── fabfile.py
+├── Makefile
+├── pelicanconf.py       # Main settings file
+└── publishconf.py       # Settings to use when ready to publish
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Add&amp;nbsp;contents&lt;/h2&gt;
+&lt;p&gt;Adding content is very easy. You just have to create markdown files with extension &lt;code&gt;.md&lt;/code&gt; in &lt;code&gt;content&lt;/code&gt; directory and it will automatically convert them into publishable &lt;code&gt;html&lt;/code&gt;. The command to import contents from blogger actually converted all my posts into markdown files and saved them into &lt;code&gt;content&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;Pelican follows a certain format for articles. For instance, here&amp;#8217;s the format for this&amp;nbsp;article:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Title: Moving to a static site generator
+Date: 2015-04-09 06:50
+Author: Sudhanshu Mishra
+Category: Programming
+Tags: Python
+Slug: moving-to-a-static-site-generator
+
+Finally I moved to a static site generator for my homepage + blog website.
+Previously, I was using [blogger](http://blog.sudhanshumishra.in) which was really
+annoying while writing a technical post. Code formatting was bizarre!
+
+...
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Publish&lt;/h2&gt;
+&lt;p&gt;Once you are done with the article just issue following command to generate &lt;code&gt;html&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;make html
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will generate &lt;code&gt;html&lt;/code&gt; along with assets in the &lt;code&gt;output&lt;/code&gt; directory. Since I&amp;#8217;m using GitHub pages to host my website, I used &lt;code&gt;output&lt;/code&gt; directory as my git repository having &lt;code&gt;CNAME&lt;/code&gt; file. Now just commit those files and push to your repository(&lt;your_username&gt;.github.io). Learn more about GitHub pages &lt;a href="https://pages.github.com/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to change theme or add plugins please visit the &lt;a href="http://docs.getpelican.com/"&gt;documentation&lt;/a&gt;.&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>Memory Error due to charge leak acceleration in DRAM</title><link href="http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram" rel="alternate"></link><updated>2015-01-16T19:36:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-01-16:memory-error-due-to-charge-leak-acceleration-in-dram</id><summary type="html">&lt;p&gt;&lt;span class="caps"&gt;DRAM&lt;/span&gt; comprises a two-dimensional array of &lt;span class="caps"&gt;DRAM&lt;/span&gt; cells, each of which
 consists of a capacitor and an access-transistor. Depending on whether
 its capacitor is fully charged or fully discharged, a cell is in either
 the charged state or the discharged state, respectively. These two
 states are used to represent a binary data value.
-Dense packaging in DRAM leads to anomalies while performing continuous
+Dense packaging in &lt;span class="caps"&gt;DRAM&lt;/span&gt; leads to anomalies while performing continuous
 read operations from same memory address which involves opening and
 closing of the wordline. This anomaly will not be evident if the data is
 read from an address after opening a wordline and not closing it. When
@@ -14,8 +73,8 @@ wordline have a disturbance effect on nearby rows, inducing some of
 their cells to leak charge at an accelerated rate. If such a cell loses
 too much charge before it is restored to its original value, it
 experiences a disturbance error.This disturbance results mostly in
-flipped bit value.Here's the assembly code which may induce errors when
-executed on Intel/AMD machines.&lt;/p&gt;
+flipped bit value.Here&amp;#8217;s the assembly code which may induce errors when
+executed on Intel/&lt;span class="caps"&gt;AMD&lt;/span&gt;&amp;nbsp;machines.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;loop:
     mov X, %eax  ; Read from address X and save in register including
 cache
@@ -28,7 +87,7 @@ cache
 
 
 &lt;p&gt;On the other hand, the following code will not induce errors because it
-does not force continuous toggling of the wordline.&lt;/p&gt;
+does not force continuous toggling of the&amp;nbsp;wordline.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;loop:
     mov X, %eax  ; Read from address X and save in register including
 cache
@@ -38,75 +97,74 @@ cache
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;These disturbances violate two invariants that memory should provide&lt;/p&gt;
+&lt;p&gt;These disturbances violate two invariants that memory should&amp;nbsp;provide&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;A read access should not modify data at any address&lt;/li&gt;
-&lt;li&gt;A write access should modify data only at the address being written to&lt;/li&gt;
+&lt;li&gt;A read access should not modify data at any&amp;nbsp;address&lt;/li&gt;
+&lt;li&gt;A write access should modify data only at the address being written&amp;nbsp;to&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;This makes systems, using DRAM, vulnerable to data corruption.&lt;/p&gt;
+&lt;p&gt;This makes systems, using &lt;span class="caps"&gt;DRAM&lt;/span&gt;, vulnerable to data&amp;nbsp;corruption.&lt;/p&gt;
 &lt;p&gt;References:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Yoongu Kim, Ross Daly, Jeremie Kim, Chris Fallin, Ji Hye Lee,
 Donghyuk Lee, Chris Wilkerson, Konrad Lai, Onur Mutlu et al. Flipping
-Bits in Memory Without Accessing Them: An Experimental Study of DRAM
-Disturbance Errors, 2014.&lt;/p&gt;
+Bits in Memory Without Accessing Them: An Experimental Study of &lt;span class="caps"&gt;DRAM&lt;/span&gt;
+Disturbance Errors,&amp;nbsp;2014.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;A. J. van de Goor and I. Schanstra. Address and Data Scrambling:
-Causes and Impact on Memory Tests. In DELTA, 2002&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;A. J.&lt;/span&gt; van de Goor and I. Schanstra. Address and Data Scrambling:
+Causes and Impact on Memory Tests. In &lt;span class="caps"&gt;DELTA&lt;/span&gt;,&amp;nbsp;2002&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</summary><category term="Electronics"></category></entry><entry><title>Two things: Dockerizing Applications and AWS' on the house services</title><link href="http://www.sudhanshumishra.in/two-things-dockerizing-applications-and-aws-on-the-house-services" rel="alternate"></link><updated>2015-01-08T18:25:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-01-08:two-things-dockerizing-applications-and-aws-on-the-house-services</id><summary type="html">&lt;p&gt;Lately I migrated my app from DigitalOcean to AWS and encountered the
-pain of setting up similar environment.(Documenting everything is very
-important!)&lt;/p&gt;
+&lt;/ol&gt;</summary><category term="Electronics"></category></entry><entry><title>Two things: Dockerizing Applications and AWS’ on the house services</title><link href="http://www.sudhanshumishra.in/two-things-dockerizing-applications-and-aws-on-the-house-services" rel="alternate"></link><updated>2015-01-08T18:25:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-01-08:two-things-dockerizing-applications-and-aws-on-the-house-services</id><summary type="html">&lt;p&gt;Lately I migrated my app from DigitalOcean to &lt;span class="caps"&gt;AWS&lt;/span&gt; and encountered the
+pain of setting up similar environment.(Documenting everything is very&amp;nbsp;important!)&lt;/p&gt;
 &lt;p&gt;I heard long ago about &lt;a href="https://docker.io/"&gt;Docker&lt;/a&gt; but never bothered
-to tinker with it. If you don't know, Docker is a platform for
+to tinker with it. If you don&amp;#8217;t know, Docker is a platform for
 developers and sysadmins to develop, ship, and run applications. Docker
 lets you quickly assemble applications from components and eliminates
-the friction that can come when shipping code.&lt;/p&gt;
+the friction that can come when shipping&amp;nbsp;code.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="docker" src="http://blog.docker.com/wp-content/uploads/2013/08/KuDr42X_ITXghJhSInDZekNEF0jLt3NeVxtRye3tqco.png" /&gt;&lt;/p&gt;
-&lt;p&gt;It's just like a &lt;code&gt;git pull&lt;/code&gt; for your custom OS.
+&lt;p&gt;It&amp;#8217;s just like a &lt;code&gt;git pull&lt;/code&gt; for your custom &lt;span class="caps"&gt;OS&lt;/span&gt;.
 &lt;a href="https://docker.io/"&gt;https://docker.io&lt;/a&gt; manages repositories of docker
 images, public and private. A docker image is just a set of layers where
 layers are changes to its file system as results of commands. It uses
-same commit system like git. Once you've established an image you can
+same commit system like git. Once you&amp;#8217;ve established an image you can
 run your applications on it. Docker calls them containers. Each
 container runs a single process. Even when containers run on same
-environment, they are sandboxed to themselves. There's a 'sophisticated'
+environment, they are sandboxed to themselves. There&amp;#8217;s a &amp;#8216;sophisticated&amp;#8217;
 way in which containers talk to each
-other. &lt;a href="https://docs.docker.com/userguide/dockerizing"&gt;Here's&lt;/a&gt; a great
-article on dockerizing your applications.&lt;/p&gt;
+other. &lt;a href="https://docs.docker.com/userguide/dockerizing"&gt;Here&amp;#8217;s&lt;/a&gt; a great
+article on dockerizing your&amp;nbsp;applications.&lt;/p&gt;
 &lt;p&gt;So yeah, I had to set up the same environment but just for once! Now I
 can easily automate spawning new instances and adding them under
-Amazon's ELB. It also made the development easier.&lt;/p&gt;
-&lt;p&gt;I'm amazingly happy with Amazon's great products. Things like Elastic
-IP, Elastic Load Balancer, Elastic Block Storage, S3, VPC, etc. can be
+Amazon&amp;#8217;s &lt;span class="caps"&gt;ELB&lt;/span&gt;. It also made the development&amp;nbsp;easier.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;m amazingly happy with Amazon&amp;#8217;s great products. Things like Elastic
+&lt;span class="caps"&gt;IP&lt;/span&gt;, Elastic Load Balancer, Elastic Block Storage, S3, &lt;span class="caps"&gt;VPC&lt;/span&gt;, etc. can be
 done with just few clicks. Setting up such infrastructure manually is a
 nightmare. One thing which I miss here is MongoDB. Although there is
-Amazon's own DynamoDB but I really don't want to learn another NoSQL DB.
-I'm using few EC2 instances for that.&lt;/p&gt;
-&lt;p&gt;We're accepting beta testers for this app.
+Amazon&amp;#8217;s own DynamoDB but I really don&amp;#8217;t want to learn another NoSQL &lt;span class="caps"&gt;DB&lt;/span&gt;.
+I&amp;#8217;m using few &lt;span class="caps"&gt;EC2&lt;/span&gt; instances for&amp;nbsp;that.&lt;/p&gt;
+&lt;p&gt;We&amp;#8217;re accepting beta testers for this app.
 &lt;a href="https://getwaeo.com/"&gt;https://getwaeo.com&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;I'm really excited about it and will be putting it in production in few
-weeks! Cheers!&lt;/p&gt;</summary><category term="aws"></category><category term="cloud"></category><category term="docker"></category><category term="Server"></category></entry><entry><title>Top Hacker News Archive</title><link href="http://www.sudhanshumishra.in/top-hacker-news-archive" rel="alternate"></link><updated>2015-01-07T16:51:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-01-07:top-hacker-news-archive</id><summary type="html">&lt;p&gt;&lt;a href="https://news.ycombinator.com/"&gt;Hacker News'&lt;/a&gt; top 5 entries are some
-beautiful stories that can't be missed by a technology enthusiast. The
-problem is HN gives more weight-age to the period of existence of a post
+&lt;p&gt;I&amp;#8217;m really excited about it and will be putting it in production in few
+weeks!&amp;nbsp;Cheers!&lt;/p&gt;</summary><category term="aws"></category><category term="cloud"></category><category term="docker"></category><category term="Server"></category></entry><entry><title>Top Hacker News Archive</title><link href="http://www.sudhanshumishra.in/top-hacker-news-archive" rel="alternate"></link><updated>2015-01-07T16:51:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-01-07:top-hacker-news-archive</id><summary type="html">&lt;p&gt;&lt;a href="https://news.ycombinator.com/"&gt;Hacker News&amp;#8217;&lt;/a&gt; top 5 entries are some
+beautiful stories that can&amp;#8217;t be missed by a technology enthusiast. The
+problem is &lt;span class="caps"&gt;HN&lt;/span&gt; gives more weight-age to the period of existence of a post
 and hence articles decay rapidly as time passes. I try my best to read
-most of them but it's certainly not possible if you've got other things
-to do. :)&lt;/p&gt;
+most of them but it&amp;#8217;s certainly not possible if you&amp;#8217;ve got other things
+to do.&amp;nbsp;:)&lt;/p&gt;
 &lt;p&gt;To overcome this problem I wrote a small script to pull all those
-entries and save it for me even when I'm away. Perhaps this will help my
-obsession with hacker news.&lt;/p&gt;
-&lt;p&gt;Once I have enough articles, I'll host them on the web with real time
-addition of new articles for everyone. I'll think about other good
-sources too.&lt;/p&gt;</summary><category term="python"></category><category term="Web"></category></entry><entry><title>Battery Status API in Chrome</title><link href="http://www.sudhanshumishra.in/battery-status-api-in-chrome" rel="alternate"></link><updated>2014-10-13T12:20:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-10-13:battery-status-api-in-chrome</id><summary type="html">&lt;p&gt;Implementation of HTML battery status API is a bit different in webkit.
+entries and save it for me even when I&amp;#8217;m away. Perhaps this will help my
+obsession with hacker&amp;nbsp;news.&lt;/p&gt;
+&lt;p&gt;Once I have enough articles, I&amp;#8217;ll host them on the web with real time
+addition of new articles for everyone. I&amp;#8217;ll think about other good
+sources&amp;nbsp;too.&lt;/p&gt;</summary><category term="python"></category><category term="Web"></category></entry><entry><title>Battery Status API in Chrome</title><link href="http://www.sudhanshumishra.in/battery-status-api-in-chrome" rel="alternate"></link><updated>2014-10-13T12:20:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-10-13:battery-status-api-in-chrome</id><summary type="html">&lt;p&gt;Implementation of &lt;span class="caps"&gt;HTML&lt;/span&gt; battery status &lt;span class="caps"&gt;API&lt;/span&gt; is a bit different in webkit.
 It has not been exposed with &lt;code&gt;navigator.battery&lt;/code&gt;.
 This works fine in Gecko(Firefox) but you might have hard time if you
-try it on Chrome.&lt;/p&gt;
+try it on&amp;nbsp;Chrome.&lt;/p&gt;
 &lt;p&gt;After banging my head for few days against some chromium issues I
-figured out that the API is &lt;code&gt;navigator.getBattery()&lt;/code&gt; instead of &lt;code&gt;navigator.battery&lt;/code&gt; which returns a promise. It works from &lt;a href="https://chromium.googlesource.com/chromium/src/+/38.0.2125.92/content/browser/battery_status/"&gt;Google Chrome
+figured out that the &lt;span class="caps"&gt;API&lt;/span&gt; is &lt;code&gt;navigator.getBattery()&lt;/code&gt; instead of &lt;code&gt;navigator.battery&lt;/code&gt; which returns a promise. It works from &lt;a href="https://chromium.googlesource.com/chromium/src/+/38.0.2125.92/content/browser/battery_status/"&gt;Google Chrome
 v38.0.2125.92&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Here's an example code for this:&lt;/p&gt;
+&lt;p&gt;Here&amp;#8217;s an example code for&amp;nbsp;this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;battery&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;battery&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;mozBattery&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;battery&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="c1"&gt;// This works in Firefox&lt;/span&gt;
@@ -120,8 +178,8 @@ v38.0.2125.92&lt;/a&gt;.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Once you have the battery, the sub API is same for both.&lt;/p&gt;
-&lt;p&gt;Cheers!&lt;/p&gt;</summary><category term="Chrome"></category><category term="JavaScript"></category></entry><entry><title>GSoC'14 progress: Week 12</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-12" rel="alternate"></link><updated>2014-08-11T11:27:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-08-11:gsoc14-progress-week-12</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;p&gt;Once you have the battery, the sub &lt;span class="caps"&gt;API&lt;/span&gt; is same for&amp;nbsp;both.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;</summary><category term="Chrome"></category><category term="JavaScript"></category></entry><entry><title>GSoC‘14 progress: Week 12</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-12" rel="alternate"></link><updated>2014-08-11T11:27:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-08-11:gsoc14-progress-week-12</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 
 &lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
@@ -131,12 +189,12 @@ master.
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Currently I am working on converting my incopmlete PR related to
+Currently I am working on converting my incopmlete &lt;span class="caps"&gt;PR&lt;/span&gt; related to
 geometrical optics in 3D into 2D. Creating these classes in 3D will make
 it difficult to use/extend. I referred to some books and I never saw use
 of too much 3D in their illustrations. Depending on the use cases we can
 consider adding it later after gsoc. As of now optics module can not be
-called complete and hence I'll be working on it post gsoc.
+called complete and hence I&amp;#8217;ll be working on it post gsoc.
 
 &lt;/div&gt;
 
@@ -149,20 +207,20 @@ follows:
 &lt;ul&gt;
 &lt;li&gt;Interference&lt;/li&gt;
 &lt;li&gt;Diffraction&lt;/li&gt;
-&lt;li&gt;IPython notebooks for examples&lt;/li&gt;
+&lt;li&gt;IPython notebooks for&amp;nbsp;examples&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Week 10: Adding more to utils</title><link href="http://www.sudhanshumishra.in/gsoc14-week-10-adding-more-to-utils" rel="alternate"></link><updated>2014-07-28T09:05:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-28:gsoc14-week-10-adding-more-to-utils</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC‘14 Week 10: Adding more to utils</title><link href="http://www.sudhanshumishra.in/gsoc14-week-10-adding-more-to-utils" rel="alternate"></link><updated>2014-07-28T09:05:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-28:gsoc14-week-10-adding-more-to-utils</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 This week I worked on adding more utility function in optics. Some of
-them are yet to be added. I'll send a pull request once I write tests
+them are yet to be added. I&amp;#8217;ll send a pull request once I write tests
 for them.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Here's the link to the code pushed till now:
+Here&amp;#8217;s the link to the code pushed till now:
 
 &lt;/div&gt;
 
@@ -173,18 +231,18 @@ Here's the link to the code pushed till now:
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 I also worked on one of my pending
-PR(&lt;https://github.com/sympy/sympy/pull/7686&gt;) parameterizing a 3D
+&lt;span class="caps"&gt;PR&lt;/span&gt;(&lt;https://github.com/sympy/sympy/pull/7686&gt;) parameterizing a 3D
 circle. This will make the implementation a bit easier.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Tomorrow I'll be going back to college.
+Tomorrow I&amp;#8217;ll be going back to college.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-That's all for now. Cheers!
+That&amp;#8217;s all for now. Cheers!
 
 &lt;/div&gt;
 
@@ -193,9 +251,9 @@ That's all for now. Cheers!
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Progress: Finished refraction at planar surface</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-finished-refraction-at-planar-surface" rel="alternate"></link><updated>2014-07-20T14:32:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-20:gsoc14-progress-finished-refraction-at-planar-surface</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC‘14 Progress: Finished refraction at planar surface</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-finished-refraction-at-planar-surface" rel="alternate"></link><updated>2014-07-20T14:32:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-20:gsoc14-progress-finished-refraction-at-planar-surface</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-I'm sorry for this delayed post. I couldn't work last week due to some
+I&amp;#8217;m sorry for this delayed post. I couldn&amp;#8217;t work last week due to some
 other issues so had nothing much to report.
 
 &lt;/div&gt;
@@ -213,58 +271,58 @@ of deviation. Details can be found on the following link
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-I'm waiting for Sean to start reviewing this.
+I&amp;#8217;m waiting for Sean to start reviewing this.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-My next priority is to complete a pending PR on mirrors.
+My next priority is to complete a pending &lt;span class="caps"&gt;PR&lt;/span&gt; on mirrors.
 
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Progress: Working with geometry</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-working-with-geometry" rel="alternate"></link><updated>2014-07-08T17:24:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-08:gsoc14-progress-working-with-geometry</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>GSoC‘14 Progress: Working with geometry</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-working-with-geometry" rel="alternate"></link><updated>2014-07-08T17:24:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-08:gsoc14-progress-working-with-geometry</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div class="markdown-body"&gt;
 &lt;div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;"&gt;
 &lt;span style="background-color: white;"&gt;This week I
-completed `refraction_angle`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}.
+completed `refraction_angle`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;}.
 Now it also works
-with `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} and `Plane`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}.
+with `Ray3D`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} and `Plane`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;}.
 This function calculates transmitted vector after
-refraction. `medium1`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} and `medium2`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} can
-be `Medium`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}or
+refraction. `medium1`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} and `medium2`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} can
+be `Medium`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;}or
 any sympifiable object.
-If`incident`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} is
+If`incident`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} is
 an object
-of `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}, `normal`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} also
+of `Ray3D`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;}, `normal`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} also
 has to be an instance
-of `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} in
+of `Ray3D`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} in
 order to get the output as
-a `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}.
+a `Ray3D`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;}.
 If plane of separation is not provided and normal is an instance
-of `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"},
+of `Ray3D`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;},
 normal will be assumed to be intersecting incident ray at the plane of
 separation. This will not be the case
-when `normal`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} is
-a `Matrix`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} or
+when `normal`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} is
+a `Matrix`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} or
 any other sequence.   
-If `incident`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} is
+If `incident`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} is
 an instance
-of `Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} and `plane`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} has
+of `Ray3D`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} and `plane`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} has
 not been provided
-and `normal`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} is
-not`Ray3D`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"},
+and `normal`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} is
+not`Ray3D`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;},
 output will be
-a `Matrix`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"}.
+a `Matrix`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;}.
 It is dependent
-on `Plane`{style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"} so
+on `Plane`{style=&amp;#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &amp;#8216;Courier New&amp;#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&amp;#8221;} so
 I haven’t added tests for it.&lt;/span&gt;
 
 &lt;/div&gt;
 
 &lt;div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;"&gt;
 &lt;span style="background-color: white;"&gt;Here’s the link to the
-PR &lt;https://github.com/sympy/sympy/pull/7626&gt;&lt;/span&gt;
+&lt;span class="caps"&gt;PR&lt;/span&gt; &lt;https://github.com/sympy/sympy/pull/7626&gt;&lt;/span&gt;
 
 &lt;/div&gt;
 
@@ -273,39 +331,39 @@ PR &lt;https://github.com/sympy/sympy/pull/7626&gt;&lt;/span&gt;
 spherical mirrors in SymPy. There are few issues that I am facing.
 Currently I’m working(stuck) on locating mirrors in space. It’s an
 amalgamation of 2D and 3D geometry. I still have to subclass Ray of
-geometry and make it useful for this. I’ve sent a [WIP
-PR](https://github.com/sympy/sympy/pull/7686).&lt;/span&gt;
+geometry and make it useful for this. I’ve sent a [&lt;span class="caps"&gt;WIP&lt;/span&gt;
+&lt;span class="caps"&gt;PR&lt;/span&gt;](https://github.com/sympy/sympy/pull/7686).&lt;/span&gt;
 
 &lt;/div&gt;
 
 &lt;div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;"&gt;
 &lt;span style="background-color: white;"&gt;I’m waiting for Sean to
-merge [this](https://github.com/sympy/sympy/pull/7607) long waited PR
+merge [this](https://github.com/sympy/sympy/pull/7607) long waited &lt;span class="caps"&gt;PR&lt;/span&gt;
 for moving Gaussian optics module.&lt;/span&gt;
 
 &lt;/div&gt;
 
 &lt;div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;"&gt;
-That's all for now.
+That&amp;#8217;s all for now.
 
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 progress: Week 6</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-6" rel="alternate"></link><updated>2014-07-02T03:27:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-02:gsoc14-progress-week-6</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC‘14 progress: Week 6</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-6" rel="alternate"></link><updated>2014-07-02T03:27:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-07-02:gsoc14-progress-week-6</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 It was a busy week though I managed to do some work.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-I've been working on following things:
+I&amp;#8217;ve been working on following things:
 
 &lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Integrating &lt;code style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"&gt;TWave&lt;/code&gt; with &lt;code style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"&gt;refraction_angle&lt;/code&gt;(&lt;a href="https://github.com/sympy/sympy/pull/7626"&gt;7626&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Interference class&lt;/li&gt;
+&lt;li&gt;Interference&amp;nbsp;class&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 Some blocking 3D geometry code got merged yesterday which gives me a lot
@@ -315,13 +373,13 @@ of new things to work on. :-)
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 I also tried to take a look on very
-old [patch](https://github.com/sympy/sympy/pull/1226) for `gaussopt`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}.
+old [patch](https://github.com/sympy/sympy/pull/1226) for `gaussopt`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 This week I wrote a script to update the development documentation when
-a PR gets merged into the master. This is up and running.
+a &lt;span class="caps"&gt;PR&lt;/span&gt; gets merged into the master. This is up and running.
 
 &lt;/div&gt;
 
@@ -334,12 +392,12 @@ their constant support.
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-That's all for now. *Cheers!*
+That&amp;#8217;s all for now. *Cheers!*
 
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 progress, Week 5</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-5" rel="alternate"></link><updated>2014-06-23T17:59:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-23:gsoc14-progress-week-5</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC‘14 progress, Week 5</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-5" rel="alternate"></link><updated>2014-06-23T17:59:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-23:gsoc14-progress-week-5</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 I did good amount of work this week. I sent a small part of it related
 to ray tracing for review.
@@ -351,20 +409,20 @@ to ray tracing for review.
 &lt;/ul&gt;
 &lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 I got some great suggestions from Sean to make it compatible directly
-with&lt;span style="color: #444444;"&gt; &lt;/span&gt;`TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}&lt;span style="color: #444444;"&gt; &lt;/span&gt;class.
-It is a WIP as I'm waiting for few 3D geometry classes. I'm also working
-on inteference of light waves and I hope that I'll send it for review in
-next couple of days. My last PR on medium is still unmerged and I really
+with&lt;span style="color: #444444;"&gt; &lt;/span&gt;`TWave`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}&lt;span style="color: #444444;"&gt; &lt;/span&gt;class.
+It is a &lt;span class="caps"&gt;WIP&lt;/span&gt; as I&amp;#8217;m waiting for few 3D geometry classes. I&amp;#8217;m also working
+on inteference of light waves and I hope that I&amp;#8217;ll send it for review in
+next couple of days. My last &lt;span class="caps"&gt;PR&lt;/span&gt; on medium is still unmerged and I really
 need it to be in master to work on more implementations.
 
 &lt;/div&gt;
 
 &lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-I'm also trying to
-move&lt;span style="color: #444444;"&gt; &lt;/span&gt;`physics/gaussopt`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}&lt;span style="color: #444444;"&gt; &lt;/span&gt;to&lt;span style="color: #444444;"&gt; &lt;/span&gt;`physics/optics/gaussopt`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}&lt;span style="color: #444444;"&gt; &lt;/span&gt;as
-it'll be good to keep things related to optics at the same place. I'm
-waiting for opinion of the community about it. Here's the link to that
-PR:
+I&amp;#8217;m also trying to
+move&lt;span style="color: #444444;"&gt; &lt;/span&gt;`physics/gaussopt`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}&lt;span style="color: #444444;"&gt; &lt;/span&gt;to&lt;span style="color: #444444;"&gt; &lt;/span&gt;`physics/optics/gaussopt`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}&lt;span style="color: #444444;"&gt; &lt;/span&gt;as
+it&amp;#8217;ll be good to keep things related to optics at the same place. I&amp;#8217;m
+waiting for opinion of the community about it. Here&amp;#8217;s the link to that
+&lt;span class="caps"&gt;PR&lt;/span&gt;:
 
 &lt;/div&gt;
 
@@ -372,7 +430,7 @@ PR:
 &lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/7607"&gt;https://github.com/sympy/sympy/pull/7607&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Here is some other minor work that I've done this week outside of
+Here is some other minor work that I&amp;#8217;ve done this week outside of
 optics:
 
 &lt;/div&gt;
@@ -387,18 +445,18 @@ optics:
 &lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/7629"&gt;https://github.com/sympy/sympy/pull/7629&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div style="font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-That's all for now. *Cheers!*
+That&amp;#8217;s all for now. *Cheers!*
 
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 progress, week 4: finished medium, working on Fermat's principle and Snell's law</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law" rel="alternate"></link><updated>2014-06-16T19:32:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-16:gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC‘14 progress, week 4: finished medium, working on Fermat’s principle and Snell’s law</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law" rel="alternate"></link><updated>2014-06-16T19:32:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-16:gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-It was a great week! My last to last PR, on
-enhancing `TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"},
+It was a great week! My last to last &lt;span class="caps"&gt;PR&lt;/span&gt;, on
+enhancing `TWave`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;},
 got merged! I have also
-finished`Medium`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} and
-waiting for Sean's comments on it. Here's the link to that PR:
+finished`Medium`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} and
+waiting for Sean&amp;#8217;s comments on it. Here&amp;#8217;s the link to that &lt;span class="caps"&gt;PR&lt;/span&gt;:
 
 &lt;/div&gt;
 
@@ -417,18 +475,18 @@ I still have a *todo* in the tests:
 
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-This `m5.speed`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} is
+This `m5.speed`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} is
 equal
-to `225407863.157895*m/s`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} (or
+to `225407863.157895*m/s`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} (or
 maybe very close to it) but, assertion results in a failure.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 Similarly in the constructor of
-the `Medium`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} inconsistency
+the `Medium`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} inconsistency
 comes due to slight difference in floating point parameters(permittivity
-and permeability). I've commented out this part of my code. Maybe Sean
+and permeability). I&amp;#8217;ve commented out this part of my code. Maybe Sean
 will suggest a better way to do it.
 
 &lt;/div&gt;
@@ -438,8 +496,8 @@ will suggest a better way to do it.
 
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-As soon as it gets merged, I'll make necessary changes in Fermat's
-principle and Snell's law part of the code and send a PR to review.
+As soon as it gets merged, I&amp;#8217;ll make necessary changes in Fermat&amp;#8217;s
+principle and Snell&amp;#8217;s law part of the code and send a &lt;span class="caps"&gt;PR&lt;/span&gt; to review.
 
 &lt;/div&gt;
 
@@ -448,14 +506,14 @@ Now I realize that the next two weeks are not going to be a joy ride for
 me. I must finish major part of geometrical optics as written in my
 proposal.
 
-That's all for now. Cheers!
+That&amp;#8217;s all for now. Cheers!
 
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>Easy caching in Android</title><link href="http://www.sudhanshumishra.in/easy-caching-in-android" rel="alternate"></link><updated>2014-06-11T21:26:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-11:easy-caching-in-android</id><summary type="html">&lt;p&gt;Recently I found a better way to
-cache data in Android. It can also be used to save preferences of users. I was using SQLite before and it was cumbersome. I had to make a table to save just few key-value pairs.&lt;/p&gt;
-&lt;p&gt;Android SDK comes with an API
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>Easy caching in Android</title><link href="http://www.sudhanshumishra.in/easy-caching-in-android" rel="alternate"></link><updated>2014-06-11T21:26:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-11:easy-caching-in-android</id><summary type="html">&lt;p&gt;Recently I found a better way to
+cache data in Android. It can also be used to save preferences of users. I was using SQLite before and it was cumbersome. I had to make a table to save just few key-value&amp;nbsp;pairs.&lt;/p&gt;
+&lt;p&gt;Android &lt;span class="caps"&gt;SDK&lt;/span&gt; comes with an &lt;span class="caps"&gt;API&lt;/span&gt;
 called &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;android.content.SharedPreferences&lt;/code&gt;.
 A&lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt; object
 points to a file containing key-value pairs and provides simple methods
@@ -463,20 +521,19 @@ to read and write them.
 Each &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt; file
 is managed by the framework and can be private or shared. You’ll not
 lose your data even when the device restarts. It has one more advantage,
-you can also use to share data among different activities.&lt;/p&gt;
+you can also use to share data among different&amp;nbsp;activities.&lt;/p&gt;
 &lt;p&gt;It supports primitive data types
 only. You can not save objects in &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt;.
-Although you can serialize your object and store the raw string in
-it.&lt;/p&gt;
+Although you can serialize your object and store the raw string in&amp;nbsp;it.&lt;/p&gt;
 &lt;p&gt;To get a private handle of
 the &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt; use
-following command:&lt;/p&gt;
+following&amp;nbsp;command:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SharedPreferences&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;getActivity&lt;/span&gt;&lt;span class="o"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getSharedPreferences&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;getString&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;YOUR_PREFERENCE_FILE_NAME&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt; &lt;span class="n"&gt;Context&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;MODE_PRIVATE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;YOUR_PREFERENCE_FILE_NAME&lt;/code&gt; can
-be any valid string allowed for a file name in UNIX environment.&lt;/p&gt;
+be any valid string allowed for a file name in &lt;span class="caps"&gt;UNIX&lt;/span&gt;&amp;nbsp;environment.&lt;/p&gt;
 &lt;p&gt;Private data will be available to your application only, it can not be accessed by other applications
 installed on the device. To make it public you just need to
 replace &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;Context.MODE_PRIVATE&lt;/code&gt; with
@@ -486,46 +543,44 @@ either &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radi
 
 
 &lt;p&gt;Publicly shared prefences are available to other apps and if they know the file identifier, they may
-perform read/write operations on it.&lt;/p&gt;
+perform read/write operations on&amp;nbsp;it.&lt;/p&gt;
 &lt;p&gt;Once you’ve got the handle you
-can read data using following code:&lt;/p&gt;
+can read data using following&amp;nbsp;code:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;strData&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getString&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mStrData&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DEFAULT_STRING&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;&lt;span class="kt"&gt;boolean&lt;/span&gt; &lt;span class="n"&gt;boolData&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getBoolean&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mBoolData&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DEFAULT_BOOLEAN&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;intData&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getInt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mIntData&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DEFAULT_INTEGER&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: If there isn’t any data
-associated with the passed key, it will return the passed default
-value.&lt;/p&gt;
+associated with the passed key, it will return the passed default&amp;nbsp;value.&lt;/p&gt;
 &lt;p&gt;For a complete list of methods see &lt;a href="http://developer.android.com/reference/android/content/SharedPreferences.html"&gt;this&lt;/a&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;To save data in the &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt; you
-need to add one more line:&lt;/p&gt;
+need to add one more&amp;nbsp;line:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SharedPreferences&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Editor&lt;/span&gt; &lt;span class="n"&gt;editor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;edit&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Now you can easily save data in the memory.&lt;/p&gt;
+&lt;p&gt;Now you can easily save data in the&amp;nbsp;memory.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;editor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;putBoolean&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;cacheAvailable&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;&lt;span class="n"&gt;editor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;putInt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pingCount&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getInt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pingCount&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)++);&lt;/span&gt;&lt;span class="n"&gt;editor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;putString&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mResponse&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;// A web response in my case.editor.commit(); // This is important to commit changes&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt;Use editor.apply() for asynchronous call.&lt;/p&gt;
-&lt;p&gt;This API made my life easy. Now I do not need to write queries to do these small
-things.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt;Use editor.apply() for asynchronous&amp;nbsp;call.&lt;/p&gt;
+&lt;p&gt;This &lt;span class="caps"&gt;API&lt;/span&gt; made my life easy. Now I do not need to write queries to do these small&amp;nbsp;things.&lt;/p&gt;
 &lt;p&gt;If you have suggestions, please
-comment below. I’ll be happy to get feedback.&lt;/p&gt;</summary><category term="Android"></category></entry><entry><title>GSoC'14: Third week</title><link href="http://www.sudhanshumishra.in/gsoc14-third-week" rel="alternate"></link><updated>2014-06-10T10:08:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-10:gsoc14-third-week</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+comment below. I’ll be happy to get&amp;nbsp;feedback.&lt;/p&gt;</summary><category term="Android"></category></entry><entry><title>GSoC‘14: Third week</title><link href="http://www.sudhanshumishra.in/gsoc14-third-week" rel="alternate"></link><updated>2014-06-10T10:08:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-10:gsoc14-third-week</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 It was another not so productive week but I learnt a lot regarding how
 to write new classes by extending classes
-like `Basic`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}, `Symbol`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} and `Expr`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}.
+like `Basic`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}, `Symbol`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} and `Expr`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 Last week I got stuck with the rewrite expression mechanism which turned
 out to be a bug in
-the `core`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}.
+the `core`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}.
 Thanks to [Sean](https://github.com/flacjacket) for the fix! I need to
-do some more cleanup to get my last PR merged.
+do some more cleanup to get my last &lt;span class="caps"&gt;PR&lt;/span&gt; merged.
 
 &lt;/div&gt;
 
@@ -535,12 +590,12 @@ do some more cleanup to get my last PR merged.
 &lt;div&gt;
 &lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt;I
 also tried to fix an issue related to assumptions
-in &lt;/span&gt;`Function`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; line-height: 18px; padding: 3px 4px;"}&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt; but
+in &lt;/span&gt;`Function`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; line-height: 18px; padding: 3px 4px;&amp;#8221;}&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt; but
 the complex behaviour
-of &lt;/span&gt;`__new__`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; line-height: 18px; padding: 3px 4px;"}&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt; constructor
+of &lt;/span&gt;`__new__`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; line-height: 18px; padding: 3px 4px;&amp;#8221;}&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt; constructor
 makes it difficult to follow the inheritance. I also need to understand
-the working of SymPy's
- &lt;/span&gt;`@cacheit`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; line-height: 18px; padding: 3px 4px;"}&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt; 
+the working of SymPy&amp;#8217;s
+ &lt;/span&gt;`@cacheit`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; line-height: 18px; padding: 3px 4px;&amp;#8221;}&lt;span style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt; 
 decorator.&lt;/span&gt;
 
 &lt;/div&gt;
@@ -552,9 +607,9 @@ decorator.&lt;/span&gt;
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Lately I've been working on the implementation of optical medium. The
+Lately I&amp;#8217;ve been working on the implementation of optical medium. The
 motivation behind defining
-a`Medium`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} came
+a`Medium`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} came
 from the laziness of passing constants like electric permittivity and
 magnetic permeabhility of the medium everywhere. It will help carry out
 operations(events) very easily in optics.
@@ -563,16 +618,16 @@ operations(events) very easily in optics.
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 With the merger
-of `Point3D`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} by [Akshay](https://github.com/akshayah3) I
-planned to implement Fermat's principle and thus felt the need
-of `Medium`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} first.
+of `Point3D`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} by [Akshay](https://github.com/akshayah3) I
+planned to implement Fermat&amp;#8217;s principle and thus felt the need
+of `Medium`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} first.
 
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-I've already sent a WIP pull request
-for `Medium`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}.
-Here's the link:
+I&amp;#8217;ve already sent a &lt;span class="caps"&gt;WIP&lt;/span&gt; pull request
+for `Medium`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}.
+Here&amp;#8217;s the link:
 
 &lt;/div&gt;
 
@@ -581,7 +636,7 @@ Here's the link:
 &lt;/ul&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 I also took a quick glance at variational calculus to solve the problem
-involving Fermat's principle. I'm planning to start this as following:
+involving Fermat&amp;#8217;s principle. I&amp;#8217;m planning to start this as following:
 
 &lt;/div&gt;
 
@@ -590,7 +645,7 @@ involving Fermat's principle. I'm planning to start this as following:
 
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-It's not a very good API and needs more refining which I'll discuss with
+It&amp;#8217;s not a very good &lt;span class="caps"&gt;API&lt;/span&gt; and needs more refining which I&amp;#8217;ll discuss with
 Sean once I get it working.
 
 &lt;/div&gt;
@@ -608,7 +663,7 @@ rains yet. :(
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-*That's all for now. Cheers!*
+*That&amp;#8217;s all for now. Cheers!*
 
 &lt;/div&gt;
 
@@ -619,7 +674,7 @@ comments. I would be happy to get some feedback.
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC'14 Progress: Finishing TWave</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-finishing-twave" rel="alternate"></link><updated>2014-06-02T02:02:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-02:gsoc14-progress-finishing-twave</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC‘14 Progress: Finishing TWave</title><link href="http://www.sudhanshumishra.in/gsoc14-progress-finishing-twave" rel="alternate"></link><updated>2014-06-02T02:02:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-06-02:gsoc14-progress-finishing-twave</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="margin-bottom: 9px;"&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 This last week most of the coding I did was only related to transverse
@@ -634,7 +689,7 @@ wave. It has already been merged into the master.
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 Here is the class structure of
-the `TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}:
+the `TWave`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}:
 
 &lt;/div&gt;
 
@@ -643,7 +698,7 @@ the `TWave`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; b
 
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Till now it has been very easy to implement this but these days I'm
+Till now it has been very easy to implement this but these days I&amp;#8217;m
 stuck on writing functions to rewrite an expression using different
 functions. This is supposed to work like this as I feel from the code:
 
@@ -651,11 +706,11 @@ functions. This is supposed to work like this as I feel from the code:
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 When you
-call `expr.rewrite('sin')`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"},
+call `expr.rewrite(&amp;#8216;sin&amp;#8217;)`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;},
 the following code written
-in `sympy.core.basic`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"}should
+in `sympy.core.basic`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;}should
 make a call to
-function `_eval_rewrite_as_sin(self, *args)`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} defined
+function `_eval_rewrite_as_sin(self, *args)`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} defined
 in the object class.
 
 &lt;/div&gt;
@@ -666,8 +721,8 @@ in the object class.
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 But this is not the case with me. It always ends up
-calling `__str__`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} method.
-This is the PR for the same.
+calling `__str__`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} method.
+This is the &lt;span class="caps"&gt;PR&lt;/span&gt; for the same.
 
 &lt;/div&gt;
 
@@ -684,10 +739,10 @@ great Python debugger which is platform independent.
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-I've also been working on SHM and will submit a PR soon for that.
+I&amp;#8217;ve also been working on &lt;span class="caps"&gt;SHM&lt;/span&gt; and will submit a &lt;span class="caps"&gt;PR&lt;/span&gt; soon for that.
 Besides my project, I also closed two issues this week related to
 printing
-in `sympy.logic`{style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace !important; font-size: 12px; padding: 3px 4px;"} and
+in `sympy.logic`{style=&amp;#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &amp;#8216;Liberation Mono&amp;#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&amp;#8221;} and
 helped to review few PRs.
 
 &lt;/div&gt;
@@ -695,37 +750,36 @@ helped to review few PRs.
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/sympy/sympy/issues/7179"&gt;https://github.com/sympy/sympy/issues/7179&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/sympy/sympy/issues/7180"&gt;https://github.com/sympy/sympy/issues/7180&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;PR: &lt;a href="https://github.com/sympy/sympy/pull/7541"&gt;https://github.com/sympy/sympy/pull/7541&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;PR&lt;/span&gt;: &lt;a href="https://github.com/sympy/sympy/pull/7541"&gt;https://github.com/sympy/sympy/pull/7541&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 We have a public channel(&lt;https://gitter.im/sympy/sympy/optics&gt;) to
 discuss about my project. You are welcome to join us, we would be more
-than happy to get feedback about the work. It'll help us refine it and
+than happy to get feedback about the work. It&amp;#8217;ll help us refine it and
 cover a wider range of use cases.
 
 &lt;/div&gt;
 
 &lt;h4 id="weeklog" style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; margin: 0px;"&gt;Weeklog&lt;/h4&gt;
-&lt;h6 id="merged" style="color: #999999; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px;"&gt;MERGED&lt;/h6&gt;
+&lt;h6 id="merged" style="color: #999999; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px;"&gt;&lt;span class="caps"&gt;MERGED&lt;/span&gt;&lt;/h6&gt;
 &lt;ul&gt;
-&lt;li&gt;Add tests for pretty printer&lt;/li&gt;
-&lt;li&gt;Remove unnecessary if block&lt;/li&gt;
-&lt;li&gt;Add IPython Notebook Checkpoints to .gitignore&lt;/li&gt;
-&lt;li&gt;Remove double wrapping with u&lt;/li&gt;
-&lt;li&gt;Add tests for printing Equivalent. fixes #7180&lt;/li&gt;
-&lt;li&gt;Wrap unicode chars with u and fix a bug in latex printer&lt;/li&gt;
-&lt;li&gt;Fix a typo in manipulation.rst [skip ci]&lt;/li&gt;
+&lt;li&gt;Add tests for pretty&amp;nbsp;printer&lt;/li&gt;
+&lt;li&gt;Remove unnecessary if&amp;nbsp;block&lt;/li&gt;
+&lt;li&gt;Add IPython Notebook Checkpoints to&amp;nbsp;.gitignore&lt;/li&gt;
+&lt;li&gt;Remove double wrapping with&amp;nbsp;u&lt;/li&gt;
+&lt;li&gt;Add tests for printing Equivalent. fixes&amp;nbsp;#7180&lt;/li&gt;
+&lt;li&gt;Wrap unicode chars with u and fix a bug in latex&amp;nbsp;printer&lt;/li&gt;
+&lt;li&gt;Fix a typo in manipulation.rst [skip&amp;nbsp;ci]&lt;/li&gt;
 &lt;li&gt;Make equivalence symbol same for pretty printer and * latex printer
-    and change not equivalent symbol to u+2262 [skip ci]&lt;/li&gt;
-&lt;li&gt;Fix latex printing for Not(Equivalent) and Not(Implies).&lt;/li&gt;
-&lt;li&gt;Fix pretty printing for Not(Equivalent) and Not(Implies). fixes
-    #7179&lt;/li&gt;
+    and change not equivalent symbol to u+2262 [skip&amp;nbsp;ci]&lt;/li&gt;
+&lt;li&gt;Fix latex printing for Not(Equivalent) and&amp;nbsp;Not(Implies).&lt;/li&gt;
+&lt;li&gt;Fix pretty printing for Not(Equivalent) and Not(Implies). fixes&amp;nbsp;#7179&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h6 id="pending" style="color: #999999; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px;"&gt;PENDING&lt;/h6&gt;
+&lt;h6 id="pending" style="color: #999999; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px;"&gt;&lt;span class="caps"&gt;PENDING&lt;/span&gt;&lt;/h6&gt;
 &lt;ul&gt;
-&lt;li&gt;Change arg to *args [skip ci]&lt;/li&gt;
-&lt;li&gt;Add rewrite expression methods [skip ci]&lt;/li&gt;
-&lt;li&gt;Add wavenumber property&lt;/li&gt;
+&lt;li&gt;Change arg to *args [skip&amp;nbsp;ci]&lt;/li&gt;
+&lt;li&gt;Add rewrite expression methods [skip&amp;nbsp;ci]&lt;/li&gt;
+&lt;li&gt;Add wavenumber&amp;nbsp;property&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 This is all for now. Cheers!
@@ -734,7 +788,7 @@ This is all for now. Cheers!
 
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC 14: First Week</title><link href="http://www.sudhanshumishra.in/gsoc-14-first-week" rel="alternate"></link><updated>2014-05-25T00:14:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-05-25:gsoc-14-first-week</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC 14: First Week</title><link href="http://www.sudhanshumishra.in/gsoc-14-first-week" rel="alternate"></link><updated>2014-05-25T00:14:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-05-25:gsoc-14-first-week</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3em; margin-bottom: 1.2em;"&gt;
 The first week of GSoC is going to end very soon. I started working very
 late this week because of some issues. I spent most of my time in
@@ -756,16 +810,16 @@ This is what my proposal says:
 
 &lt;blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;During this week I'll write code for classical wave equation and
-    simple harmonic motion.&lt;/li&gt;
+&lt;li&gt;During this week I&amp;#8217;ll write code for classical wave equation and
+    simple harmonic&amp;nbsp;motion.&lt;/li&gt;
 &lt;li&gt;Introduction of properties like phase angles, phase velocity, wave
-    velocity, amplitude, intensity, frequency and wavelength. &lt;/li&gt;
+    velocity, amplitude, intensity, frequency and&amp;nbsp;wavelength. &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;div style="color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3em; margin-bottom: 1.2em;"&gt;
 [This](https://github.com/sympy/sympy/pull/7518) is my first pull
 request regarding my project (Thanks to Sean for the quick review). Till
-now I've only added a transverse wave class and will add more to it in
+now I&amp;#8217;ve only added a transverse wave class and will add more to it in
 the next 2 days.
 
 &lt;/div&gt;
@@ -781,7 +835,7 @@ There were no hiccups yet!
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC 2014 with SymPy</title><link href="http://www.sudhanshumishra.in/gsoc-2014-with-sympy" rel="alternate"></link><updated>2014-04-25T18:00:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-25:gsoc-2014-with-sympy</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="physics"></category><category term="sympy"></category></entry><entry><title>GSoC 2014 with SymPy</title><link href="http://www.sudhanshumishra.in/gsoc-2014-with-sympy" rel="alternate"></link><updated>2014-04-25T18:00:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-25:gsoc-2014-with-sympy</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div style="text-align: left;"&gt;
 
 My proposal is intended to add more to optics in SymPy. Till now it can
@@ -796,7 +850,7 @@ Vig](https://github.com/flacjacket) are my mentors for the project.
 &lt;/div&gt;
 
 &lt;div style="text-align: left;"&gt;
-For those who don't know what is SymPy, SymPy is a Python library for
+For those who don&amp;#8217;t know what is SymPy, SymPy is a Python library for
 symbolic computation. It provides computer algebra capabilities either
 as a standalone application, as a library to other applications, or live
 on the web as SymPy Live. SymPy is trivial to install and to inspect
@@ -804,7 +858,7 @@ because is written entirely in Python and because it does not depend on
 any additional libraries. This ease of access combined with a simple and
 extensible code base in a well known language make SymPy a computer
 algebra system with a relatively low barrier to entry. SymPy is free
-software and is licensed under New BSD license. The lead developers are
+software and is licensed under New &lt;span class="caps"&gt;BSD&lt;/span&gt; license. The lead developers are
 Ondřej Čertík and Aaron Meurer.
 
 &lt;/div&gt;
@@ -819,20 +873,19 @@ namely, Akshay, Sachin Joglekar and Soumya Dipta Biswas.
 
 &lt;/div&gt;
 
-&lt;p&gt;During this &lt;em&gt;Community Bonding Period&lt;/em&gt;I'll try to get familiar with the
-huge code base of SymPy and its community of developers. I'm also
-working on few old pull requests that are dead for so long.  &lt;/p&gt;
+&lt;p&gt;During this &lt;em&gt;Community Bonding Period&lt;/em&gt;I&amp;#8217;ll try to get familiar with the
+huge code base of SymPy and its community of developers. I&amp;#8217;m also
+working on few old pull requests that are dead for so&amp;nbsp;long.  &lt;/p&gt;
 &lt;p&gt;Looking forward to work with such a great organization! Thanks to Google
-and SymPy for this opportunity!&lt;/p&gt;
+and SymPy for this&amp;nbsp;opportunity!&lt;/p&gt;
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>Managing commits and working with git diff</title><link href="http://www.sudhanshumishra.in/managing-commits-and-working-with-git-diff" rel="alternate"></link><updated>2014-04-14T13:48:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-14:managing-commits-and-working-with-git-diff</id><summary type="html">&lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;: This post assumes that you have basic knowledge of git. It's
+&lt;/p&gt;&lt;/p&gt;</summary><category term="gsoc"></category><category term="sympy"></category></entry><entry><title>Managing commits and working with git diff</title><link href="http://www.sudhanshumishra.in/managing-commits-and-working-with-git-diff" rel="alternate"></link><updated>2014-04-14T13:48:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-14:managing-commits-and-working-with-git-diff</id><summary type="html">&lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;: This post assumes that you have basic knowledge of git. It&amp;#8217;s
 just about managing commits and minimizing their numbers by having only
-meaningful ones.&lt;/p&gt;
-&lt;p&gt;I've been working on a PR for around thirteen days which aims to fix a bug related to mathematical assumptions for inverse trigonometric functions in sympy. In order to do that I kept on committing changes
+meaningful&amp;nbsp;ones.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve been working on a &lt;span class="caps"&gt;PR&lt;/span&gt; for around thirteen days which aims to fix a bug related to mathematical assumptions for inverse trigonometric functions in sympy. In order to do that I kept on committing changes
 randomly and number of commits went on increasing. As of now sympy has two types of mathematical assumptions we call it &lt;strong&gt;new&lt;/strong&gt; and &lt;strong&gt;old&lt;/strong&gt; so genuinely there should have been only two commits referring changes to
-respective types.&lt;/p&gt;
-&lt;p&gt;I had two branches &lt;code&gt;master&lt;/code&gt; and &lt;code&gt;arctrigo&lt;/code&gt; I followed following steps to separate the changes done in both the
-assumptions:&lt;/p&gt;
+respective&amp;nbsp;types.&lt;/p&gt;
+&lt;p&gt;I had two branches &lt;code&gt;master&lt;/code&gt; and &lt;code&gt;arctrigo&lt;/code&gt; I followed following steps to separate the changes done in both the&amp;nbsp;assumptions:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;First pull the changes from the remote to your &lt;code&gt;master&lt;/code&gt; and merge it to your feature branch. In my case it was &lt;code&gt;arctrigo&lt;/code&gt;.&lt;/p&gt;
@@ -841,7 +894,7 @@ assumptions:&lt;/p&gt;
 &lt;p&gt;Make sure that you are no your feature branch and not on &lt;code&gt;master&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Create a diff with respect to &lt;code&gt;master&lt;/code&gt;. &lt;code&gt;git diff master &amp;gt; diff&lt;/code&gt; (latter diff is just the filename, it could be anything)&lt;/p&gt;
+&lt;p&gt;Create a diff with respect to &lt;code&gt;master&lt;/code&gt;. &lt;code&gt;git diff master &amp;gt; diff&lt;/code&gt; (latter diff is just the filename, it could be&amp;nbsp;anything)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Create a new temporary branch of &lt;code&gt;master&lt;/code&gt;. &lt;code&gt;git checkout master; git branch -b tmp&lt;/code&gt;.&lt;/p&gt;
@@ -850,13 +903,13 @@ assumptions:&lt;/p&gt;
 &lt;p&gt;Apply the patch. &lt;code&gt;git apply diff&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Use &lt;code&gt;git add -p&lt;/code&gt; and you'll be prompted change by change as to whether that change should be staged for committal. Say &lt;code&gt;y&lt;/code&gt; to all changes involving one part and &lt;code&gt;n&lt;/code&gt; to the others.&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;git add -p&lt;/code&gt; and you&amp;#8217;ll be prompted change by change as to whether that change should be staged for committal. Say &lt;code&gt;y&lt;/code&gt; to all changes involving one part and &lt;code&gt;n&lt;/code&gt; to the&amp;nbsp;others.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Here git has staged a set of changes for your next commit command.&lt;/p&gt;
+&lt;p&gt;Here git has staged a set of changes for your next commit&amp;nbsp;command.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Commit the changes for the first part, for which you said &lt;code&gt;y&lt;/code&gt; in the prompts, by &lt;code&gt;git commit -m "your message for the first part"&lt;/code&gt;. And then do &lt;code&gt;git commit -am "your message for the other part"&lt;/code&gt; for which you said &lt;code&gt;n&lt;/code&gt; in the prompts.&lt;/p&gt;
+&lt;p&gt;Commit the changes for the first part, for which you said &lt;code&gt;y&lt;/code&gt; in the prompts, by &lt;code&gt;git commit -m "your message for the first part"&lt;/code&gt;. And then do &lt;code&gt;git commit -am "your message for the other part"&lt;/code&gt; for which you said &lt;code&gt;n&lt;/code&gt; in the&amp;nbsp;prompts.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Delete your feature branch. In my case it was &lt;code&gt;arctrigo&lt;/code&gt; with &lt;code&gt;git branch -D arctrigo&lt;/code&gt;.&lt;/p&gt;
@@ -865,14 +918,14 @@ assumptions:&lt;/p&gt;
 &lt;p&gt;Create the same feature branch from &lt;code&gt;tmp&lt;/code&gt; and switch to it. &lt;code&gt;git branch tmp; git checkout tmp&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Update your PR with &lt;code&gt;git push -f &amp;lt;your_remote_name&amp;gt; &amp;lt;your_branch_name&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Update your &lt;span class="caps"&gt;PR&lt;/span&gt; with &lt;code&gt;git push -f &amp;lt;your_remote_name&amp;gt; &amp;lt;your_branch_name&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Now navigate to your PR and you'll see two clean commits. I just learned
+&lt;p&gt;Now navigate to your &lt;span class="caps"&gt;PR&lt;/span&gt; and you&amp;#8217;ll see two clean commits. I just learned
 these things from &lt;a href="https://github.com/smichr"&gt;Christopher&lt;/a&gt; and decided
-to write a blog post about it.&lt;/p&gt;
-&lt;p&gt;Cheers!&lt;/p&gt;</summary><category term="git"></category><category term="github"></category></entry><entry><title>Setting up Tornado server on Ubuntu 12.04</title><link href="http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204" rel="alternate"></link><updated>2014-04-05T06:42:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-05:setting-up-tornado-server-on-ubuntu-1204</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
- {#setting-up-tornado-server-on-ubuntu-12-04 style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"}
+to write a blog post about&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;</summary><category term="git"></category><category term="github"></category></entry><entry><title>Setting up Tornado server on Ubuntu 12.04</title><link href="http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204" rel="alternate"></link><updated>2014-04-05T06:42:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-05:setting-up-tornado-server-on-ubuntu-1204</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+ {#setting-up-tornado-server-on-ubuntu-12-04 style=&amp;#8221;color: #444444; font-family: Arvo, &amp;#8216;Helvetica Neue&amp;#8217;, Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;&amp;#8221;}
 
 &lt;div style="font-size: 13px; font-weight: normal; line-height: 18px; margin-bottom: 9px;"&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;
@@ -887,11 +940,10 @@ for &lt;br /&gt;
 long polling, WebSockets, and other applications that require a
 long-lived connection to each user. This server is written in Python
 which follows a non blocking methodology of coding. Just like Node.js it
-also works on a similar concept of callbacks.&lt;/p&gt;
+also works on a similar concept of&amp;nbsp;callbacks.&lt;/p&gt;
 &lt;p&gt;&lt;/div&gt;
 &lt;/h1&gt;
-&lt;span style="font-size: large;"&gt;Prerequisites&lt;/span&gt; {#setting-up-tornado-server-on-ubuntu-12-04 style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"}
-====================================================&lt;/p&gt;
+&lt;span style="font-size: large;"&gt;Prerequisites&lt;/span&gt; {#setting-up-tornado-server-on-ubuntu-12-04 style=&amp;#8221;color: #444444; font-family: Arvo, &amp;#8216;Helvetica Neue&amp;#8217;, Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;&amp;#8221;}&amp;nbsp;====================================================&lt;/p&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 Tornado runs on Python 2.6, 2.7, 3.2, and 3.3. On Python 2, the
 backports.ssl\_match\_hostname package must be installed (This will be
@@ -926,7 +978,7 @@ Tornado features may require one of the following optional libraries:
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div style="margin-bottom: 9px;"&gt;
     &lt;a href="https://pypi.python.org/pypi/pycares"&gt;pycares&lt;/a&gt; is an alternative
-    non-blocking DNS resolver that can be used when threads are not
+    non-blocking &lt;span class="caps"&gt;DNS&lt;/span&gt; resolver that can be used when threads are not
     appropriate.
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div style="margin-bottom: 9px;"&gt;
@@ -936,7 +988,7 @@ Tornado features may require one of the following optional libraries:
     &lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Tornado works on almost all platforms including unix, BSD, Mac OS X and
+Tornado works on almost all platforms including unix, &lt;span class="caps"&gt;BSD&lt;/span&gt;, Mac &lt;span class="caps"&gt;OS&lt;/span&gt; X and
 windows though it is advised to use it only on Unix for production
 purpose.
 
@@ -969,7 +1021,7 @@ using following command:
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h1 id="running-a-simple-program-using-tornado" style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"&gt;&lt;span style="font-size: large;"&gt;Running a simple program using tornado&lt;/span&gt;&lt;/h1&gt;
+&lt;h1 id="running-a-simple-program-using-tornado" style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"&gt;&lt;span style="font-size: large;"&gt;Running a simple program using&amp;nbsp;tornado&lt;/span&gt;&lt;/h1&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 Following is a simple hello world program using tornado.
 
@@ -991,7 +1043,7 @@ visiting [http://www.yourdomain.com:8888](http://www.yourdomain.com:8888/).
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-I will write more on tornado in future. I'm planning to use this as
+I will write more on tornado in future. I&amp;#8217;m planning to use this as
 computing server for online version of [Binpy](http://www.binpy.org/).
 
 &lt;/div&gt;
@@ -1002,7 +1054,7 @@ Cheers!
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="BinPy"></category><category term="Server"></category><category term="Ubuntu"></category></entry><entry><title>BinPy: N Bit Ripple Counter</title><link href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter" rel="alternate"></link><updated>2014-03-13T17:36:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-03-13:binpy-n-bit-ripple-counter</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="BinPy"></category><category term="Server"></category><category term="Ubuntu"></category></entry><entry><title>BinPy: N Bit Ripple Counter</title><link href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter" rel="alternate"></link><updated>2014-03-13T17:36:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-03-13:binpy-n-bit-ripple-counter</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;
 [![](http://binpy.github.io/images/logo.png)](http://binpy.github.io/images/logo.png)
@@ -1010,37 +1062,37 @@ Cheers!
 &lt;/div&gt;
 
 &lt;p&gt;&lt;a href="http://binpy.github.io"&gt;BinPy&lt;/a&gt; is almost ready to create things. This
-post focuses on building a ripple counter using it.  &lt;/p&gt;
+post focuses on building a ripple counter using&amp;nbsp;it.  &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Theory&lt;/strong&gt;  &lt;/p&gt;
 &lt;p&gt;A ripple counter is an asynchronous counter where only the first
 flip-flop is clocked by an external clock. All subsequent flip-flops are
 clocked by the output of the preceding flip-flop. Asynchronous counters
 are also called ripple-counters because of the way the clock pulse
-ripples it way through the flip-flops.  &lt;/p&gt;
-&lt;p&gt;The MOD of the ripple counter or asynchronous counter is 2n if n
+ripples it way through the&amp;nbsp;flip-flops.  &lt;/p&gt;
+&lt;p&gt;The &lt;span class="caps"&gt;MOD&lt;/span&gt; of the ripple counter or asynchronous counter is 2n if n
 flip-flops are used. For a 4-bit counter, the range of the count is 0000
 to 1111 (24-1). A counter may count up or count down or count up and
 down depending on the input control. The count sequence usually repeats
 itself. When counting up, the count sequence goes from 0000, 0001, 0010,
-... 1110 , 1111 , 0000, 0001, ... etc. When counting down the count
-sequence goes in the opposite manner: 1111, 1110, ... 0010, 0001, 0000,
-1111, 1110, ... etc.  &lt;/p&gt;
+&amp;#8230; 1110 , 1111 , 0000, 0001, &amp;#8230; etc. When counting down the count
+sequence goes in the opposite manner: 1111, 1110, &amp;#8230; 0010, 0001, 0000,
+1111, 1110, &amp;#8230;&amp;nbsp;etc.  &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Implementation&lt;/strong&gt;  &lt;/p&gt;
-&lt;p&gt;The following code is using BinPy's internal NBitRippleCounter.  &lt;/p&gt;
-&lt;p&gt;Following is the output of the above code.  &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Under the hood&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;The following code is using BinPy&amp;#8217;s internal&amp;nbsp;NBitRippleCounter.  &lt;/p&gt;
+&lt;p&gt;Following is the output of the above&amp;nbsp;code.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Under the&amp;nbsp;hood&lt;/strong&gt;  &lt;/p&gt;
 &lt;p&gt;When we are initializing the counter with specified number of bits, it
 is actually creating those many T Flip Flops and connecting them in
 order to get the result. The actual implementation is shown in the
-following code.  &lt;/p&gt;
-&lt;p&gt;Try connecting some wires with code, it's fun!&lt;br /&gt;
+following&amp;nbsp;code.  &lt;/p&gt;
+&lt;p&gt;Try connecting some wires with code, it&amp;#8217;s fun!&lt;br /&gt;
 If you have some feedback or questions regarding this post, please add
-comments. Cheers!   &lt;/p&gt;
+comments.&amp;nbsp;Cheers!   &lt;/p&gt;
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="BinPy"></category><category term="Circuit Design"></category><category term="Electronics"></category></entry><entry><title>CapaStr: Talking about design</title><link href="http://www.sudhanshumishra.in/capastr-talking-about-design" rel="alternate"></link><updated>2013-08-20T22:37:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-08-20:capastr-talking-about-design</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="BinPy"></category><category term="Circuit Design"></category><category term="Electronics"></category></entry><entry><title>CapaStr: Talking about design</title><link href="http://www.sudhanshumishra.in/capastr-talking-about-design" rel="alternate"></link><updated>2013-08-20T22:37:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-08-20:capastr-talking-about-design</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 It was very difficult for me to choose the best and easiest framework to
-use for UI design. After lot of research I decided to stick with
+use for &lt;span class="caps"&gt;UI&lt;/span&gt; design. After lot of research I decided to stick with
 **JQueryMobile** since it has an awesome extension called
 **ThemeRoller**.
 
@@ -1048,7 +1100,7 @@ Working with a framework gives you enough time to work on core things
 rather than thinking about the responsive design. Cordova is doing
 pretty well with JQuery without loosing any frame.  
 
-Here's some of the screen shots of the
+Here&amp;#8217;s some of the screen shots of the
 app&lt;span id="goog_1151724009"&gt;&lt;/span&gt;&lt;span id="goog_1151724010"&gt;&lt;/span&gt;  
 
 
@@ -1062,37 +1114,35 @@ app&lt;span id="goog_1151724009"&gt;&lt;/span&gt;&lt;span id="goog_1151724010"&g
 
 &lt;/div&gt;
 
-&lt;p&gt;I'm not very good at choosing colors, although Blue and Orange are my
-all time favorite.  &lt;/p&gt;
-&lt;p&gt;Working with Android's push notification system is really a hectic job.
-First you code for C2DM and then you get to know that it has been
+&lt;p&gt;I&amp;#8217;m not very good at choosing colors, although Blue and Orange are my
+all time&amp;nbsp;favorite.  &lt;/p&gt;
+&lt;p&gt;Working with Android&amp;#8217;s push notification system is really a hectic job.
+First you code for &lt;span class="caps"&gt;C2DM&lt;/span&gt; and then you get to know that it has been
 deprecated by Google itself discourages the development. Google
-introduced something new called Google Cloud Messaging(GCM). This works
+introduced something new called Google Cloud Messaging(&lt;span class="caps"&gt;GCM&lt;/span&gt;). This works
 pretty smooth once you have the registration Id of the device. Thanks
 to &lt;a href="http://namis.me/"&gt;geeknam&lt;/a&gt; for proving such a fantastic library to
-handle GCM with Python.&lt;br /&gt;
-I hope that Apple Push Notification Service(APNS) would not be a
+handle &lt;span class="caps"&gt;GCM&lt;/span&gt; with Python.&lt;br /&gt;
+I hope that Apple Push Notification Service(&lt;span class="caps"&gt;APNS&lt;/span&gt;) would not be a
 headache like Android. &lt;br /&gt;
-I'll let you know about further development soon.  &lt;/p&gt;
+I&amp;#8217;ll let you know about further development&amp;nbsp;soon.  &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Enjoy!!&lt;/em&gt;&lt;/strong&gt;  &lt;/p&gt;
 &lt;p&gt;&lt;span style="font-size: xx-small;"&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="Android"></category><category term="CapaStr"></category><category term="Cordova"></category><category term="iOS"></category><category term="JQueryMobile"></category><category term="PhoneGap"></category></entry><entry><title>Linux and Lenovo Essential G580</title><link href="http://www.sudhanshumishra.in/linux-and-lenovo-essential-g580" rel="alternate"></link><updated>2013-08-10T23:10:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-08-10:linux-and-lenovo-essential-g580</id><summary type="html">&lt;p&gt;Lenovo Essential G580 is the laptop which has highest number of conflicts with
-aLinux OS. The biggest problem is when you install a Linux OS you will
-&lt;strong&gt;lose access to your BIOS setup&lt;/strong&gt; and that's permanent. I faced this
+&lt;/p&gt;&lt;/p&gt;</summary><category term="Android"></category><category term="CapaStr"></category><category term="Cordova"></category><category term="iOS"></category><category term="JQueryMobile"></category><category term="PhoneGap"></category></entry><entry><title>Linux and Lenovo Essential G580</title><link href="http://www.sudhanshumishra.in/linux-and-lenovo-essential-g580" rel="alternate"></link><updated>2013-08-10T23:10:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-08-10:linux-and-lenovo-essential-g580</id><summary type="html">&lt;p&gt;Lenovo Essential G580 is the laptop which has highest number of conflicts with
+aLinux &lt;span class="caps"&gt;OS&lt;/span&gt;. The biggest problem is when you install a Linux &lt;span class="caps"&gt;OS&lt;/span&gt; you will
+&lt;strong&gt;lose access to your &lt;span class="caps"&gt;BIOS&lt;/span&gt; setup&lt;/strong&gt; and that&amp;#8217;s permanent. I faced this
 problem and I sent my laptop to service center to repair and they had to
 change its motherboard to fix this problem. When my laptop returned
-after repairing I installed Ubuntu 12.10 and lost my BIOS once again!
-:(&lt;/p&gt;
+after repairing I installed Ubuntu 12.10 and lost my &lt;span class="caps"&gt;BIOS&lt;/span&gt; once again!&amp;nbsp;:(&lt;/p&gt;
 &lt;p&gt;Now I am using only Ubuntu 12.10 and not windows and that too without
-BIOS even if it's under warranty.&lt;/p&gt;
+&lt;span class="caps"&gt;BIOS&lt;/span&gt; even if it&amp;#8217;s under&amp;nbsp;warranty.&lt;/p&gt;
 &lt;p&gt;Now when the Ubuntu is installed, be prepared to face challenges! Ubuntu
 is supposed to carry each and every driver with it but unfortunately it
-doesn't have the wired network driver for this laptop. After searching
+doesn&amp;#8217;t have the wired network driver for this laptop. After searching
 over the internet for hours I finally installed my network driver and
 uploaded the installer to Google drive for future.
 I solved one more issue of uncontrollable brightness of the screen by
 editing grub. Bluetooth automatically gets activated sometimes.
 There are uncountable number of problems. The only thing which you can
-do is to prevent yourself from buying this
-laptop.&lt;/p&gt;</summary><category term="BIOS"></category><category term="Lenovo"></category><category term="Lenovo G580"></category><category term="Linux"></category><category term="Ubuntu"></category></entry></feed>
+do is to prevent yourself from buying this&amp;nbsp;laptop.&lt;/p&gt;</summary><category term="BIOS"></category><category term="Lenovo"></category><category term="Lenovo G580"></category><category term="Linux"></category><category term="Ubuntu"></category></entry></feed>

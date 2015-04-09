@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/lenovo.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2013-08-10T23:10:00+05:30</updated><entry><title>Linux and Lenovo Essential G580</title><link href="http://www.sudhanshumishra.in/linux-and-lenovo-essential-g580" rel="alternate"></link><updated>2013-08-10T23:10:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-08-10:linux-and-lenovo-essential-g580</id><summary type="html">&lt;p&gt;Lenovo Essential G580 is the laptop which has highest number of conflicts with
-aLinux OS. The biggest problem is when you install a Linux OS you will
-&lt;strong&gt;lose access to your BIOS setup&lt;/strong&gt; and that's permanent. I faced this
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/lenovo.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2013-08-10T23:10:00+05:30</updated><entry><title>Linux and Lenovo Essential G580</title><link href="http://www.sudhanshumishra.in/linux-and-lenovo-essential-g580" rel="alternate"></link><updated>2013-08-10T23:10:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-08-10:linux-and-lenovo-essential-g580</id><summary type="html">&lt;p&gt;Lenovo Essential G580 is the laptop which has highest number of conflicts with
+aLinux &lt;span class="caps"&gt;OS&lt;/span&gt;. The biggest problem is when you install a Linux &lt;span class="caps"&gt;OS&lt;/span&gt; you will
+&lt;strong&gt;lose access to your &lt;span class="caps"&gt;BIOS&lt;/span&gt; setup&lt;/strong&gt; and that&amp;#8217;s permanent. I faced this
 problem and I sent my laptop to service center to repair and they had to
 change its motherboard to fix this problem. When my laptop returned
-after repairing I installed Ubuntu 12.10 and lost my BIOS once again!
-:(&lt;/p&gt;
+after repairing I installed Ubuntu 12.10 and lost my &lt;span class="caps"&gt;BIOS&lt;/span&gt; once again!&amp;nbsp;:(&lt;/p&gt;
 &lt;p&gt;Now I am using only Ubuntu 12.10 and not windows and that too without
-BIOS even if it's under warranty.&lt;/p&gt;
+&lt;span class="caps"&gt;BIOS&lt;/span&gt; even if it&amp;#8217;s under&amp;nbsp;warranty.&lt;/p&gt;
 &lt;p&gt;Now when the Ubuntu is installed, be prepared to face challenges! Ubuntu
 is supposed to carry each and every driver with it but unfortunately it
-doesn't have the wired network driver for this laptop. After searching
+doesn&amp;#8217;t have the wired network driver for this laptop. After searching
 over the internet for hours I finally installed my network driver and
 uploaded the installer to Google drive for future.
 I solved one more issue of uncontrollable brightness of the screen by
 editing grub. Bluetooth automatically gets activated sometimes.
 There are uncountable number of problems. The only thing which you can
-do is to prevent yourself from buying this
-laptop.&lt;/p&gt;</summary><category term="BIOS"></category><category term="Lenovo"></category><category term="Lenovo G580"></category><category term="Linux"></category><category term="Ubuntu"></category></entry></feed>
+do is to prevent yourself from buying this&amp;nbsp;laptop.&lt;/p&gt;</summary><category term="BIOS"></category><category term="Lenovo"></category><category term="Lenovo G580"></category><category term="Linux"></category><category term="Ubuntu"></category></entry></feed>

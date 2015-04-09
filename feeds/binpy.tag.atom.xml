@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/binpy.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2014-04-05T06:42:00+05:30</updated><entry><title>Setting up Tornado server on Ubuntu 12.04</title><link href="http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204" rel="alternate"></link><updated>2014-04-05T06:42:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-05:setting-up-tornado-server-on-ubuntu-1204</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
- {#setting-up-tornado-server-on-ubuntu-12-04 style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"}
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/binpy.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2014-04-05T06:42:00+05:30</updated><entry><title>Setting up Tornado server on Ubuntu 12.04</title><link href="http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204" rel="alternate"></link><updated>2014-04-05T06:42:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-05:setting-up-tornado-server-on-ubuntu-1204</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+ {#setting-up-tornado-server-on-ubuntu-12-04 style=&amp;#8221;color: #444444; font-family: Arvo, &amp;#8216;Helvetica Neue&amp;#8217;, Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;&amp;#8221;}
 
 &lt;div style="font-size: 13px; font-weight: normal; line-height: 18px; margin-bottom: 9px;"&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;
@@ -15,11 +15,10 @@ for &lt;br /&gt;
 long polling, WebSockets, and other applications that require a
 long-lived connection to each user. This server is written in Python
 which follows a non blocking methodology of coding. Just like Node.js it
-also works on a similar concept of callbacks.&lt;/p&gt;
+also works on a similar concept of&amp;nbsp;callbacks.&lt;/p&gt;
 &lt;p&gt;&lt;/div&gt;
 &lt;/h1&gt;
-&lt;span style="font-size: large;"&gt;Prerequisites&lt;/span&gt; {#setting-up-tornado-server-on-ubuntu-12-04 style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"}
-====================================================&lt;/p&gt;
+&lt;span style="font-size: large;"&gt;Prerequisites&lt;/span&gt; {#setting-up-tornado-server-on-ubuntu-12-04 style=&amp;#8221;color: #444444; font-family: Arvo, &amp;#8216;Helvetica Neue&amp;#8217;, Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;&amp;#8221;}&amp;nbsp;====================================================&lt;/p&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 Tornado runs on Python 2.6, 2.7, 3.2, and 3.3. On Python 2, the
 backports.ssl\_match\_hostname package must be installed (This will be
@@ -54,7 +53,7 @@ Tornado features may require one of the following optional libraries:
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div style="margin-bottom: 9px;"&gt;
     &lt;a href="https://pypi.python.org/pypi/pycares"&gt;pycares&lt;/a&gt; is an alternative
-    non-blocking DNS resolver that can be used when threads are not
+    non-blocking &lt;span class="caps"&gt;DNS&lt;/span&gt; resolver that can be used when threads are not
     appropriate.
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div style="margin-bottom: 9px;"&gt;
@@ -64,7 +63,7 @@ Tornado features may require one of the following optional libraries:
     &lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Tornado works on almost all platforms including unix, BSD, Mac OS X and
+Tornado works on almost all platforms including unix, &lt;span class="caps"&gt;BSD&lt;/span&gt;, Mac &lt;span class="caps"&gt;OS&lt;/span&gt; X and
 windows though it is advised to use it only on Unix for production
 purpose.
 
@@ -97,7 +96,7 @@ using following command:
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h1 id="running-a-simple-program-using-tornado" style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"&gt;&lt;span style="font-size: large;"&gt;Running a simple program using tornado&lt;/span&gt;&lt;/h1&gt;
+&lt;h1 id="running-a-simple-program-using-tornado" style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"&gt;&lt;span style="font-size: large;"&gt;Running a simple program using&amp;nbsp;tornado&lt;/span&gt;&lt;/h1&gt;
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
 Following is a simple hello world program using tornado.
 
@@ -119,7 +118,7 @@ visiting [http://www.yourdomain.com:8888](http://www.yourdomain.com:8888/).
 &lt;/div&gt;
 
 &lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-I will write more on tornado in future. I'm planning to use this as
+I will write more on tornado in future. I&amp;#8217;m planning to use this as
 computing server for online version of [Binpy](http://www.binpy.org/).
 
 &lt;/div&gt;
@@ -130,7 +129,7 @@ Cheers!
 &lt;/div&gt;
 
 &lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="BinPy"></category><category term="Server"></category><category term="Ubuntu"></category></entry><entry><title>BinPy: N Bit Ripple Counter</title><link href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter" rel="alternate"></link><updated>2014-03-13T17:36:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-03-13:binpy-n-bit-ripple-counter</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
+&lt;/p&gt;&lt;/p&gt;</summary><category term="BinPy"></category><category term="Server"></category><category term="Ubuntu"></category></entry><entry><title>BinPy: N Bit Ripple Counter</title><link href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter" rel="alternate"></link><updated>2014-03-13T17:36:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-03-13:binpy-n-bit-ripple-counter</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div dir="ltr" style="text-align: left;"&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;
 [![](http://binpy.github.io/images/logo.png)](http://binpy.github.io/images/logo.png)
@@ -138,32 +137,32 @@ Cheers!
 &lt;/div&gt;
 
 &lt;p&gt;&lt;a href="http://binpy.github.io"&gt;BinPy&lt;/a&gt; is almost ready to create things. This
-post focuses on building a ripple counter using it.  &lt;/p&gt;
+post focuses on building a ripple counter using&amp;nbsp;it.  &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Theory&lt;/strong&gt;  &lt;/p&gt;
 &lt;p&gt;A ripple counter is an asynchronous counter where only the first
 flip-flop is clocked by an external clock. All subsequent flip-flops are
 clocked by the output of the preceding flip-flop. Asynchronous counters
 are also called ripple-counters because of the way the clock pulse
-ripples it way through the flip-flops.  &lt;/p&gt;
-&lt;p&gt;The MOD of the ripple counter or asynchronous counter is 2n if n
+ripples it way through the&amp;nbsp;flip-flops.  &lt;/p&gt;
+&lt;p&gt;The &lt;span class="caps"&gt;MOD&lt;/span&gt; of the ripple counter or asynchronous counter is 2n if n
 flip-flops are used. For a 4-bit counter, the range of the count is 0000
 to 1111 (24-1). A counter may count up or count down or count up and
 down depending on the input control. The count sequence usually repeats
 itself. When counting up, the count sequence goes from 0000, 0001, 0010,
-... 1110 , 1111 , 0000, 0001, ... etc. When counting down the count
-sequence goes in the opposite manner: 1111, 1110, ... 0010, 0001, 0000,
-1111, 1110, ... etc.  &lt;/p&gt;
+&amp;#8230; 1110 , 1111 , 0000, 0001, &amp;#8230; etc. When counting down the count
+sequence goes in the opposite manner: 1111, 1110, &amp;#8230; 0010, 0001, 0000,
+1111, 1110, &amp;#8230;&amp;nbsp;etc.  &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Implementation&lt;/strong&gt;  &lt;/p&gt;
-&lt;p&gt;The following code is using BinPy's internal NBitRippleCounter.  &lt;/p&gt;
-&lt;p&gt;Following is the output of the above code.  &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Under the hood&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;The following code is using BinPy&amp;#8217;s internal&amp;nbsp;NBitRippleCounter.  &lt;/p&gt;
+&lt;p&gt;Following is the output of the above&amp;nbsp;code.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Under the&amp;nbsp;hood&lt;/strong&gt;  &lt;/p&gt;
 &lt;p&gt;When we are initializing the counter with specified number of bits, it
 is actually creating those many T Flip Flops and connecting them in
 order to get the result. The actual implementation is shown in the
-following code.  &lt;/p&gt;
-&lt;p&gt;Try connecting some wires with code, it's fun!&lt;br /&gt;
+following&amp;nbsp;code.  &lt;/p&gt;
+&lt;p&gt;Try connecting some wires with code, it&amp;#8217;s fun!&lt;br /&gt;
 If you have some feedback or questions regarding this post, please add
-comments. Cheers!   &lt;/p&gt;
+comments.&amp;nbsp;Cheers!   &lt;/p&gt;
 &lt;p&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/p&gt;&lt;/p&gt;</summary><category term="BinPy"></category><category term="Circuit Design"></category><category term="Electronics"></category></entry></feed>
