@@ -39,7 +39,9 @@
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/python.html">Python</a> </p>
 </footer><!-- /.post-info --><p><img alt="Pelican" src="https://pbs.twimg.com/profile_images/3330071480/8fc5b7f80b98bcc67512795fe5fb9291.png" /></p>
 <p>Finally I moved to a static site generator for my homepage + blog. Previously, I was using <a href="http://blog.sudhanshumishra.in">blogger</a> which was really annoying when writing a technical post. Code formatting was&nbsp;bizarre!</p>
-<p>Of all the static website generators I chose <a href="http://getpelican.com">Pelican</a>. It is written in Python and it doesn&#8217;t require any database at the server side. I can write articles in <strong>markdown</strong> which gives me full control over code highlighting! I know that these things are also possible with <a href="http://jekyllrb.com/">Jekyll</a> but the fact that Jekyll builds sometime take minutes, set me off. Nevertheless, Pelican is in&nbsp;Python!</p>
+<p>Of all the static website generators I chose <a href="http://getpelican.com">Pelican</a>. It is written in Python and it doesn&#8217;t require any database at the server side. I can write articles in <strong>markdown</strong> which gives me full control over code highlighting! I can also write math using&nbsp;MathJax.</p>
+<div class="math">$$\lim_{x \to 0^+}\left(\frac{1}{x} \sin{\left (x \right )}\right) + \int_{0}^{\infty} e^{x}\, dx$$</div>
+<p>I know that these things are also possible with <a href="http://jekyllrb.com/">Jekyll</a> but the fact that Jekyll builds sometime take minutes, set me off. Nevertheless, Pelican is in&nbsp;Python!</p>
 <p>Pelican also gives you a nice way of importing contents from your old blog. I used following command to do&nbsp;that.</p>
 <div class="highlight"><pre><span class="nv">$ </span>pelican-import  --feed http://blog.sudhanshumishra.in/feeds/posts/default/ -o content/ -m markdown
 </pre></div>
@@ -97,7 +99,45 @@ annoying while writing a technical post. Code formatting was bizarre!
 
 
 <p>This will generate <code>html</code> along with assets in the <code>output</code> directory. Since I&#8217;m using GitHub pages to host my website, I used <code>output</code> directory as my git repository having <code>CNAME</code> file. Now just commit those files and push to your repository(your_username.github.io). Learn more about GitHub pages <a href="https://pages.github.com/">here</a>.</p>
-<p>If you want to change theme or add plugins, visit the <a href="http://docs.getpelican.com/">documentation</a>.</p><p>There are <a href="http://www.sudhanshumishra.in/moving-to-a-static-site-generator#disqus_thread">comments</a>.</p>                </article>
+<p>If you want to change theme or add plugins, visit the <a href="http://docs.getpelican.com/">documentation</a>.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+    
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'red ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script><p>There are <a href="http://www.sudhanshumishra.in/moving-to-a-static-site-generator#disqus_thread">comments</a>.</p>                </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>

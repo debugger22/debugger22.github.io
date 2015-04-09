@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/programming.category.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2015-04-09T06:50:00+05:30</updated><entry><title>Moving to a static site generator</title><link href="http://www.sudhanshumishra.in/moving-to-a-static-site-generator" rel="alternate"></link><updated>2015-04-09T06:50:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-04-09:moving-to-a-static-site-generator</id><summary type="html">&lt;p&gt;&lt;img alt="Pelican" src="https://pbs.twimg.com/profile_images/3330071480/8fc5b7f80b98bcc67512795fe5fb9291.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Finally I moved to a static site generator for my homepage + blog. Previously, I was using &lt;a href="http://blog.sudhanshumishra.in"&gt;blogger&lt;/a&gt; which was really annoying when writing a technical post. Code formatting was&amp;nbsp;bizarre!&lt;/p&gt;
-&lt;p&gt;Of all the static website generators I chose &lt;a href="http://getpelican.com"&gt;Pelican&lt;/a&gt;. It is written in Python and it doesn&amp;#8217;t require any database at the server side. I can write articles in &lt;strong&gt;markdown&lt;/strong&gt; which gives me full control over code highlighting! I know that these things are also possible with &lt;a href="http://jekyllrb.com/"&gt;Jekyll&lt;/a&gt; but the fact that Jekyll builds sometime take minutes, set me off. Nevertheless, Pelican is in&amp;nbsp;Python!&lt;/p&gt;
+&lt;p&gt;Of all the static website generators I chose &lt;a href="http://getpelican.com"&gt;Pelican&lt;/a&gt;. It is written in Python and it doesn&amp;#8217;t require any database at the server side. I can write articles in &lt;strong&gt;markdown&lt;/strong&gt; which gives me full control over code highlighting! I can also write math using&amp;nbsp;MathJax.&lt;/p&gt;
+&lt;div class="math"&gt;$$\lim_{x \to 0^+}\left(\frac{1}{x} \sin{\left (x \right )}\right) + \int_{0}^{\infty} e^{x}\, dx$$&lt;/div&gt;
+&lt;p&gt;I know that these things are also possible with &lt;a href="http://jekyllrb.com/"&gt;Jekyll&lt;/a&gt; but the fact that Jekyll builds sometime take minutes, set me off. Nevertheless, Pelican is in&amp;nbsp;Python!&lt;/p&gt;
 &lt;p&gt;Pelican also gives you a nice way of importing contents from your old blog. I used following command to do&amp;nbsp;that.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pelican-import  --feed http://blog.sudhanshumishra.in/feeds/posts/default/ -o content/ -m markdown
 &lt;/pre&gt;&lt;/div&gt;
@@ -59,7 +61,45 @@ annoying while writing a technical post. Code formatting was bizarre!
 
 
 &lt;p&gt;This will generate &lt;code&gt;html&lt;/code&gt; along with assets in the &lt;code&gt;output&lt;/code&gt; directory. Since I&amp;#8217;m using GitHub pages to host my website, I used &lt;code&gt;output&lt;/code&gt; directory as my git repository having &lt;code&gt;CNAME&lt;/code&gt; file. Now just commit those files and push to your repository(your_username.github.io). Learn more about GitHub pages &lt;a href="https://pages.github.com/"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you want to change theme or add plugins, visit the &lt;a href="http://docs.getpelican.com/"&gt;documentation&lt;/a&gt;.&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>Memory Error due to charge leak acceleration in DRAM</title><link href="http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram" rel="alternate"></link><updated>2015-01-16T19:36:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-01-16:memory-error-due-to-charge-leak-acceleration-in-dram</id><summary type="html">&lt;p&gt;&lt;span class="caps"&gt;DRAM&lt;/span&gt; comprises a two-dimensional array of &lt;span class="caps"&gt;DRAM&lt;/span&gt; cells, each of which
+&lt;p&gt;If you want to change theme or add plugins, visit the &lt;a href="http://docs.getpelican.com/"&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+    
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'red ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><category term="Python"></category></entry><entry><title>Memory Error due to charge leak acceleration in DRAM</title><link href="http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram" rel="alternate"></link><updated>2015-01-16T19:36:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-01-16:memory-error-due-to-charge-leak-acceleration-in-dram</id><summary type="html">&lt;p&gt;&lt;span class="caps"&gt;DRAM&lt;/span&gt; comprises a two-dimensional array of &lt;span class="caps"&gt;DRAM&lt;/span&gt; cells, each of which
 consists of a capacitor and an access-transistor. Depending on whether
 its capacitor is fully charged or fully discharged, a cell is in either
 the charged state or the discharged state, respectively. These two
