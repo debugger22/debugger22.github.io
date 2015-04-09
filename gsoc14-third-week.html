@@ -6,22 +6,108 @@
         <link rel="stylesheet" href="http://www.sudhanshumishra.in/theme/css/main.css" />
         <link href="http://www.sudhanshumishra.in/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Shortlog Atom Feed" />
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <meta property="og:url" content="http://www.sudhanshumishra.in" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Shortlog" />
+        <meta property="og:url" content="http://www.sudhanshumishra.in/gsoc14-third-week" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Shortlog | article.title" />
         <meta property="og:image" content="https://avatars3.githubusercontent.com/u/2821646?v=3&s=200" />
-        <meta property="og:description" content="A blog by Sudhanshu Mishra" />
+        <meta property="og:description" content="<p>It was another not so productive week but I learnt a lot regarding how to write new classes by extending classes like <code>Basic</code>, <code>Symbol</code> and <code>Expr</code>.</p>
+<p>Last week got stuck with the rewrite expression mechanism which turned
+out to be a bug in the <code>core</code>. Thanks to <a href="https://github.com/flacjacket">Sean</a> for the fix! I need to
+do some more cleanup to get my last <span class="caps">PR</span>&nbsp;merged.</p>
+<ul>
+<li>https://github.com/sympy/sympy/pull/7546</li>
+</ul>
+<p>I also tried to fix an issue related to assumptions in <code>Function</code> but the complex behaviour of <code>__new__</code> constructor makes it difficult to follow the inheritance. I also need to understand the working of SymPy&#8217;s <code>@cacheit</code> decorator.</p>
+<p>Lately I&#8217;ve been working on the implementation of optical medium. The motivation behind defining
+a<code>Medium</code> came from the laziness of passing constants like electric permittivity and
+magnetic permeabhility of the medium everywhere. It will help carry out
+operations(events) very easily in&nbsp;optics.</p>
+<p>With the merger of <code>Point3D</code> by <a href="https://github.com/akshayah3">Akshay</a> I planned to implement Fermat&#8217;s principle and thus felt the need of <code>Medium</code> first.</p>
+<p>I&#8217;ve already sent a <span class="caps">WIP</span> pull request for <code>Medium</code>. Here&#8217;s the&nbsp;link:</p>
+<ul>
+<li>https://github.com/sympy/sympy/pull/7580</li>
+</ul>
+<p>I also took a quick glance at variational calculus to solve the problem
+involving Fermat&#8217;s principle. I&#8217;m planning to start this as&nbsp;following:</p>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">FermatsPrinciple</span><span class="p">(</span><span class="n">Expr</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">Symbol</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="nb">type</span><span class="p">(()))</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="nb">type</span><span class="p">(())):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="o">*</span><span class="n">p1</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="o">*</span><span class="n">p2</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point3D</span><span class="p">(</span><span class="o">*</span><span class="n">p1</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">p2</span> <span class="o">=</span> <span class="n">Point3D</span><span class="p">(</span><span class="o">*</span><span class="n">p2</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">Point</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">Point</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point3D</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">p2</span> <span class="o">=</span> <span class="n">Point3D</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">Point3D</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">Point3D</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">p2</span> <span class="o">=</span> <span class="n">p2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;p1 and p2 can only be tuple, Point or Point3D&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>It&#8217;s not a very good <span class="caps">API</span> and needs more refining which I&#8217;ll discuss with
+Sean once I get it&nbsp;working.</p>
+<p>My work in this week(<em>fourth week as I am writing this post very late</em>) will be to complete the above discussed&nbsp;things.</p>
+<p>On a lighter note, the temperature here is 46 degrees and no sign of rains yet.&nbsp;:(</p>
+<p>That&#8217;s all for now.&nbsp;Cheers!</p>
+<p>If you have some feedback or questions regarding this post, please add comments. I would be happy to get some&nbsp;feedback.</p>" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@debugger22" />
-        <meta name="twitter:title" content="Shortlog" />
-        <meta name="twitter:description" content="A blog by Sudhanshu Mishra" />
-        <meta name="twitter:image" content="https://avatars3.githubusercontent.com/u/2821646?v=3&s=200" />
-        <meta name="twitter:url" content="http://www.sudhanshumishra.in/" />
-        <meta name="keywords" content="sudhanshu mishra, programming, blog" />
+        <meta name="twitter:title" content="Shortlog | article.title" />
+        <meta name="twitter:description" content="<p>It was another not so productive week but I learnt a lot regarding how to write new classes by extending classes like <code>Basic</code>, <code>Symbol</code> and <code>Expr</code>.</p>
+<p>Last week got stuck with the rewrite expression mechanism which turned
+out to be a bug in the <code>core</code>. Thanks to <a href="https://github.com/flacjacket">Sean</a> for the fix! I need to
+do some more cleanup to get my last <span class="caps">PR</span>&nbsp;merged.</p>
+<ul>
+<li>https://github.com/sympy/sympy/pull/7546</li>
+</ul>
+<p>I also tried to fix an issue related to assumptions in <code>Function</code> but the complex behaviour of <code>__new__</code> constructor makes it difficult to follow the inheritance. I also need to understand the working of SymPy&#8217;s <code>@cacheit</code> decorator.</p>
+<p>Lately I&#8217;ve been working on the implementation of optical medium. The motivation behind defining
+a<code>Medium</code> came from the laziness of passing constants like electric permittivity and
+magnetic permeabhility of the medium everywhere. It will help carry out
+operations(events) very easily in&nbsp;optics.</p>
+<p>With the merger of <code>Point3D</code> by <a href="https://github.com/akshayah3">Akshay</a> I planned to implement Fermat&#8217;s principle and thus felt the need of <code>Medium</code> first.</p>
+<p>I&#8217;ve already sent a <span class="caps">WIP</span> pull request for <code>Medium</code>. Here&#8217;s the&nbsp;link:</p>
+<ul>
+<li>https://github.com/sympy/sympy/pull/7580</li>
+</ul>
+<p>I also took a quick glance at variational calculus to solve the problem
+involving Fermat&#8217;s principle. I&#8217;m planning to start this as&nbsp;following:</p>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">FermatsPrinciple</span><span class="p">(</span><span class="n">Expr</span><span class="p">):</span>
 
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">Symbol</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="nb">type</span><span class="p">(()))</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="nb">type</span><span class="p">(())):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="o">*</span><span class="n">p1</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="o">*</span><span class="n">p2</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point3D</span><span class="p">(</span><span class="o">*</span><span class="n">p1</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">p2</span> <span class="o">=</span> <span class="n">Point3D</span><span class="p">(</span><span class="o">*</span><span class="n">p2</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">Point</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">Point</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point3D</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">p2</span> <span class="o">=</span> <span class="n">Point3D</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">Point3D</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">Point3D</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">p2</span> <span class="o">=</span> <span class="n">p2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;p1 and p2 can only be tuple, Point or Point3D&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>It&#8217;s not a very good <span class="caps">API</span> and needs more refining which I&#8217;ll discuss with
+Sean once I get it&nbsp;working.</p>
+<p>My work in this week(<em>fourth week as I am writing this post very late</em>) will be to complete the above discussed&nbsp;things.</p>
+<p>On a lighter note, the temperature here is 46 degrees and no sign of rains yet.&nbsp;:(</p>
+<p>That&#8217;s all for now.&nbsp;Cheers!</p>
+<p>If you have some feedback or questions regarding this post, please add comments. I would be happy to get some&nbsp;feedback.</p>" />
+        <meta name="twitter:image" content="https://avatars3.githubusercontent.com/u/2821646?v=3&s=200" />
+        <meta name="twitter:url" content="http://www.sudhanshumishra.in/gsoc14-third-week" />
+        <meta name="keywords" content="sudhanshu mishra, programming, blog" />
 </head>
 
 <body id="index" class="home">
