@@ -55,43 +55,4 @@ need to add one more&amp;nbsp;line:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt;Use editor.apply() for asynchronous&amp;nbsp;call.&lt;/p&gt;
 &lt;p&gt;This &lt;span class="caps"&gt;API&lt;/span&gt; made my life easy. Now I do not need to write queries to do these small&amp;nbsp;things.&lt;/p&gt;
 &lt;p&gt;If you have suggestions, please
-comment below. I’ll be happy to get&amp;nbsp;feedback.&lt;/p&gt;</summary><category term="Android"></category></entry><entry><title>CapaStr: Talking about design</title><link href="http://www.sudhanshumishra.in/capastr-talking-about-design" rel="alternate"></link><updated>2013-08-20T22:37:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2013-08-20:capastr-talking-about-design</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
-It was very difficult for me to choose the best and easiest framework to
-use for &lt;span class="caps"&gt;UI&lt;/span&gt; design. After lot of research I decided to stick with
-**JQueryMobile** since it has an awesome extension called
-**ThemeRoller**.
-
-Working with a framework gives you enough time to work on core things
-rather than thinking about the responsive design. Cordova is doing
-pretty well with JQuery without loosing any frame.  
-
-Here&amp;#8217;s some of the screen shots of the
-app&lt;span id="goog_1151724009"&gt;&lt;/span&gt;&lt;span id="goog_1151724010"&gt;&lt;/span&gt;  
-
-
-&lt;div class="separator" style="clear: both; text-align: center;"&gt;
-[![](http://2.bp.blogspot.com/-Ro8l1hwPdeY/UhPmv_VoK8I/AAAAAAAAAg8/h_G61THSzHo/s320/device-2013-08-21-032238.png)](http://2.bp.blogspot.com/-Ro8l1hwPdeY/UhPmv_VoK8I/AAAAAAAAAg8/h_G61THSzHo/s1600/device-2013-08-21-032238.png)
-
-&lt;/div&gt;
-
-&lt;div class="separator" style="clear: both; text-align: center;"&gt;
-[![](http://3.bp.blogspot.com/-D6s37MvlMpI/UhPnnnEflOI/AAAAAAAAAhE/4tkIOQw1L58/s320/device-2013-08-21-031844.png)](http://3.bp.blogspot.com/-D6s37MvlMpI/UhPnnnEflOI/AAAAAAAAAhE/4tkIOQw1L58/s1600/device-2013-08-21-031844.png)
-
-&lt;/div&gt;
-
-&lt;p&gt;I&amp;#8217;m not very good at choosing colors, although Blue and Orange are my
-all time&amp;nbsp;favorite.  &lt;/p&gt;
-&lt;p&gt;Working with Android&amp;#8217;s push notification system is really a hectic job.
-First you code for &lt;span class="caps"&gt;C2DM&lt;/span&gt; and then you get to know that it has been
-deprecated by Google itself discourages the development. Google
-introduced something new called Google Cloud Messaging(&lt;span class="caps"&gt;GCM&lt;/span&gt;). This works
-pretty smooth once you have the registration Id of the device. Thanks
-to &lt;a href="http://namis.me/"&gt;geeknam&lt;/a&gt; for proving such a fantastic library to
-handle &lt;span class="caps"&gt;GCM&lt;/span&gt; with Python.&lt;br /&gt;
-I hope that Apple Push Notification Service(&lt;span class="caps"&gt;APNS&lt;/span&gt;) would not be a
-headache like Android. &lt;br /&gt;
-I&amp;#8217;ll let you know about further development&amp;nbsp;soon.  &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Enjoy!!&lt;/em&gt;&lt;/strong&gt;  &lt;/p&gt;
-&lt;p&gt;&lt;span style="font-size: xx-small;"&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="Android"></category><category term="CapaStr"></category><category term="Cordova"></category><category term="iOS"></category><category term="JQueryMobile"></category><category term="PhoneGap"></category></entry></feed>
+comment below. I’ll be happy to get&amp;nbsp;feedback.&lt;/p&gt;</summary><category term="Android"></category></entry></feed>

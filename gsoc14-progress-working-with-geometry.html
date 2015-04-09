@@ -42,76 +42,22 @@
         </address>
 <p>In <a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a>. </p>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/gsoc.html">gsoc</a> <a href="http://www.sudhanshumishra.in/tag/physics.html">physics</a> <a href="http://www.sudhanshumishra.in/tag/sympy.html">sympy</a> </p>
-</footer><!-- /.post-info -->      <div dir="ltr" style="text-align: left;">
-<div class="markdown-body">
-<div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;">
-<span style="background-color: white;">This week I
-completed `refraction_angle`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;}.
-Now it also works
-with `Ray3D`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;} and `Plane`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;}.
-This function calculates transmitted vector after
-refraction. `medium1`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;} and `medium2`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;} can
-be `Medium`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;}or
-any sympifiable object.
-If`incident`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;} is
-an object
-of `Ray3D`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;}, `normal`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;} also
-has to be an instance
-of `Ray3D`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;} in
-order to get the output as
-a `Ray3D`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;}.
-If plane of separation is not provided and normal is an instance
-of `Ray3D`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;},
-normal will be assumed to be intersecting incident ray at the plane of
-separation. This will not be the case
-when `normal`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;} is
-a `Matrix`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;} or
-any other sequence.   
-If `incident`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;} is
-an instance
-of `Ray3D`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;} and `plane`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;} has
-not been provided
-and `normal`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;} is
-not`Ray3D`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;},
-output will be
-a `Matrix`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;}.
-It is dependent
-on `Plane`{style=&#8221;border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, &#8216;Courier New&#8217;, monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;&#8221;} so
-I haven’t added tests for it.</span>
-
-</div>
-
-<div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;">
-<span style="background-color: white;">Here’s the link to the
-<span class="caps">PR</span> <https://github.com/sympy/sympy/pull/7626></span>
-
-</div>
-
-<div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;">
-<span style="background-color: white;">This week I also worked on making
-spherical mirrors in SymPy. There are few issues that I am facing.
-Currently I’m working(stuck) on locating mirrors in space. It’s an
-amalgamation of 2D and 3D geometry. I still have to subclass Ray of
-geometry and make it useful for this. I’ve sent a [<span class="caps">WIP</span>
-<span class="caps">PR</span>](https://github.com/sympy/sympy/pull/7686).</span>
-
-</div>
-
-<div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;">
-<span style="background-color: white;">I’m waiting for Sean to
-merge [this](https://github.com/sympy/sympy/pull/7607) long waited <span class="caps">PR</span>
-for moving Gaussian optics module.</span>
-
-</div>
-
-<div style="color: #162029; font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 15px;">
-That&#8217;s all for now.
-
-</div>
-
-<p></div>
-</div>
-</p></p>
+</footer><!-- /.post-info -->      <p>This week I completed <code>refraction_angle</code>. Now it also works with <code>Ray3D</code> and <code>Plane</code>. This function calculates transmitted vector after refraction. <code>medium1</code> and <code>medium2</code> can be <code>Medium</code>or any sympifiable&nbsp;object.</p>
+<p>If<code>incident</code> is an object of <code>Ray3D</code>, <code>normal</code> also has to be an instance of <code>Ray3D</code> in order to get the output as a <code>Ray3D</code>. If plane of separation is not provided and normal is an instance
+of <code>Ray3D</code>, normal will be assumed to be intersecting incident ray at the plane of separation. This will not be the case when <code>normal</code> is a <code>Matrix</code> or
+any other&nbsp;sequence.</p>
+<p>If <code>incident</code> is an instance of <code>Ray3D</code> and <code>plane</code> has not been provided and <code>normal</code> is not<code>Ray3D</code>,
+output will be a <code>Matrix</code>. It is dependent
+on <code>Plane</code> so I haven’t added tests for&nbsp;it.</p>
+<p>Here’s the link to the <span class="caps">PR</span> </p>
+<ul>
+<li>https://github.com/sympy/sympy/pull/7626&gt;</li>
+</ul>
+<p>This week I also worked on making spherical mirrors in SymPy. There are few issues that I am facing.
+Currently I’m working(stuck) on locating mirrors in space. It’s an amalgamation of 2D and 3D geometry. I still have to subclass Ray of geometry and make it useful for this. I’ve sent a <a href="https://github.com/sympy/sympy/pull/7686"><span class="caps">WIP</span>
+<span class="caps">PR</span></a></p>
+<p>I’m waiting for Sean to merge <a href="https://github.com/sympy/sympy/pull/7607">this</a> long waited <span class="caps">PR</span> for moving Gaussian optics&nbsp;module.</span></p>
+<p>That&#8217;s all for&nbsp;now.</p>
     </div><!-- /.entry-content -->
     <div class="comments">
       <h2>Comments !</h2>

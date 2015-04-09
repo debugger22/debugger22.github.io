@@ -1,149 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/binpy.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2014-04-05T06:42:00+05:30</updated><entry><title>Setting up Tornado server on Ubuntu 12.04</title><link href="http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204" rel="alternate"></link><updated>2014-04-05T06:42:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-05:setting-up-tornado-server-on-ubuntu-1204</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
- {#setting-up-tornado-server-on-ubuntu-12-04 style=&amp;#8221;color: #444444; font-family: Arvo, &amp;#8216;Helvetica Neue&amp;#8217;, Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;&amp;#8221;}
-
-&lt;div style="font-size: 13px; font-weight: normal; line-height: 18px; margin-bottom: 9px;"&gt;
-&lt;div class="separator" style="clear: both; text-align: center;"&gt;
-[![Tornado](http://www.tornadoweb.org/en/stable/_images/tornado.png)](http://www.tornadoweb.org/en/stable/_images/tornado.png)
-
-&lt;/div&gt;
-
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/binpy.tag.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2014-04-05T06:42:00+05:30</updated><entry><title>Setting up Tornado server on Ubuntu 12.04</title><link href="http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204" rel="alternate"></link><updated>2014-04-05T06:42:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-04-05:setting-up-tornado-server-on-ubuntu-1204</id><summary type="html">&lt;p&gt;&lt;img alt="Tornado" src="http://www.tornadoweb.org/en/stable/_images/tornado.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Lately I was looking at Tornado which has been open sourced by Facebook.
 It was originally developed at FriendFeed. It has a great capability to
 handle tens of thousands on live connections at a time making it ideal
-for &lt;br /&gt;
-long polling, WebSockets, and other applications that require a
+for long polling, WebSockets, and other applications that require a
 long-lived connection to each user. This server is written in Python
 which follows a non blocking methodology of coding. Just like Node.js it
 also works on a similar concept of&amp;nbsp;callbacks.&lt;/p&gt;
-&lt;p&gt;&lt;/div&gt;
-&lt;/h1&gt;
-&lt;span style="font-size: large;"&gt;Prerequisites&lt;/span&gt; {#setting-up-tornado-server-on-ubuntu-12-04 style=&amp;#8221;color: #444444; font-family: Arvo, &amp;#8216;Helvetica Neue&amp;#8217;, Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;&amp;#8221;}&amp;nbsp;====================================================&lt;/p&gt;
-&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Tornado runs on Python 2.6, 2.7, 3.2, and 3.3. On Python 2, the
-backports.ssl\_match\_hostname package must be installed (This will be
-installed automatically when using pip or easy\_install); on Python 3
-there are no strict dependencies outside the standard library. Some
-Tornado features may require one of the following optional libraries:
-
-&lt;/div&gt;
-
+&lt;h2&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;Tornado runs on Python 2.6, 2.7, 3.2, and 3.3. On Python 2, the &lt;code&gt;backports.ssl_match_hostname&lt;/code&gt; package must be installed (This will be installed automatically when using &lt;code&gt;pip&lt;/code&gt; or &lt;code&gt;easy_install&lt;/code&gt;); on Python 3 there are no strict dependencies outside the standard library. Some Tornado features may require one of the following optional&amp;nbsp;libraries&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 9px;"&gt;
-    &lt;a href="https://pypi.python.org/pypi/unittest2"&gt;unittest2&lt;/a&gt; is needed to run
-    Tornado’s test suite on Python 2.6 (it is unnecessary on more recent
-    versions of Python)
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 9px;"&gt;
-    &lt;a href="https://pypi.python.org/pypi/futures"&gt;concurrent.futures&lt;/a&gt; is the
-    recommended thread pool for use with Tornado and enables the use
-    of &lt;a href="http://www.tornadoweb.org/en/stable/netutil.html#tornado.netutil.ThreadedResolver"&gt;ThreadedResolver&lt;/a&gt;.
-    It is needed only on Python 2; Python 3 includes this package in the
-    standard library.
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 9px;"&gt;
-    &lt;a href="http://pycurl.sourceforge.net/"&gt;pycurl&lt;/a&gt; is used by the optional
-    tornado.curl_httpclient. Libcurl version 7.18.2 or higher is
-    required; version 7.21.1 or higher is recommended.
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 9px;"&gt;
-    &lt;a href="http://www.twistedmatrix.com/"&gt;Twisted&lt;/a&gt; may be used with the
-    classes
-    in &lt;a href="http://www.tornadoweb.org/en/stable/twisted.html#module-tornado.platform.twisted"&gt;tornado.platform.twisted&lt;/a&gt;.
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 9px;"&gt;
-    &lt;a href="https://pypi.python.org/pypi/pycares"&gt;pycares&lt;/a&gt; is an alternative
-    non-blocking &lt;span class="caps"&gt;DNS&lt;/span&gt; resolver that can be used when threads are not
-    appropriate.
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div style="margin-bottom: 9px;"&gt;
-    &lt;a href="https://pypi.python.org/pypi/Monotime"&gt;Monotime&lt;/a&gt; adds support for a
-    monotonic clock, which improves reliability in environments where
-    clock adjustments are frequent. No longer needed in Python 3.3.
-    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://pypi.python.org/pypi/unittest2"&gt;unittest2&lt;/a&gt; is needed to run Tornado’s test suite on Python 2.6 (it is unnecessary on more recent versions of&amp;nbsp;Python)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://pypi.python.org/pypi/futures"&gt;concurrent.futures&lt;/a&gt; is the recommended thread pool for use with Tornado and enables the use of &lt;a href="http://www.tornadoweb.org/en/stable/netutil.html#tornado.netutil.ThreadedResolver"&gt;ThreadedResolver&lt;/a&gt;. It is needed only on Python 2; Python 3 includes this package in the standard&amp;nbsp;library.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://pycurl.sourceforge.net/"&gt;pycurl&lt;/a&gt; is used by the optional tornado.curl_httpclient. Libcurl version 7.18.2 or higher is required; version 7.21.1 or higher is&amp;nbsp;recommended.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://www.twistedmatrix.com/"&gt;Twisted&lt;/a&gt; may be used with the classes in &lt;a href="http://www.tornadoweb.org/en/stable/twisted.html#module-tornado.platform.twisted"&gt;tornado.platform.twisted&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://pypi.python.org/pypi/pycares"&gt;pycares&lt;/a&gt; is an alternative non-blocking &lt;span class="caps"&gt;DNS&lt;/span&gt; resolver that can be used when threads are not&amp;nbsp;appropriate.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://pypi.python.org/pypi/Monotime"&gt;Monotime&lt;/a&gt; adds support for a monotonic clock, which improves reliability in environments where clock adjustments are frequent. No longer needed in Python&amp;nbsp;3.3.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Tornado works on almost all platforms including unix, &lt;span class="caps"&gt;BSD&lt;/span&gt;, Mac &lt;span class="caps"&gt;OS&lt;/span&gt; X and
-windows though it is advised to use it only on Unix for production
-purpose.
-
-&lt;/div&gt;
-
-&lt;h1 id="installation" style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"&gt;&lt;span style="font-size: large;"&gt;Installation&lt;/span&gt;&lt;/h1&gt;
-&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Tornado is listed in [PyPi](https://pypi.python.org/pypi/tornado) so it
-can be installed very easily with the following command:
-
-&lt;/div&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;sudo pip install tornado
+&lt;p&gt;Tornado works on almost all platforms including unix, &lt;span class="caps"&gt;BSD&lt;/span&gt;, Mac &lt;span class="caps"&gt;OS&lt;/span&gt; X and
+windows though it is advised to use it only on Unix for production&amp;nbsp;purpose.&lt;/p&gt;
+&lt;h2&gt;Installation&lt;/h2&gt;
+&lt;p&gt;Tornado is listed in &lt;a href="https://pypi.python.org/pypi/tornado"&gt;PyPi&lt;/a&gt; so it
+can be installed very easily with the following&amp;nbsp;command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install tornado
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-For backports it will automatically
-install [backports.ssl\_match\_hostname](https://pypi.python.org/pypi/backports.ssl_match_hostname).
-
-&lt;/div&gt;
-
-&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-You can also install the latest development version from source code
-using following command:
-
-&lt;/div&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;sudo pip install https://github.com/facebook/tornado/zipball/master
+&lt;p&gt;For backports it will automatically install &lt;a href="https://pypi.python.org/pypi/backports.ssl_match_hostname"&gt;backports.ssl_match_hostname&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can also install the latest development version from source code using following&amp;nbsp;command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install https://github.com/facebook/tornado/zipball/master
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h1 id="running-a-simple-program-using-tornado" style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 36px; margin: 0px;"&gt;&lt;span style="font-size: large;"&gt;Running a simple program using&amp;nbsp;tornado&lt;/span&gt;&lt;/h1&gt;
-&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Following is a simple hello world program using tornado.
+&lt;h2&gt;Running a simple program using&amp;nbsp;tornado&lt;/h2&gt;
+&lt;p&gt;Following is a simple hello world program using&amp;nbsp;tornado.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tornado.httpserver&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tornado.ioloop&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tornado.options&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tornado.web&lt;/span&gt;
 
-&lt;/div&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;tornado.options&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;define&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;options&lt;/span&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tornado.httpserverimport&lt;/span&gt; &lt;span class="nn"&gt;tornado.ioloopimport&lt;/span&gt; &lt;span class="nn"&gt;tornado.optionsimport&lt;/span&gt; &lt;span class="nn"&gt;tornado.webfrom&lt;/span&gt; &lt;span class="nn"&gt;tornado.options&lt;/span&gt; &lt;span class="nn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;define&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;optionsdefine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;port&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;8888&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;run on the given port&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MainHandler&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tornado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;web&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;RequestHandler&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello, world&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;    &lt;span class="n"&gt;tornado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parse_command_line&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;    &lt;span class="n"&gt;application&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tornado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;web&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Application&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;r&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;MainHandler&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;    &lt;span class="p"&gt;])&lt;/span&gt;    &lt;span class="n"&gt;http_server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tornado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;httpserver&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;HTTPServer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;application&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;    &lt;span class="n"&gt;http_server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;listen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;    &lt;span class="n"&gt;tornado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ioloop&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;IOLoop&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;instance&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;    &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;define&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;port&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;8888&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;run on the given port&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MainHandler&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tornado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;web&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;RequestHandler&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello, world&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;tornado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parse_command_line&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;application&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tornado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;web&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Application&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;r&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;MainHandler&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;http_server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tornado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;httpserver&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;HTTPServer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;application&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;http_server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;listen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;tornado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ioloop&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;IOLoop&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;instance&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-The above written program will start the server on port 8888. You can
-check it out by
-visiting [http://www.yourdomain.com:8888](http://www.yourdomain.com:8888/).
-
-&lt;/div&gt;
-
-&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-
-&lt;/div&gt;
-
-&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-I will write more on tornado in future. I&amp;#8217;m planning to use this as
-computing server for online version of [Binpy](http://www.binpy.org/).
-
-&lt;/div&gt;
-
-&lt;div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;"&gt;
-Cheers!
-
-&lt;/div&gt;
-
-&lt;p&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="BinPy"></category><category term="Server"></category><category term="Ubuntu"></category></entry><entry><title>BinPy: N Bit Ripple Counter</title><link href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter" rel="alternate"></link><updated>2014-03-13T17:36:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-03-13:binpy-n-bit-ripple-counter</id><summary type="html">&lt;div dir="ltr" style="text-align: left;"&gt;
-&lt;div dir="ltr" style="text-align: left;"&gt;
-&lt;div class="separator" style="clear: both; text-align: center;"&gt;
-[![](http://binpy.github.io/images/logo.png)](http://binpy.github.io/images/logo.png)
-
-&lt;/div&gt;
-
+&lt;p&gt;The above written program will start the server on port 8888. You can check it out by
+visiting &lt;a href="http://www.yourdomain.com:8888/"&gt;http://www.yourdomain.com:8888&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I will write more on tornado in future. I&amp;#8217;m planning to use this as
+computing server for online version of &lt;a href="http://www.binpy.org/"&gt;Binpy&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;</summary><category term="BinPy"></category><category term="Server"></category><category term="Ubuntu"></category></entry><entry><title>BinPy: N Bit Ripple Counter</title><link href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter" rel="alternate"></link><updated>2014-03-13T17:36:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-03-13:binpy-n-bit-ripple-counter</id><summary type="html">&lt;p&gt;&lt;img alt="Logo" src="http://binpy.github.io/images/logo.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://binpy.github.io"&gt;BinPy&lt;/a&gt; is almost ready to create things. This
-post focuses on building a ripple counter using&amp;nbsp;it.  &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Theory&lt;/strong&gt;  &lt;/p&gt;
+post focuses on building a ripple counter using&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theory&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;A ripple counter is an asynchronous counter where only the first
 flip-flop is clocked by an external clock. All subsequent flip-flops are
 clocked by the output of the preceding flip-flop. Asynchronous counters
 are also called ripple-counters because of the way the clock pulse
-ripples it way through the&amp;nbsp;flip-flops.  &lt;/p&gt;
+ripples it way through the&amp;nbsp;flip-flops.&lt;/p&gt;
 &lt;p&gt;The &lt;span class="caps"&gt;MOD&lt;/span&gt; of the ripple counter or asynchronous counter is 2n if n
 flip-flops are used. For a 4-bit counter, the range of the count is 0000
 to 1111 (24-1). A counter may count up or count down or count up and
@@ -151,18 +96,110 @@ down depending on the input control. The count sequence usually repeats
 itself. When counting up, the count sequence goes from 0000, 0001, 0010,
 &amp;#8230; 1110 , 1111 , 0000, 0001, &amp;#8230; etc. When counting down the count
 sequence goes in the opposite manner: 1111, 1110, &amp;#8230; 0010, 0001, 0000,
-1111, 1110, &amp;#8230;&amp;nbsp;etc.  &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Implementation&lt;/strong&gt;  &lt;/p&gt;
-&lt;p&gt;The following code is using BinPy&amp;#8217;s internal&amp;nbsp;NBitRippleCounter.  &lt;/p&gt;
-&lt;p&gt;Following is the output of the above&amp;nbsp;code.  &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Under the&amp;nbsp;hood&lt;/strong&gt;  &lt;/p&gt;
+1111, 1110, &amp;#8230;&amp;nbsp;etc.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Implementation&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The following code is using BinPy&amp;#8217;s internal&amp;nbsp;NBitRippleCounter.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;print_function&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;BinPy.tools&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Clock&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;BinPy.Sequential.counters&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;NBitRippleCounter&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;BinPy.Gates&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Connector&lt;/span&gt;
+
+&lt;span class="n"&gt;toggle&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Connector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c"&gt;# Initialize the clock with leading edge = 1 and frequency = 1000Hz&lt;/span&gt;
+&lt;span class="n"&gt;clock&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Clock&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;init_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;frequency&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;  &lt;span class="c"&gt;#Start the clock&lt;/span&gt;
+&lt;span class="n"&gt;clk_conn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;  &lt;span class="c"&gt;#Clock.A provides the connector of the clock&lt;/span&gt;
+&lt;span class="n"&gt;enable&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Connector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c"&gt;# Initialize the counter&lt;/span&gt;
+&lt;span class="n"&gt;counter&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;NBitRippleCounter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;clk_conn&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;INITIAL STATE&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;counter&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;state&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;TRIGGERING THE COUNTER SEQUENTIALLY 2^4 + 1 times&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;counter&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;state&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+    &lt;span class="n"&gt;counter&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Following is the output of the above&amp;nbsp;code.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;INITIAL STATE
+[0, 0, 0, 0]
+TRIGGERING THE COUNTER SEQUENTIALLY 2^4 + 1 times
+[0, 0, 0, 0]
+[0, 0, 0, 1]
+[0, 0, 1, 0]
+[0, 0, 1, 1]
+[0, 1, 0, 0]
+[0, 1, 0, 1]
+[0, 1, 1, 0]
+[0, 1, 1, 1]
+[1, 0, 0, 0]
+[1, 0, 0, 1]
+[1, 0, 1, 0]
+[1, 0, 1, 1]
+[1, 1, 0, 0]
+[1, 1, 0, 1]
+[1, 1, 1, 0]
+[1, 1, 1, 1]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Under the&amp;nbsp;hood&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;When we are initializing the counter with specified number of bits, it
 is actually creating those many T Flip Flops and connecting them in
 order to get the result. The actual implementation is shown in the
-following&amp;nbsp;code.  &lt;/p&gt;
-&lt;p&gt;Try connecting some wires with code, it&amp;#8217;s fun!&lt;br /&gt;
+following&amp;nbsp;code.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;NBitRippleCounter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Counter&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;    An N-Bit Ripple Counter&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;bits&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;clock_connector&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Connector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+            &lt;span class="n"&gt;reset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Connector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+            &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+
+        &lt;span class="c"&gt;# All the output bits are initialized to this data bit&lt;/span&gt;
+
+        &lt;span class="n"&gt;Counter&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bits&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;clock_connector&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;reset&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="c"&gt;# Calling the super class constructor&lt;/span&gt;
+
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ff&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bits&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;
+            &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TFlipFlop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;enable&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;clk&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bits&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;
+                &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;outinv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bits&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;
+                &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reset&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bits&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ff&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TFlipFlop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;enable&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+                    &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;outinv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reset&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Try connecting some wires with code, it&amp;#8217;s fun!
 If you have some feedback or questions regarding this post, please add
-comments.&amp;nbsp;Cheers!   &lt;/p&gt;
-&lt;p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/p&gt;&lt;/p&gt;</summary><category term="BinPy"></category><category term="Circuit Design"></category><category term="Electronics"></category></entry></feed>
+comments.&amp;nbsp;Cheers!&lt;/p&gt;</summary><category term="BinPy"></category><category term="Circuit Design"></category><category term="Electronics"></category></entry></feed>

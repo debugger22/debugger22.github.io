@@ -37,21 +37,15 @@
         </address>
 <p>In <a href="http://www.sudhanshumishra.in/category/programming.html">Programming</a>. </p>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/binpy.html">BinPy</a> <a href="http://www.sudhanshumishra.in/tag/circuit-design.html">Circuit Design</a> <a href="http://www.sudhanshumishra.in/tag/electronics.html">Electronics</a> </p>
-</footer><!-- /.post-info --><div dir="ltr" style="text-align: left;">
-<div dir="ltr" style="text-align: left;">
-<div class="separator" style="clear: both; text-align: center;">
-[![](http://binpy.github.io/images/logo.png)](http://binpy.github.io/images/logo.png)
-
-</div>
-
+</footer><!-- /.post-info --><p><img alt="Logo" src="http://binpy.github.io/images/logo.png" /></p>
 <p><a href="http://binpy.github.io">BinPy</a> is almost ready to create things. This
-post focuses on building a ripple counter using&nbsp;it.  </p>
-<p><strong>Theory</strong>  </p>
+post focuses on building a ripple counter using&nbsp;it.</p>
+<p><strong>Theory</strong></p>
 <p>A ripple counter is an asynchronous counter where only the first
 flip-flop is clocked by an external clock. All subsequent flip-flops are
 clocked by the output of the preceding flip-flop. Asynchronous counters
 are also called ripple-counters because of the way the clock pulse
-ripples it way through the&nbsp;flip-flops.  </p>
+ripples it way through the&nbsp;flip-flops.</p>
 <p>The <span class="caps">MOD</span> of the ripple counter or asynchronous counter is 2n if n
 flip-flops are used. For a 4-bit counter, the range of the count is 0000
 to 1111 (24-1). A counter may count up or count down or count up and
@@ -59,21 +53,113 @@ down depending on the input control. The count sequence usually repeats
 itself. When counting up, the count sequence goes from 0000, 0001, 0010,
 &#8230; 1110 , 1111 , 0000, 0001, &#8230; etc. When counting down the count
 sequence goes in the opposite manner: 1111, 1110, &#8230; 0010, 0001, 0000,
-1111, 1110, &#8230;&nbsp;etc.  </p>
-<p><strong>Implementation</strong>  </p>
-<p>The following code is using BinPy&#8217;s internal&nbsp;NBitRippleCounter.  </p>
-<p>Following is the output of the above&nbsp;code.  </p>
-<p><strong>Under the&nbsp;hood</strong>  </p>
+1111, 1110, &#8230;&nbsp;etc.</p>
+<p><strong>Implementation</strong></p>
+<p>The following code is using BinPy&#8217;s internal&nbsp;NBitRippleCounter.</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">BinPy.tools</span> <span class="kn">import</span> <span class="n">Clock</span>
+<span class="kn">from</span> <span class="nn">BinPy.Sequential.counters</span> <span class="kn">import</span> <span class="n">NBitRippleCounter</span>
+<span class="kn">from</span> <span class="nn">BinPy.Gates</span> <span class="kn">import</span> <span class="n">Connector</span>
+
+<span class="n">toggle</span> <span class="o">=</span> <span class="n">Connector</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c"># Initialize the clock with leading edge = 1 and frequency = 1000Hz</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">Clock</span><span class="p">(</span><span class="n">init_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">clock</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>  <span class="c">#Start the clock</span>
+<span class="n">clk_conn</span> <span class="o">=</span> <span class="n">clock</span><span class="o">.</span><span class="n">A</span>  <span class="c">#Clock.A provides the connector of the clock</span>
+<span class="n">enable</span> <span class="o">=</span> <span class="n">Connector</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c"># Initialize the counter</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="n">NBitRippleCounter</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">clk_conn</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;INITIAL STATE&quot;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">state</span><span class="p">())</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;TRIGGERING THE COUNTER SEQUENTIALLY 2^4 + 1 times&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">print</span> <span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">state</span><span class="p">())</span>
+    <span class="n">counter</span><span class="o">.</span><span class="n">trigger</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Following is the output of the above&nbsp;code.</p>
+<div class="highlight"><pre>INITIAL STATE
+[0, 0, 0, 0]
+TRIGGERING THE COUNTER SEQUENTIALLY 2^4 + 1 times
+[0, 0, 0, 0]
+[0, 0, 0, 1]
+[0, 0, 1, 0]
+[0, 0, 1, 1]
+[0, 1, 0, 0]
+[0, 1, 0, 1]
+[0, 1, 1, 0]
+[0, 1, 1, 1]
+[1, 0, 0, 0]
+[1, 0, 0, 1]
+[1, 0, 1, 0]
+[1, 0, 1, 1]
+[1, 1, 0, 0]
+[1, 1, 0, 1]
+[1, 1, 1, 0]
+[1, 1, 1, 1]
+</pre></div>
+
+
+<p><strong>Under the&nbsp;hood</strong></p>
 <p>When we are initializing the counter with specified number of bits, it
 is actually creating those many T Flip Flops and connecting them in
 order to get the result. The actual implementation is shown in the
-following&nbsp;code.  </p>
-<p>Try connecting some wires with code, it&#8217;s fun!<br />
+following&nbsp;code.</p>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">NBitRippleCounter</span><span class="p">(</span><span class="n">Counter</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    An N-Bit Ripple Counter</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">bits</span><span class="p">,</span>
+            <span class="n">clock_connector</span><span class="p">,</span>
+            <span class="nb">set</span><span class="o">=</span><span class="n">Connector</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+            <span class="n">reset</span><span class="o">=</span><span class="n">Connector</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+            <span class="n">data</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+
+        <span class="c"># All the output bits are initialized to this data bit</span>
+
+        <span class="n">Counter</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">clock_connector</span><span class="p">,</span> <span class="nb">set</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="c"># Calling the super class constructor</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ff</span><span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">bits</span> <span class="o">-</span>
+            <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">TFlipFlop</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">enable</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">clk</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">out</span><span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">bits</span> <span class="o">-</span>
+                <span class="mi">1</span><span class="p">],</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">outinv</span><span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">bits</span> <span class="o">-</span>
+                <span class="mi">1</span><span class="p">],</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bits</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">TFlipFlop</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">enable</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">out</span><span class="p">[</span>
+                    <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">outinv</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Try connecting some wires with code, it&#8217;s fun!
 If you have some feedback or questions regarding this post, please add
-comments.&nbsp;Cheers!   </p>
-<p></div>
-</div>
-</p></p><p>There are <a href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter#disqus_thread">comments</a>.</p>                </article>
+comments.&nbsp;Cheers!</p><p>There are <a href="http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter#disqus_thread">comments</a>.</p>                </article>
 <p class="paginator">
     Page 1 / 1
 </p>

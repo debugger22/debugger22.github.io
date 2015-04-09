@@ -42,68 +42,35 @@
         </address>
 <p>In <a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a>. </p>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/gsoc.html">gsoc</a> <a href="http://www.sudhanshumishra.in/tag/physics.html">physics</a> <a href="http://www.sudhanshumishra.in/tag/sympy.html">sympy</a> </p>
-</footer><!-- /.post-info -->      <div dir="ltr" style="text-align: left;">
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-It was a great week! My last to last <span class="caps">PR</span>, on
-enhancing `TWave`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;},
-got merged! I have also
-finished`Medium`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;} and
-waiting for Sean&#8217;s comments on it. Here&#8217;s the link to that <span class="caps">PR</span>:
-
-</div>
-
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-<https://github.com/sympy/sympy/pull/7580>
-
-</div>
-
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-I still have a *todo* in the tests:
-
-</div>
-
-<div class="highlight"><pre>m5 = Medium(&#39;m5&#39;, permittivity=710*10**(-12)*s**4*A**2/(m**3*kg), n=1.33)assert simplify(m5.intrinsic_impedance - 6.24845417765552*kg*m**2/(A**2*s**3)) == 0# XXX: This is supposed to be zero but it turns out to be# very close to zero and not zero.# assert simplify(m5.speed - 225407863.157895*m/s) == 0
+</footer><!-- /.post-info -->      <p>It was a great week! My last to last <span class="caps">PR</span>, on enhancing <code>TWave</code>, got merged! I have alsofinished<code>Medium</code> and
+waiting for Sean&#8217;s comments on it. Here&#8217;s the link to that <span class="caps">PR</span>:</p>
+<ul>
+<li>https://github.com/sympy/sympy/pull/7580</li>
+</ul>
+<p>I still have a <em>todo</em> in the&nbsp;tests:</p>
+<div class="highlight"><pre><span class="n">m5</span> <span class="o">=</span> <span class="n">Medium</span><span class="p">(</span><span class="s">&#39;m5&#39;</span><span class="p">,</span> <span class="n">permittivity</span><span class="o">=</span><span class="mi">710</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">)</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">A</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">m</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">kg</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mf">1.33</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">simplify</span><span class="p">(</span><span class="n">m5</span><span class="o">.</span><span class="n">intrinsic_impedance</span> <span class="o">-</span> <span class="mf">6.24845417765552</span><span class="o">*</span><span class="n">kg</span><span class="o">*</span><span class="n">m</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">A</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="c"># XXX: This is supposed to be zero but it turns out to be</span>
+<span class="c"># very close to zero and not zero.</span>
+<span class="c"># assert simplify(m5.speed - 225407863.157895*m/s) == 0</span>
 </pre></div>
 
 
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-This `m5.speed`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;} is
-equal
-to `225407863.157895*m/s`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;} (or
-maybe very close to it) but, assertion results in a failure.
-
-</div>
-
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-Similarly in the constructor of
-the `Medium`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;} inconsistency
-comes due to slight difference in floating point parameters(permittivity
-and permeability). I&#8217;ve commented out this part of my code. Maybe Sean
-will suggest a better way to do it.
-
-</div>
-
-<div class="highlight"><pre># XXX: There&#39;s issue with precision. Values may be# different slightly.if permittivity != u0 and permittivity != e0:    if n != c*sqrt(permittivity*permeability):        raise ValueError(&quot;Values are not consistent.&quot;)
+<p>This <code>m5.speed</code> is equal to <code>225407863.157895*m/s</code> (or maybe very close to it) but, assertion results in a&nbsp;failure.</p>
+<p>Similarly in the constructor of the <code>Medium</code> inconsistency comes due to slight difference in floating point parameters(permittivity and permeability). I&#8217;ve commented out this part of my code. Maybe Sean
+will suggest a better way to do&nbsp;it.</p>
+<div class="highlight"><pre># XXX: There&#39;s issue with precision. Values may be
+# different slightly.
+if permittivity != u0 and permittivity != e0:
+    if n != c*sqrt(permittivity*permeability):
+        raise ValueError(&quot;Values are not consistent.&quot;)
 </pre></div>
 
 
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-As soon as it gets merged, I&#8217;ll make necessary changes in Fermat&#8217;s
-principle and Snell&#8217;s law part of the code and send a <span class="caps">PR</span> to review.
-
-</div>
-
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-Now I realize that the next two weeks are not going to be a joy ride for
-me. I must finish major part of geometrical optics as written in my
-proposal.
-
-That&#8217;s all for now. Cheers!
-
-</div>
-
-<p></div>
-</p></p>
+<p>As soon as it gets merged, I&#8217;ll make necessary changes in Fermat&#8217;s
+principle and Snell&#8217;s law part of the code and send a <span class="caps">PR</span> to&nbsp;review.</p>
+<p>Now I realize that the next two weeks are not going to be a joy ride for me. I must finish major part of geometrical optics as written in my&nbsp;proposal.</p>
+<p>That&#8217;s all for now.&nbsp;Cheers!</p>
     </div><!-- /.entry-content -->
     <div class="comments">
       <h2>Comments !</h2>

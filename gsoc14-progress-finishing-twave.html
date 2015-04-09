@@ -42,94 +42,85 @@
         </address>
 <p>In <a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a>. </p>
 <p>tags: <a href="http://www.sudhanshumishra.in/tag/gsoc.html">gsoc</a> <a href="http://www.sudhanshumishra.in/tag/physics.html">physics</a> <a href="http://www.sudhanshumishra.in/tag/sympy.html">sympy</a> </p>
-</footer><!-- /.post-info -->      <div dir="ltr" style="text-align: left;">
-<div style="margin-bottom: 9px;">
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-This last week most of the coding I did was only related to transverse
-wave. It has already been merged into the master.
-
-</div>
-
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-<https://github.com/sympy/sympy/pull/7518>
-
-</div>
-
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-Here is the class structure of
-the `TWave`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;}:
-
-</div>
-
-<div class="highlight"><pre>Inherits========ExprArguments=========amplitude : Sympifyable    Amplitude of the wave.frequency : Sympifyable    Frequency of the wave.phase : Sympifyable    Phase angle of the wave.time_period : Sympifyable    Time period of the wave.n : Sympifyable    Refractive index of the medium.Raises=======ValueError : When niether frequency nor time period is provided.    or they are not consistent.TypeError : When anyting other than TWave objects is added.Methods=======frequencytime_periodwavelengthamplitudephasespeedangular_velocitywavenumber
-</pre></div>
-
-
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-Till now it has been very easy to implement this but these days I&#8217;m
-stuck on writing functions to rewrite an expression using different
-functions. This is supposed to work like this as I feel from the code:
-
-</div>
-
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-When you
-call `expr.rewrite(&#8216;sin&#8217;)`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;},
-the following code written
-in `sympy.core.basic`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;}should
-make a call to
-function `_eval_rewrite_as_sin(self, *args)`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;} defined
-in the object class.
-
-</div>
-
-<div class="highlight"><pre><span class="s-Atom">if</span> <span class="o">not</span> <span class="nn">args</span><span class="p">:</span>    <span class="s-Atom">return</span> <span class="nn">selfelse</span><span class="p">:</span>    <span class="s-Atom">pattern</span> <span class="o">=</span> <span class="s-Atom">args</span><span class="p">[:-</span><span class="mi">1</span><span class="p">]</span>    <span class="s-Atom">if</span> <span class="nf">isinstance</span><span class="p">(</span><span class="s-Atom">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s-Atom">string_types</span><span class="p">)</span><span class="s-Atom">:</span>        <span class="s-Atom">rule</span> <span class="o">=</span> <span class="s-Atom">&#39;_eval_rewrite_as_&#39;</span> <span class="o">+</span> <span class="s-Atom">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>    <span class="nn">else</span><span class="p">:</span>        <span class="s-Atom">rule</span> <span class="o">=</span> <span class="s-Atom">&#39;_eval_rewrite_as_&#39;</span> <span class="o">+</span> <span class="s-Atom">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="k">__</span><span class="s-Atom">name__</span>    <span class="s-Atom">if</span> <span class="o">not</span> <span class="nn">pattern</span><span class="p">:</span>        <span class="s-Atom">return</span> <span class="s-Atom">self</span><span class="p">.</span><span class="k">_</span><span class="nf">eval_rewrite</span><span class="p">(</span><span class="nv">None</span><span class="p">,</span> <span class="s-Atom">rule</span><span class="p">,</span> <span class="s-Atom">**hints</span><span class="p">)</span>    <span class="nn">else</span><span class="p">:</span>        <span class="s-Atom">if</span> <span class="nf">iterable</span><span class="p">(</span><span class="s-Atom">pattern</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="s-Atom">:</span>            <span class="s-Atom">pattern</span> <span class="o">=</span> <span class="s-Atom">pattern</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>        <span class="s-Atom">pattern</span> <span class="o">=</span> <span class="p">[</span> <span class="s-Atom">p</span><span class="p">.</span><span class="k">__</span><span class="s-Atom">class__</span> <span class="s-Atom">for</span> <span class="s-Atom">p</span> <span class="s-Atom">in</span> <span class="s-Atom">pattern</span> <span class="s-Atom">if</span> <span class="s-Atom">self</span><span class="p">.</span><span class="nf">has</span><span class="p">(</span><span class="s-Atom">p</span><span class="p">)</span> <span class="p">]</span>        <span class="s-Atom">if</span> <span class="nn">pattern</span><span class="p">:</span>            <span class="s-Atom">return</span> <span class="s-Atom">self</span><span class="p">.</span><span class="k">_</span><span class="nf">eval_rewrite</span><span class="p">(</span><span class="nf">tuple</span><span class="p">(</span><span class="s-Atom">pattern</span><span class="p">),</span> <span class="s-Atom">rule</span><span class="p">,</span> <span class="s-Atom">**hints</span><span class="p">)</span>        <span class="nn">else</span><span class="p">:</span>            <span class="s-Atom">return</span> <span class="s-Atom">self</span>
-</pre></div>
-
-
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-But this is not the case with me. It always ends up
-calling `__str__`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;} method.
-This is the <span class="caps">PR</span> for the same.
-
-</div>
-
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-<https://github.com/sympy/sympy/pull/7546>
-
-</div>
-
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-By the way, I had never used any debugger for Python before and now I
-feel it makes your life much easier. [Winpdb](http://winpdb.org/) is a
-great Python debugger which is platform independent.
-
-</div>
-
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-I&#8217;ve also been working on <span class="caps">SHM</span> and will submit a <span class="caps">PR</span> soon for that.
-Besides my project, I also closed two issues this week related to
-printing
-in `sympy.logic`{style=&#8221;background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #dd1144; font-family: Consolas, &#8216;Liberation Mono&#8217;, Courier, monospace !important; font-size: 12px; padding: 3px 4px;&#8221;} and
-helped to review few PRs.
-
-</div>
-
+</footer><!-- /.post-info -->      <p>This last week most of the coding I did was only related to transverse
+wave. It has already been merged into the&nbsp;master.</p>
 <ul>
-<li><a href="https://github.com/sympy/sympy/issues/7179">https://github.com/sympy/sympy/issues/7179</a></li>
-<li><a href="https://github.com/sympy/sympy/issues/7180">https://github.com/sympy/sympy/issues/7180</a></li>
-<li><span class="caps">PR</span>: <a href="https://github.com/sympy/sympy/pull/7541">https://github.com/sympy/sympy/pull/7541</a></li>
+<li>https://github.com/sympy/sympy/pull/7518</li>
 </ul>
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-We have a public channel(<https://gitter.im/sympy/sympy/optics>) to
-discuss about my project. You are welcome to join us, we would be more
-than happy to get feedback about the work. It&#8217;ll help us refine it and
-cover a wider range of use cases.
+<p>Here is the class structure of the <code>TWave</code></p>
+<div class="highlight"><pre><span class="gh">Inherits</span>
+<span class="gh">========</span>
 
-</div>
+Expr
 
-<h4 id="weeklog" style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; margin: 0px;">Weeklog</h4>
-<h6 id="merged" style="color: #999999; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px;"><span class="caps">MERGED</span></h6>
+<span class="gh">Arguments</span>
+<span class="gh">=========</span>
+
+amplitude : Sympifyable    Amplitude of the wave.
+frequency : Sympifyable    Frequency of the wave.
+phase : Sympifyable    Phase angle of the wave.
+time_period : Sympifyable    Time period of the wave.
+n : Sympifyable    Refractive index of the medium.
+
+<span class="gh">Raises</span>
+<span class="gh">=======</span>
+
+ValueError : When niether frequency nor time period is provided or they are not consistent.TypeError : When anyting other than TWave objects is added.
+
+<span class="gh">Methods</span>
+<span class="gh">=======</span>
+
+frequency
+time_period
+wavelength
+amplitude
+phase
+speed
+angular_velocity
+wavenumber
+</pre></div>
+
+
+<p>Till now it has been very easy to implement this but these days I&#8217;m stuck on writing functions to rewrite an expression using different functions. This is supposed to work like this as I feel from the&nbsp;code:</p>
+<p>When you call <code>expr.rewrite('sin')</code>, the following code written in <code>sympy.core.basic</code>should
+make a call to function <code>_eval_rewrite_as_sin(self, *args)</code> defined in the object&nbsp;class.</p>
+<div class="highlight"><pre><span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="p">:</span>
+    <span class="k">return</span> <span class="bp">self</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="n">args</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">string_types</span><span class="p">):</span>
+        <span class="n">rule</span> <span class="o">=</span> <span class="s">&#39;_eval_rewrite_as_&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">rule</span> <span class="o">=</span> <span class="s">&#39;_eval_rewrite_as_&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">__name__</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">pattern</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eval_rewrite</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="o">**</span><span class="n">hints</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">iterable</span><span class="p">(</span><span class="n">pattern</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">pattern</span> <span class="o">=</span> <span class="n">pattern</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">pattern</span> <span class="o">=</span> <span class="p">[</span> <span class="n">p</span><span class="o">.</span><span class="n">__class__</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pattern</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">pattern</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eval_rewrite</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">pattern</span><span class="p">),</span> <span class="n">rule</span><span class="p">,</span> <span class="o">**</span><span class="n">hints</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span>
+</pre></div>
+
+
+<p>But this is not the case with me. It always ends up calling <code>__str__</code> method. This is the <span class="caps">PR</span> for the&nbsp;same.</p>
+<p>https://github.com/sympy/sympy/pull/7546</p>
+<p>By the way, I had never used any debugger for Python before and now I feel it makes your life much easier. <a href="http://winpdb.org/">Winpdb</a> is a great Python debugger which is platform&nbsp;independent.</p>
+<p>I&#8217;ve also been working on <span class="caps">SHM</span> and will submit a <span class="caps">PR</span> soon for that. Besides my project, I also closed two issues this week related to printing in <code>sympy.logic</code> and helped to review few&nbsp;PRs.</p>
+<ul>
+<li>https://github.com/sympy/sympy/issues/7179</li>
+<li>https://github.com/sympy/sympy/issues/7180</li>
+<li><span class="caps">PR</span>: &lt;https://github.com/sympy/sympy/pull/7541</li>
+</ul>
+<p>We have a public channel(<a href="https://gitter.im/sympy/sympy/optics">https://gitter.im/sympy/sympy/optics</a>) to discuss about my project. You are welcome to join us, we would be more than happy to get feedback about the work. It&#8217;ll help us refine it and
+cover a wider range of use&nbsp;cases.</p>
+<h2>Weeklog</h2>
+<p><strong>Merged</strong></p>
 <ul>
 <li>Add tests for pretty&nbsp;printer</li>
 <li>Remove unnecessary if&nbsp;block</li>
@@ -138,25 +129,17 @@ cover a wider range of use cases.
 <li>Add tests for printing Equivalent. fixes&nbsp;#7180</li>
 <li>Wrap unicode chars with u and fix a bug in latex&nbsp;printer</li>
 <li>Fix a typo in manipulation.rst [skip&nbsp;ci]</li>
-<li>Make equivalence symbol same for pretty printer and * latex printer
-    and change not equivalent symbol to u+2262 [skip&nbsp;ci]</li>
+<li>Make equivalence symbol same for pretty printer and * latex printer and change not equivalent symbol to u+2262 [skip&nbsp;ci]</li>
 <li>Fix latex printing for Not(Equivalent) and&nbsp;Not(Implies).</li>
 <li>Fix pretty printing for Not(Equivalent) and Not(Implies). fixes&nbsp;#7179</li>
 </ul>
-<h6 id="pending" style="color: #999999; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 18px; margin: 0px;"><span class="caps">PENDING</span></h6>
+<p><strong>Pending</strong></p>
 <ul>
 <li>Change arg to *args [skip&nbsp;ci]</li>
 <li>Add rewrite expression methods [skip&nbsp;ci]</li>
 <li>Add wavenumber&nbsp;property</li>
 </ul>
-<div style="color: #444444; font-family: Arvo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 9px;">
-This is all for now. Cheers!
-
-</div>
-
-<p></div>
-</div>
-</p></p>
+<p>This is all for now.&nbsp;Cheers!</p>
     </div><!-- /.entry-content -->
     <div class="comments">
       <h2>Comments !</h2>
