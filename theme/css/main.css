@@ -228,8 +228,8 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	background: #fff;
 	margin-bottom: 2em;
 	overflow: hidden;
-	padding: 20px;
-	width: 860px;
+	padding: 30px;
+	width: 840px;
 	
 	border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -257,8 +257,8 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	background: #fff;
 	margin-bottom: 2em;
 	overflow: hidden;
-	padding: 20px 20px;
-	width: 860px;
+	padding: 30px 30px;
+	width: 840px;
 	
 	border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -345,9 +345,9 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	font-style: normal;
 	margin-bottom: 2em;
 	overflow: hidden;
-	padding: 20px;
+	padding: 30px;
 	text-align: left;
-	width: 860px;
+	width: 840px;
 	
 	border-radius: 10px;
 	-moz-border-radius: 10px;
