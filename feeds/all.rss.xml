@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shortlog</title><link>http://www.sudhanshumishra.in/</link><description></description><atom:link href="http://www.sudhanshumishra.in/feeds/all.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 09 Apr 2015 06:50:00 +0530</lastBuildDate><item><title>Moving to a static site generator</title><link>http://www.sudhanshumishra.in/moving-to-a-static-site-generator</link><description>&lt;p&gt;&lt;img alt="Pelican" src="https://pbs.twimg.com/profile_images/3330071480/8fc5b7f80b98bcc67512795fe5fb9291.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Finally I moved to a static site generator for my homepage + blog. Previously, I was using &lt;a href="http://blog.sudhanshumishra.in"&gt;blogger&lt;/a&gt; which was really annoying when writing a technical post. Code formatting was&amp;nbsp;bizarre!&lt;/p&gt;
+&lt;p&gt;Of all the static website generators I chose &lt;a href="http://getpelican.com"&gt;Pelican&lt;/a&gt;. It is written in Python and it doesn&amp;#8217;t require any database at the server side. I can write articles in &lt;strong&gt;markdown&lt;/strong&gt; which gives me full control over code highlighting! I can also write math using&amp;nbsp;MathJax.&lt;/p&gt;
+&lt;div class="math"&gt;$$\lim_{x \to 0^+}\left(\frac{1}{x} \sin{\left (x \right )}\right) + \int_{0}^{\infty} e^{x}\, dx$$&lt;/div&gt;
+&lt;p&gt;I know that these things are also possible with &lt;a href="http://jekyllrb.com/"&gt;Jekyll&lt;/a&gt; but the fact that Jekyll builds sometime take minutes, set me off. Nevertheless, Pelican is in&amp;nbsp;Python!&lt;/p&gt;
+&lt;p&gt;Pelican also gives you a nice way of importing contents from your old blog. I used following command to do&amp;nbsp;that.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pelican-import  --feed http://blog.sudhanshumishra.in/feeds/posts/default/ -o content/ -m markdown
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This reads the stream of &lt;span class="caps"&gt;RSS&lt;/span&gt; feed and converts them into markdown files. I&amp;#8217;ll explain what it actually did a bit&amp;nbsp;later.&lt;/p&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;p&gt;You can install it very easily with &lt;code&gt;pip&lt;/code&gt;. For a full installation(with markdown support) issue following&amp;nbsp;command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install --upgrade pelican markdown typogriphy
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Kickstart your&amp;nbsp;website&lt;/h2&gt;
+&lt;p&gt;Now create your project folder and &lt;code&gt;cd&lt;/code&gt; into it. After navigating into your project folder issue following&amp;nbsp;command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pelican-quickstart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If Pelican was installed successfully on your computer, it will prompt you with a questionnaire having very simple questions. Answer them and it&amp;#8217;ll generate skeleton files for your&amp;nbsp;website.&lt;/p&gt;
+&lt;p&gt;The directory structure looks somewhat like&amp;nbsp;this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;yourproject/
+├── content
+│   └── (pages)
+├── output
+├── develop_server.sh
+├── fabfile.py
+├── Makefile
+├── pelicanconf.py       # Main settings file
+└── publishconf.py       # Settings to use when ready to publish
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Add&amp;nbsp;contents&lt;/h2&gt;
+&lt;p&gt;Adding content is very easy. You just have to create markdown files with extension &lt;code&gt;.md&lt;/code&gt; in the &lt;code&gt;content&lt;/code&gt; directory and it will automatically convert them into publishable &lt;code&gt;html&lt;/code&gt;. The command to import contents from blogger actually converted all my posts into markdown files and saved them into the &lt;code&gt;content&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;Pelican follows a certain format for articles. For instance, here&amp;#8217;s the format for this&amp;nbsp;article:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Title: Moving to a static site generator
+Date: 2015-04-09 06:50
+Author: Sudhanshu Mishra
+Category: Programming
+Tags: Python
+Slug: moving-to-a-static-site-generator
+
+Finally I moved to a static site generator for my homepage + blog website.
+Previously, I was using [blogger](http://blog.sudhanshumishra.in) which was really
+annoying while writing a technical post. Code formatting was bizarre!
+
+...
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Publish&lt;/h2&gt;
+&lt;p&gt;Once you are done with the article just issue following command to generate &lt;code&gt;html&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;make html
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will generate &lt;code&gt;html&lt;/code&gt; along with assets in the &lt;code&gt;output&lt;/code&gt; directory. Since I&amp;#8217;m using GitHub pages to host my website, I used &lt;code&gt;output&lt;/code&gt; directory as my git repository having &lt;code&gt;CNAME&lt;/code&gt; file. Now just commit those files and push to your repository(your_username.github.io). Learn more about GitHub pages &lt;a href="https://pages.github.com/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to change theme or add plugins, visit the &lt;a href="http://docs.getpelican.com/"&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+    
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'red ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Thu, 09 Apr 2015 06:50:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2015-04-09:moving-to-a-static-site-generator</guid><category>Python</category></item><item><title>Memory Error due to charge leak acceleration in DRAM</title><link>http://www.sudhanshumishra.in/memory-error-due-to-charge-leak-acceleration-in-dram</link><description>&lt;p&gt;&lt;span class="caps"&gt;DRAM&lt;/span&gt; comprises a two-dimensional array of &lt;span class="caps"&gt;DRAM&lt;/span&gt; cells, each of which
+consists of a capacitor and an access-transistor. Depending on whether
+its capacitor is fully charged or fully discharged, a cell is in either
+the charged state or the discharged state, respectively. These two
+states are used to represent a binary data value.
+Dense packaging in &lt;span class="caps"&gt;DRAM&lt;/span&gt; leads to anomalies while performing continuous
+read operations from same memory address which involves opening and
+closing of the wordline. This anomaly will not be evident if the data is
+read from an address after opening a wordline and not closing it. When
+there are many activations to the same row, they force the wordline to
+toggle on and off repeatedly. Such voltage fluctuations on a row’s
+wordline have a disturbance effect on nearby rows, inducing some of
+their cells to leak charge at an accelerated rate. If such a cell loses
+too much charge before it is restored to its original value, it
+experiences a disturbance error.This disturbance results mostly in
+flipped bit value.Here&amp;#8217;s the assembly code which may induce errors when
+executed on Intel/&lt;span class="caps"&gt;AMD&lt;/span&gt;&amp;nbsp;machines.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;loop:
+    mov X, %eax  ; Read from address X and save in register including
+cache
+    mov Y, %ebx  ; values in registers and cache
+    clflush (X)  ; Clear data from cache
+    clflush (Y)
+    mfence       ; Make sure that data is fully flushed
+    jmp loop
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;On the other hand, the following code will not induce errors because it
+does not force continuous toggling of the&amp;nbsp;wordline.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;loop:
+    mov X, %eax  ; Read from address X and save in register including
+cache
+    clflush (X)  ; Clear data from cache
+    mfence       ; Make sure that data is fully flushed
+    jmp loop
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;These disturbances violate two invariants that memory should&amp;nbsp;provide&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A read access should not modify data at any&amp;nbsp;address&lt;/li&gt;
+&lt;li&gt;A write access should modify data only at the address being written&amp;nbsp;to&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This makes systems, using &lt;span class="caps"&gt;DRAM&lt;/span&gt;, vulnerable to data&amp;nbsp;corruption.&lt;/p&gt;
+&lt;p&gt;References:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Yoongu Kim, Ross Daly, Jeremie Kim, Chris Fallin, Ji Hye Lee,
+Donghyuk Lee, Chris Wilkerson, Konrad Lai, Onur Mutlu et al. Flipping
+Bits in Memory Without Accessing Them: An Experimental Study of &lt;span class="caps"&gt;DRAM&lt;/span&gt;
+Disturbance Errors,&amp;nbsp;2014.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="caps"&gt;A. J.&lt;/span&gt; van de Goor and I. Schanstra. Address and Data Scrambling:
+Causes and Impact on Memory Tests. In &lt;span class="caps"&gt;DELTA&lt;/span&gt;,&amp;nbsp;2002&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Fri, 16 Jan 2015 19:36:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2015-01-16:memory-error-due-to-charge-leak-acceleration-in-dram</guid><category>Electronics</category></item><item><title>Two things: Dockerizing Applications and AWS’ on the house services</title><link>http://www.sudhanshumishra.in/two-things-dockerizing-applications-and-aws-on-the-house-services</link><description>&lt;p&gt;Lately I migrated my app from DigitalOcean to &lt;span class="caps"&gt;AWS&lt;/span&gt; and encountered the
+pain of setting up similar environment.(Documenting everything is very&amp;nbsp;important!)&lt;/p&gt;
+&lt;p&gt;I heard long ago about &lt;a href="https://docker.io/"&gt;Docker&lt;/a&gt; but never bothered
+to tinker with it. If you don&amp;#8217;t know, Docker is a platform for
+developers and sysadmins to develop, ship, and run applications. Docker
+lets you quickly assemble applications from components and eliminates
+the friction that can come when shipping&amp;nbsp;code.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="docker" src="http://blog.docker.com/wp-content/uploads/2013/08/KuDr42X_ITXghJhSInDZekNEF0jLt3NeVxtRye3tqco.png" /&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;#8217;s just like a &lt;code&gt;git pull&lt;/code&gt; for your custom &lt;span class="caps"&gt;OS&lt;/span&gt;.
+&lt;a href="https://docker.io/"&gt;https://docker.io&lt;/a&gt; manages repositories of docker
+images, public and private. A docker image is just a set of layers where
+layers are changes to its file system as results of commands. It uses
+same commit system like git. Once you&amp;#8217;ve established an image you can
+run your applications on it. Docker calls them containers. Each
+container runs a single process. Even when containers run on same
+environment, they are sandboxed to themselves. There&amp;#8217;s a &amp;#8216;sophisticated&amp;#8217;
+way in which containers talk to each
+other. &lt;a href="https://docs.docker.com/userguide/dockerizing"&gt;Here&amp;#8217;s&lt;/a&gt; a great
+article on dockerizing your&amp;nbsp;applications.&lt;/p&gt;
+&lt;p&gt;So yeah, I had to set up the same environment but just for once! Now I
+can easily automate spawning new instances and adding them under
+Amazon&amp;#8217;s &lt;span class="caps"&gt;ELB&lt;/span&gt;. It also made the development&amp;nbsp;easier.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;m amazingly happy with Amazon&amp;#8217;s great products. Things like Elastic
+&lt;span class="caps"&gt;IP&lt;/span&gt;, Elastic Load Balancer, Elastic Block Storage, S3, &lt;span class="caps"&gt;VPC&lt;/span&gt;, etc. can be
+done with just few clicks. Setting up such infrastructure manually is a
+nightmare. One thing which I miss here is MongoDB. Although there is
+Amazon&amp;#8217;s own DynamoDB but I really don&amp;#8217;t want to learn another NoSQL &lt;span class="caps"&gt;DB&lt;/span&gt;.
+I&amp;#8217;m using few &lt;span class="caps"&gt;EC2&lt;/span&gt; instances for&amp;nbsp;that.&lt;/p&gt;
+&lt;p&gt;We&amp;#8217;re accepting beta testers for this app.
+&lt;a href="https://getwaeo.com/"&gt;https://getwaeo.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;m really excited about it and will be putting it in production in few
+weeks!&amp;nbsp;Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Thu, 08 Jan 2015 18:25:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2015-01-08:two-things-dockerizing-applications-and-aws-on-the-house-services</guid><category>aws</category><category>cloud</category><category>docker</category><category>Server</category></item><item><title>Top Hacker News Archive</title><link>http://www.sudhanshumishra.in/top-hacker-news-archive</link><description>&lt;p&gt;&lt;a href="https://news.ycombinator.com/"&gt;Hacker News&amp;#8217;&lt;/a&gt; top 5 entries are some
+beautiful stories that can&amp;#8217;t be missed by a technology enthusiast. The
+problem is &lt;span class="caps"&gt;HN&lt;/span&gt; gives more weight-age to the period of existence of a post
+and hence articles decay rapidly as time passes. I try my best to read
+most of them but it&amp;#8217;s certainly not possible if you&amp;#8217;ve got other things
+to do.&amp;nbsp;:)&lt;/p&gt;
+&lt;p&gt;To overcome this problem I wrote a small script to pull all those
+entries and save it for me even when I&amp;#8217;m away. Perhaps this will help my
+obsession with hacker&amp;nbsp;news.&lt;/p&gt;
+&lt;p&gt;Once I have enough articles, I&amp;#8217;ll host them on the web with real time
+addition of new articles for everyone. I&amp;#8217;ll think about other good
+sources&amp;nbsp;too.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Wed, 07 Jan 2015 16:51:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2015-01-07:top-hacker-news-archive</guid><category>python</category><category>Web</category></item><item><title>Battery Status API in Chrome</title><link>http://www.sudhanshumishra.in/battery-status-api-in-chrome</link><description>&lt;p&gt;Implementation of &lt;span class="caps"&gt;HTML&lt;/span&gt; battery status &lt;span class="caps"&gt;API&lt;/span&gt; is a bit different in webkit.
+It has not been exposed with &lt;code&gt;navigator.battery&lt;/code&gt;.
+This works fine in Gecko(Firefox) but you might have hard time if you
+try it on&amp;nbsp;Chrome.&lt;/p&gt;
+&lt;p&gt;After banging my head for few days against some chromium issues I
+figured out that the &lt;span class="caps"&gt;API&lt;/span&gt; is &lt;code&gt;navigator.getBattery()&lt;/code&gt; instead of &lt;code&gt;navigator.battery&lt;/code&gt; which returns a promise. It works from &lt;a href="https://chromium.googlesource.com/chromium/src/+/38.0.2125.92/content/browser/battery_status/"&gt;Google Chrome
+v38.0.2125.92&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here&amp;#8217;s an example code for&amp;nbsp;this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;battery&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;battery&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;mozBattery&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;battery&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// This works in Firefox&lt;/span&gt;
+    &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;battery&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;level&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;%&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getBattery&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// This works in Google Chrome&lt;/span&gt;
+    &lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getBattery&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;battery&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;battery&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;level&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;%&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;});&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Once you have the battery, the sub &lt;span class="caps"&gt;API&lt;/span&gt; is same for&amp;nbsp;both.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Mon, 13 Oct 2014 12:20:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-10-13:battery-status-api-in-chrome</guid><category>Chrome</category><category>JavaScript</category></item><item><title>GSoC‘14 progress: Week 12</title><link>http://www.sudhanshumishra.in/gsoc14-progress-week-12</link><description>&lt;p&gt;Last week I worked on utility functions which has been merged into the master.
+Currently I am working on converting my incopmlete &lt;span class="caps"&gt;PR&lt;/span&gt; related to geometrical optics in 3D into 2D. Creating these classes in 3D will make it difficult to use/extend. I referred to some books and I never saw use of too much 3D in their illustrations. Depending on the use cases we can consider adding it later after gsoc. As of now optics module can not be called complete and hence I&amp;#8217;ll be working on it post&amp;nbsp;gsoc.&lt;/p&gt;
+&lt;p&gt;Few other things which I would like to complete this week are as&amp;nbsp;follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Interference&lt;/li&gt;
+&lt;li&gt;Diffraction&lt;/li&gt;
+&lt;li&gt;IPython notebooks for&amp;nbsp;examples&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Mon, 11 Aug 2014 11:27:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-08-11:gsoc14-progress-week-12</guid><category>gsoc</category><category>sympy</category></item><item><title>GSoC‘14 Week 10: Adding more to utils</title><link>http://www.sudhanshumishra.in/gsoc14-week-10-adding-more-to-utils</link><description>&lt;p&gt;This week I worked on adding more utility function in optics. Some of them are yet to be added. I&amp;#8217;ll send a pull request once I write tests for&amp;nbsp;them.&lt;/p&gt;
+&lt;p&gt;Here&amp;#8217;s the link to the code pushed till&amp;nbsp;now:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;https://github.com/debugger22/sympy/compare/util-funcs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I also worked on one of my pending &lt;span class="caps"&gt;PR&lt;/span&gt;(&lt;a href="https://github.com/sympy/sympy/pull/7686"&gt;https://github.com/sympy/sympy/pull/7686&lt;/a&gt;) parameterizing a 3D circle. This will make the implementation a bit&amp;nbsp;easier.&lt;/p&gt;
+&lt;p&gt;Tomorrow I&amp;#8217;ll be going back to&amp;nbsp;college.&lt;/p&gt;
+&lt;p&gt;That&amp;#8217;s all for now.&amp;nbsp;Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Mon, 28 Jul 2014 09:05:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-07-28:gsoc14-week-10-adding-more-to-utils</guid><category>gsoc</category><category>sympy</category></item><item><title>GSoC‘14 Progress: Finished refraction at planar surface</title><link>http://www.sudhanshumishra.in/gsoc14-progress-finished-refraction-at-planar-surface</link><description>&lt;p&gt;I&amp;#8217;m sorry for this delayed post. I couldn&amp;#8217;t work last week due to some other issues so had nothing much to&amp;nbsp;report.&lt;/p&gt;
+&lt;p&gt;This week I completed refraction function for planar surface, fixed some bugs and wrote tests for it. I also added a function to calculate angle of deviation. Details can be found on the following&amp;nbsp;link&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;https://github.com/sympy/sympy/pull/7626&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I&amp;#8217;m waiting for Sean to start reviewing&amp;nbsp;this.&lt;/p&gt;
+&lt;p&gt;My next priority is to complete a pending &lt;span class="caps"&gt;PR&lt;/span&gt; on&amp;nbsp;mirrors.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Sun, 20 Jul 2014 14:32:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-07-20:gsoc14-progress-finished-refraction-at-planar-surface</guid><category>gsoc</category><category>sympy</category></item><item><title>GSoC‘14 Progress: Working with geometry</title><link>http://www.sudhanshumishra.in/gsoc14-progress-working-with-geometry</link><description>&lt;p&gt;This week I completed &lt;code&gt;refraction_angle&lt;/code&gt;. Now it also works with &lt;code&gt;Ray3D&lt;/code&gt; and &lt;code&gt;Plane&lt;/code&gt;. This function calculates transmitted vector after refraction. &lt;code&gt;medium1&lt;/code&gt; and &lt;code&gt;medium2&lt;/code&gt; can be &lt;code&gt;Medium&lt;/code&gt;or any sympifiable&amp;nbsp;object.&lt;/p&gt;
+&lt;p&gt;If&lt;code&gt;incident&lt;/code&gt; is an object of &lt;code&gt;Ray3D&lt;/code&gt;, &lt;code&gt;normal&lt;/code&gt; also has to be an instance of &lt;code&gt;Ray3D&lt;/code&gt; in order to get the output as a &lt;code&gt;Ray3D&lt;/code&gt;. If plane of separation is not provided and normal is an instance
+of &lt;code&gt;Ray3D&lt;/code&gt;, normal will be assumed to be intersecting incident ray at the plane of separation. This will not be the case when &lt;code&gt;normal&lt;/code&gt; is a &lt;code&gt;Matrix&lt;/code&gt; or
+any other&amp;nbsp;sequence.&lt;/p&gt;
+&lt;p&gt;If &lt;code&gt;incident&lt;/code&gt; is an instance of &lt;code&gt;Ray3D&lt;/code&gt; and &lt;code&gt;plane&lt;/code&gt; has not been provided and &lt;code&gt;normal&lt;/code&gt; is not&lt;code&gt;Ray3D&lt;/code&gt;,
+output will be a &lt;code&gt;Matrix&lt;/code&gt;. It is dependent
+on &lt;code&gt;Plane&lt;/code&gt; so I haven’t added tests for&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;Here’s the link to the &lt;span class="caps"&gt;PR&lt;/span&gt; &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;https://github.com/sympy/sympy/pull/7626&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This week I also worked on making spherical mirrors in SymPy. There are few issues that I am facing.
+Currently I’m working(stuck) on locating mirrors in space. It’s an amalgamation of 2D and 3D geometry. I still have to subclass Ray of geometry and make it useful for this. I’ve sent a &lt;a href="https://github.com/sympy/sympy/pull/7686"&gt;&lt;span class="caps"&gt;WIP&lt;/span&gt;
+&lt;span class="caps"&gt;PR&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I’m waiting for Sean to merge &lt;a href="https://github.com/sympy/sympy/pull/7607"&gt;this&lt;/a&gt; long waited &lt;span class="caps"&gt;PR&lt;/span&gt; for moving Gaussian optics&amp;nbsp;module.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;That&amp;#8217;s all for&amp;nbsp;now.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Tue, 08 Jul 2014 17:24:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-07-08:gsoc14-progress-working-with-geometry</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC‘14 progress: Week 6</title><link>http://www.sudhanshumishra.in/gsoc14-progress-week-6</link><description>&lt;p&gt;It was a busy week though I managed to do some&amp;nbsp;work.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve been working on following&amp;nbsp;things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Integrating &lt;code&gt;TWave&lt;/code&gt; with &lt;code&gt;refraction_angle&lt;/code&gt;(&lt;a href="https://github.com/sympy/sympy/pull/7626"&gt;7626&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Interference&amp;nbsp;class&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some blocking 3D geometry code got merged yesterday which gives me a lot
+of new things to work on.&amp;nbsp;:)&lt;/p&gt;
+&lt;p&gt;I also tried to take a look on very old &lt;a href="https://github.com/sympy/sympy/pull/1226"&gt;patch&lt;/a&gt; for &lt;code&gt;gaussopt&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This week I wrote a script to update the development documentation when
+a &lt;span class="caps"&gt;PR&lt;/span&gt; gets merged into the master. This is up and&amp;nbsp;running.&lt;/p&gt;
+&lt;p&gt;I passed mid term evaluation that took place last week and I would like to
+thank &lt;a href="https://github.com/flacjacket"&gt;Sean&lt;/a&gt;, &lt;a href="https://github.com/certik"&gt;Ondrej&lt;/a&gt;,&lt;a href="https://github.com/asmeurer"&gt;Aaron&lt;/a&gt; and &lt;a href="https://github.com/smichr"&gt;Chris&lt;/a&gt; for their constant&amp;nbsp;support.&lt;/p&gt;
+&lt;p&gt;That&amp;#8217;s all for&amp;nbsp;now. Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Wed, 02 Jul 2014 03:27:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-07-02:gsoc14-progress-week-6</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC‘14 progress, Week 5</title><link>http://www.sudhanshumishra.in/gsoc14-progress-week-5</link><description>&lt;p&gt;I did good amount of work this week. I sent a small part of it related
+to ray tracing for&amp;nbsp;review.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;https://github.com/sympy/sympy/pull/7626&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I got some great suggestions from Sean to make it compatible directly
+with&lt;code&gt;TWave&lt;/code&gt; class.&lt;/p&gt;
+&lt;p&gt;It is a &lt;span class="caps"&gt;WIP&lt;/span&gt; as I&amp;#8217;m waiting for few 3D geometry classes. I&amp;#8217;m also working
+on inteference of light waves and I hope that I&amp;#8217;ll send it for review in
+next couple of days. My last &lt;span class="caps"&gt;PR&lt;/span&gt; on medium is still unmerged and I really
+need it to be in master to work on more&amp;nbsp;implementations.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;m also trying to move &lt;code&gt;physics/gaussopt&lt;/code&gt; to &lt;code&gt;physics/optics/gaussopt&lt;/code&gt; as it&amp;#8217;ll be good to keep things related to optics at the same place. I&amp;#8217;m waiting for opinion of the community about it. Here&amp;#8217;s the link to that
+&lt;span class="caps"&gt;PR&lt;/span&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;https://github.com/sympy/sympy/pull/7607&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here is some other minor work that I&amp;#8217;ve done this week outside of&amp;nbsp;optics:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;https://github.com/sympy/sympy/pull/7609&lt;/li&gt;
+&lt;li&gt;https://github.com/sympy/sympy/pull/7610&lt;/li&gt;
+&lt;li&gt;https://github.com/sympy/sympy/pull/7612&lt;/li&gt;
+&lt;li&gt;https://github.com/sympy/sympy/pull/7614&lt;/li&gt;
+&lt;li&gt;https://github.com/sympy/sympy/pull/7627&lt;/li&gt;
+&lt;li&gt;https://github.com/sympy/sympy/pull/7628&lt;/li&gt;
+&lt;li&gt;https://github.com/sympy/sympy/pull/7629&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That&amp;#8217;s all for&amp;nbsp;now. Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Mon, 23 Jun 2014 17:59:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-06-23:gsoc14-progress-week-5</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC‘14 progress, week 4: finished medium, working on Fermat’s principle and Snell’s law</title><link>http://www.sudhanshumishra.in/gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law</link><description>&lt;p&gt;It was a great week! My last to last &lt;span class="caps"&gt;PR&lt;/span&gt;, on enhancing &lt;code&gt;TWave&lt;/code&gt;, got merged! I have alsofinished&lt;code&gt;Medium&lt;/code&gt; and
+waiting for Sean&amp;#8217;s comments on it. Here&amp;#8217;s the link to that &lt;span class="caps"&gt;PR&lt;/span&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;https://github.com/sympy/sympy/pull/7580&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I still have a &lt;em&gt;todo&lt;/em&gt; in the&amp;nbsp;tests:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;m5&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Medium&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;m5&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;permittivity&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;710&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;kg&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;1.33&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;simplify&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;m5&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;intrinsic_impedance&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mf"&gt;6.24845417765552&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;kg&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="c"&gt;# XXX: This is supposed to be zero but it turns out to be&lt;/span&gt;
+&lt;span class="c"&gt;# very close to zero and not zero.&lt;/span&gt;
+&lt;span class="c"&gt;# assert simplify(m5.speed - 225407863.157895*m/s) == 0&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This &lt;code&gt;m5.speed&lt;/code&gt; is equal to &lt;code&gt;225407863.157895*m/s&lt;/code&gt; (or maybe very close to it) but, assertion results in a&amp;nbsp;failure.&lt;/p&gt;
+&lt;p&gt;Similarly in the constructor of the &lt;code&gt;Medium&lt;/code&gt; inconsistency comes due to slight difference in floating point parameters(permittivity and permeability). I&amp;#8217;ve commented out this part of my code. Maybe Sean
+will suggest a better way to do&amp;nbsp;it.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# XXX: There&amp;#39;s issue with precision. Values may be&lt;/span&gt;
+&lt;span class="c"&gt;# different slightly.&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;permittivity&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="n"&gt;u0&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;permittivity&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="n"&gt;e0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;sqrt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;permittivity&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;permeability&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="ne"&gt;ValueError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Values are not consistent.&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;As soon as it gets merged, I&amp;#8217;ll make necessary changes in Fermat&amp;#8217;s
+principle and Snell&amp;#8217;s law part of the code and send a &lt;span class="caps"&gt;PR&lt;/span&gt; to&amp;nbsp;review.&lt;/p&gt;
+&lt;p&gt;Now I realize that the next two weeks are not going to be a joy ride for me. I must finish major part of geometrical optics as written in my&amp;nbsp;proposal.&lt;/p&gt;
+&lt;p&gt;That&amp;#8217;s all for now.&amp;nbsp;Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Mon, 16 Jun 2014 19:32:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-06-16:gsoc14-progress-week-4-finished-medium-working-on-fermats-principle-and-snells-law</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>Easy caching in Android</title><link>http://www.sudhanshumishra.in/easy-caching-in-android</link><description>&lt;p&gt;Recently I found a better way to
+cache data in Android. It can also be used to save preferences of users. I was using SQLite before and it was cumbersome. I had to make a table to save just few key-value&amp;nbsp;pairs.&lt;/p&gt;
+&lt;p&gt;Android &lt;span class="caps"&gt;SDK&lt;/span&gt; comes with an &lt;span class="caps"&gt;API&lt;/span&gt;
+called &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;android.content.SharedPreferences&lt;/code&gt;.
+A&lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt; object
+points to a file containing key-value pairs and provides simple methods
+to read and write them.
+Each &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt; file
+is managed by the framework and can be private or shared. You’ll not
+lose your data even when the device restarts. It has one more advantage,
+you can also use to share data among different&amp;nbsp;activities.&lt;/p&gt;
+&lt;p&gt;It supports primitive data types
+only. You can not save objects in &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt;.
+Although you can serialize your object and store the raw string in&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;To get a private handle of
+the &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt; use
+following&amp;nbsp;command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SharedPreferences&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;getActivity&lt;/span&gt;&lt;span class="o"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getSharedPreferences&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;getString&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;YOUR_PREFERENCE_FILE_NAME&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt; &lt;span class="n"&gt;Context&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;MODE_PRIVATE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;YOUR_PREFERENCE_FILE_NAME&lt;/code&gt; can
+be any valid string allowed for a file name in &lt;span class="caps"&gt;UNIX&lt;/span&gt;&amp;nbsp;environment.&lt;/p&gt;
+&lt;p&gt;Private data will be available to your application only, it can not be accessed by other applications
+installed on the device. To make it public you just need to
+replace &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;Context.MODE_PRIVATE&lt;/code&gt; with
+either &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;MODE_WORLD_READABLE&lt;/code&gt; or &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;MODE_WORLD_WRITABLE&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SharedPreferences&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;getSharedPreferences&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;    &lt;span class="s"&gt;&amp;quot;YOUR_PREFERENCE_FILE_NAME&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Context&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;MODE_WORLD_WRITABLE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Publicly shared prefences are available to other apps and if they know the file identifier, they may
+perform read/write operations on&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;Once you’ve got the handle you
+can read data using following&amp;nbsp;code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;strData&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getString&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mStrData&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DEFAULT_STRING&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;&lt;span class="kt"&gt;boolean&lt;/span&gt; &lt;span class="n"&gt;boolData&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getBoolean&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mBoolData&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DEFAULT_BOOLEAN&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;intData&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getInt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mIntData&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DEFAULT_INTEGER&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: If there isn’t any data
+associated with the passed key, it will return the passed default&amp;nbsp;value.&lt;/p&gt;
+&lt;p&gt;For a complete list of methods see &lt;a href="http://developer.android.com/reference/android/content/SharedPreferences.html"&gt;this&lt;/a&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;To save data in the &lt;code style="border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; font-family: Menlo, Consolas, 'Courier New', monospace; font-size: 12px !important; padding: 2px 4px; white-space: nowrap;"&gt;SharedPreferences&lt;/code&gt; you
+need to add one more&amp;nbsp;line:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SharedPreferences&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Editor&lt;/span&gt; &lt;span class="n"&gt;editor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;edit&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now you can easily save data in the&amp;nbsp;memory.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;editor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;putBoolean&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;cacheAvailable&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;&lt;span class="n"&gt;editor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;putInt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pingCount&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;myPrefs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getInt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pingCount&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)++);&lt;/span&gt;&lt;span class="n"&gt;editor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;putString&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mResponse&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;// A web response in my case.editor.commit(); // This is important to commit changes&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt;Use editor.apply() for asynchronous&amp;nbsp;call.&lt;/p&gt;
+&lt;p&gt;This &lt;span class="caps"&gt;API&lt;/span&gt; made my life easy. Now I do not need to write queries to do these small&amp;nbsp;things.&lt;/p&gt;
+&lt;p&gt;If you have suggestions, please
+comment below. I’ll be happy to get&amp;nbsp;feedback.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Wed, 11 Jun 2014 21:26:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-06-11:easy-caching-in-android</guid><category>Android</category></item><item><title>GSoC‘14: Third week</title><link>http://www.sudhanshumishra.in/gsoc14-third-week</link><description>&lt;p&gt;It was another not so productive week but I learnt a lot regarding how to write new classes by extending classes like &lt;code&gt;Basic&lt;/code&gt;, &lt;code&gt;Symbol&lt;/code&gt; and &lt;code&gt;Expr&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Last week got stuck with the rewrite expression mechanism which turned
+out to be a bug in the &lt;code&gt;core&lt;/code&gt;. Thanks to &lt;a href="https://github.com/flacjacket"&gt;Sean&lt;/a&gt; for the fix! I need to
+do some more cleanup to get my last &lt;span class="caps"&gt;PR&lt;/span&gt;&amp;nbsp;merged.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;https://github.com/sympy/sympy/pull/7546&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I also tried to fix an issue related to assumptions in &lt;code&gt;Function&lt;/code&gt; but the complex behaviour of &lt;code&gt;__new__&lt;/code&gt; constructor makes it difficult to follow the inheritance. I also need to understand the working of SymPy&amp;#8217;s &lt;code&gt;@cacheit&lt;/code&gt; decorator.&lt;/p&gt;
+&lt;p&gt;Lately I&amp;#8217;ve been working on the implementation of optical medium. The motivation behind defining
+a&lt;code&gt;Medium&lt;/code&gt; came from the laziness of passing constants like electric permittivity and
+magnetic permeabhility of the medium everywhere. It will help carry out
+operations(events) very easily in&amp;nbsp;optics.&lt;/p&gt;
+&lt;p&gt;With the merger of &lt;code&gt;Point3D&lt;/code&gt; by &lt;a href="https://github.com/akshayah3"&gt;Akshay&lt;/a&gt; I planned to implement Fermat&amp;#8217;s principle and thus felt the need of &lt;code&gt;Medium&lt;/code&gt; first.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve already sent a &lt;span class="caps"&gt;WIP&lt;/span&gt; pull request for &lt;code&gt;Medium&lt;/code&gt;. Here&amp;#8217;s the&amp;nbsp;link:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;https://github.com/sympy/sympy/pull/7580&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I also took a quick glance at variational calculus to solve the problem
+involving Fermat&amp;#8217;s principle. I&amp;#8217;m planning to start this as&amp;nbsp;following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;FermatsPrinciple&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Expr&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Symbol&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(()))&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(())):&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Point&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Point&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Point3D&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Point3D&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Point&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Point&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Point3D&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Point3D&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Point3D&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Point3D&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;p1&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="ne"&gt;TypeError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;p1 and p2 can only be tuple, Point or Point3D&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It&amp;#8217;s not a very good &lt;span class="caps"&gt;API&lt;/span&gt; and needs more refining which I&amp;#8217;ll discuss with
+Sean once I get it&amp;nbsp;working.&lt;/p&gt;
+&lt;p&gt;My work in this week(&lt;em&gt;fourth week as I am writing this post very late&lt;/em&gt;) will be to complete the above discussed&amp;nbsp;things.&lt;/p&gt;
+&lt;p&gt;On a lighter note, the temperature here is 46 degrees and no sign of rains yet.&amp;nbsp;:(&lt;/p&gt;
+&lt;p&gt;That&amp;#8217;s all for now.&amp;nbsp;Cheers!&lt;/p&gt;
+&lt;p&gt;If you have some feedback or questions regarding this post, please add comments. I would be happy to get some&amp;nbsp;feedback.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Tue, 10 Jun 2014 10:08:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-06-10:gsoc14-third-week</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC‘14 Progress: Finishing TWave</title><link>http://www.sudhanshumishra.in/gsoc14-progress-finishing-twave</link><description>&lt;p&gt;This last week most of the coding I did was only related to transverse
+wave. It has already been merged into the&amp;nbsp;master.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;https://github.com/sympy/sympy/pull/7518&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here is the class structure of the &lt;code&gt;TWave&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="gh"&gt;Inherits&lt;/span&gt;
+&lt;span class="gh"&gt;========&lt;/span&gt;
+
+Expr
+
+&lt;span class="gh"&gt;Arguments&lt;/span&gt;
+&lt;span class="gh"&gt;=========&lt;/span&gt;
+
+amplitude : Sympifyable    Amplitude of the wave.
+frequency : Sympifyable    Frequency of the wave.
+phase : Sympifyable    Phase angle of the wave.
+time_period : Sympifyable    Time period of the wave.
+n : Sympifyable    Refractive index of the medium.
+
+&lt;span class="gh"&gt;Raises&lt;/span&gt;
+&lt;span class="gh"&gt;=======&lt;/span&gt;
+
+ValueError : When niether frequency nor time period is provided or they are not consistent.
+TypeError : When anyting other than TWave objects is added.
+
+&lt;span class="gh"&gt;Methods&lt;/span&gt;
+&lt;span class="gh"&gt;=======&lt;/span&gt;
+
+frequency
+time_period
+wavelength
+amplitude
+phase
+speed
+angular_velocity
+wavenumber
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Till now it has been very easy to implement this but these days I&amp;#8217;m stuck on writing functions to rewrite an expression using different functions. This is supposed to work like this as I feel from the&amp;nbsp;code:&lt;/p&gt;
+&lt;p&gt;When you call &lt;code&gt;expr.rewrite('sin')&lt;/code&gt;, the following code written in &lt;code&gt;sympy.core.basic&lt;/code&gt;should
+make a call to function &lt;code&gt;_eval_rewrite_as_sin(self, *args)&lt;/code&gt; defined in the object&amp;nbsp;class.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;pattern&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;[:&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;string_types&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;rule&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;_eval_rewrite_as_&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;rule&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;_eval_rewrite_as_&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;pattern&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_eval_rewrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rule&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;hints&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;iterable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pattern&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]):&lt;/span&gt;
+            &lt;span class="n"&gt;pattern&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pattern&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+        &lt;span class="n"&gt;pattern&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__class__&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;pattern&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;has&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;pattern&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_eval_rewrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;tuple&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pattern&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;rule&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;hints&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;But this is not the case with me. It always ends up calling &lt;code&gt;__str__&lt;/code&gt; method. This is the &lt;span class="caps"&gt;PR&lt;/span&gt; for the&amp;nbsp;same.&lt;/p&gt;
+&lt;p&gt;https://github.com/sympy/sympy/pull/7546&lt;/p&gt;
+&lt;p&gt;By the way, I had never used any debugger for Python before and now I feel it makes your life much easier. &lt;a href="http://winpdb.org/"&gt;Winpdb&lt;/a&gt; is a great Python debugger which is platform&amp;nbsp;independent.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve also been working on &lt;span class="caps"&gt;SHM&lt;/span&gt; and will submit a &lt;span class="caps"&gt;PR&lt;/span&gt; soon for that. Besides my project, I also closed two issues this week related to printing in &lt;code&gt;sympy.logic&lt;/code&gt; and helped to review few&amp;nbsp;PRs.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;https://github.com/sympy/sympy/issues/7179&lt;/li&gt;
+&lt;li&gt;https://github.com/sympy/sympy/issues/7180&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;PR&lt;/span&gt;: &amp;lt;https://github.com/sympy/sympy/pull/7541&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We have a public channel(&lt;a href="https://gitter.im/sympy/sympy/optics"&gt;https://gitter.im/sympy/sympy/optics&lt;/a&gt;) to discuss about my project. You are welcome to join us, we would be more than happy to get feedback about the work. It&amp;#8217;ll help us refine it and
+cover a wider range of use&amp;nbsp;cases.&lt;/p&gt;
+&lt;h2&gt;Weeklog&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Merged&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add tests for pretty&amp;nbsp;printer&lt;/li&gt;
+&lt;li&gt;Remove unnecessary if&amp;nbsp;block&lt;/li&gt;
+&lt;li&gt;Add IPython Notebook Checkpoints to&amp;nbsp;.gitignore&lt;/li&gt;
+&lt;li&gt;Remove double wrapping with&amp;nbsp;u&lt;/li&gt;
+&lt;li&gt;Add tests for printing Equivalent. fixes&amp;nbsp;#7180&lt;/li&gt;
+&lt;li&gt;Wrap unicode chars with u and fix a bug in latex&amp;nbsp;printer&lt;/li&gt;
+&lt;li&gt;Fix a typo in manipulation.rst [skip&amp;nbsp;ci]&lt;/li&gt;
+&lt;li&gt;Make equivalence symbol same for pretty printer and * latex printer and change not equivalent symbol to u+2262 [skip&amp;nbsp;ci]&lt;/li&gt;
+&lt;li&gt;Fix latex printing for Not(Equivalent) and&amp;nbsp;Not(Implies).&lt;/li&gt;
+&lt;li&gt;Fix pretty printing for Not(Equivalent) and Not(Implies). fixes&amp;nbsp;#7179&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Pending&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change arg to *args [skip&amp;nbsp;ci]&lt;/li&gt;
+&lt;li&gt;Add rewrite expression methods [skip&amp;nbsp;ci]&lt;/li&gt;
+&lt;li&gt;Add wavenumber&amp;nbsp;property&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is all for now.&amp;nbsp;Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Mon, 02 Jun 2014 02:02:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-06-02:gsoc14-progress-finishing-twave</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC 14: First Week</title><link>http://www.sudhanshumishra.in/gsoc-14-first-week</link><description>&lt;p&gt;The first week of GSoC is going to end very soon. I started working very
+late this week because of some issues. I spent most of my time in
+reading books on&amp;nbsp;optics.&lt;/p&gt;
+&lt;p&gt;Due to a dependency for 3D geometry, which will take some more time, I
+changed my timeline from what I had proposed. Besides starting with
+geometrical optics(3 weeks), I have started working on wave&amp;nbsp;optics.&lt;/p&gt;
+&lt;p&gt;This is what my proposal&amp;nbsp;says:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;During this week I&amp;#8217;ll write code for classical wave equation and simple harmonic&amp;nbsp;motion.&lt;/li&gt;
+&lt;li&gt;Introduction of properties like phase angles, phase velocity, wave velocity, amplitude, intensity, frequency and&amp;nbsp;wavelength. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://github.com/sympy/sympy/pull/7518"&gt;This&lt;/a&gt; is my first pull request regarding my project (Thanks to Sean for the quick review). Till now I&amp;#8217;ve only added a transverse wave class and will add more to it in the next 2&amp;nbsp;days.&lt;/p&gt;
+&lt;p&gt;There were no hiccups&amp;nbsp;yet!&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Sun, 25 May 2014 00:14:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-05-25:gsoc-14-first-week</guid><category>gsoc</category><category>physics</category><category>sympy</category></item><item><title>GSoC 2014 with SymPy</title><link>http://www.sudhanshumishra.in/gsoc-2014-with-sympy</link><description>&lt;p&gt;My proposal is intended to add more to optics in SymPy. Till now it can
+only do computations related to Gaussian optics and a bit of geometrical
+optics. &lt;a href="https://github.com/certik"&gt;Ondřej Čertík&lt;/a&gt; and &lt;a href="https://github.com/flacjacket"&gt;Sean
+Vig&lt;/a&gt; are my mentors for the&amp;nbsp;project.&lt;/p&gt;
+&lt;p&gt;For those who don&amp;#8217;t know what is SymPy, SymPy is a Python library for
+symbolic computation. It provides computer algebra capabilities either
+as a standalone application, as a library to other applications, or live
+on the web as SymPy Live. SymPy is trivial to install and to inspect
+because is written entirely in Python and because it does not depend on
+any additional libraries. This ease of access combined with a simple and
+extensible code base in a well known language make SymPy a computer
+algebra system with a relatively low barrier to entry. SymPy is free
+software and is licensed under New &lt;span class="caps"&gt;BSD&lt;/span&gt; license. The lead developers are
+Ondřej Čertík and Aaron&amp;nbsp;Meurer.&lt;/p&gt;
+&lt;p&gt;Three more people other than me got selected for SymPy from my college,
+namely, Akshay, Sachin Joglekar and Soumya Dipta&amp;nbsp;Biswas.&lt;/p&gt;
+&lt;p&gt;During this &lt;em&gt;Community Bonding Period&lt;/em&gt; I&amp;#8217;ll try to get familiar with the
+huge code base of SymPy and its community of developers. I&amp;#8217;m also
+working on few old pull requests that are dead for so&amp;nbsp;long.&lt;/p&gt;
+&lt;p&gt;Looking forward to work with such a great organization! Thanks to Google
+and SymPy for this&amp;nbsp;opportunity!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Fri, 25 Apr 2014 18:00:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-04-25:gsoc-2014-with-sympy</guid><category>gsoc</category><category>sympy</category></item><item><title>Managing commits and working with git diff</title><link>http://www.sudhanshumishra.in/managing-commits-and-working-with-git-diff</link><description>&lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;: This post assumes that you have basic knowledge of git. It&amp;#8217;s
+just about managing commits and minimizing their numbers by having only
+meaningful&amp;nbsp;ones.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve been working on a &lt;span class="caps"&gt;PR&lt;/span&gt; for around thirteen days which aims to fix a bug related to mathematical assumptions for inverse trigonometric functions in sympy. In order to do that I kept on committing changes
+randomly and number of commits went on increasing. As of now sympy has two types of mathematical assumptions we call it &lt;strong&gt;new&lt;/strong&gt; and &lt;strong&gt;old&lt;/strong&gt; so genuinely there should have been only two commits referring changes to
+respective&amp;nbsp;types.&lt;/p&gt;
+&lt;p&gt;I had two branches &lt;code&gt;master&lt;/code&gt; and &lt;code&gt;arctrigo&lt;/code&gt; I followed following steps to separate the changes done in both the&amp;nbsp;assumptions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;First pull the changes from the remote to your &lt;code&gt;master&lt;/code&gt; and merge it to your feature branch. In my case it was &lt;code&gt;arctrigo&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make sure that you are no your feature branch and not on &lt;code&gt;master&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a diff with respect to &lt;code&gt;master&lt;/code&gt;. &lt;code&gt;git diff master &amp;gt; diff&lt;/code&gt; (latter diff is just the filename, it could be&amp;nbsp;anything)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a new temporary branch of &lt;code&gt;master&lt;/code&gt;. &lt;code&gt;git checkout master; git branch -b tmp&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Apply the patch. &lt;code&gt;git apply diff&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use &lt;code&gt;git add -p&lt;/code&gt; and you&amp;#8217;ll be prompted change by change as to whether that change should be staged for committal. Say &lt;code&gt;y&lt;/code&gt; to all changes involving one part and &lt;code&gt;n&lt;/code&gt; to the&amp;nbsp;others.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here git has staged a set of changes for your next commit&amp;nbsp;command.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Commit the changes for the first part, for which you said &lt;code&gt;y&lt;/code&gt; in the prompts, by &lt;code&gt;git commit -m "your message for the first part"&lt;/code&gt;. And then do &lt;code&gt;git commit -am "your message for the other part"&lt;/code&gt; for which you said &lt;code&gt;n&lt;/code&gt; in the&amp;nbsp;prompts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Delete your feature branch. In my case it was &lt;code&gt;arctrigo&lt;/code&gt; with &lt;code&gt;git branch -D arctrigo&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create the same feature branch from &lt;code&gt;tmp&lt;/code&gt; and switch to it. &lt;code&gt;git branch tmp; git checkout tmp&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Update your &lt;span class="caps"&gt;PR&lt;/span&gt; with &lt;code&gt;git push -f &amp;lt;your_remote_name&amp;gt; &amp;lt;your_branch_name&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now navigate to your &lt;span class="caps"&gt;PR&lt;/span&gt; and you&amp;#8217;ll see two clean commits. I just learned
+these things from &lt;a href="https://github.com/smichr"&gt;Christopher&lt;/a&gt; and decided
+to write a blog post about&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Mon, 14 Apr 2014 13:48:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-04-14:managing-commits-and-working-with-git-diff</guid><category>git</category><category>github</category></item><item><title>Setting up Tornado server on Ubuntu 12.04</title><link>http://www.sudhanshumishra.in/setting-up-tornado-server-on-ubuntu-1204</link><description>&lt;p&gt;&lt;img alt="Tornado" src="http://www.tornadoweb.org/en/stable/_images/tornado.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Lately I was looking at Tornado which has been open sourced by Facebook.
+It was originally developed at FriendFeed. It has a great capability to
+handle tens of thousands on live connections at a time making it ideal
+for long polling, WebSockets, and other applications that require a
+long-lived connection to each user. This server is written in Python
+which follows a non blocking methodology of coding. Just like Node.js it
+also works on a similar concept of&amp;nbsp;callbacks.&lt;/p&gt;
+&lt;h2&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;Tornado runs on Python 2.6, 2.7, 3.2, and 3.3. On Python 2, the &lt;code&gt;backports.ssl_match_hostname&lt;/code&gt; package must be installed (This will be installed automatically when using &lt;code&gt;pip&lt;/code&gt; or &lt;code&gt;easy_install&lt;/code&gt;); on Python 3 there are no strict dependencies outside the standard library. Some Tornado features may require one of the following optional&amp;nbsp;libraries&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://pypi.python.org/pypi/unittest2"&gt;unittest2&lt;/a&gt; is needed to run Tornado’s test suite on Python 2.6 (it is unnecessary on more recent versions of&amp;nbsp;Python)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://pypi.python.org/pypi/futures"&gt;concurrent.futures&lt;/a&gt; is the recommended thread pool for use with Tornado and enables the use of &lt;a href="http://www.tornadoweb.org/en/stable/netutil.html#tornado.netutil.ThreadedResolver"&gt;ThreadedResolver&lt;/a&gt;. It is needed only on Python 2; Python 3 includes this package in the standard&amp;nbsp;library.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://pycurl.sourceforge.net/"&gt;pycurl&lt;/a&gt; is used by the optional tornado.curl_httpclient. Libcurl version 7.18.2 or higher is required; version 7.21.1 or higher is&amp;nbsp;recommended.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://www.twistedmatrix.com/"&gt;Twisted&lt;/a&gt; may be used with the classes in &lt;a href="http://www.tornadoweb.org/en/stable/twisted.html#module-tornado.platform.twisted"&gt;tornado.platform.twisted&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://pypi.python.org/pypi/pycares"&gt;pycares&lt;/a&gt; is an alternative non-blocking &lt;span class="caps"&gt;DNS&lt;/span&gt; resolver that can be used when threads are not&amp;nbsp;appropriate.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://pypi.python.org/pypi/Monotime"&gt;Monotime&lt;/a&gt; adds support for a monotonic clock, which improves reliability in environments where clock adjustments are frequent. No longer needed in Python&amp;nbsp;3.3.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tornado works on almost all platforms including unix, &lt;span class="caps"&gt;BSD&lt;/span&gt;, Mac &lt;span class="caps"&gt;OS&lt;/span&gt; X and
+windows though it is advised to use it only on Unix for production&amp;nbsp;purpose.&lt;/p&gt;
+&lt;h2&gt;Installation&lt;/h2&gt;
+&lt;p&gt;Tornado is listed in &lt;a href="https://pypi.python.org/pypi/tornado"&gt;PyPi&lt;/a&gt; so it
+can be installed very easily with the following&amp;nbsp;command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install tornado
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;For backports it will automatically install &lt;a href="https://pypi.python.org/pypi/backports.ssl_match_hostname"&gt;backports.ssl_match_hostname&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can also install the latest development version from source code using following&amp;nbsp;command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install https://github.com/facebook/tornado/zipball/master
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Running a simple program using&amp;nbsp;tornado&lt;/h2&gt;
+&lt;p&gt;Following is a simple hello world program using&amp;nbsp;tornado.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tornado.httpserver&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tornado.ioloop&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tornado.options&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tornado.web&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;tornado.options&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;define&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;options&lt;/span&gt;
+
+&lt;span class="n"&gt;define&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;port&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;8888&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;run on the given port&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MainHandler&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tornado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;web&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;RequestHandler&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello, world&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;tornado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parse_command_line&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;application&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tornado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;web&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Application&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;r&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;MainHandler&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;http_server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tornado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;httpserver&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;HTTPServer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;application&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;http_server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;listen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;tornado&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ioloop&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;IOLoop&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;instance&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The above written program will start the server on port 8888. You can check it out by
+visiting &lt;a href="http://www.yourdomain.com:8888/"&gt;http://www.yourdomain.com:8888&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I will write more on tornado in future. I&amp;#8217;m planning to use this as
+computing server for online version of &lt;a href="http://www.binpy.org/"&gt;Binpy&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Sat, 05 Apr 2014 06:42:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-04-05:setting-up-tornado-server-on-ubuntu-1204</guid><category>BinPy</category><category>Server</category><category>Ubuntu</category></item><item><title>BinPy: N Bit Ripple Counter</title><link>http://www.sudhanshumishra.in/binpy-n-bit-ripple-counter</link><description>&lt;p&gt;&lt;img alt="Logo" src="http://binpy.github.io/images/logo.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://binpy.github.io"&gt;BinPy&lt;/a&gt; is almost ready to create things. This
+post focuses on building a ripple counter using&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theory&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A ripple counter is an asynchronous counter where only the first
+flip-flop is clocked by an external clock. All subsequent flip-flops are
+clocked by the output of the preceding flip-flop. Asynchronous counters
+are also called ripple-counters because of the way the clock pulse
+ripples it way through the&amp;nbsp;flip-flops.&lt;/p&gt;
+&lt;p&gt;The &lt;span class="caps"&gt;MOD&lt;/span&gt; of the ripple counter or asynchronous counter is 2n if n
+flip-flops are used. For a 4-bit counter, the range of the count is 0000
+to 1111 (24-1). A counter may count up or count down or count up and
+down depending on the input control. The count sequence usually repeats
+itself. When counting up, the count sequence goes from 0000, 0001, 0010,
+&amp;#8230; 1110 , 1111 , 0000, 0001, &amp;#8230; etc. When counting down the count
+sequence goes in the opposite manner: 1111, 1110, &amp;#8230; 0010, 0001, 0000,
+1111, 1110, &amp;#8230;&amp;nbsp;etc.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Implementation&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The following code is using BinPy&amp;#8217;s internal&amp;nbsp;NBitRippleCounter.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;print_function&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;BinPy.tools&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Clock&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;BinPy.Sequential.counters&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;NBitRippleCounter&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;BinPy.Gates&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Connector&lt;/span&gt;
+
+&lt;span class="n"&gt;toggle&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Connector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c"&gt;# Initialize the clock with leading edge = 1 and frequency = 1000Hz&lt;/span&gt;
+&lt;span class="n"&gt;clock&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Clock&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;init_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;frequency&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;  &lt;span class="c"&gt;#Start the clock&lt;/span&gt;
+&lt;span class="n"&gt;clk_conn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;  &lt;span class="c"&gt;#Clock.A provides the connector of the clock&lt;/span&gt;
+&lt;span class="n"&gt;enable&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Connector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c"&gt;# Initialize the counter&lt;/span&gt;
+&lt;span class="n"&gt;counter&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;NBitRippleCounter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;clk_conn&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;INITIAL STATE&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;counter&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;state&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;TRIGGERING THE COUNTER SEQUENTIALLY 2^4 + 1 times&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;counter&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;state&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+    &lt;span class="n"&gt;counter&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Following is the output of the above&amp;nbsp;code.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;INITIAL STATE
+[0, 0, 0, 0]
+TRIGGERING THE COUNTER SEQUENTIALLY 2^4 + 1 times
+[0, 0, 0, 0]
+[0, 0, 0, 1]
+[0, 0, 1, 0]
+[0, 0, 1, 1]
+[0, 1, 0, 0]
+[0, 1, 0, 1]
+[0, 1, 1, 0]
+[0, 1, 1, 1]
+[1, 0, 0, 0]
+[1, 0, 0, 1]
+[1, 0, 1, 0]
+[1, 0, 1, 1]
+[1, 1, 0, 0]
+[1, 1, 0, 1]
+[1, 1, 1, 0]
+[1, 1, 1, 1]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Under the&amp;nbsp;hood&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;When we are initializing the counter with specified number of bits, it
+is actually creating those many T Flip Flops and connecting them in
+order to get the result. The actual implementation is shown in the
+following&amp;nbsp;code.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;NBitRippleCounter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Counter&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;    An N-Bit Ripple Counter&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;bits&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;clock_connector&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Connector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+            &lt;span class="n"&gt;reset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;Connector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+            &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+
+        &lt;span class="c"&gt;# All the output bits are initialized to this data bit&lt;/span&gt;
+
+        &lt;span class="n"&gt;Counter&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bits&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;clock_connector&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;reset&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="c"&gt;# Calling the super class constructor&lt;/span&gt;
+
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ff&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bits&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;
+            &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TFlipFlop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;enable&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;clk&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bits&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;
+                &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;outinv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bits&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;
+                &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reset&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bits&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ff&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TFlipFlop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;enable&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+                    &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;outinv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reset&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Try connecting some wires with code, it&amp;#8217;s fun!
+If you have some feedback or questions regarding this post, please add
+comments.&amp;nbsp;Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Thu, 13 Mar 2014 17:36:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2014-03-13:binpy-n-bit-ripple-counter</guid><category>BinPy</category><category>Circuit Design</category><category>Electronics</category></item><item><title>Linux and Lenovo Essential G580</title><link>http://www.sudhanshumishra.in/linux-and-lenovo-essential-g580</link><description>&lt;p&gt;Lenovo Essential G580 is the laptop which has highest number of conflicts with
+aLinux &lt;span class="caps"&gt;OS&lt;/span&gt;. The biggest problem is when you install a Linux &lt;span class="caps"&gt;OS&lt;/span&gt; you will
+&lt;strong&gt;lose access to your &lt;span class="caps"&gt;BIOS&lt;/span&gt; setup&lt;/strong&gt; and that&amp;#8217;s permanent. I faced this
+problem and I sent my laptop to service center to repair and they had to
+change its motherboard to fix this problem. When my laptop returned
+after repairing I installed Ubuntu 12.10 and lost my &lt;span class="caps"&gt;BIOS&lt;/span&gt; once again!&amp;nbsp;:(&lt;/p&gt;
+&lt;p&gt;Now I am using only Ubuntu 12.10 and not windows and that too without
+&lt;span class="caps"&gt;BIOS&lt;/span&gt; even if it&amp;#8217;s under&amp;nbsp;warranty.&lt;/p&gt;
+&lt;p&gt;Now when the Ubuntu is installed, be prepared to face challenges! Ubuntu
+is supposed to carry each and every driver with it but unfortunately it
+doesn&amp;#8217;t have the wired network driver for this laptop. After searching
+over the internet for hours I finally installed my network driver and
+uploaded the installer to Google drive for future.
+I solved one more issue of uncontrollable brightness of the screen by
+editing grub. Bluetooth automatically gets activated sometimes.
+There are uncountable number of problems. The only thing which you can
+do is to prevent yourself from buying this&amp;nbsp;laptop.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Sat, 10 Aug 2013 23:10:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2013-08-10:linux-and-lenovo-essential-g580</guid><category>BIOS</category><category>Lenovo</category><category>Lenovo G580</category><category>Linux</category><category>Ubuntu</category></item></channel></rss>
