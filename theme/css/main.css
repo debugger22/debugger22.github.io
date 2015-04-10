@@ -24,7 +24,7 @@ body {
     -webkit-font-smoothing: antialiased
     font-size: 18px; /* Base font size: 14px */
     font-family: 'Source Sans Pro', 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    line-height: 30px;
+    line-height: 1.14;
     margin: 0;
     padding: 0;
     text-align: left;
