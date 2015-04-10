@@ -21,9 +21,10 @@
 body {
     background: #F5F4EF;
     color: #000305;
-    font-size: 90.5%; /* Base font size: 14px */
+    -webkit-font-smoothing: antialiased
+    font-size: 15px; /* Base font size: 14px */
     font-family: 'Source Sans Pro', 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    line-height: 1.429;
+    line-height: 25px;
     margin: 0;
     padding: 0;
     text-align: left;
