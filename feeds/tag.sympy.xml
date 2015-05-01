@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shortlog</title><link>http://www.sudhanshumishra.in/</link><description></description><atom:link href="http://www.sudhanshumishra.in/feeds/tag.sympy.xml" rel="self"></atom:link><lastBuildDate>Fri, 01 May 2015 11:00:00 +0530</lastBuildDate><item><title>Google Summer of Code 2015 with SymPy</title><link>http://www.sudhanshumishra.in/posts/gsoc15-with-sympy/</link><description>&lt;p align="left"&gt;
+&lt;img src="http://www.sudhanshumishra.in/images/sympy.png" /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Once again I got accepted into Google Summer of Code! I'll be working on assumptions system of SymPy. This time, SymPy is participating under Python Software Foundation.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;SymPy is a Python library for symbolic mathematics. It aims to become a full-featured &lt;a href="https://en.wikipedia.org/wiki/Computer_algebra_system"&gt;Computer Algebra System&lt;/a&gt; while keeping the code as simple as possible in order to be comprehensible and easily extensible.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Here's what ideas page says about the project:&lt;/p&gt;
+&lt;div style="border:1px solid #C74350;padding:10px;border-radius: 5px;"&gt;
+&lt;i&gt;
+The project is to completely remove our old assumptions system, replacing it
+with the new one.&lt;br/&gt;&lt;br/&gt;
+
+The difference between the two systems is outlined in the first two sections of this blog post.  A list of detailed issues can be found at this issue.&lt;br/&gt;&lt;br/&gt;
+
+This project is challenging.  It requires deep understanding of the core of SymPy, basic logical inference, excellent code organization, and attention to performance.  It is also very important and of high value to the SymPy community.&lt;br/&gt;&lt;br/&gt;
+
+You should take a look at the work started at
+&lt;a href="https://github.com/sympy/sympy/pull/2508"&gt;https://github.com/sympy/sympy/pull/2508&lt;/a&gt;. Numerous related tasks are mentioned in the "Ideas" section.
+&lt;/i&gt;
+&lt;/div&gt;
+
+&lt;p&gt;My mentors are &lt;a href="https://github.com/asmeurer"&gt;Aaron Meurer&lt;/a&gt; and &lt;a href="https://github.com/tjl"&gt;Tim Lahey&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Currently SymPy has two versions of mathematical assumptions. One is called "old assumptions" because a new implementation has been carried out recently. Since "old assumptions" were developed a long back, they are more mature and faster. However, because of its design, it is not capable of doing some interesting things like assuming something over an expression e.g. &lt;code&gt;x**2 + 2 &amp;gt; 0&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Old assumptions store assumptions in the object itself. For example, the code &lt;code&gt;x = Symbol('x', finite=True)&lt;/code&gt; will store the assumption that the &lt;code&gt;x&lt;/code&gt; is finite in this object itself.&lt;/p&gt;
+&lt;p&gt;Both systems expose different APIs to query the facts:&lt;/p&gt;
+&lt;p&gt;Old:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Symbol&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;imaginary&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_real&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;New:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Symbol&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;y&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;ask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Q&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;real&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;Q&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;positive&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;My work includes but is not limited to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Identifying inconsistencies between old and new assumptions and eliminate them.&lt;/li&gt;
+&lt;li&gt;Making new assumptions read old assumptions.&lt;/li&gt;
+&lt;li&gt;Removing assumptions from the core as much as possible.&lt;/li&gt;
+&lt;li&gt;Making API of old assumptions call new assumptions internally.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That's all for now. Looking forward to a great summer!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Fri, 01 May 2015 11:00:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2015-05-01:posts/gsoc15-with-sympy/</guid><category>python</category><category>sympy</category><category>gsoc</category></item></channel></rss>
