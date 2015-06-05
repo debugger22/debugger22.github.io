@@ -31,10 +31,10 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/posts/gsoc15-with-sympy/">Google Summer of Code 2015 with SymPy</a></h1>
+                    <h1 class="entry-title"><a href="http://www.sudhanshumishra.in/posts/gsoc15-week-one/">GSoC'15: Week one</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2015-05-01T11:00:00">
-                Published: Fri 01 May 2015
+        <abbr class="published" title="2015-06-05T23:00:00">
+                Published: Fri 05 June 2015
         </abbr>
 
 <p>In <a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a>. </p>
@@ -43,62 +43,50 @@
 <img src="http://www.sudhanshumishra.in/images/gsoc15.png" />
 </p>
 
+<p>The first week ended few days back. I managed to do few things during this period.</p>
+<p>I finished <a href="https://github.com/sympy/sympy/pull/9228">#9228</a> and got it merged into the master. I also started working on <a href="https://github.com/sympy/sympy/pull/9475">documenting new assumptions</a>. Thanks to Aaron for quick feedback on that.</p>
+<p>There are few hiccups in the latter one. After changing all predicate keys to <code>property</code>, some of them started giving <code>None</code> when used in <code>ask</code>. I hope that I'll be able to sort it out before Monday.</p>
+<p>I'm also looking forward to merge <a href="https://github.com/sympy/sympy/pull/2508">#2508</a> this week. You are welcome to help me in reviewing this one.</p>
+<p>I'll start working on global assumptions once I'm done with the documentation.</p>
+<p>That's all for now. Cheers!</p><p>There are <a href="http://www.sudhanshumishra.in/posts/gsoc15-week-one/#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://www.sudhanshumishra.in/posts/gsoc15-with-sympy/" rel="bookmark"
+                           title="Permalink to Google Summer of Code 2015 with SymPy">Google Summer of Code 2015 with SymPy</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2015-05-01T11:00:00">
+                Published: Fri 01 May 2015
+        </abbr>
+
+<p>In <a href="http://www.sudhanshumishra.in/category/gsoc.html">GSoC</a>. </p>
+<p>tags: <a href="http://www.sudhanshumishra.in/posts/tags/python/">python</a> <a href="http://www.sudhanshumishra.in/posts/tags/sympy/">sympy</a> <a href="http://www.sudhanshumishra.in/posts/tags/gsoc/">gsoc</a> </p>
+</footer><!-- /.post-info -->                <p align="center">
+<img src="http://www.sudhanshumishra.in/images/gsoc15.png" />
+</p>
+
 <p>Once again I got accepted into Google Summer of Code! I'll be working on assumptions system of SymPy. This time, SymPy is participating under Python Software Foundation.</p>
 <p align="center">
 <img src="http://www.sudhanshumishra.in/images/sympy.png" />
 </p>
 
-<p><em>SymPy is a Python library for symbolic mathematics. It aims to become a full-featured <a href="https://en.wikipedia.org/wiki/Computer_algebra_system">Computer Algebra System</a> while keeping the code as simple as possible in order to be comprehensible and easily extensible.</em></p>
-<p>Here's what ideas page says about the project:</p>
-<div style="border:1px solid #C74350;padding:10px;border-radius: 5px;">
-<i>
-The project is to completely remove our old assumptions system, replacing it
-with the new one.<br/><br/>
-
-The difference between the two systems is outlined in the first two sections of this blog post.  A list of detailed issues can be found at this issue.<br/><br/>
-
-This project is challenging.  It requires deep understanding of the core of SymPy, basic logical inference, excellent code organization, and attention to performance.  It is also very important and of high value to the SymPy community.<br/><br/>
-
-You should take a look at the work started at
-<a href="https://github.com/sympy/sympy/pull/2508">https://github.com/sympy/sympy/pull/2508</a>. Numerous related tasks are mentioned in the "Ideas" section.
-</i>
-</div>
-
-<p>My mentors are <a href="https://github.com/asmeurer">Aaron Meurer</a> and <a href="https://github.com/tjl">Tim Lahey</a>.</p>
-<p>Currently SymPy has two versions of mathematical assumptions. One is called "old assumptions" because a new implementation has been carried out recently. Since "old assumptions" were developed a long back, they are more mature and faster. However, because of its design, it is not capable of doing some interesting things like assuming something over an expression e.g. <code>x**2 + 2 &gt; 0</code>.</p>
-<p>Old assumptions store assumptions in the object itself. For example, the code <code>x = Symbol('x', finite=True)</code> will store the assumption that the <code>x</code> is finite in this object itself.</p>
-<p>Both systems expose different APIs to query the facts:</p>
-<p>Old:</p>
-<div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="n">imaginary</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">x</span><span class="o">.</span><span class="n">is_real</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="bp">False</span>
-</pre></div>
-
-
-<p>New:</p>
-<div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">ask</span><span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">positive</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="bp">True</span>
-</pre></div>
-
-
-<p>My work includes but is not limited to:</p>
-<ul>
-<li>Identifying inconsistencies between old and new assumptions and eliminate them.</li>
-<li>Improving performance of the new assumptions.</li>
-<li>Making new assumptions read old assumptions.</li>
-<li>Removing assumptions from the core as much as possible.</li>
-<li>Making API of old assumptions call new assumptions internally.</li>
-</ul>
-<p>That's all for now. Looking forward to a great summer!</p><p>There are <a href="http://www.sudhanshumishra.in/posts/gsoc15-with-sympy/#disqus_thread">comments</a>.</p>                </article>
+<p><em>SymPy is a Python library for symbolic mathematics. It aims to become a full-featured <a href="https://en.wikipedia.org/wiki/Computer_algebra_system">Computer Algebra System</a> while keeping the code as ...</em></p>
+                <a class="readmore" href="http://www.sudhanshumishra.in/posts/gsoc15-with-sympy/">read more</a>
+<p>There are <a href="http://www.sudhanshumishra.in/posts/gsoc15-with-sympy/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
 <p class="paginator">
     Page 1 / 1
 </p>
-            </aside><!-- /#featured -->
+                </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>blogroll</h2>

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/gsoc.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2015-05-01T11:00:00+05:30</updated><entry><title>Google Summer of Code 2015 with SymPy</title><link href="http://www.sudhanshumishra.in/posts/gsoc15-with-sympy/" rel="alternate"></link><updated>2015-05-01T11:00:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-05-01:posts/gsoc15-with-sympy/</id><summary type="html">&lt;p align="center"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/gsoc.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2015-06-05T23:00:00+05:30</updated><entry><title>GSoC'15: Week one</title><link href="http://www.sudhanshumishra.in/posts/gsoc15-week-one/" rel="alternate"></link><updated>2015-06-05T23:00:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-06-05:posts/gsoc15-week-one/</id><summary type="html">&lt;p align="center"&gt;
+&lt;img src="http://www.sudhanshumishra.in/images/gsoc15.png" /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The first week ended few days back. I managed to do few things during this period.&lt;/p&gt;
+&lt;p&gt;I finished &lt;a href="https://github.com/sympy/sympy/pull/9228"&gt;#9228&lt;/a&gt; and got it merged into the master. I also started working on &lt;a href="https://github.com/sympy/sympy/pull/9475"&gt;documenting new assumptions&lt;/a&gt;. Thanks to Aaron for quick feedback on that.&lt;/p&gt;
+&lt;p&gt;There are few hiccups in the latter one. After changing all predicate keys to &lt;code&gt;property&lt;/code&gt;, some of them started giving &lt;code&gt;None&lt;/code&gt; when used in &lt;code&gt;ask&lt;/code&gt;. I hope that I'll be able to sort it out before Monday.&lt;/p&gt;
+&lt;p&gt;I'm also looking forward to merge &lt;a href="https://github.com/sympy/sympy/pull/2508"&gt;#2508&lt;/a&gt; this week. You are welcome to help me in reviewing this one.&lt;/p&gt;
+&lt;p&gt;I'll start working on global assumptions once I'm done with the documentation.&lt;/p&gt;
+&lt;p&gt;That's all for now. Cheers!&lt;/p&gt;</summary><category term="python"></category><category term="sympy"></category><category term="gsoc"></category></entry><entry><title>Google Summer of Code 2015 with SymPy</title><link href="http://www.sudhanshumishra.in/posts/gsoc15-with-sympy/" rel="alternate"></link><updated>2015-05-01T11:00:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-05-01:posts/gsoc15-with-sympy/</id><summary type="html">&lt;p align="center"&gt;
 &lt;img src="http://www.sudhanshumishra.in/images/gsoc15.png" /&gt;
 &lt;/p&gt;
 
