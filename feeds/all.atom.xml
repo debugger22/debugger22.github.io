@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/all.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2015-06-05T23:00:00+05:30</updated><entry><title>GSoC'15: Week one</title><link href="http://www.sudhanshumishra.in/posts/gsoc15-week-one/" rel="alternate"></link><updated>2015-06-05T23:00:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-06-05:posts/gsoc15-week-one/</id><summary type="html">&lt;p align="center"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/all.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2015-06-09T12:00:00+05:30</updated><entry><title>GSoC'15: Week two</title><link href="http://www.sudhanshumishra.in/posts/gsoc15-week-two/" rel="alternate"></link><updated>2015-06-09T12:00:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-06-09:posts/gsoc15-week-two/</id><summary type="html">&lt;p align="center"&gt;
+&lt;img src="http://www.sudhanshumishra.in/images/gsoc15.png" /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Second week of GSoC is over. I learned a lot this week about the assumptions system.&lt;/p&gt;
+&lt;p&gt;Goal of this week was to finish the &lt;a href="https://github.com/sympy/sympy/pull/9475"&gt;documentation PR&lt;/a&gt; which I started few days back. I think it's complete now and ready for the final review.&lt;/p&gt;
+&lt;p&gt;We also merged a very old and crucial &lt;a href="https://github.com/sympy/sympy/pull/2508"&gt;PR&lt;/a&gt; for the new assumptions started by Aaron. Now we really need to improve performance of &lt;code&gt;satask&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This week I'll start working on adding assumptions on Symbols to global assumptions context.&lt;/p&gt;
+&lt;p&gt;That's all for now. Cheers!&lt;/p&gt;</summary><category term="python"></category><category term="sympy"></category><category term="gsoc"></category></entry><entry><title>GSoC'15: Week one</title><link href="http://www.sudhanshumishra.in/posts/gsoc15-week-one/" rel="alternate"></link><updated>2015-06-05T23:00:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2015-06-05:posts/gsoc15-week-one/</id><summary type="html">&lt;p align="center"&gt;
 &lt;img src="http://www.sudhanshumishra.in/images/gsoc15.png" /&gt;
 &lt;/p&gt;
 

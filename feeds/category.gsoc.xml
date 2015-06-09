@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shortlog</title><link>http://www.sudhanshumishra.in/</link><description></description><atom:link href="http://www.sudhanshumishra.in/feeds/category.gsoc.xml" rel="self"></atom:link><lastBuildDate>Fri, 05 Jun 2015 23:00:00 +0530</lastBuildDate><item><title>GSoC'15: Week one</title><link>http://www.sudhanshumishra.in/posts/gsoc15-week-one/</link><description>&lt;p align="center"&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shortlog</title><link>http://www.sudhanshumishra.in/</link><description></description><atom:link href="http://www.sudhanshumishra.in/feeds/category.gsoc.xml" rel="self"></atom:link><lastBuildDate>Tue, 09 Jun 2015 12:00:00 +0530</lastBuildDate><item><title>GSoC'15: Week two</title><link>http://www.sudhanshumishra.in/posts/gsoc15-week-two/</link><description>&lt;p align="center"&gt;
+&lt;img src="http://www.sudhanshumishra.in/images/gsoc15.png" /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Second week of GSoC is over. I learned a lot this week about the assumptions system.&lt;/p&gt;
+&lt;p&gt;Goal of this week was to finish the &lt;a href="https://github.com/sympy/sympy/pull/9475"&gt;documentation PR&lt;/a&gt; which I started few days back. I think it's complete now and ready for the final review.&lt;/p&gt;
+&lt;p&gt;We also merged a very old and crucial &lt;a href="https://github.com/sympy/sympy/pull/2508"&gt;PR&lt;/a&gt; for the new assumptions started by Aaron. Now we really need to improve performance of &lt;code&gt;satask&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This week I'll start working on adding assumptions on Symbols to global assumptions context.&lt;/p&gt;
+&lt;p&gt;That's all for now. Cheers!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Tue, 09 Jun 2015 12:00:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2015-06-09:posts/gsoc15-week-two/</guid><category>python</category><category>sympy</category><category>gsoc</category></item><item><title>GSoC'15: Week one</title><link>http://www.sudhanshumishra.in/posts/gsoc15-week-one/</link><description>&lt;p align="center"&gt;
 &lt;img src="http://www.sudhanshumishra.in/images/gsoc15.png" /&gt;
 &lt;/p&gt;
 
