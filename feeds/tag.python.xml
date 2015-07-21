@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shortlog</title><link>http://www.sudhanshumishra.in/</link><description></description><atom:link href="http://www.sudhanshumishra.in/feeds/tag.python.xml" rel="self"></atom:link><lastBuildDate>Wed, 01 Jul 2015 03:30:00 +0530</lastBuildDate><item><title>GSoC'15: Mixing both assumption systems, Midterm updates</title><link>http://www.sudhanshumishra.in/posts/gsoc15-midterm-updates/</link><description>&lt;p&gt;It's been very long since I've written anything here. Here's some of the pull requests that I've created during this period:&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shortlog</title><link>http://www.sudhanshumishra.in/</link><description></description><atom:link href="http://www.sudhanshumishra.in/feeds/tag.python.xml" rel="self"></atom:link><lastBuildDate>Tue, 14 Jul 2015 11:00:00 +0530</lastBuildDate><item><title>GSoC'15: Fourth biweekly update</title><link>http://www.sudhanshumishra.in/posts/gsoc15-fourth-biweekly-update/</link><description>&lt;p&gt;During this period we've been able to finish and merge following PRs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/9475"&gt;Documenting new assumptions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/9676"&gt;Deprecate Q.infinitesimal predicate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/9674"&gt;Remove obsolete doctest skip from nonzero predicate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/sympy/sympy/pull/9670"&gt;Fixes to some predicates in new assumptions regarding float arguments&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As of now I'm working on reducing autosimplifications based on assumptions from the core.&lt;/p&gt;
+&lt;p&gt;That's all for now.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sudhanshu Mishra</dc:creator><pubDate>Tue, 14 Jul 2015 11:00:00 +0530</pubDate><guid>tag:www.sudhanshumishra.in,2015-07-14:posts/gsoc15-fourth-biweekly-update/</guid><category>python</category><category>sympy</category><category>gsoc</category></item><item><title>GSoC'15: Mixing both assumption systems, Midterm updates</title><link>http://www.sudhanshumishra.in/posts/gsoc15-midterm-updates/</link><description>&lt;p&gt;It's been very long since I've written anything here. Here's some of the pull requests that I've created during this period:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href="https://github.com/sympy/sympy/pull/9490"&gt;Q.nonzero(non-real) now returns False&lt;/a&gt; Now &lt;code&gt;Q.nonzero&lt;/code&gt; requires the argument to be real along with nonzero to return &lt;code&gt;True&lt;/code&gt;.&lt;/p&gt;
