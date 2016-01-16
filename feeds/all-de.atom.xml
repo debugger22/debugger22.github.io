@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/all-de.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2014-09-14T00:00:00+05:30</updated><entry><title>Ein übersetzter Artikel</title><link href="http://www.sudhanshumishra.in/translated-article-de.html" rel="alternate"></link><updated>2014-09-14T00:00:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-09-14:translated-article-de.html</id><summary type="html">&lt;p&gt;Ein einfacher Artikel mit einer Übersetzung.
+Hier ist ein Link zur &lt;a class="reference external" href="{filename}/images/img.png"&gt;einigem Bild&lt;/a&gt;.&lt;/p&gt;
+</summary></entry></feed>

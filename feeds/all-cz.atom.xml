@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shortlog</title><link href="http://www.sudhanshumishra.in/" rel="alternate"></link><link href="http://www.sudhanshumishra.in/feeds/all-cz.atom.xml" rel="self"></link><id>http://www.sudhanshumishra.in/</id><updated>2014-09-15T00:00:00+05:30</updated><entry><title>Přeložený článek</title><link href="http://www.sudhanshumishra.in/translated-article-cz.html" rel="alternate"></link><updated>2014-09-15T00:00:00+05:30</updated><author><name>Sudhanshu Mishra</name></author><id>tag:www.sudhanshumishra.in,2014-09-15:translated-article-cz.html</id><summary type="html">&lt;p&gt;Jednoduchý článek s překlady.
+Zde je odkaz na &lt;a class="reference external" href="{filename}/images/img.png"&gt;nějaký obrázek&lt;/a&gt;.&lt;/p&gt;
+</summary></entry></feed>
